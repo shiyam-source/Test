@@ -1,0 +1,52 @@
+TripleDart AM team: org structure and hiring by stage
+"Change the blue inputs. Source: client book in the detailed capacity model (paid and SEO rosters, 21 Oct 2026). RevOps stays outside AM scope."
+
+INPUTS,Value,Note
+Weighted units one AM carries,13,About 12-15 clients
+Weighted units a Senior AM (team lead) carries,9,Smaller book; leads 4-6 AMs
+Share of engagements in AM scope (paid + SEO),=63/73,63 of 73 today; RevOps excluded
+Weighted units per in-scope engagement,=61.75/63,From the client book
+Paid media India + RoW units today,19.5,From the client book
+SEO and GEO India + RoW units today,23.125,Includes 70% of untagged SEO clients
+US + Canada units today (all lines),19.125,Includes 30% of untagged SEO clients
+"Cost per India AM a year, loaded ($)",27660,"Rs 15L fixed + Rs 10L variable, 4% load, Rs 94/$"
+"Cost per Senior AM a year, loaded ($)",33191,Rs 20L fixed + Rs 10L variable
+"Cost of the Canada AM a year, loaded ($)",81159,"CAD 75K + CAD 25K, 12% load"
+
+AM NEED BY STAGE,Today,At 100,At 150
+"Engagements, all lines",73,100,150
+Engagements in AM scope,"=ROUND(B17*$B$7,0)","=ROUND(C17*$B$7,0)","=ROUND(D17*$B$7,0)"
+Weighted units,"=ROUND(B18*$B$8,1)","=ROUND(C18*$B$8,1)","=ROUND(D18*$B$8,1)"
+"Units Gayu carries herself (Atlas, GE Appliances, escalations)",4.25,6,6
+Units left for the AM team,=B19-B20,=C19-C20,=D19-D20
+"Senior AMs (team leads), promoted from within",0,0,2
+AMs needed (incl. Senior AMs),"=B22+ROUNDUP(MAX(0,B21-B22*$B$6)/$B$5,0)","=C22+ROUNDUP(MAX(0,C21-C22*$B$6)/$B$5,0)","=D22+ROUNDUP(MAX(0,D21-D22*$B$6)/$B$5,0)"
+"  of which Paid media, India + RoW","=ROUND($B$9*B18/63/$B$5,0)","=ROUND($B$9*C18/63/$B$5,0)","=ROUND($B$9*D18/63/$B$5,0)"
+"  of which SEO and GEO, India + RoW","=ROUND($B$10*B18/63/$B$5,0)","=ROUND($B$10*C18/63/$B$5,0)","=ROUND($B$10*D18/63/$B$5,0)"
+  of which US + Canada (EST shift),"=ROUND(($B$11*B18/63-B20)/$B$5,0)","=ROUND(($B$11*C18/63-C20)/$B$5,0)","=ROUND(($B$11*D18/63-D20)/$B$5,0)"
+"  of which flex, India + RoW (paid or SEO)","=MAX(0,B23-B24-B25-B26)","=MAX(0,C23-C24-C25-C26)","=MAX(0,D23-D24-D25-D26)"
+Gayu's direct reports,"=IF(B22>0,B22,B23)","=IF(C22>0,C22,C23)","=IF(D22>0,D22,D23)"
+"Annual cost of the AM team, loaded ($)",=(B23-B22-1)*$B$12+B22*$B$13+$B$14,=(C23-C22-1)*$B$12+C22*$B$13+$B$14,=(D23-D22-1)*$B$12+D22*$B$13+$B$14
+"MRR per AM at this stage ($, approx.)","=ROUND(307225*B18/63/B23,-2)","=ROUND(307225*C18/63/C23,-2)","=ROUND(307225*D18/63/D23,-2)"
+
+ORG STRUCTURE,Reports to,Location and shift,Book,Today (73),At 100,At 150
+"Shiyam Sunder, CEO",,India,,In seat,In seat,In seat
+"Gayu (Gayatri Devi), Head of Account Management",Shiyam,"India, covers both shifts","Atlas, GE Appliances, escalations",In seat,In seat,In seat
+"Senior AM, India + RoW (team lead)",Gayu,"India, GMT shift","Leads India + RoW AMs, smaller own book",-,-,Promote from AM Paid #1
+"Senior AM, US + Canada (team lead)",Gayu,"Canada, EST","Leads US AMs, smaller own book",-,-,Promote from AM US #1
+AM Paid Media #1,Gayu,"India, GMT shift","Paid India, EU, MEA",TBH (Dec 2026),Filled,Filled
+AM Paid Media #2,Gayu; Senior AM IR at 150,"India, GMT shift","Paid India, EU, MEA",TBH (Jan 2027),Filled,Filled
+AM Paid Media #3,Senior AM India + RoW,"India, GMT shift",New paid clients,-,-,TBH
+AM SEO and GEO #1,Gayu; Senior AM IR at 150,"India, GMT shift",At-risk and Enterprise SEO first,TBH (Dec 2026),Filled,Filled
+AM SEO and GEO #2,Gayu; Senior AM IR at 150,"India, GMT shift",Rest of India + RoW SEO,TBH (Jan 2027),Filled,Filled
+AM SEO and GEO #3 (flex seat at 100),Gayu; Senior AM IR at 150,"India, GMT shift","Paid or SEO, whichever fills first",-,TBH (Feb 2027),Filled
+AM SEO and GEO #4,Senior AM India + RoW,"India, GMT shift",New SEO clients,-,-,TBH
+AM US + Canada #1 (Canada test hire),Gayu,"Canada, EST","US clients, paid first",TBH (Jan 2027),Filled,Filled
+AM US + Canada #2,Gayu; Senior AM US at 150,"India, EST shift",Second US book,-,TBH (Feb 2027),Filled
+AM US + Canada #3,Senior AM US + Canada,Canada or India EST (after the test),New US clients,-,-,TBH
+AMs in the plan (Filled + TBH),,,,"=COUNTIF(E37:E46,""Filled"")+COUNTIF(E37:E46,""TBH*"")","=COUNTIF(F37:F46,""Filled"")+COUNTIF(F37:F46,""TBH*"")","=COUNTIF(G37:G46,""Filled"")+COUNTIF(G37:G46,""TBH*"")"
+New seats to hire at this stage (TBH),,,,"=COUNTIF(E33:E46,""TBH*"")","=COUNTIF(F33:F46,""TBH*"")","=COUNTIF(G33:G46,""TBH*"")"
+Check: AMs needed from the model,,,,=B23,=C23,=D23
+
+"TripleDart has zero account managers today. In SEO, client relationships sit with Associate Directors Glenn and Zawad and Senior Manager Rohan alongside their delivery roles; they hand the relationships to the new AMs and stay on delivery. Every AM seat here is a new hire."
+"Past 150, add one AM for about every 13 new engagements, and one Senior AM for every 5 to 6 AMs."

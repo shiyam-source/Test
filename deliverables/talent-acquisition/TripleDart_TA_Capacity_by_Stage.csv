@@ -1,0 +1,57 @@
+TripleDart talent acquisition: capacity and org structure by stage
+"Change the inputs. Hire counts come from the 26-role hiring plan (Oct 2026 org session), the AM plan (5, then 7, then 10 AMs) and delivery growth per new engagement."
+
+INPUTS,Value,Note
+Weight: senior or leadership hire,2,"Directors, sales leader, FDMs. Long searches, more stakeholders."
+Weight: mid-level hire,1,"AMs, AEs, PMs, managers, specialists"
+Weight: junior hire,0.5,"SDRs, analysts, coordinators"
+Weight: delivery or backfill hire (mixed levels),0.75,"Pod analysts, specialists, leads"
+Weighted hires a TA Manager closes per month,4,"Hands-on, but also builds the function, agencies and employer brand"
+Weighted hires a Recruiter closes per month,6,"Full-cycle, sourcing-heavy"
+Share of senior-search work an agency takes off TA,0.5,"TA still runs intake, panels and the close"
+Hires per month above which TA needs dedicated scheduling support,6,Roughly 60+ interviews a month
+Delivery hires per new engagement,0.4,"Ideal pod: about 5 people on 6-8 clients, plus specialists"
+Annual attrition to backfill,0.2,Placeholder; replace with HR actuals
+"TA Manager cost a year, loaded ($)",30979,"Rs 24L fixed + Rs 4L variable, 4% load, Rs 94/$"
+"Recruiter cost a year, loaded ($)",17702,Rs 14L fixed + Rs 2L variable
+"TA Coordinator cost a year, loaded ($)",6638,Rs 6L fixed
+
+HIRING DEMAND BY STAGE,Today (73),At 100,At 150
+Hiring window (months),3,3,4
+Headcount at start of window (approx.),73,100,125
+New engagements in the window,0,27,50
+Senior hires (external),3,5,2
+  which ones,Sales leader IR; Paid and SEO directors IR,Paid and SEO directors US; RevOps director; 2 FDMs,Second US pod leads
+Mid-level hires,15,5,5
+  which ones,"5 AMs, finance mgr, PM, 2 AEs, PMM, ABM marketer, People Mgr, 2 SEO pod leads, SEO PM","2 AMs, AE IR, PM EST, partnerships mgr","3 AMs, 2 AEs"
+Junior hires,5,0,2
+  which ones,"4 SDRs, social and founder-brand mgr",,2 SDRs
+Delivery hires for new engagements,"=ROUND(B22*$B$13,0)","=ROUND(C22*$B$13,0)","=ROUND(D22*$B$13,0)"
+Backfills (attrition),"=ROUND(B21*$B$14/12*B20,0)","=ROUND(C21*$B$14/12*C20,0)","=ROUND(D21*$B$14/12*D20,0)"
+Total hires in the window,=B23+B25+B27+B29+B30,=C23+C25+C27+C29+C30,=D23+D25+D27+D29+D30
+Hires per month,"=ROUND(B31/B20,1)","=ROUND(C31/C20,1)","=ROUND(D31/D20,1)"
+Weighted hires per month,"=ROUND((B23*$B$5+B25*$B$6+B27*$B$7+(B29+B30)*$B$8)/B20,1)","=ROUND((C23*$B$5+C25*$B$6+C27*$B$7+(C29+C30)*$B$8)/C20,1)","=ROUND((D23*$B$5+D25*$B$6+D27*$B$7+(D29+D30)*$B$8)/D20,1)"
+Less: senior work an agency takes,"=ROUND(B23*$B$5*$B$11/B20,1)","=ROUND(C23*$B$5*$B$11/C20,1)","=ROUND(D23*$B$5*$B$11/D20,1)"
+Weighted hires per month for the TA team,=B33-B34,=C33-C34,=D33-D34
+
+TA TEAM NEEDED,Today (73),At 100,At 150
+TA Manager,1,1,1
+Recruiters,"=ROUNDUP(MAX(0,B35-$B$9)/$B$10,0)","=ROUNDUP(MAX(0,C35-$B$9)/$B$10,0)","=ROUNDUP(MAX(0,D35-$B$9)/$B$10,0)"
+Dedicated scheduling support needed? (1 = yes),"=IF(B32>$B$12,1,0)","=IF(C32>$B$12,1,0)","=IF(D32>$B$12,1,0)"
+  who covers it,Radhika (People Ops) part-time,Radhika (People Ops) part-time,Hire a TA Coordinator
+TA Coordinator (dedicated hire),0,0,=D40
+"TA team capacity, weighted hires per month",=B38*$B$9+B39*$B$10,=C38*$B$9+C39*$B$10,=D38*$B$9+D39*$B$10
+Coverage of TA demand %,"=ROUND(MIN(1,B43/B35)*100,0)","=ROUND(MIN(1,C43/C35)*100,0)","=ROUND(MIN(1,D43/D35)*100,0)"
+"Annual cost of the TA team, loaded ($)",=B38*$B$15+B39*$B$16+B42*$B$17,=C38*$B$15+C39*$B$16+C42*$B$17,=D38*$B$15+D39*$B$16+D42*$B$17
+
+ORG STRUCTURE,Reports to,Location,Focus,Today (73),At 100,At 150
+"Shiyam Sunder, CEO",,India,Final say on senior hires,In seat,In seat,In seat
+Talent Acquisition Manager,Shiyam (until a COO or People head is hired),India,Owns hiring end to end; leadership and senior searches; agencies; employer brand,"TBH (offer Nov, start Dec 2026)",Filled,Filled
+Recruiter #1,TA Manager,India,"Volume roles: AMs, AEs, SDRs, delivery analysts and specialists",TBH (start Jan 2027),Filled,Filled
+TA Coordinator,TA Manager,India,"Scheduling, candidate comms, offer paperwork, pre-boarding",-,-,TBH
+"Radhika Nair, People Operations Associate",People (dotted line to TA),India,Interim scheduling and onboarding paperwork,In seat,In seat,In seat
+Search agencies (2 to 3 partners),TA Manager,"India, US","Senior and US searches, about 8.33% of first-year CTC",Engage,Engage,As needed
+Hires on the TA team (Filled + TBH),,,,"=COUNTIF(E49:E51,""Filled"")+COUNTIF(E49:E51,""TBH*"")","=COUNTIF(F49:F51,""Filled"")+COUNTIF(F49:F51,""TBH*"")","=COUNTIF(G49:G51,""Filled"")+COUNTIF(G49:G51,""TBH*"")"
+Check: TA seats needed from the model,,,,=B38+B39+B42,=C38+C39+C42,=D38+D39+D42
+
+"Until the TA Manager starts, Gayu runs the AM hiring with an agency and Radhika schedules interviews. Every other hiring manager briefs the agency directly."

@@ -1,0 +1,114 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Account Managers</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .headline { top: 150px; text-align: center; }
+  .sticker { top: 286px; left: 300px; font-size: 46px; }
+  .underline { top: 470px; left: 150px; width: 780px; }
+
+  /* client chat */
+  .chat { left: 64px; top: 520px; width: 596px; height: 568px; rotate: -1.5deg; }
+  .msgs { padding: 22px 24px; display: flex; flex-direction: column; gap: 22px; }
+  .msg { max-width: 82%; padding: 16px 20px; border-radius: 20px; font: 500 22px/1.35 var(--font-body);
+    background: #222633; color: #E8EAF0; border-bottom-left-radius: 6px; position: relative; }
+  .msg small { display: block; font: 700 15px/1 var(--font-mono); letter-spacing: .08em; color: #8A8F9C; margin-bottom: 8px; }
+  .msg.me { align-self: flex-end; background: var(--blue); color: #fff; border-radius: 20px; border-bottom-right-radius: 6px; }
+  .msg.me small { color: rgba(255,255,255,.7); }
+  .msg.m1 { animation: m1 var(--L) cubic-bezier(.3,1.4,.5,1) infinite; }
+  .msg.m2 { animation: m2 var(--L) cubic-bezier(.3,1.4,.5,1) infinite; }
+  .msg.m3 { animation: m3 var(--L) cubic-bezier(.3,1.4,.5,1) infinite; }
+  @keyframes m1 { 0% { opacity: 0; translate: 0 20px; scale: .9; } 6%, 92% { opacity: 1; translate: 0 0; scale: 1; } 100% { opacity: 0; } }
+  @keyframes m2 { 0%, 24% { opacity: 0; translate: 0 20px; scale: .9; } 30%, 92% { opacity: 1; translate: 0 0; scale: 1; } 100% { opacity: 0; } }
+  .msg.m4 { animation: m4 var(--L) cubic-bezier(.3,1.4,.5,1) infinite; }
+  @keyframes m4 { 0%, 68% { opacity: 0; translate: 0 20px; scale: .9; } 74%, 92% { opacity: 1; translate: 0 0; scale: 1; } 100% { opacity: 0; } }
+  @keyframes m3 { 0%, 46% { opacity: 0; translate: 0 20px; scale: .9; } 52%, 92% { opacity: 1; translate: 0 0; scale: 1; } 100% { opacity: 0; } }
+  .react { position: absolute; right: -14px; bottom: -18px; padding: 6px 12px; border-radius: 999px; background: #fff; color: var(--ink);
+    font: 700 17px/1 var(--font-mono); box-shadow: 0 6px 16px rgba(0,0,0,.3); animation: react var(--L) cubic-bezier(.3,1.8,.5,1) infinite; }
+  @keyframes react { 0%, 58% { scale: 0; } 64%, 92% { scale: 1; } 100% { scale: 0; } }
+  .typing { display: flex; gap: 8px; padding: 18px 22px; border-radius: 20px; background: #222633; align-self: flex-start;
+    position: absolute; left: 24px; animation: typing var(--L) linear infinite; }
+  .typing i { width: 10px; height: 10px; border-radius: 50%; background: #8A8F9C; animation: dotb .5s ease-in-out infinite; }
+  .typing i:nth-child(2) { animation-delay: -.33s; } .typing i:nth-child(3) { animation-delay: -.17s; }
+  @keyframes dotb { 50% { translate: 0 -6px; background: #fff; } }
+  @keyframes typing { 0%, 8% { opacity: 0; } 10%, 22% { opacity: 1; } 24%, 100% { opacity: 0; } }
+  .compose { position: absolute; left: 20px; right: 20px; bottom: 20px; height: 56px; border-radius: 14px; background: #1A1D27;
+    display: flex; align-items: center; padding: 0 18px; font: 500 20px/1 var(--font-body); color: #5E6372; }
+
+  /* health gauge */
+  .health { right: 64px; top: 556px; width: 330px; padding: 26px; text-align: center; rotate: 2deg; z-index: 9; }
+  .health h4, .qbr h4 { font: 700 18px/1 var(--font-mono); letter-spacing: .12em; color: var(--muted); text-align: left; }
+  .ring { position: relative; width: 210px; height: 210px; margin: 18px auto 14px; }
+  .ring svg { width: 100%; height: 100%; rotate: -90deg; }
+  .ring circle { fill: none; stroke-width: 20; }
+  .ring .bg { stroke: #E8EAF2; }
+  .ring .fg { stroke: var(--blue); stroke-linecap: round; stroke-dasharray: 534; animation: ring var(--L) cubic-bezier(.2,.8,.2,1) infinite; }
+  @keyframes ring { 0% { stroke-dashoffset: 534; } 34%, 92% { stroke-dashoffset: 21; } 100% { stroke-dashoffset: 534; } }
+  .ring .val { position: absolute; inset: 0; display: grid; place-items: center; font: 900 66px/1 var(--font-display); letter-spacing: -.03em; }
+  .ring .val .count { animation: hv var(--L) cubic-bezier(.2,.8,.2,1) infinite; }
+  @keyframes hv { 0% { --n: 0; } 34%, 92% { --n: 96; } 100% { --n: 0; } }
+  .tag { display: inline-block; padding: 9px 16px; border-radius: 10px; background: #EEF1FF; color: var(--blue); font: 700 18px/1 var(--font-mono); }
+
+  .qbr { right: 64px; top: 902px; width: 330px; padding: 22px 24px; border-left: 10px solid var(--blue); rotate: -2deg; z-index: 9; }
+  .qbr b { display: block; font: 800 30px/1.1 var(--font-display); margin: 12px 0 6px; letter-spacing: -.02em; }
+  .qbr span { font: 500 20px/1 var(--font-body); color: var(--muted); }
+
+  .p1 { top: 1112px; left: 64px; }
+  .p2 { top: 1112px; left: 382px; animation-delay: -1.6s; }
+  .p3 { top: 1188px; left: 200px; animation-delay: -3.2s; }
+  .p4 { top: 1188px; left: 430px; animation-delay: -2.4s; }
+  .scrawl.s-a { top: 1120px; right: 62px; rotate: -6deg; font-size: 38px; text-align: right; line-height: 1.05; }
+</style></head>
+<body data-still="4200">
+<div class="slide">
+  <div class="top">
+    <div class="kicker"><span class="dot"></span>Now hiring for</div>
+    <div class="logo"><div class="target"></div><div class="wordmark"><span>Triple</span><b>Dart</b></div></div>
+  </div>
+
+  <div class="headline" data-fit="952"><span class="line">Account</span><span class="line">Managers</span></div>
+  <div class="sticker">Multiple openings</div>
+  <svg class="underline" viewBox="0 0 1000 40" preserveAspectRatio="none">
+    <path d="M6 22 C 180 10, 420 30, 640 16 S 900 12, 994 20"/>
+  </svg>
+
+  <div class="win chat">
+    <div class="bar"><i></i><i></i><i></i><span># acme-x-tripledart</span></div>
+    <div class="msgs">
+      <div class="msg m1"><small>CMO · ACME</small>Can we get the Q4 pipeline readout before Monday's board call?</div>
+      <div class="typing"><i></i><i></i><i></i></div>
+      <div class="msg me m2"><small>YOU · TRIPLEDART</small>Already in your inbox. TL;DR: pipeline's up.</div>
+      <div class="msg m3"><small>CMO · ACME</small>Okay, you're officially our favourite.<span class="react">+1 ×12</span></div>
+      <div class="msg me m4"><small>YOU · TRIPLEDART</small>Renewal deck's ready too. See you Friday.</div>
+    </div>
+  </div>
+
+  <div class="card health">
+    <h4>CLIENT HEALTH</h4>
+    <div class="ring">
+      <svg viewBox="0 0 210 210"><circle class="bg" cx="105" cy="105" r="85"/><circle class="fg" cx="105" cy="105" r="85"/></svg>
+      <div class="val"><span class="count"></span></div>
+    </div>
+    <span class="tag">RENEWAL ✓ SIGNED</span>
+  </div>
+
+  <div class="card qbr">
+    <h4>UP NEXT</h4>
+    <b>QBR with the CMO</b>
+    <span>Fri · 10:00 AM · you lead</span>
+  </div>
+
+  <div class="pill p1">Client success</div>
+  <div class="pill solid p2">Retention</div>
+  <div class="pill p3">Upsells</div>
+  <div class="pill p4">B2B SaaS</div>
+
+  <div class="scrawl s-a">the client's<br>favourite person</div>
+
+  <div class="footer">
+    <span>Ref: AM_2026</span>
+    <span>Location : Bengaluru / Remote</span>
+    <span>Link in caption</span>
+  </div>
+</div>
+<script src="slide.js"></script>
+</body></html>

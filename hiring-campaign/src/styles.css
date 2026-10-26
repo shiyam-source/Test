@@ -1,0 +1,150 @@
+/* ============================================================
+   TripleDart hiring campaign: shared design tokens + components
+   Swap brand values here and every slide picks them up.
+   ============================================================ */
+@font-face { font-family: "Inter Tight"; src: url(fonts/intertight.woff2) format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "Inter"; src: url(fonts/inter.woff2) format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "JetBrains Mono"; src: url(fonts/jbmono.woff2) format("woff2"); font-weight: 100 800; }
+@font-face { font-family: "Permanent Marker"; src: url(fonts/marker.woff2) format("woff2"); }
+
+:root {
+  /* brand: replace with exact values from tripledart.com if they differ */
+  --blue: #2B5CFF;          /* TripleDart neon blue */
+  --blue-glow: #6F8DFF;
+  --ink: #08090D;           /* near-black */
+  --paper: #F2F2EE;         /* off-white print stock */
+  --muted: #8A8F9C;
+  --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-hand: "Permanent Marker", cursive;
+
+  --L: 5s;                  /* master loop length: every animation divides into it */
+  --W: 1080px;
+  --H: 1350px;
+  --pad: 64px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: var(--W); height: var(--H); overflow: hidden; background: var(--paper); }
+
+.slide {
+  position: relative; width: var(--W); height: var(--H); overflow: hidden;
+  background-color: var(--paper); color: var(--ink);
+  font-family: var(--font-body);
+  /* Thunderclap-style print grid: 4 x 5 cells */
+  background-image:
+    linear-gradient(to right, rgba(8,9,13,.075) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(8,9,13,.075) 1.5px, transparent 1.5px);
+  background-size: 270px 270px;
+  background-position: -1px -1px;
+}
+.slide.dark {
+  background-color: var(--ink); color: #fff;
+  background-image:
+    radial-gradient(900px 700px at 85% 15%, rgba(43,92,255,.22), transparent 60%),
+    linear-gradient(to right, rgba(255,255,255,.07) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(255,255,255,.07) 1.5px, transparent 1.5px);
+  background-size: auto, 270px 270px, 270px 270px;
+}
+
+/* ---------- top bar ---------- */
+.top { position: absolute; top: 58px; left: var(--pad); right: var(--pad);
+  display: flex; justify-content: space-between; align-items: center; z-index: 20; }
+.kicker { font: 600 30px/1 var(--font-body); letter-spacing: .01em; text-transform: uppercase; }
+.kicker .dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--blue); margin-right: 12px; vertical-align: 2px;
+  animation: blink calc(var(--L) / 4) steps(1) infinite; }
+@keyframes blink { 50% { opacity: .15; } }
+
+/* wordmark (drop a real logo at src/assets/logo.svg to replace it) */
+.logo { display: flex; align-items: center; gap: 12px; transform: rotate(-5deg); }
+.logo img { height: 64px; }
+.wordmark { font: 900 italic 40px/0.82 var(--font-display); letter-spacing: -.02em;
+  text-transform: uppercase; display: flex; flex-direction: column; }
+.wordmark b { color: var(--blue); }
+.target { width: 54px; height: 54px; border-radius: 50%; position: relative;
+  background: radial-gradient(circle, var(--blue) 0 18%, transparent 19% 36%, currentColor 37% 52%, transparent 53% 70%, currentColor 71% 100%); }
+
+/* ---------- headline ---------- */
+.headline { position: absolute; left: var(--pad); right: var(--pad);
+  font-family: var(--font-display); font-weight: 900; text-transform: uppercase;
+  letter-spacing: -.045em; line-height: .84; z-index: 5; }
+.headline .line { display: block; white-space: nowrap; }
+.headline .center { text-align: center; }
+
+/* hand-drawn marker underline that keeps redrawing */
+.underline { position: absolute; z-index: 4; left: 40px; width: 1000px; height: 40px; overflow: visible; }
+.underline path { fill: none; stroke: var(--blue); stroke-width: 9; stroke-linecap: round;
+  stroke-dasharray: 2400; animation: draw var(--L) cubic-bezier(.6,0,.2,1) infinite; }
+.underline path + path { stroke-width: 6; opacity: .85; }
+@keyframes draw {
+  0% { stroke-dashoffset: 2400; }
+  22%, 88% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -2400; }
+}
+
+/* ---------- pills, stickers, scrawls ---------- */
+.pill { position: absolute; z-index: 12; padding: 14px 30px; border: 2.5px solid currentColor; border-radius: 999px;
+  font: 500 27px/1 var(--font-body); text-transform: uppercase; letter-spacing: .01em;
+  background: var(--paper); white-space: nowrap; animation: bob var(--L) ease-in-out infinite; }
+.dark .pill { background: var(--ink); }
+.pill.solid { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.pill.blue { background: var(--blue); color: #fff; border-color: var(--blue); }
+@keyframes bob { 0%,100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+
+.sticker { position: absolute; z-index: 15; padding: 12px 34px 16px; border-radius: 14px;
+  background: linear-gradient(115deg, var(--blue) 0 40%, #4C77FF 48%, var(--blue) 56% 100%);
+  color: #fff; font: 700 52px/1 var(--font-body); letter-spacing: -.02em;
+  box-shadow: 0 10px 24px rgba(8,9,13,.25), inset 0 0 0 2px rgba(255,255,255,.12);
+  animation: wobble var(--L) ease-in-out infinite; }
+@keyframes wobble { 0%,100% { rotate: -5deg; scale: 1; } 50% { rotate: -2deg; scale: 1.04; } }
+
+.scrawl { position: absolute; z-index: 14; font: 400 40px/1 var(--font-hand); color: var(--blue);
+  white-space: nowrap; text-transform: uppercase;
+  animation: write var(--L) steps(14) infinite; }
+@keyframes write {
+  0% { clip-path: inset(0 100% 0 0); }
+  30%, 100% { clip-path: inset(0 0 0 0); }
+}
+.scrawl.late { animation-name: write-late; }
+@keyframes write-late {
+  0%, 30% { clip-path: inset(0 100% 0 0); }
+  60%, 100% { clip-path: inset(0 0 0 0); }
+}
+.dark .scrawl { color: var(--blue-glow); }
+
+/* ---------- UI windows (the "screen collage" layer) ---------- */
+.win { position: absolute; z-index: 8; border-radius: 22px; background: #0F1117; color: #E8EAF0;
+  box-shadow: 0 30px 60px rgba(8,9,13,.35), 0 0 0 1.5px rgba(255,255,255,.06); overflow: hidden; }
+.win .bar { height: 46px; display: flex; align-items: center; gap: 9px; padding: 0 18px;
+  background: #171A22; font: 500 18px/1 var(--font-mono); color: #8A8F9C; }
+.win .bar i { width: 12px; height: 12px; border-radius: 50%; background: #2A2E3A; }
+.win .bar i:first-child { background: var(--blue); }
+.win .bar span { margin-left: 10px; }
+
+.card { position: absolute; background: #fff; border-radius: 22px; color: var(--ink);
+  box-shadow: 0 24px 50px rgba(8,9,13,.18), 0 0 0 1.5px rgba(8,9,13,.06); }
+
+/* ---------- footer ---------- */
+.footer { position: absolute; left: var(--pad); right: var(--pad); bottom: 50px; z-index: 20;
+  display: flex; justify-content: space-between; gap: 24px; font: 500 23px/1 var(--font-body);
+  text-transform: uppercase; letter-spacing: .01em; }
+.footer .swipe { display: inline-flex; gap: 10px; align-items: center; }
+.footer .swipe em { font-style: normal; display: inline-block; color: var(--blue);
+  animation: nudge calc(var(--L) / 5) ease-in-out infinite; }
+.dark .footer .swipe em { color: var(--blue-glow); }
+@keyframes nudge { 50% { translate: 10px 0; } }
+
+/* ---------- marquee band ---------- */
+.band { position: absolute; left: -40px; right: -40px; z-index: 16; height: 84px; overflow: hidden;
+  background: var(--blue); color: #fff; display: flex; align-items: center; }
+.band .track { display: flex; white-space: nowrap; animation: slide var(--L) linear infinite; }
+.band .track span { font: 800 44px/1 var(--font-display); text-transform: uppercase; letter-spacing: -.02em; padding-right: 26px; }
+.band .track span b { color: var(--ink); font-weight: 900; padding-left: 26px; }
+@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* integer counters: animate a registered custom property and print it */
+@property --n { syntax: "<integer>"; inherits: false; initial-value: 0; }
+.count { counter-reset: n var(--n); }
+.count::before { content: counter(n); }

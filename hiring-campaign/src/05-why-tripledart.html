@@ -1,0 +1,72 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Why TripleDart</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .headline { top: 146px; }
+  .underline { top: 400px; left: 40px; width: 700px; }
+  .sub { position: absolute; top: 452px; left: var(--pad); right: 300px; font: 500 30px/1.3 var(--font-body); color: #C9CDD8; z-index: 5; }
+  .sub b { color: #fff; font-weight: 700; }
+
+  .grid { position: absolute; top: 566px; left: var(--pad); right: var(--pad); display: grid; grid-template-columns: 1fr 1fr; gap: 20px; z-index: 6; }
+  .tile { height: 196px; border-radius: 22px; padding: 26px 28px; background: #11131A; border: 2px solid rgba(255,255,255,.09);
+    display: flex; flex-direction: column; justify-content: space-between;
+    animation: tile var(--L) cubic-bezier(.7,0,.3,1) infinite; animation-delay: var(--d); }
+  .tile:nth-child(1) { --d: 0s; } .tile:nth-child(2) { --d: -3.75s; } .tile:nth-child(3) { --d: -2.5s; } .tile:nth-child(4) { --d: -1.25s; }
+  @keyframes tile { 0% { background: #11131A; } 3%, 22% { background: var(--blue); border-color: var(--blue); translate: 0 -8px; } 26%, 100% { background: #11131A; translate: 0 0; } }
+  .tile b { font: 900 92px/1 var(--font-display); letter-spacing: -.04em; }
+  .tile span { font: 500 24px/1.2 var(--font-body); color: #DADDE6; }
+  .tile b .count { font: inherit; color: inherit; }
+  .tile .count { animation: var(--k) var(--L) cubic-bezier(.2,.8,.2,1) infinite; }
+  @keyframes k250 { 0% { --n: 0; } 20%, 100% { --n: 250; } }
+  @keyframes k150 { 0% { --n: 0; } 20%, 100% { --n: 150; } }
+  @keyframes k60  { 0% { --n: 0; } 20%, 100% { --n: 60; } }
+  @keyframes k10  { 0% { --n: 100; } 20%, 100% { --n: 10; } }
+
+  .band { top: 1016px; rotate: 2deg; }
+  .band .track span { font-size: 40px; }
+
+  .cta { position: absolute; top: 1138px; left: var(--pad); z-index: 18; display: flex; align-items: center; gap: 18px;
+    padding: 24px 34px; border-radius: 999px; background: #fff; color: var(--ink); font: 800 38px/1 var(--font-display);
+    letter-spacing: -.02em; text-transform: uppercase; animation: cta calc(var(--L) / 2) ease-in-out infinite; }
+  .cta i { font-style: normal; display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--blue); color: #fff; }
+  @keyframes cta { 0%, 100% { box-shadow: 0 0 0 0 rgba(43,92,255,.7); } 50% { box-shadow: 0 0 0 18px rgba(43,92,255,0); scale: 1.03; } }
+  .scrawl.s-a { top: 1140px; right: 64px; rotate: -6deg; font-size: 38px; text-align: right; line-height: 1.05; }
+  .scrawl.s-b { top: 470px; right: 52px; rotate: 8deg; font-size: 34px; text-align: center; line-height: 1.05; }
+</style></head>
+<body data-still="1800">
+<div class="slide dark">
+  <div class="top">
+    <div class="kicker"><span class="dot"></span>Why TripleDart?</div>
+    <div class="logo on-dark"><div class="target"></div><div class="wordmark"><span>Triple</span><b>Dart</b></div></div>
+  </div>
+
+  <div class="headline" data-fit="952"><span class="line">The AI-led</span><span class="line">GTM company</span></div>
+  <svg class="underline" viewBox="0 0 1000 40" preserveAspectRatio="none">
+    <path d="M6 22 C 180 10, 420 30, 640 16 S 900 12, 994 20"/>
+  </svg>
+  <div class="sub"><b>We turn strategy into pipeline for B2B tech.</b> Senior operators + AI workflows, one team.</div>
+  <div class="scrawl s-b">people<br>stay here</div>
+
+  <div class="grid">
+    <div class="tile"><b><span class="count" style="--k:k250"></span>+</b><span>B2B tech companies served</span></div>
+    <div class="tile"><b>$<span class="count" style="--k:k150"></span>M+</b><span>in ad spend managed</span></div>
+    <div class="tile"><b><span class="count" style="--k:k60"></span>+</b><span>operators on the team</span></div>
+    <div class="tile"><b>&lt;<span class="count" style="--k:k10"></span>%</b><span>attrition over 4 years</span></div>
+  </div>
+
+  <div class="band"><div class="track">
+    <span>SEO<b>✦</b></span><span>Paid media<b>✦</b></span><span>ABM<b>✦</b></span><span>Content<b>✦</b></span><span>RevOps<b>✦</b></span><span>AI search<b>✦</b></span>
+    <span>SEO<b>✦</b></span><span>Paid media<b>✦</b></span><span>ABM<b>✦</b></span><span>Content<b>✦</b></span><span>RevOps<b>✦</b></span><span>AI search<b>✦</b></span>
+  </div></div>
+
+  <div class="cta">Apply · link in caption <i>→</i></div>
+  <div class="scrawl s-a">know someone?<br>tag them</div>
+
+  <div class="footer">
+    <span>Ref: TD_2026</span>
+    <span>tripledart.com</span>
+    <span>DMs open</span>
+  </div>
+</div>
+<script src="slide.js"></script>
+</body></html>

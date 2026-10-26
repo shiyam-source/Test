@@ -1,0 +1,89 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Cover: 3 roles</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .headline { top: 150px; }
+  .underline { top: 268px; }
+  .sub { position: absolute; top: 330px; left: var(--pad); font: 500 34px/1.25 var(--font-body); color: #C9CDD8; z-index: 5; }
+  .sub b { color: #fff; font-weight: 700; }
+
+  .board { position: absolute; top: 432px; left: var(--pad); right: var(--pad); z-index: 6; }
+  .row { position: relative; height: 166px; display: flex; align-items: center; gap: 34px; padding: 0 30px;
+    border-top: 2px solid rgba(255,255,255,.14); border-radius: 0;
+    animation: lit var(--L) cubic-bezier(.7,0,.3,1) infinite; }
+  .row:last-child { border-bottom: 2px solid rgba(255,255,255,.14); }
+  .row { animation-delay: var(--d); }
+  .row:nth-child(1) { --d: -2.6s; }
+  .row:nth-child(2) { --d: -0.933s; }
+  .row:nth-child(3) { --d: -4.267s; }
+  .num { font: 700 30px/1 var(--font-mono); color: var(--blue-glow); width: 52px; }
+  .name { font: 800 62px/1 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; }
+  .meta { font: 500 21px/1 var(--font-mono); color: #9AA0AE; margin-top: 12px; letter-spacing: .04em; text-transform: uppercase; }
+  .arrow { margin-left: auto; font: 800 64px/1 var(--font-display); opacity: .25; }
+  @keyframes lit {
+    0% { background: transparent; translate: 0 0; }
+    4%, 30% { background: var(--blue); translate: 18px 0; border-radius: 18px; }
+    34%, 100% { background: transparent; translate: 0 0; border-radius: 0; }
+  }
+  .row .arrow, .row .num, .row .meta { animation: litText var(--L) cubic-bezier(.7,0,.3,1) infinite var(--d); }
+  @keyframes litText { 0% { opacity: .25; } 4%, 30% { opacity: 1; color: #fff; } 34%, 100% { opacity: .25; } }
+  .row .num, .row .meta { animation-name: litMeta; }
+  @keyframes litMeta { 4%, 30% { color: #fff; } }
+
+  .badge { position: absolute; top: 948px; left: 58px; width: 210px; height: 210px; rotate: -8deg; z-index: 17; }
+  .badge .spin { position: absolute; inset: 0; animation: spin var(--L) linear infinite; }
+  .badge text { font: 700 19.5px var(--font-mono); letter-spacing: .14em; fill: #fff; }
+  .badge .core { position: absolute; inset: 56px; border-radius: 50%; background: var(--blue);
+    display: grid; place-items: center; font: 900 48px/1 var(--font-display); color: #fff;
+    box-shadow: 0 0 60px rgba(43,92,255,.7); animation: pulse calc(var(--L) / 2) ease-in-out infinite; }
+  @keyframes spin { to { rotate: 360deg; } }
+  @keyframes pulse { 50% { scale: 1.08; box-shadow: 0 0 90px rgba(43,92,255,.95); } }
+
+  .scrawl.pick { top: 986px; right: 70px; rotate: -6deg; font-size: 46px; }
+
+  .band { top: 1112px; rotate: -3deg; }
+</style></head>
+<body>
+<div class="slide dark">
+  <div class="top">
+    <div class="kicker"><span class="dot"></span>Now hiring</div>
+    <div class="logo on-dark"><div class="target"></div><div class="wordmark"><span>Triple</span><b>Dart</b></div></div>
+  </div>
+
+  <div class="headline"><span class="line" data-fit="952">We’re hiring</span></div>
+  <svg class="underline" viewBox="0 0 1000 40" preserveAspectRatio="none">
+    <path d="M6 22 C 180 10, 420 30, 640 16 S 900 12, 994 20"/>
+    <path d="M60 32 C 300 24, 600 36, 960 28"/>
+  </svg>
+
+  <div class="sub"><b>3 roles.</b> One very ambitious GTM team.</div>
+
+  <div class="board">
+    <div class="row"><div class="num">01</div><div><div class="name">Senior Recruiter</div><div class="meta">Talent · Full-time</div></div><div class="arrow">→</div></div>
+    <div class="row"><div class="num">02</div><div><div class="name">Account Managers</div><div class="meta">Client success · Multiple openings</div></div><div class="arrow">→</div></div>
+    <div class="row"><div class="num">03</div><div><div class="name">Director, Paid Media</div><div class="meta">Leadership · Full-time</div></div><div class="arrow">→</div></div>
+  </div>
+
+  <div class="badge">
+    <svg class="spin" viewBox="0 0 230 230">
+      <defs><path id="c" d="M115,115 m-96,0 a96,96 0 1,1 192,0 a96,96 0 1,1 -192,0"/></defs>
+      <text><textPath href="#c">WE’RE HIRING ✦ JOIN TRIPLEDART ✦ WE’RE HIRING ✦ </textPath></text>
+    </svg>
+    <div class="core">×3</div>
+  </div>
+
+  <div class="scrawl pick">swipe, pick yours</div>
+
+  <div class="band"><div class="track">
+    <span>Senior Recruiter<b>✦</b></span><span>Account Managers<b>✦</b></span><span>Director of Paid Media<b>✦</b></span>
+    <span>Senior Recruiter<b>✦</b></span><span>Account Managers<b>✦</b></span><span>Director of Paid Media<b>✦</b></span>
+  </div></div>
+
+  <div class="footer">
+    <span>Ref: TD_2026 // 3 roles</span>
+    <span>Location : Bengaluru / Remote</span>
+    <span class="swipe">Swipe <em>→</em></span>
+  </div>
+</div>
+<script src="slide.js"></script>
+</body></html>

@@ -3,86 +3,78 @@
 <link rel="stylesheet" href="styles.css">
 <style>
   .headline { top: 150px; }
-  .underline { top: 268px; }
-  .sub { position: absolute; top: 330px; left: var(--pad); font: 500 34px/1.25 var(--font-body); color: #C9CDD8; z-index: 5; }
-  .sub b { color: #fff; font-weight: 700; }
+  .sub { position: absolute; top: 372px; left: var(--pad); font: 400 34px/1.3 var(--font-body); color: var(--ink-2); z-index: 5; }
+  .sub b { color: var(--white); font-weight: 600; }
 
-  .board { position: absolute; top: 432px; left: var(--pad); right: var(--pad); z-index: 6; }
-  .row { position: relative; height: 166px; display: flex; align-items: center; gap: 34px; padding: 0 30px;
-    border-top: 2px solid rgba(255,255,255,.14); border-radius: 0;
-    animation: lit var(--L) cubic-bezier(.7,0,.3,1) infinite; }
-  .row:last-child { border-bottom: 2px solid rgba(255,255,255,.14); }
-  .row { animation-delay: var(--d); }
+  .board { position: absolute; top: 452px; left: var(--pad); right: var(--pad); z-index: 6; }
+  .row { position: relative; height: 150px; display: flex; align-items: center; gap: 34px; padding: 0 30px;
+    border-top: 2px solid var(--grey-800); color: var(--white);
+    animation: lit var(--L) cubic-bezier(.7,0,.3,1) infinite var(--d); }
+  .row:last-child { border-bottom: 2px solid var(--grey-800); }
   .row:nth-child(1) { --d: -2.6s; }
   .row:nth-child(2) { --d: -0.933s; }
   .row:nth-child(3) { --d: -4.267s; }
-  .num { font: 700 30px/1 var(--font-mono); color: var(--blue-glow); width: 52px; }
-  .name { font: 800 62px/1 var(--font-display); letter-spacing: -.035em; text-transform: uppercase; }
-  .meta { font: 500 21px/1 var(--font-mono); color: #9AA0AE; margin-top: 12px; letter-spacing: .04em; text-transform: uppercase; }
-  .arrow { margin-left: auto; font: 800 64px/1 var(--font-display); opacity: .25; }
   @keyframes lit {
-    0% { background: transparent; translate: 0 0; }
-    4%, 30% { background: var(--blue); translate: 18px 0; border-radius: 18px; }
-    34%, 100% { background: transparent; translate: 0 0; border-radius: 0; }
+    0% { background: rgba(208,255,0,0); color: var(--white); translate: 0 0; }
+    4%, 30% { background: rgba(208,255,0,1); color: var(--black); translate: 18px 0; border-radius: 16px; }
+    34%, 100% { background: rgba(208,255,0,0); color: var(--white); translate: 0 0; border-radius: 0; }
   }
-  .row .arrow, .row .num, .row .meta { animation: litText var(--L) cubic-bezier(.7,0,.3,1) infinite var(--d); }
-  @keyframes litText { 0% { opacity: .25; } 4%, 30% { opacity: 1; color: #fff; } 34%, 100% { opacity: .25; } }
-  .row .num, .row .meta { animation-name: litMeta; }
-  @keyframes litMeta { 4%, 30% { color: #fff; } }
+  .num { font: 700 32px/1 var(--font-display); width: 56px; color: var(--lime-500); animation: litNum var(--L) cubic-bezier(.7,0,.3,1) infinite var(--d); }
+  @keyframes litNum { 0%, 34%, 100% { color: var(--lime-500); } 4%, 30% { color: var(--black); } }
+  .name { font: 700 64px/1 var(--font-display); letter-spacing: -.03em; }
+  .meta { font: 700 21px/1 var(--font-display); letter-spacing: .04em; text-transform: uppercase; margin-top: 12px; opacity: .62; }
+  .row .arr { margin-left: auto; font-size: 54px; opacity: .3; animation: litArr var(--L) cubic-bezier(.7,0,.3,1) infinite var(--d); }
+  @keyframes litArr { 0%, 34%, 100% { opacity: .3; } 4%, 30% { opacity: 1; } }
 
-  .badge { position: absolute; top: 948px; left: 58px; width: 210px; height: 210px; rotate: -8deg; z-index: 17; }
+  .badge { position: absolute; top: 918px; left: 58px; width: 200px; height: 200px; rotate: -8deg; z-index: 17; }
   .badge .spin { position: absolute; inset: 0; animation: spin var(--L) linear infinite; }
-  .badge text { font: 700 19.5px var(--font-mono); letter-spacing: .14em; fill: #fff; }
-  .badge .core { position: absolute; inset: 56px; border-radius: 50%; background: var(--blue);
-    display: grid; place-items: center; font: 900 48px/1 var(--font-display); color: #fff;
-    box-shadow: 0 0 60px rgba(43,92,255,.7); animation: pulse calc(var(--L) / 2) ease-in-out infinite; }
+  .badge text { font: 600 18.5px var(--font-body); letter-spacing: .16em; fill: var(--white); }
+  .badge .core { position: absolute; inset: 52px; border-radius: 50%; background: var(--lime-500); color: var(--black);
+    display: grid; place-items: center; font: 700 46px/1 var(--font-display);
+    box-shadow: 0 0 60px rgba(208,255,0,.45); animation: pulse calc(var(--L) / 2) ease-in-out infinite; }
   @keyframes spin { to { rotate: 360deg; } }
-  @keyframes pulse { 50% { scale: 1.08; box-shadow: 0 0 90px rgba(43,92,255,.95); } }
+  @keyframes pulse { 50% { scale: 1.08; box-shadow: 0 0 90px rgba(208,255,0,.7); } }
 
-  .scrawl.pick { top: 986px; right: 70px; rotate: -6deg; font-size: 46px; }
-
-  .band { top: 1112px; rotate: -3deg; }
+  .note.pick { top: 976px; right: 70px; rotate: -5deg; font-size: 44px; }
+  .squiggle.pa { top: 900px; right: 430px; width: 120px; height: 80px; }
+  .band { top: 1140px; rotate: -3deg; }
 </style></head>
 <body>
 <div class="slide dark">
   <div class="top">
-    <div class="kicker"><span class="dot"></span>Now hiring</div>
-    <div class="logo on-dark"><div class="target"></div><div class="wordmark"><span>Triple</span><b>Dart</b></div></div>
+    <div class="eyebrow">We are hiring</div>
+    <div class="logo"><img src="assets/logo-white.svg" alt="TripleDart"></div>
   </div>
 
-  <div class="headline"><span class="line" data-fit="952">We’re hiring</span></div>
-  <svg class="underline" viewBox="0 0 1000 40" preserveAspectRatio="none">
-    <path d="M6 22 C 180 10, 420 30, 640 16 S 900 12, 994 20"/>
-    <path d="M60 32 C 300 24, 600 36, 960 28"/>
-  </svg>
-
+  <div class="headline"><span class="line" data-fit="952">Now <span class="hl">hiring</span></span></div>
   <div class="sub"><b>3 roles.</b> One very ambitious GTM team.</div>
 
   <div class="board">
-    <div class="row"><div class="num">01</div><div><div class="name">Senior Recruiter</div><div class="meta">Talent · Full-time</div></div><div class="arrow">→</div></div>
-    <div class="row"><div class="num">02</div><div><div class="name">Account Managers</div><div class="meta">Client success · Multiple openings</div></div><div class="arrow">→</div></div>
-    <div class="row"><div class="num">03</div><div><div class="name">Director, Paid Media</div><div class="meta">Leadership · Full-time</div></div><div class="arrow">→</div></div>
+    <div class="row"><div class="num">01</div><div><div class="name">Senior Recruiter</div><div class="meta">Talent / Full-time</div></div><span class="arr"></span></div>
+    <div class="row"><div class="num">02</div><div><div class="name">Account Managers</div><div class="meta">Client success / Multiple openings</div></div><span class="arr"></span></div>
+    <div class="row"><div class="num">03</div><div><div class="name">Director, Paid Media</div><div class="meta">Leadership / Full-time</div></div><span class="arr"></span></div>
   </div>
 
   <div class="badge">
-    <svg class="spin" viewBox="0 0 230 230">
-      <defs><path id="c" d="M115,115 m-96,0 a96,96 0 1,1 192,0 a96,96 0 1,1 -192,0"/></defs>
-      <text><textPath href="#c">WE’RE HIRING ✦ JOIN TRIPLEDART ✦ WE’RE HIRING ✦ </textPath></text>
+    <svg class="spin" viewBox="0 0 210 210" style="width:100%;height:100%">
+      <defs><path id="c" d="M105,105 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
+      <text><textPath href="#c">NOW HIRING • JOIN TRIPLEDART • NOW HIRING • </textPath></text>
     </svg>
     <div class="core">×3</div>
   </div>
 
-  <div class="scrawl pick">swipe, pick yours</div>
+  <svg class="squiggle pa" viewBox="0 0 120 80"><path d="M112 66 C 84 74, 40 70, 26 44 S 30 10, 52 14"/><path d="M14 26 L 26 46 L 44 34"/></svg>
+  <div class="note pick">Swipe, pick yours</div>
 
   <div class="band"><div class="track">
-    <span>Senior Recruiter<b>✦</b></span><span>Account Managers<b>✦</b></span><span>Director of Paid Media<b>✦</b></span>
-    <span>Senior Recruiter<b>✦</b></span><span>Account Managers<b>✦</b></span><span>Director of Paid Media<b>✦</b></span>
+    <span>Senior Recruiter<i class="sep"></i></span><span>Account Managers<i class="sep"></i></span><span>Director of Paid Media<i class="sep"></i></span>
+    <span>Senior Recruiter<i class="sep"></i></span><span>Account Managers<i class="sep"></i></span><span>Director of Paid Media<i class="sep"></i></span>
   </div></div>
 
   <div class="footer">
-    <span>Ref: TD_2026 // 3 roles</span>
-    <span>Location : Bengaluru / Remote</span>
-    <span class="swipe">Swipe <em>→</em></span>
+    <span>Ref TD-2026 / 3 roles</span>
+    <span>Bengaluru / Remote</span>
+    <span class="swipe">Swipe <i class="arr"></i></span>
   </div>
 </div>
 <script src="slide.js"></script>

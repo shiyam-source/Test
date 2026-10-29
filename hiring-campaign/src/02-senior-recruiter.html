@@ -3,17 +3,16 @@
 <link rel="stylesheet" href="styles.css">
 <style>
   .headline { top: 150px; text-align: center; }
-  .sticker { top: 280px; left: 372px; }
-  .underline { top: 448px; left: 190px; width: 700px; }
+  .sticker { top: 236px; right: 60px; }
 
   /* pipeline funnel */
   .funnel { left: 64px; top: 540px; width: 384px; padding: 30px 30px 26px; rotate: -2deg; z-index: 9; }
-  .funnel h4 { font: 700 20px/1 var(--font-mono); letter-spacing: .12em; color: var(--muted); margin-bottom: 22px; }
+  .funnel .label { margin-bottom: 24px; }
   .stage { margin-bottom: 18px; }
-  .stage .lbl { display: flex; justify-content: space-between; font: 600 23px/1 var(--font-body); margin-bottom: 9px; }
-  .stage .lbl .count { font-family: var(--font-mono); font-weight: 700; }
-  .stage .bar { height: 14px; border-radius: 8px; background: #E8EAF2; overflow: hidden; }
-  .stage .bar i { display: block; height: 100%; border-radius: 8px; background: var(--blue); transform-origin: left;
+  .stage .lbl { display: flex; justify-content: space-between; font: 500 23px/1 var(--font-body); margin-bottom: 10px; }
+  .stage .lbl .count { font: 700 24px/1 var(--font-display); }
+  .stage .bar { height: 14px; border-radius: 2px; background: var(--grey-200); overflow: hidden; }
+  .stage .bar i { display: block; height: 100%; background: var(--black); transform-origin: left;
     animation: grow var(--L) cubic-bezier(.2,.8,.2,1) infinite; }
   @keyframes grow { 0% { scale: 0 1; } 30%, 90% { scale: 1 1; } 100% { scale: 0 1; } }
   .s1 .count { animation: c1 var(--L) ease-out infinite; }
@@ -22,12 +21,13 @@
   @keyframes c1 { 0% { --n: 0; } 30%, 90% { --n: 1240; } 100% { --n: 0; } }
   @keyframes c2 { 0% { --n: 0; } 30%, 90% { --n: 86; } 100% { --n: 0; } }
   @keyframes c3 { 0% { --n: 0; } 30%, 90% { --n: 12; } 100% { --n: 0; } }
-  .stage.hired .lbl { color: var(--blue); }
-  .stage.hired .bar i { background: var(--ink); }
+  .stage.hired .lbl b { font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+  .stage.hired .bar { background: var(--grey-200); }
+  .stage.hired .bar i { background: var(--lime-500); border-right: 3px solid var(--black); }
 
   /* candidate card stack: each card cycles front -> swiped -> back -> middle */
-  .stack { position: absolute; left: 502px; top: 572px; width: 480px; height: 330px; z-index: 10; }
-  .cand { position: absolute; inset: 0; padding: 30px; transform-origin: 50% 100%;
+  .stack { position: absolute; left: 502px; top: 572px; width: 480px; height: 300px; z-index: 10; }
+  .cand { position: absolute; inset: 0; padding: 30px; transform-origin: 50% 100%; border-color: var(--black);
     animation: deck var(--L) cubic-bezier(.65,0,.35,1) infinite; }
   .cand:nth-child(2) { animation-delay: calc(var(--L) * -2 / 3); }
   .cand:nth-child(3) { animation-delay: calc(var(--L) * -1 / 3); }
@@ -41,63 +41,60 @@
   }
   .who { display: flex; gap: 20px; align-items: center; }
   .av { width: 86px; height: 86px; border-radius: 50%; display: grid; place-items: center;
-    font: 800 32px/1 var(--font-display); color: #fff; background: linear-gradient(135deg, var(--blue), #0B1A55); }
-  .cand:nth-child(2) .av { background: linear-gradient(135deg, #111, #4b4f5c); }
-  .cand:nth-child(3) .av { background: linear-gradient(135deg, #6F8DFF, var(--blue)); }
-  .who b { display: block; font: 800 34px/1.05 var(--font-display); letter-spacing: -.02em; }
-  .who span { font: 500 22px/1.3 var(--font-body); color: var(--muted); }
+    font: 700 32px/1 var(--font-display); background: var(--black); color: var(--lime-500); }
+  .cand:nth-child(2) .av { background: var(--lime-500); color: var(--black); border: 2px solid var(--black); }
+  .cand:nth-child(3) .av { background: var(--blue-600); color: var(--white); }
+  .who b { display: block; font: 700 34px/1.05 var(--font-display); letter-spacing: -.02em; }
+  .who span { font: 400 22px/1.3 var(--font-body); color: var(--card-ink-2); }
   .chips { display: flex; gap: 10px; margin: 24px 0 26px; }
-  .chips span { font: 600 18px/1 var(--font-mono); padding: 9px 14px; border-radius: 10px; background: #EEF1FF; color: var(--blue); }
-  .match { display: flex; align-items: center; gap: 16px; font: 700 22px/1 var(--font-mono); }
-  .match .bar { flex: 1; height: 12px; border-radius: 6px; background: #E8EAF2; overflow: hidden; }
-  .match .bar i { display: block; height: 100%; width: var(--w); background: var(--blue); }
-  .stamp { position: absolute; right: 26px; bottom: 26px; padding: 10px 16px; border: 4px solid var(--blue); border-radius: 12px;
-    color: var(--blue); font: 900 30px/1 var(--font-display); letter-spacing: .02em; text-transform: uppercase;
+  .chips span { font: 500 18px/1 var(--font-body); padding: 9px 14px; border-radius: 6px; background: var(--linen); }
+  .match { display: flex; align-items: center; gap: 16px; font: 700 20px/1 var(--font-display); letter-spacing: .04em; }
+  .match .bar { flex: 1; height: 12px; border-radius: 2px; background: var(--grey-200); overflow: hidden; }
+  .match .bar i { display: block; height: 100%; width: var(--w); background: var(--black); }
+  .stamp { position: absolute; right: 26px; bottom: 26px; padding: 10px 16px; border: 3px solid var(--black); border-radius: 8px;
+    background: var(--lime-500); color: var(--black); font: 700 28px/1 var(--font-display); letter-spacing: .02em; text-transform: uppercase;
     rotate: -8deg; animation: stamp var(--L) cubic-bezier(.3,1.6,.5,1) infinite; animation-delay: inherit; }
   @keyframes stamp { 0%, 7% { opacity: 0; scale: 2.2; } 13%, 26% { opacity: 1; scale: 1; } 31%, 100% { opacity: 0; scale: 1; } }
 
-  .p1 { top: 478px; right: 64px; }
+  .p1 { top: 488px; right: 64px; }
   .p2 { top: 1006px; left: 64px; animation-delay: -1.2s; }
   .p3 { top: 1006px; left: 410px; animation-delay: -2.4s; }
   .p4 { top: 1094px; left: 196px; animation-delay: -3.6s; }
-  .scrawl.s-a { top: 930px; left: 72px; rotate: -6deg; }
-  .scrawl.s-b { top: 1110px; right: 74px; rotate: -5deg; font-size: 44px; }
+  .note.n-a { top: 920px; left: 70px; rotate: -4deg; }
+  .note.n-b { top: 1120px; right: 64px; rotate: -5deg; }
 </style></head>
 <body data-still="4230">
-<div class="slide">
+<div class="slide linen">
   <div class="top">
-    <div class="kicker"><span class="dot"></span>Now hiring for</div>
-    <div class="logo"><div class="target"></div><div class="wordmark"><span>Triple</span><b>Dart</b></div></div>
+    <div class="eyebrow">Now hiring for</div>
+    <div class="logo"><img src="assets/logo.svg" alt="TripleDart"></div>
   </div>
 
-  <div class="headline" data-fit="952"><span class="line">Senior</span><span class="line">Recruiter</span></div>
+  <div class="headline" data-fit="800"><span class="line">Senior</span><span class="line"><span class="hl">Recruiter</span></span></div>
   <div class="sticker">Full-time</div>
-  <svg class="underline" viewBox="0 0 1000 40" preserveAspectRatio="none">
-    <path d="M6 22 C 180 10, 420 30, 640 16 S 900 12, 994 20"/>
-  </svg>
 
   <div class="card funnel">
-    <h4>HIRING PIPELINE</h4>
+    <div class="label">Hiring pipeline</div>
     <div class="stage s1"><div class="lbl"><span>Sourced</span><span class="count"></span></div><div class="bar"><i style="width:100%"></i></div></div>
     <div class="stage s2"><div class="lbl"><span>Screened</span><span class="count"></span></div><div class="bar"><i style="width:58%"></i></div></div>
     <div class="stage s3"><div class="lbl"><span>Interviewed</span><span class="count"></span></div><div class="bar"><i style="width:28%"></i></div></div>
-    <div class="stage hired"><div class="lbl"><span>Hired</span><span>A-player ✓</span></div><div class="bar"><i style="width:12%"></i></div></div>
+    <div class="stage hired"><div class="lbl"><span>Hired</span><b>A-player <i class="chk"></i></b></div><div class="bar"><i style="width:14%"></i></div></div>
   </div>
 
   <div class="stack">
     <div class="card cand"><div class="stamp">Shortlisted</div>
-      <div class="who"><div class="av">AK</div><div><b>Growth Marketer</b><span>Candidate #0214</span></div></div>
-      <div class="chips"><span>7 YRS</span><span>B2B SAAS</span><span>PLG</span></div>
+      <div class="who"><div class="av">AK</div><div><b>Growth Marketer</b><span>Candidate 0214</span></div></div>
+      <div class="chips"><span>7 yrs</span><span>B2B SaaS</span><span>PLG</span></div>
       <div class="match"><span>MATCH</span><div class="bar"><i style="--w:96%"></i></div><span>96%</span></div>
     </div>
     <div class="card cand"><div class="stamp">Shortlisted</div>
-      <div class="who"><div class="av">RS</div><div><b>SEO Lead</b><span>Candidate #0388</span></div></div>
-      <div class="chips"><span>8 YRS</span><span>CONTENT</span><span>AI SEARCH</span></div>
+      <div class="who"><div class="av">RS</div><div><b>SEO Lead</b><span>Candidate 0388</span></div></div>
+      <div class="chips"><span>8 yrs</span><span>Content</span><span>AI search</span></div>
       <div class="match"><span>MATCH</span><div class="bar"><i style="--w:92%"></i></div><span>92%</span></div>
     </div>
     <div class="card cand"><div class="stamp">Shortlisted</div>
-      <div class="who"><div class="av">MJ</div><div><b>Paid Media Lead</b><span>Candidate #0457</span></div></div>
-      <div class="chips"><span>6 YRS</span><span>LINKEDIN</span><span>ABM</span></div>
+      <div class="who"><div class="av">MJ</div><div><b>Paid Media Lead</b><span>Candidate 0457</span></div></div>
+      <div class="chips"><span>6 yrs</span><span>LinkedIn</span><span>ABM</span></div>
       <div class="match"><span>MATCH</span><div class="bar"><i style="--w:94%"></i></div><span>94%</span></div>
     </div>
   </div>
@@ -107,12 +104,12 @@
   <div class="pill solid p3">Talent strategy</div>
   <div class="pill p4">Closing offers</div>
 
-  <div class="scrawl s-a">finds the A-players</div>
-  <div class="scrawl late s-b">builds the bench</div>
+  <div class="note n-a">Finds the A-players</div>
+  <div class="note late n-b">Builds the bench</div>
 
   <div class="footer">
-    <span>Ref: TA_2026</span>
-    <span>Location : Bengaluru / Remote</span>
+    <span>Ref TA-2026</span>
+    <span>Bengaluru / Remote</span>
     <span>Link in caption</span>
   </div>
 </div>

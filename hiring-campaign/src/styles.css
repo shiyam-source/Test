@@ -1,147 +1,184 @@
 /* ============================================================
-   TripleDart hiring campaign: shared design tokens + components
-   Swap brand values here and every slide picks them up.
+   TripleDart hiring campaign: built on the "TripleDart New branding"
+   design system (Electric Lime on near-black, NeuSans + Rubik).
+   Token values are copied from that system's tokens.json.
    ============================================================ */
-@font-face { font-family: "Inter Tight"; src: url(fonts/intertight.woff2) format("woff2"); font-weight: 100 900; }
-@font-face { font-family: "Inter"; src: url(fonts/inter.woff2) format("woff2"); font-weight: 100 900; }
-@font-face { font-family: "JetBrains Mono"; src: url(fonts/jbmono.woff2) format("woff2"); font-weight: 100 800; }
-@font-face { font-family: "Permanent Marker"; src: url(fonts/marker.woff2) format("woff2"); }
+@font-face { font-family: "NeuSans Trial"; src: url(fonts/NeuSansTrial-Medium.otf); font-weight: 500; }
+@font-face { font-family: "NeuSans Trial"; src: url(fonts/NeuSansTrial-Bold.otf); font-weight: 700; }
+@font-face { font-family: "NeuSans Trial"; src: url(fonts/NeuSansTrial-Black.otf); font-weight: 900; }
+@font-face { font-family: "Rubik"; src: url(fonts/Rubik-VariableFont_wght.ttf); font-weight: 300 900; }
 
 :root {
-  /* brand: replace with exact values from tripledart.com if they differ */
-  --blue: #2B5CFF;          /* TripleDart neon blue */
-  --blue-glow: #6F8DFF;
-  --ink: #08090D;           /* near-black */
-  --paper: #F2F2EE;         /* off-white print stock */
-  --muted: #8A8F9C;
-  --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --font-hand: "Permanent Marker", cursive;
+  /* core palette */
+  --lime-500: #D0FF00;      /* electric-lime */
+  --lime-600: #A7CC00;
+  --lime-800: #536600;
+  --lime-900: #2A3300;
+  --blue-400: #7C9CFD;
+  --blue-600: #3F50EB;      /* cerulean-blue, sparingly */
+  --linen: #F2F2E6;
+  --olive-300: #D6D6C4;
+  --grey-200: #E6E6E6;
+  --grey-400: #A3A3A3;
+  --grey-600: #535353;
+  --grey-700: #404040;
+  --grey-800: #272727;
+  --carbon: #1A1A1A;        /* grey-900 */
+  --black: #0B0B0B;
+  --white: #FFFFFF;
 
-  --L: 5s;                  /* master loop length: every animation divides into it */
+  /* type: NeuSans for headlines, Rubik for everything you read.
+     The NeuSans trial cut only has letters, digits and , . - / :
+     so other characters fall back to Rubik through this stack. */
+  --font-display: "NeuSans Trial", "Rubik", system-ui, sans-serif;
+  --font-body: "Rubik", system-ui, sans-serif;
+
+  --L: 5s;                  /* master loop: every animation divides into it */
   --W: 1080px;
   --H: 1350px;
-  --pad: 64px;
+  --pad: 64px;              /* page-padding-desktop */
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { width: var(--W); height: var(--H); overflow: hidden; background: var(--paper); }
-
-.slide {
-  position: relative; width: var(--W); height: var(--H); overflow: hidden;
-  background-color: var(--paper); color: var(--ink);
-  font-family: var(--font-body);
-  /* Thunderclap-style print grid: 4 x 5 cells */
+/* ---------- themes (surface / ink / accent roles per ground) ---------- */
+.slide.dark {
+  --bg: var(--black); --ink: var(--white); --ink-2: var(--grey-400); --accent-ink: var(--lime-500);
+  --hl: var(--lime-500); --hl-ink: var(--black);
+  --card: var(--carbon); --card-line: var(--grey-800); --card-ink: var(--white); --card-ink-2: var(--grey-400);
+  --pill-bg: var(--black); --sticker: var(--lime-500); --sticker-ink: var(--black);
+  --note: transparent; --note-ink: var(--lime-500);
+  --band: var(--lime-500); --band-ink: var(--black);
+  background-color: var(--black);
   background-image:
-    linear-gradient(to right, rgba(8,9,13,.075) 1.5px, transparent 1.5px),
-    linear-gradient(to bottom, rgba(8,9,13,.075) 1.5px, transparent 1.5px);
+    radial-gradient(1100px 520px at 50% 108%, rgba(208,255,0,.15), rgba(208,255,0,0) 70%),
+    url(assets/texture-grid-dark.svg);
+  background-size: auto, 1280px 800px;
+}
+.slide.linen {
+  --bg: var(--linen); --ink: var(--black); --ink-2: var(--grey-600); --accent-ink: var(--lime-800);
+  --hl: var(--lime-500); --hl-ink: var(--black);
+  --card: var(--white); --card-line: var(--olive-300); --card-ink: var(--black); --card-ink-2: var(--grey-600);
+  --pill-bg: var(--linen); --sticker: var(--black); --sticker-ink: var(--lime-500);
+  --note: var(--lime-500); --note-ink: var(--black);
+  --band: var(--black); --band-ink: var(--lime-500);
+  background-color: var(--linen);
+  background-image:
+    linear-gradient(to right, rgba(11,11,11,.07) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(11,11,11,.07) 1.5px, transparent 1.5px);
   background-size: 270px 270px;
   background-position: -1px -1px;
 }
-.slide.dark {
-  background-color: var(--ink); color: #fff;
+.slide.lime {
+  --bg: var(--lime-500); --ink: var(--black); --ink-2: var(--lime-900); --accent-ink: var(--black);
+  --hl: var(--black); --hl-ink: var(--lime-500);
+  --card: var(--black); --card-line: var(--black); --card-ink: var(--white); --card-ink-2: var(--grey-400);
+  --pill-bg: var(--lime-500); --sticker: var(--black); --sticker-ink: var(--lime-500);
+  --note: var(--black); --note-ink: var(--lime-500);
+  --band: var(--black); --band-ink: var(--lime-500);
+  background-color: var(--lime-500);
   background-image:
-    radial-gradient(900px 700px at 85% 15%, rgba(43,92,255,.22), transparent 60%),
-    linear-gradient(to right, rgba(255,255,255,.07) 1.5px, transparent 1.5px),
-    linear-gradient(to bottom, rgba(255,255,255,.07) 1.5px, transparent 1.5px);
-  background-size: auto, 270px 270px, 270px 270px;
+    linear-gradient(to right, rgba(11,11,11,.09) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(11,11,11,.09) 1.5px, transparent 1.5px);
+  background-size: 270px 270px;
+  background-position: -1px -1px;
 }
 
-/* ---------- top bar ---------- */
-.top { position: absolute; top: 58px; left: var(--pad); right: var(--pad);
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: var(--W); height: var(--H); overflow: hidden; background: var(--black); }
+
+.slide { position: relative; width: var(--W); height: var(--H); overflow: hidden;
+  color: var(--ink); font-family: var(--font-body); }
+
+/* ---------- top bar: eyebrow + logo ---------- */
+.top { position: absolute; top: 60px; left: var(--pad); right: var(--pad);
   display: flex; justify-content: space-between; align-items: center; z-index: 20; }
-.kicker { font: 600 30px/1 var(--font-body); letter-spacing: .01em; text-transform: uppercase; }
-.kicker .dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%;
-  background: var(--blue); margin-right: 12px; vertical-align: 2px;
-  animation: blink calc(var(--L) / 4) steps(1) infinite; }
-@keyframes blink { 50% { opacity: .15; } }
+.eyebrow { display: flex; align-items: center; gap: 16px; color: var(--accent-ink);
+  font: 700 28px/1 var(--font-display); letter-spacing: .02em; text-transform: uppercase; }
+.eyebrow::before { content: ""; width: 40px; height: 6px; background: var(--lime-500); border-radius: 2px;
+  animation: barGrow calc(var(--L) / 2) ease-in-out infinite; transform-origin: left; }
+.lime .eyebrow::before { background: var(--black); }
+@keyframes barGrow { 50% { scale: 1.6 1; } }
+.logo { height: 44px; }
+.logo img { height: 100%; display: block; }
 
-/* wordmark (drop a real logo at src/assets/logo.svg to replace it) */
-.logo { display: flex; align-items: center; gap: 12px; transform: rotate(-5deg); }
-.logo img { height: 64px; }
-.wordmark { font: 900 italic 40px/0.82 var(--font-display); letter-spacing: -.02em;
-  text-transform: uppercase; display: flex; flex-direction: column; }
-.wordmark b { color: var(--blue); }
-.target { width: 54px; height: 54px; border-radius: 50%; position: relative;
-  background: radial-gradient(circle, var(--blue) 0 18%, transparent 19% 36%, currentColor 37% 52%, transparent 53% 70%, currentColor 71% 100%); }
-
-/* ---------- headline ---------- */
-.headline { position: absolute; left: var(--pad); right: var(--pad);
-  font-family: var(--font-display); font-weight: 900; text-transform: uppercase;
-  letter-spacing: -.045em; line-height: .84; z-index: 5; }
+/* ---------- headline + highlighter ---------- */
+.headline { position: absolute; left: var(--pad); right: var(--pad); z-index: 5;
+  font-family: var(--font-display); font-weight: 700; letter-spacing: -.035em; line-height: .9; }
 .headline .line { display: block; white-space: nowrap; }
-.headline .center { text-align: center; }
-
-/* hand-drawn marker underline that keeps redrawing */
-.underline { position: absolute; z-index: 4; left: 40px; width: 1000px; height: 40px; overflow: visible; }
-.underline path { fill: none; stroke: var(--blue); stroke-width: 9; stroke-linecap: round;
-  stroke-dasharray: 2400; animation: draw var(--L) cubic-bezier(.6,0,.2,1) infinite; }
-.underline path + path { stroke-width: 6; opacity: .85; }
-@keyframes draw {
-  0% { stroke-dashoffset: 2400; }
-  22%, 88% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: -2400; }
+.hl { position: relative; z-index: 0; isolation: isolate; color: var(--hl-ink); padding: 0 .05em; }
+.hl::before { content: ""; position: absolute; z-index: -1; left: -.02em; right: -.04em; top: .1em; bottom: -.04em;
+  background: var(--hl); border-radius: .06em; transform-origin: left;
+  animation: swipe var(--L) cubic-bezier(.7,0,.2,1) infinite; }
+@keyframes swipe {
+  0% { scale: 0 1; }
+  14%, 92% { scale: 1 1; }
+  100% { scale: 0 1; transform-origin: right; }
 }
 
-/* ---------- pills, stickers, scrawls ---------- */
-.pill { position: absolute; z-index: 12; padding: 14px 30px; border: 2.5px solid currentColor; border-radius: 999px;
-  font: 500 27px/1 var(--font-body); text-transform: uppercase; letter-spacing: .01em;
-  background: var(--paper); white-space: nowrap; animation: bob var(--L) ease-in-out infinite; }
-.dark .pill { background: var(--ink); }
-.pill.solid { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-.pill.blue { background: var(--blue); color: #fff; border-color: var(--blue); }
+/* ---------- pills, stickers, notes ---------- */
+.pill { position: absolute; z-index: 12; padding: 15px 30px; border: 2.5px solid var(--ink); border-radius: 9999px;
+  font: 500 27px/1 var(--font-body); color: var(--ink); background: var(--pill-bg); white-space: nowrap;
+  animation: bob var(--L) ease-in-out infinite; }
+.pill.solid { background: var(--ink); color: var(--bg); }
+.pill.accent { background: var(--lime-500); color: var(--black); border-color: var(--lime-500); }
+.linen .pill.accent { border-color: var(--black); }
 @keyframes bob { 0%,100% { translate: 0 0; } 50% { translate: 0 -10px; } }
 
-.sticker { position: absolute; z-index: 15; padding: 12px 34px 16px; border-radius: 14px;
-  background: linear-gradient(115deg, var(--blue) 0 40%, #4C77FF 48%, var(--blue) 56% 100%);
-  color: #fff; font: 700 52px/1 var(--font-body); letter-spacing: -.02em;
-  box-shadow: 0 10px 24px rgba(8,9,13,.25), inset 0 0 0 2px rgba(255,255,255,.12);
+.sticker { position: absolute; z-index: 15; padding: 14px 30px 16px; border-radius: 14px;
+  background: var(--sticker); color: var(--sticker-ink); font: 700 50px/1 var(--font-display); letter-spacing: -.02em;
   animation: wobble var(--L) ease-in-out infinite; }
 @keyframes wobble { 0%,100% { rotate: -5deg; scale: 1; } 50% { rotate: -2deg; scale: 1.04; } }
 
-.scrawl { position: absolute; z-index: 14; font: 400 40px/1 var(--font-hand); color: var(--blue);
-  white-space: nowrap; text-transform: uppercase;
-  animation: write var(--L) steps(14) infinite; }
-@keyframes write {
-  0% { clip-path: inset(0 100% 0 0); }
-  30%, 100% { clip-path: inset(0 0 0 0); }
-}
-.scrawl.late { animation-name: write-late; }
-@keyframes write-late {
-  0%, 30% { clip-path: inset(0 100% 0 0); }
-  60%, 100% { clip-path: inset(0 0 0 0); }
-}
-.dark .scrawl { color: var(--blue-glow); }
+/* annotation callout (replaces hand lettering: the system allows NeuSans + Rubik only) */
+.note { position: absolute; z-index: 14; padding: 10px 18px; border-radius: 8px; background: var(--note); color: var(--note-ink);
+  font: 700 36px/1.05 var(--font-display); letter-spacing: -.01em; white-space: nowrap;
+  animation: type var(--L) steps(16) infinite; }
+.dark .note { padding: 0; }
+@keyframes type { 0% { clip-path: inset(0 100% 0 0); } 28%, 100% { clip-path: inset(0 0 0 0); } }
+.note.late { animation-name: type-late; }
+@keyframes type-late { 0%, 30% { clip-path: inset(0 100% 0 0); } 58%, 100% { clip-path: inset(0 0 0 0); } }
 
-/* ---------- UI windows (the "screen collage" layer) ---------- */
-.win { position: absolute; z-index: 8; border-radius: 22px; background: #0F1117; color: #E8EAF0;
-  box-shadow: 0 30px 60px rgba(8,9,13,.35), 0 0 0 1.5px rgba(255,255,255,.06); overflow: hidden; }
-.win .bar { height: 46px; display: flex; align-items: center; gap: 9px; padding: 0 18px;
-  background: #171A22; font: 500 18px/1 var(--font-mono); color: #8A8F9C; }
-.win .bar i { width: 12px; height: 12px; border-radius: 50%; background: #2A2E3A; }
-.win .bar i:first-child { background: var(--blue); }
+/* hand-drawn arrow that redraws */
+.squiggle { position: absolute; z-index: 14; overflow: visible; }
+.squiggle path { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 400; animation: draw var(--L) ease-out infinite; }
+.dark .squiggle path { stroke: var(--lime-500); }
+@keyframes draw { 0% { stroke-dashoffset: 400; } 26%, 100% { stroke-dashoffset: 0; } }
+
+/* icons drawn as masks so they take the text colour (no glyph fallbacks) */
+.arr, .chk, .up, .down { display: inline-block; width: .85em; height: .85em; background: currentColor; vertical-align: -.08em;
+  -webkit-mask: var(--m) center / contain no-repeat; mask: var(--m) center / contain no-repeat; }
+.arr  { --m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 10.5h13.2l-5-5L13.3 3.4 22 12l-8.7 8.6-2.1-2.1 5-5H3z'/%3E%3C/svg%3E"); }
+.chk  { --m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-2.1 2.1L9 20.4 21.3 8.1l-2.1-2.1z'/%3E%3C/svg%3E"); }
+.up   { --m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 4 11h5v10h6V11h5z'/%3E%3C/svg%3E"); }
+.down { --m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21l8-8h-5V3H9v10H4z'/%3E%3C/svg%3E"); }
+.sep { display: inline-block; width: .32em; height: .32em; background: currentColor; rotate: 45deg; vertical-align: .18em; }
+
+/* ---------- product-UI layer: borders, not shadows ---------- */
+.win { position: absolute; z-index: 8; border-radius: 24px; background: var(--carbon); color: var(--white);
+  border: 2px solid var(--grey-800); overflow: hidden; }
+.dark .win { border-color: var(--grey-700); }
+.win .bar { height: 48px; display: flex; align-items: center; gap: 9px; padding: 0 20px;
+  border-bottom: 2px solid var(--grey-800); font: 500 19px/1 var(--font-body); color: var(--grey-400); }
+.win .bar i { width: 12px; height: 12px; border-radius: 50%; background: var(--grey-700); }
+.win .bar i:first-child { background: var(--lime-500); }
 .win .bar span { margin-left: 10px; }
 
-.card { position: absolute; background: #fff; border-radius: 22px; color: var(--ink);
-  box-shadow: 0 24px 50px rgba(8,9,13,.18), 0 0 0 1.5px rgba(8,9,13,.06); }
+.card { position: absolute; background: var(--card); color: var(--card-ink); border: 2px solid var(--card-line); border-radius: 24px; }
+.label { font: 700 19px/1 var(--font-display); letter-spacing: .04em; text-transform: uppercase; color: var(--card-ink-2); }
 
-/* ---------- footer ---------- */
-.footer { position: absolute; left: var(--pad); right: var(--pad); bottom: 50px; z-index: 20;
-  display: flex; justify-content: space-between; gap: 24px; font: 500 23px/1 var(--font-body);
-  text-transform: uppercase; letter-spacing: .01em; }
-.footer .swipe { display: inline-flex; gap: 10px; align-items: center; }
-.footer .swipe em { font-style: normal; display: inline-block; color: var(--blue);
-  animation: nudge calc(var(--L) / 5) ease-in-out infinite; }
-.dark .footer .swipe em { color: var(--blue-glow); }
+/* ---------- footer (eyebrow style) ---------- */
+.footer { position: absolute; left: var(--pad); right: var(--pad); bottom: 52px; z-index: 20;
+  display: flex; justify-content: space-between; gap: 24px; color: var(--ink);
+  font: 700 22px/1 var(--font-display); letter-spacing: .02em; text-transform: uppercase; }
+.footer .swipe { display: inline-flex; gap: 12px; align-items: center; }
+.footer .swipe .arr { color: var(--accent-ink); animation: nudge calc(var(--L) / 5) ease-in-out infinite; }
 @keyframes nudge { 50% { translate: 10px 0; } }
 
 /* ---------- marquee band ---------- */
-.band { position: absolute; left: -40px; right: -40px; z-index: 16; height: 84px; overflow: hidden;
-  background: var(--blue); color: #fff; display: flex; align-items: center; }
+.band { position: absolute; left: -40px; right: -40px; z-index: 16; height: 88px; overflow: hidden;
+  background: var(--band); color: var(--band-ink); display: flex; align-items: center; }
 .band .track { display: flex; white-space: nowrap; animation: slide var(--L) linear infinite; }
-.band .track span { font: 800 44px/1 var(--font-display); text-transform: uppercase; letter-spacing: -.02em; padding-right: 26px; }
-.band .track span b { color: var(--ink); font-weight: 900; padding-left: 26px; }
+.band .track span { font: 700 46px/1 var(--font-display); letter-spacing: -.02em; padding-right: 30px; display: inline-flex; align-items: center; gap: 30px; }
 @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* integer counters: animate a registered custom property and print it */

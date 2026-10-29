@@ -29,9 +29,11 @@ The single posts are where the GIFs do their job on LinkedIn. They also let each
 
 ---
 
+Captions follow the TripleDart New branding voice: lead with the claim, then the proof, and no emoji.
+
 ## Day 1: LinkedIn carousel caption
 
-> We're hiring for 3 roles at TripleDart 👇
+> We're hiring for 3 roles at TripleDart.
 >
 > 01 / Senior Recruiter: you'll own how we find, close and keep A-players. [JD link]
 > 02 / Account Managers (a few of them): be the person our B2B SaaS clients trust most. [JD link]
@@ -46,14 +48,14 @@ The single posts are where the GIFs do their job on LinkedIn. They also let each
 
 ## Day 1: Instagram carousel caption
 
-> 3 roles. 1 very ambitious GTM team. 🎯
+> 3 roles. 1 very ambitious GTM team.
 >
-> → Senior Recruiter
-> → Account Managers
-> → Director of Paid Media
+> - Senior Recruiter
+> - Account Managers
+> - Director of Paid Media
 >
 > Swipe to find yours. JDs are at the link in bio.
-> Tag the friend who needs to see this 👇
+> Tag the friend who needs to see this.
 >
 > #hiring #marketingjobs #saas #b2b #paidmedia #recruiter #bengalurujobs
 
@@ -66,12 +68,12 @@ The single posts are where the GIFs do their job on LinkedIn. They also let each
 > You'll own hiring end to end: sourcing, employer brand, sharp interview loops, and closing offers with candidates who have other options.
 >
 > You'll fit right in if you:
-> → have hired for marketing, growth or SaaS roles before
-> → can tell a solid candidate from a truly great one in the first call
-> → get as excited about building the bench as about filling roles
+> - have hired for marketing, growth or SaaS roles before
+> - can tell a solid candidate from a truly great one in the first call
+> - get as excited about building the bench as about filling roles
 >
 > JD + apply: [JD link]
-> Know a recruiter people rave about? Tag them 👇
+> Know a recruiter people rave about? Tag them.
 
 ## Day 4: Account Managers (single post)
 
@@ -80,9 +82,9 @@ The single posts are where the GIFs do their job on LinkedIn. They also let each
 > You'll be the person our B2B SaaS clients message first. You'll run QBRs, keep the work on track, spot upsell opportunities early, and turn good relationships into renewals.
 >
 > You'll fit right in if you:
-> → have managed agency or SaaS client relationships
-> → can talk pipeline with a CMO and timelines with a specialist in the same hour
-> → hate surprises, so you get ahead of them
+> - have managed agency or SaaS client relationships
+> - can talk pipeline with a CMO and timelines with a specialist in the same hour
+> - hate surprises, so you get ahead of them
 >
 > JD + apply: [JD link]
 
@@ -93,9 +95,9 @@ The single posts are where the GIFs do their job on LinkedIn. They also let each
 > We've managed $150M+ in ad spend for B2B tech. Now we want someone to lead that practice: the strategy, the team, and the outcomes that show up in pipeline, not just in clicks.
 >
 > You'll fit right in if you:
-> → have run Google, LinkedIn and Meta budgets at scale for B2B
-> → think in pipeline, CAC and payback, not CPCs
-> → enjoy building a team of strong media buyers as much as building campaigns
+> - have run Google, LinkedIn and Meta budgets at scale for B2B
+> - think in pipeline, CAC and payback, not CPCs
+> - enjoy building a team of strong media buyers as much as building campaigns
 >
 > JD + apply: [JD link]
-> Leaders on the team: please reshare 🙏
+> Leaders on the team: please reshare.

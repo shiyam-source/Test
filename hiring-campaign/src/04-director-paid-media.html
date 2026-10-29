@@ -3,38 +3,37 @@
 <link rel="stylesheet" href="styles.css">
 <style>
   .headline { top: 150px; text-align: center; }
-  .sticker { top: 262px; right: 70px; font-size: 46px; }
-  .underline { top: 418px; left: 120px; width: 840px; }
+  .sticker { top: 440px; left: 70px; font-size: 42px; z-index: 18; }
 
   /* ads dashboard */
-  .dash { left: 64px; top: 500px; width: 650px; height: 520px; rotate: -1.5deg; }
+  .dash { left: 64px; top: 510px; width: 650px; height: 510px; rotate: -1.5deg; border-color: var(--black); }
   .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 22px 22px 0; }
-  .kpi { background: #171A22; border-radius: 14px; padding: 16px 18px; }
-  .kpi small { display: block; font: 700 15px/1 var(--font-mono); letter-spacing: .1em; color: #8A8F9C; margin-bottom: 10px; }
-  .kpi b { font: 800 38px/1 var(--font-display); letter-spacing: -.02em; }
-  .kpi em { font: 700 16px/1 var(--font-mono); font-style: normal; color: #7DF0B0; margin-left: 6px; }
-  .kpi.hot { background: var(--blue); }
-  .kpi.hot small { color: rgba(255,255,255,.75); }
-  .kpi.hot em { color: #fff; }
-  .chart { position: relative; margin: 18px 22px 0; height: 236px; border-radius: 14px; background: #12141B; overflow: hidden;
+  .kpi { background: var(--black); border: 2px solid var(--grey-800); border-radius: 12px; padding: 16px 18px; }
+  .kpi small { display: block; font: 700 15px/1 var(--font-display); letter-spacing: .04em; color: var(--grey-400); margin-bottom: 10px; }
+  .kpi b { font: 700 38px/1 var(--font-display); letter-spacing: -.02em; }
+  .kpi .up, .kpi .down { font-size: 22px; margin-left: 6px; color: var(--lime-500); }
+  .kpi.hot { background: var(--lime-500); border-color: var(--lime-500); color: var(--black); }
+  .kpi.hot small { color: var(--lime-900); }
+  .kpi.hot .up { color: var(--black); }
+  .chart { position: relative; margin: 18px 22px 0; height: 236px; border-radius: 12px; background: var(--black); overflow: hidden;
     background-image: linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 100% 47px; }
   .chart svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .chart .base { fill: none; stroke: #3A3F4E; stroke-width: 3; stroke-dasharray: 8 8; }
-  .chart .line { fill: none; stroke: var(--blue-glow); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 900;
+  .chart .base { fill: none; stroke: var(--grey-700); stroke-width: 3; stroke-dasharray: 8 8; }
+  .chart .line { fill: none; stroke: var(--lime-500); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 900;
     animation: line var(--L) cubic-bezier(.5,0,.2,1) infinite; }
   @keyframes line { 0% { stroke-dashoffset: 900; opacity: 1; } 40%, 92% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
   .chart .area { fill: url(#g); animation: area var(--L) ease-out infinite; }
   @keyframes area { 0%, 25% { opacity: 0; } 45%, 92% { opacity: 1; } 100% { opacity: 0; } }
-  .chart .tip { position: absolute; right: 18px; top: 10px; padding: 8px 12px; border-radius: 10px; background: #fff; color: var(--ink);
-    font: 700 16px/1 var(--font-mono); animation: tip var(--L) cubic-bezier(.3,1.6,.5,1) infinite; }
+  .chart .tip { position: absolute; right: 18px; top: 12px; padding: 8px 12px; border-radius: 6px; background: var(--white); color: var(--black);
+    font: 700 16px/1 var(--font-display); letter-spacing: .04em; animation: tip var(--L) cubic-bezier(.3,1.6,.5,1) infinite; }
   @keyframes tip { 0%, 38% { opacity: 0; scale: .6; } 44%, 92% { opacity: 1; scale: 1; } 100% { opacity: 0; } }
-  .legend { position: absolute; left: 18px; top: 14px; font: 600 15px/1 var(--font-mono); color: #8A8F9C; letter-spacing: .06em; }
-  .legend i { display: inline-block; width: 18px; height: 4px; background: var(--blue-glow); vertical-align: middle; margin-right: 6px; }
+  .legend { position: absolute; left: 18px; top: 16px; font: 500 15px/1 var(--font-body); color: var(--grey-400); }
+  .legend i { display: inline-block; width: 18px; height: 4px; background: var(--lime-500); vertical-align: middle; margin-right: 6px; }
   .actions { display: flex; align-items: center; gap: 14px; padding: 18px 22px; }
-  .btn { padding: 15px 22px; border-radius: 12px; background: #fff; color: var(--ink); font: 700 20px/1 var(--font-body);
+  .btn { padding: 15px 22px; border-radius: 8px; background: var(--white); color: var(--black); font: 500 20px/1 var(--font-body);
     animation: press var(--L) ease-in-out infinite; }
-  @keyframes press { 0%, 52% { scale: 1; background: #fff; color: var(--ink); } 55% { scale: .92; } 58%, 92% { scale: 1; background: var(--blue); color: #fff; } 100% { background: #fff; color: var(--ink); } }
-  .toast { font: 600 18px/1.2 var(--font-mono); color: #7DF0B0; animation: toast var(--L) ease-out infinite; }
+  @keyframes press { 0%, 52% { scale: 1; background: var(--white); } 55% { scale: .92; } 58%, 92% { scale: 1; background: var(--lime-500); } 100% { background: var(--white); } }
+  .toast { display: inline-flex; align-items: center; gap: 8px; font: 500 18px/1.2 var(--font-body); color: var(--lime-500); animation: toast var(--L) ease-out infinite; }
   @keyframes toast { 0%, 57% { opacity: 0; translate: -10px 0; } 62%, 92% { opacity: 1; translate: 0 0; } 100% { opacity: 0; } }
   .cursor { position: absolute; z-index: 13; left: 0; top: 0; width: 46px; animation: cursor var(--L) cubic-bezier(.6,0,.3,1) infinite; }
   @keyframes cursor {
@@ -46,53 +45,49 @@
   }
 
   /* spend stat */
-  .stat { right: 64px; top: 520px; width: 292px; padding: 26px 24px; background: var(--blue); color: #fff; rotate: 3deg; z-index: 9;
-    box-shadow: 0 24px 50px rgba(43,92,255,.35); }
-  .stat b { display: block; font: 900 62px/0.9 var(--font-display); letter-spacing: -.04em; }
-  .stat span { display: block; margin-top: 12px; font: 600 22px/1.25 var(--font-body); }
-  .stat small { display: block; margin-top: 16px; font: 700 15px/1 var(--font-mono); letter-spacing: .1em; opacity: .75; }
+  .stat { right: 64px; top: 520px; width: 292px; padding: 26px 24px; background: var(--lime-500); border-color: var(--black); color: var(--black); rotate: 3deg; z-index: 9; }
+  .stat b { display: block; font: 700 66px/0.9 var(--font-display); letter-spacing: -.04em; }
+  .stat span { display: block; margin-top: 14px; font: 500 22px/1.25 var(--font-body); }
+  .stat small { display: block; margin-top: 16px; font: 700 16px/1 var(--font-display); letter-spacing: .04em; color: var(--lime-900); }
 
   .p1 { top: 790px; right: 64px; }
   .p2 { top: 870px; right: 64px; animation-delay: -1.25s; }
   .p3 { top: 950px; right: 64px; animation-delay: -2.5s; }
   .p4 { top: 1150px; left: 64px; animation-delay: -3.75s; }
-  .p5 { top: 1150px; left: 230px; animation-delay: -1.9s; }
-  .scrawl.s-a { top: 1064px; left: 76px; rotate: -4deg; font-size: 54px; }
-  .scrawl.s-b { top: 1120px; right: 64px; rotate: -6deg; font-size: 40px; text-align: right; line-height: 1.05; }
+  .p5 { top: 1150px; left: 222px; animation-delay: -1.9s; }
+  .note.n-a { top: 1062px; left: 70px; rotate: -4deg; font-size: 44px; }
+  .note.n-b { top: 1132px; right: 64px; rotate: -6deg; font-size: 32px; text-align: right; }
 </style></head>
 <body data-still="4000">
-<div class="slide">
+<div class="slide linen">
   <div class="top">
-    <div class="kicker"><span class="dot"></span>Now hiring for</div>
-    <div class="logo"><div class="target"></div><div class="wordmark"><span>Triple</span><b>Dart</b></div></div>
+    <div class="eyebrow">Now hiring for</div>
+    <div class="logo"><img src="assets/logo.svg" alt="TripleDart"></div>
   </div>
 
-  <div class="headline" data-fit="952"><span class="line">Director of</span><span class="line">Paid Media</span></div>
+  <div class="headline" data-fit="900"><span class="line">Director of</span><span class="line"><span class="hl">Paid Media</span></span></div>
   <div class="sticker">Leadership role</div>
-  <svg class="underline" viewBox="0 0 1000 40" preserveAspectRatio="none">
-    <path d="M6 22 C 180 10, 420 30, 640 16 S 900 12, 994 20"/>
-  </svg>
 
   <div class="win dash">
-    <div class="bar"><i></i><i></i><i></i><span>paid-media / pipeline · Q4</span></div>
+    <div class="bar"><i></i><i></i><i></i><span>paid-media / pipeline / Q4</span></div>
     <div class="kpis">
-      <div class="kpi hot"><small>PIPELINE</small><b>3.1×</b><em>↑</em></div>
-      <div class="kpi"><small>CAC</small><b>−28%</b><em>↓</em></div>
-      <div class="kpi"><small>ROAS</small><b>4.2×</b><em>↑</em></div>
+      <div class="kpi hot"><small>PIPELINE</small><b>3.1×</b><i class="up"></i></div>
+      <div class="kpi"><small>CAC</small><b>-28%</b><i class="down"></i></div>
+      <div class="kpi"><small>ROAS</small><b>4.2×</b><i class="up"></i></div>
     </div>
     <div class="chart">
       <svg viewBox="0 0 606 236" preserveAspectRatio="none">
-        <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B5CFF" stop-opacity=".55"/><stop offset="1" stop-color="#2B5CFF" stop-opacity="0"/></linearGradient></defs>
+        <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D0FF00" stop-opacity=".35"/><stop offset="1" stop-color="#D0FF00" stop-opacity="0"/></linearGradient></defs>
         <path class="base" d="M0 200 C 120 196, 240 190, 360 184 S 520 176, 606 172"/>
         <path class="area" d="M0 206 C 60 200, 100 192, 150 180 S 240 168, 290 140 S 380 124, 420 96 S 520 54, 606 30 L 606 236 L 0 236 Z"/>
         <path class="line" d="M0 206 C 60 200, 100 192, 150 180 S 240 168, 290 140 S 380 124, 420 96 S 520 54, 606 30"/>
       </svg>
-      <div class="legend"><i></i>SQL PIPELINE vs LAST QTR</div>
-      <div class="tip">NEW HIGH ↑</div>
+      <div class="legend"><i></i>SQL pipeline vs last quarter</div>
+      <div class="tip">NEW HIGH</div>
     </div>
-    <div class="actions"><div class="btn">Scale winners</div><div class="toast">→ budget moved to LinkedIn ABM</div></div>
+    <div class="actions"><div class="btn">Scale winners</div><div class="toast"><i class="arr"></i> Budget moved to LinkedIn ABM</div></div>
   </div>
-  <svg class="cursor" viewBox="0 0 24 24"><path d="M3 2 L 3 19 L 8 14.5 L 11.5 22 L 14.5 20.7 L 11 13.3 L 18 13.3 Z" fill="#08090D" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  <svg class="cursor" viewBox="0 0 24 24"><path d="M3 2 L 3 19 L 8 14.5 L 11.5 22 L 14.5 20.7 L 11 13.3 L 18 13.3 Z" fill="#0B0B0B" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
 
   <div class="card stat">
     <b>$150M+</b>
@@ -103,15 +98,15 @@
   <div class="pill p1">Google Ads</div>
   <div class="pill solid p2">LinkedIn Ads</div>
   <div class="pill p3">Meta</div>
-  <div class="pill blue p4">ABM</div>
+  <div class="pill accent p4">ABM</div>
   <div class="pill p5">Team lead</div>
 
-  <div class="scrawl s-a">pipeline &gt; clicks</div>
-  <div class="scrawl late s-b">builds &amp; leads<br>the media team</div>
+  <div class="note n-a">Pipeline over clicks</div>
+  <div class="note late n-b">Builds and leads<br>the media team</div>
 
   <div class="footer">
-    <span>Ref: PM_DIR_2026</span>
-    <span>Location : Bengaluru / Remote</span>
+    <span>Ref PM-DIR-2026</span>
+    <span>Bengaluru / Remote</span>
     <span>Link in caption</span>
   </div>
 </div>

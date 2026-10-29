@@ -1,19 +1,20 @@
 # TripleDart hiring campaign
 
-A 5-slide animated carousel (1080×1350, 4:5) in a Thunderclap-style layout: print grid, huge headline type, outlined pills, callouts and a sticker. It is built on the **TripleDart New branding** design system (https://claude.ai/artifact/8cRAVLs6VZheX3U4MhJ4wM):
+A 6-slide animated carousel (1080×1350, 4:5) in a Thunderclap-style layout: print grid, huge headline type, outlined pills, callouts and a sticker. It is built on the **TripleDart New branding** design system (https://claude.ai/artifact/8cRAVLs6VZheX3U4MhJ4wM):
 
-- **Colour:** Electric Lime `#D0FF00` leads, always with dark text on it. Grounds alternate Black `#0B0B0B` (01, 05), Linen `#F2F2E6` (02, 04) and full lime (03).
+- **Colour:** Electric Lime `#D0FF00` leads, always with dark text on it. Grounds alternate Black `#0B0B0B` (01, 06), Linen `#F2F2E6` (02, 04) and full lime (03, 05).
 - **Type:** NeuSans for headlines and labels, Rubik for everything you read. The hand-lettered notes from the first draft are now NeuSans callouts, because the system allows only these two fonts.
 - **Logo and texture:** the official wordmark SVGs (white on dark, black on light and lime), and `texture-grid-dark.svg` behind the black slides.
 - **Depth:** borders, not shadows. The only glow is the soft lime one at the bottom of the dark slides.
 
 | # | Slide | Animation |
 |---|---|---|
-| 01 | Cover: all 3 roles | Role board highlights each role in turn, spinning badge, scrolling ticker |
-| 02 | Senior Recruiter | Candidate cards get stamped "Shortlisted" and swiped away, pipeline counts up |
-| 03 | Account Managers | Client chat plays out, client-health ring fills to 96 |
-| 04 | Director of Paid Media | Pipeline chart draws in, cursor clicks "Scale winners" |
-| 05 | Why TripleDart + apply CTA | Stats count up, tiles light up in turn, pulsing apply button |
+| 01 | Cover: 10 openings, 6 roles | Role board highlights each role in turn, spinning ×10 badge, scrolling ticker |
+| 02 | Recruiter (1) | Candidate cards get stamped "Shortlisted" and swiped away, pipeline counts up |
+| 03 | Account Managers (3) | Client chat plays out, client-health ring fills to 96 |
+| 04 | Paid Media and ABM (1 Manager, 2 Specialists) | Pipeline chart draws in, cursor clicks "Scale winners" |
+| 05 | SEO and GEO (1 Lead, 2 Specialists) | AI answer cites the client, share-of-AI-answers bars fill, Google rank climbs to #1 |
+| 06 | Why TripleDart + apply CTA | Stats count up, tiles light up in turn, pulsing apply button |
 
 Posting plan and captions are in [CAPTIONS.md](CAPTIONS.md).
 

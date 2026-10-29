@@ -1,0 +1,112 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>SEO and GEO</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .headline { top: 150px; text-align: center; }
+  .sticker { top: 470px; right: 60px; font-size: 40px; z-index: 18; background: var(--white); color: var(--black); border: 3px solid var(--black); }
+
+  /* AI answer window */
+  .ai { left: 64px; top: 524px; width: 600px; height: 560px; rotate: -1.5deg; border-color: var(--black); background: var(--black); }
+  .ai .bar { background: var(--carbon); }
+  .ai .body { padding: 24px; display: flex; flex-direction: column; gap: 20px; }
+  .ask { align-self: flex-end; max-width: 86%; padding: 16px 20px; border-radius: 20px; border-bottom-right-radius: 6px;
+    background: var(--grey-800); font: 400 22px/1.35 var(--font-body); animation: ask var(--L) ease-out infinite; }
+  @keyframes ask { 0% { opacity: 0; translate: 0 16px; } 6%, 92% { opacity: 1; translate: 0 0; } 100% { opacity: 0; } }
+  .answer { font: 400 22px/1.5 var(--font-body); color: var(--grey-400); }
+  .answer small { display: block; font: 700 15px/1 var(--font-display); letter-spacing: .04em; color: var(--lime-500); margin-bottom: 12px; }
+  .answer p { animation: reveal var(--L) steps(30) infinite; }
+  .answer b { color: var(--white); font-weight: 500; }
+  @keyframes reveal { 0%, 12% { clip-path: inset(0 0 100% 0); } 44%, 92% { clip-path: inset(0 0 0 0); } 100% { clip-path: inset(0 0 0 0); opacity: 0; } }
+  .cite { display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 6px; border-radius: 6px; background: var(--grey-700);
+    color: var(--white); font: 700 15px/1 var(--font-display); vertical-align: 2px; }
+  .cite.us { background: var(--lime-500); color: var(--black); }
+  .sources { display: flex; gap: 10px; flex-wrap: wrap; }
+  .src { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 9999px; border: 2px solid var(--grey-700);
+    font: 500 18px/1 var(--font-body); color: var(--grey-400); }
+  .src.us { border-color: var(--lime-500); color: var(--lime-500); animation: glow var(--L) ease-in-out infinite; }
+  @keyframes glow { 0%, 46% { background: rgba(208,255,0,0); color: var(--lime-500); } 52%, 92% { background: rgba(208,255,0,1); color: var(--black); } 100% { background: rgba(208,255,0,0); } }
+  .src i { font-style: normal; font-weight: 700; }
+
+  /* AI visibility bars */
+  .vis { right: 64px; top: 548px; width: 330px; padding: 24px; rotate: 2deg; z-index: 9; }
+  .vis .label { margin-bottom: 18px; }
+  .eng { margin-bottom: 14px; }
+  .eng .lbl { display: flex; justify-content: space-between; font: 500 20px/1 var(--font-body); margin-bottom: 8px; }
+  .eng .lbl b { font: 700 21px/1 var(--font-display); }
+  .eng .lbl b::after { content: "%"; font-family: var(--font-body); }
+  .eng .bar { height: 12px; border-radius: 2px; background: var(--grey-800); overflow: hidden; }
+  .eng .bar i { display: block; height: 100%; width: var(--w); background: var(--lime-500); transform-origin: left; animation: grow var(--L) cubic-bezier(.2,.8,.2,1) infinite; }
+  @keyframes grow { 0% { scale: 0 1; } 32%, 92% { scale: 1 1; } 100% { scale: 0 1; } }
+  .e1 b { animation: v1 var(--L) cubic-bezier(.2,.8,.2,1) infinite; } @keyframes v1 { 0% { --n: 0; } 32%, 92% { --n: 72; } 100% { --n: 0; } }
+  .e2 b { animation: v2 var(--L) cubic-bezier(.2,.8,.2,1) infinite; } @keyframes v2 { 0% { --n: 0; } 32%, 92% { --n: 64; } 100% { --n: 0; } }
+  .e3 b { animation: v3 var(--L) cubic-bezier(.2,.8,.2,1) infinite; } @keyframes v3 { 0% { --n: 0; } 32%, 92% { --n: 58; } 100% { --n: 0; } }
+  .e4 b { animation: v4 var(--L) cubic-bezier(.2,.8,.2,1) infinite; } @keyframes v4 { 0% { --n: 0; } 32%, 92% { --n: 41; } 100% { --n: 0; } }
+
+  /* google rank climbing to #1 */
+  .rank { right: 64px; top: 906px; width: 330px; padding: 22px 24px; rotate: -2deg; z-index: 9; display: flex; align-items: center; gap: 20px; }
+  .rank .pos { font: 700 84px/1 var(--font-display); letter-spacing: -.04em; color: var(--lime-500); }
+  .rank .pos::before { content: "#"; font-family: var(--font-body); font-weight: 700; }
+  .rank .pos .count { font: inherit; color: inherit; animation: climb var(--L) cubic-bezier(.5,0,.2,1) infinite; }
+  @keyframes climb { 0%, 10% { --n: 14; } 46%, 92% { --n: 1; } 100% { --n: 14; } }
+  .rank span { font: 400 19px/1.3 var(--font-body); color: var(--card-ink-2); }
+  .rank span b { display: block; font: 700 22px/1.2 var(--font-display); color: var(--white); margin-bottom: 4px; }
+
+  .p1 { top: 1124px; left: 64px; }
+  .p2 { top: 1124px; left: 316px; animation-delay: -1.6s; }
+  .p3 { top: 1196px; left: 140px; animation-delay: -3.2s; }
+  .p4 { top: 1196px; left: 380px; animation-delay: -2.4s; }
+  .note.n-a { top: 1112px; right: 62px; rotate: -6deg; font-size: 34px; text-align: right; }
+</style></head>
+<body data-still="3600">
+<div class="slide lime">
+  <div class="top">
+    <div class="eyebrow">SEO team / 3 openings</div>
+    <div class="logo"><img src="assets/logo.svg" alt="TripleDart"></div>
+  </div>
+
+  <div class="headline" data-fit="700"><span class="line">SEO</span><span class="line"><span class="hl">and GEO</span></span></div>
+  <div class="sticker">3 openings</div>
+
+  <div class="win ai">
+    <div class="bar"><i></i><i></i><i></i><span>ai-answer</span></div>
+    <div class="body">
+      <div class="ask">What's the best payroll tool for a 50-person startup in India?</div>
+      <div class="answer"><small>AI ANSWER</small>
+        <p>For a team that size, <b>Acme Payroll</b> <span class="cite us">1</span> is the most recommended option: compliance for India and the US, plus a free tier. Teams also compare it with two larger suites <span class="cite">2</span> <span class="cite">3</span>.</p>
+      </div>
+      <div class="sources">
+        <span class="src us"><i>1</i> acme.com <i class="chk"></i></span>
+        <span class="src"><i>2</i> g2.com</span>
+        <span class="src"><i>3</i> reddit.com</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card vis">
+    <div class="label">Share of AI answers</div>
+    <div class="eng e1"><div class="lbl"><span>ChatGPT</span><b class="count"></b></div><div class="bar"><i style="--w:72%"></i></div></div>
+    <div class="eng e2"><div class="lbl"><span>Perplexity</span><b class="count"></b></div><div class="bar"><i style="--w:64%"></i></div></div>
+    <div class="eng e3"><div class="lbl"><span>AI Overviews</span><b class="count"></b></div><div class="bar"><i style="--w:58%"></i></div></div>
+    <div class="eng e4"><div class="lbl"><span>Gemini</span><b class="count"></b></div><div class="bar"><i style="--w:41%"></i></div></div>
+  </div>
+
+  <div class="card rank">
+    <div class="pos"><span class="count"></span></div>
+    <span><b>Google rank</b>"payroll software india"</span>
+  </div>
+
+  <div class="pill p1">Technical SEO</div>
+  <div class="pill solid p2">AI search</div>
+  <div class="pill p3">Content</div>
+  <div class="pill p4">Schema</div>
+
+  <div class="note n-a">Cited, not<br>just ranked</div>
+
+  <div class="footer">
+    <span>Ref SEO-2026</span>
+    <span>Bengaluru / Remote</span>
+    <span>Link in caption</span>
+  </div>
+</div>
+<script src="slide.js"></script>
+</body></html>

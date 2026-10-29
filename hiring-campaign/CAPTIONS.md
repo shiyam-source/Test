@@ -197,7 +197,7 @@ What's the one thing your favourite account manager always did?
 ## 8. Day 8: Recruiter (slide 02, GIF/MP4)
 
 ```
-We're hiring 10 people this quarter. First, we need the person who'll help find the other 9.
+We're hiring 10 people. First, we need the person who'll help find the other 9.
 
 Recruiter at TripleDart. Bengaluru / Remote.
 

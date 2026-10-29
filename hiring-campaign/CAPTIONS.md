@@ -108,17 +108,14 @@ Know someone perfect for one of these? Tag them below.
 ## 4. First comment (every LinkedIn post)
 
 ```
-JDs and how to apply:
-
-Lead, SEO and GEO: [JD link]
-Specialist, SEO and GEO: [JD link]
-Manager, Paid Media and ABM: [JD link]
-Specialist, Paid Media and ABM: [JD link]
-Account Manager: [JD link]
-Recruiter: [JD link]
+Apply here: [APPLY_LINK]
+Questions about the roles, shifts or hiring process? Read the FAQ: [FAQ_LINK]
 ```
 
-On the team posts, keep only that team's links.
+- `[APPLY_LINK]` is the candidate form: https://tripledart.notion.site/314c28e495de4b53b56dcf3cdf857e53
+- `[FAQ_LINK]` is the FAQ: https://tripledart.notion.site/Frequently-Asked-Questions-4051ad7c385881f9aa72c3029e34dffe
+
+Swap in the short links once they exist. On Instagram, put the apply link in bio and the FAQ in a Story link sticker.
 
 ---
 

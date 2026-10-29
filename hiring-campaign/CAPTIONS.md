@@ -218,15 +218,39 @@ Who's the best recruiter you've ever worked with?
 
 ---
 
-## 9. #general message for the team (post within 10 minutes)
+## 9. Slack message for the all-members channel (post within 10 minutes)
 
 ```
-Our hiring post is live: [post link]
+*We're hiring 10 people, and the post just went live* :rocket:
+:point_right: [LinkedIn post link]
 
-Please drop a real comment in the first hour. Some starters:
-- Why you joined TripleDart, in one line
-- What working with our SEO / paid / client team is actually like
-- Tag one person you'd love to work with
+LinkedIn decides how far a post travels in the first hour, based mostly on comments. So I need your help in the next 60 minutes. It takes 3 minutes:
 
-And reshare it from your own profile with a line about your team.
+*1. Comment (a real one)*
+Write 15+ words. "Great post" and "Congrats" don't help reach. Some starters:
+• Why you joined TripleDart, in one line
+• What working with our SEO, paid media or client team is actually like
+• Tag 1 or 2 people from your network who'd be great for one of these roles
+
+*2. Reshare from your own profile*
+Click Repost → "Repost with your thoughts", and add one line in your own words. For example:
+• SEO team: "We're hiring a Lead and 2 Specialists for SEO and GEO. If you want to work on getting brands cited by ChatGPT, come talk to me."
+• Paid media team: "3 openings on my team: 1 Manager, 2 Specialists in Paid Media and ABM. DM me if you want the inside view."
+• AMs: "We're adding 3 Account Managers. Best part of this job: you're the person clients trust most."
+• Everyone else: "My team is hiring 10 people. If you've ever wanted to work with sharp people who don't do fluff, this is it."
+
+*3. Refer someone*
+Know someone great? Send them the apply link and the FAQ, and tell [recruiter name] so we can look out for them.
+• Apply: [APPLY_LINK]
+• FAQ: [FAQ_LINK]
+
+Please don't paste links in your comments or reshares. LinkedIn shows those posts to fewer people. The links are already in the first comment.
+
+Drop a :white_check_mark: in this thread once you've commented and reshared. Thank you, team. Every one of these hires makes your week easier. :raised_hands:
+```
+
+Short reminder for the thread, 24 hours later:
+
+```
+Quick nudge: if you haven't yet, a comment and a reshare on yesterday's hiring post still help a lot :pray: [LinkedIn post link]
 ```

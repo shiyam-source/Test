@@ -1,0 +1,5 @@
+prompts_in_cluster,answers_per_month,sd_of_change,approx_mdc
+1,90,0.0661,0.1851
+5,450,0.0289,0.0808
+10,900,0.0204,0.0572
+25,2250,0.0129,0.0361

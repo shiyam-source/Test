@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>The Coin-Flip Report</title><link rel="stylesheet" href="report.css"></head><body>
+
+<div class="cover">
+  <div class="kicker">Slate Research · Data study 01</div>
+  <h1>The Coin&#8209;Flip Report</h1>
+  <div class="sub">How many AI answers it takes before a visibility number means anything, and what each tracking plan can actually detect.</div>
+  {{dots}}
+  <div class="meta"><b>November 2026</b><br>Statistical study of AI visibility sampling designs<br>slatehq.com</div>
+</div>
+
+<div>
+  <div class="eyebrow">Executive summary</div>
+  <h2>Most prompt-level AI visibility charts show noise, not change</h2>
+  <p class="lede">AI answers are random draws. A tracker that asks ChatGPT the same question once a day collects about 30 draws a month for that prompt on that engine. We modelled what that buys. If the true appearance rate is a steady 30%, a month of daily sampling can report anything from 17% to 48%. That is wide enough that most month-over-month moves on a single prompt are produced by the sampling itself.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">37%</div><div class="l">of prompt-months show a swing of 10+ points under daily sampling, even though nothing real changed.</div></div>
+    <div class="stat"><div class="n">17–48%</div><div class="l">95% range a dashboard can report for a prompt whose true rate is 30%, after a month of daily runs.</div></div>
+    <div class="stat"><div class="n">37%</div><div class="l">how often the real category leader shows up at #1 in a five-brand race separated by three points, with daily sampling.</div></div>
+    <div class="stat"><div class="n">356</div><div class="l">answers per period needed to reliably detect a 10-point change on one prompt. Daily runs give about 30.</div></div>
+  </div>
+  <h3>What this means for buyers</h3>
+  <ul>
+    <li><b>Brand-wide numbers hold up. Prompt-level stories mostly don't.</b> Averaged across 100 prompts and three engines, the topline moved by at most about 1 point a month in our simulation. Single prompts swung by 20 points or more.</li>
+    <li><b>Competitor leaderboards are close to random</b> when brands sit within a few points of each other. Daily sampling put the wrong brand at #1 almost two times in three.</li>
+    <li><b>The fix costs little.</b> Group prompts into topics, put sampling depth on the prompts you are actively working on, and report a range with every number. A 10-prompt topic sampled daily on three engines can detect a change of about 6 points.</li>
+  </ul>
+  <div class="callout"><b>Disclosure</b>Slate sells an AI visibility and execution platform. Every limit in this report applies to Slate's tracking as well, and to every vendor that samples AI answers. We publish the method and code so anyone can check the math.</div>
+</div>
+
+<div class="section">
+  <div class="eyebrow">Why this study</div>
+  <h2>The category agrees answers are random. Nobody has priced what that does to a dashboard.</h2>
+  <p>In January 2026, SparkToro and Gumshoe had 600 volunteers run 12 brand-recommendation prompts 2,961 times across ChatGPT, Claude and Google's AI surfaces. They found under a 1-in-100 chance of getting the same set of brands on a repeat run, and under a 1-in-1,000 chance of the same brands in the same order. Rand Fishkin's verdict, as widely quoted: any tool that gives a "ranking position in AI" is "full of baloney." Kevin Indig put it more gently: "the thing they're measuring isn't stable."</p>
+  <p>Buyers have noticed. In May 2026 Digiday reported agency leaders running identical prompts through three tools and getting three different answers, and one holding company testing 17 platforms side by side. Meanwhile Profound's own research has been cited as showing that 40–60% of the domains AI platforms cite change from month to month.</p>
+  <p>The industry's answer has been to move from "rank" to "appearance rate": the share of answers that mention your brand. That is the right unit. But an appearance rate is an estimate from a sample, and every tracking plan fixes the sample size, through a prompt quota, an engine list and a run cadence. This report asks the next question: <b>given the sample a plan buys you, what can it actually detect?</b></p>
+  <h3>How we modelled it</h3>
+  <p>We treat each AI answer as an independent yes/no draw: did the brand appear? We then computed exact confidence intervals and statistical power, and ran Monte Carlo simulations of 100-prompt, three-engine programmes over 12 months in which <b>nothing real ever changes</b>. Whatever "movement" the simulated dashboards show is produced by the sampling itself. Independence is the best case. Real answers also shift with model updates, personalization, location and API-versus-app differences, so real dashboards are noisier than the figures here. Full method on page 9.</p>
+  <figure>
+    <div class="figtitle">Figure 1 · What a dashboard can report when the truth is a steady 30%</div>
+    {{chart:c1_interval_band}}
+    <figcaption>95% Wilson interval for an observed appearance rate, true rate 30%, by number of AI answers sampled for one prompt on one engine. <b>Seven days of daily runs gives a 9%–65% range. A month gives 17%–48%.</b> It takes about 1,000 answers to get within ±3 points.</figcaption>
+  </figure>
+</div>
+
+<div class="section">
+  <div class="eyebrow">Finding 1</div>
+  <h2>A prompt that never changes can still look like a campaign result</h2>
+  <p>Figure 2 follows one simulated prompt on one engine for a year, sampled once a day. Its true appearance rate is fixed at 30% from January to December. The dashboard reports 47% in June and 13% in October. Shown in a monthly review, the June figure looks like a win to celebrate and the October figure looks like a crisis.</p>
+  <figure>
+    <div class="figtitle">Figure 2 · One prompt versus the brand-wide average, true rate constant</div>
+    {{chart:c5_one_prompt}}
+    <figcaption>Single simulated run, 30 answers per month per prompt-engine. The orange line is one prompt on one engine. The blue line averages 100 prompts across three engines. <b>Neither true rate changed at any point.</b></figcaption>
+  </figure>
+  <p>That run is typical. Across 200 simulated programmes (100 prompts, three engines, 12 months) we counted how often a prompt-engine pair moved 10+ points between months with no real change.</p>
+  <figure>
+    <div class="figtitle">Figure 3 · How often noise looks like a real move</div>
+    {{chart:c2_phantom_moves}}
+    <figcaption>Share of month-over-month readings that moved by 10+ or 20+ points while every true rate stayed constant. Prompt true rates vary between prompts (mean 30%). <b>Under daily sampling, 37% of prompt-months show a 10-point "move" and 8.5% show a 20-point move.</b> A team reviewing 300 prompt-engine pairs a month would see about 110 double-digit moves that mean nothing.</figcaption>
+  </figure>
+
+</div>
+
+<div class="section">
+  <div class="eyebrow">Finding 2</div>
+  <h2>Competitor leaderboards are close to random when the race is close</h2>
+  <p>Share-of-voice tables rank you against competitors. In a contested category the gaps between brands are often a few points. We simulated five brands with fixed true appearance rates of 34%, 31%, 30%, 28% and 25%, and asked how often the true leader comes out on top.</p>
+  <figure>
+    <div class="figtitle">Figure 4 · Does the real leader come out #1?</div>
+    {{chart:c3_leaderboard}}
+    <figcaption>20,000 simulated months per sample size. With 30 answers per brand per month, the real leader is shown at #1 only 37% of the time and at #3 or lower 39% of the time. The five brands come out in the correct order 3% of the time.</figcaption>
+  </figure>
+  <table>
+    <tr><th>Answers per brand per month</th><th class="r">Real leader shown #1</th><th class="r">Real leader shown #3 or lower</th><th class="r">All five in the correct order</th></tr>
+    {{rows:leaderboard}}
+  </table>
+  <p>Even at 1,000 answers, the full order is right less than half the time. The honest output for a close race is "statistically tied," and almost no dashboard says that.</p>
+  <h3>Brand-wide numbers are the exception</h3>
+  <p>Aggregates behave well. In the same simulations, a brand's average across 100 prompts and three engines (9,000 answers a month) moved by at most about 1.2 points from month to month. <b>Use the topline for trend. Don't read individual prompts as trend.</b></p>
+</div>
+
+<div class="section">
+  <div class="eyebrow">Finding 3</div>
+  <h2>What common plan designs can and can't detect</h2>
+  <p>We mapped typical plan designs to the smallest change they can reliably detect: 80% power, 95% confidence, from a 30% baseline, comparing one month with the next. "Per prompt-engine" reads one prompt on one engine. "Engines pooled" combines all engines for that prompt.</p>
+  <table>
+    <tr><th>Plan design</th><th class="r">Prompts</th><th class="r">Engines</th><th class="r">Runs / month</th><th class="r">Answers / month</th><th class="r">95% range at 30%</th><th class="r">Min. change, one engine</th><th class="r">Min. change, engines pooled</th></tr>
+    {{rows:plans}}
+  </table>
+  <p class="small">† Plan parameters as reported by third-party reviews as of November 2026. Profound's brand self-serve plans were reportedly withdrawn in September 2026, and the agency workspace is reported at 100 prompts, three engines, daily. Slate rows are allocation scenarios for a 10,000-answer monthly pool and assume runs per prompt can be set. Confirm current limits with each vendor.</p>
+  <h3>Three things the table shows</h3>
+  <ol>
+    <li><b>No plan with about 10,000 answers a month gives tight per-prompt readings across 100+ prompts.</b> That includes Slate's. The total volume is too small once it is split across many prompts.</li>
+    <li><b>How answers are allocated matters more than how many you buy.</b> Spending the same pool on 40 priority prompts at 60 runs, rather than 333 prompts at 30, cuts the detectable change roughly in half (12 points with engines pooled).</li>
+    <li><b>A 7-day trial can't judge visibility.</b> Seven runs leave a 9%–65% range, and a per-prompt change has to exceed 60 points to register. A trial can judge workflow, coverage and fit, but it can't show whether your visibility moved.</li>
+  </ol>
+
+</div>
+
+<div class="section">
+  <div class="eyebrow">Finding 4</div>
+  <h2>Pooling prompts into topics fixes most of the problem</h2>
+  <p>Marketers act on topics ("CRM for startups") more than on single strings. Pooling 5–25 related prompts gives a large sample without a larger plan. We simulated topic clusters in which the prompts have different true rates, so the pooling is realistic rather than flattering.</p>
+  <figure>
+    <div class="figtitle">Figure 5 · Smallest reliable change by topic size (3 engines, daily)</div>
+    {{chart:c4_clusters}}
+    <figcaption>3,000 simulations per cluster size; 80% power, 95% confidence. <b>A 10-prompt topic can detect a 6-point change in a month. A single prompt needs a 19-point change.</b></figcaption>
+  </figure>
+  <h3>A measurement standard for AI visibility</h3>
+  <p>We propose seven rules. Any vendor that reports AI visibility should be held to them, Slate included.</p>
+  <ol>
+    <li><b>Every rate ships with its range and sample size.</b> "31% (24–39%, n = 120)", never a bare "31%".</li>
+    <li><b>No rank positions.</b> Report appearance rate and share of answers. Treat a close race as a tie.</li>
+    <li><b>Topics are the unit of trend.</b> Track single prompts for diagnosis, not for monthly progress reports.</li>
+    <li><b>Sampling depth goes where the work is.</b> Prompts you are actively fixing get more runs. Background prompts get fewer.</li>
+    <li><b>Changes are called before the data arrives.</b> Log the fix, the prompts it should move and the expected size, then read the result once the planned sample is in.</li>
+    <li><b>Collection mode is disclosed.</b> API or app, logged in or out, location and model version. Surfer found API answers had no sources about 25% of the time, while answers scraped from the app always had sources.</li>
+    <li><b>Methods are public.</b> If a vendor won't publish how a number is sampled, treat the number as unverified.</li>
+  </ol>
+</div>
+
+<div class="section">
+  <div class="eyebrow">For buyers</div>
+  <h2>What your decisions need, and ten questions to ask any vendor</h2>
+  <p>Use these in a demo, in an RFP, or before renewing. A good vendor will answer all ten in writing. Ask Slate too. Start by knowing how many answers your decision needs.</p>
+  <h3 style="margin-top:2mm">Answers needed, by the decision you want to make</h3>
+  <table>
+    <tr><th>Decision</th><th class="r">Answers needed per period</th><th>At once-daily, one engine</th></tr>
+    <tr><td>Report a rate within ±15 points</td><td class="r">36</td><td>about 5 weeks</td></tr>
+    <tr><td>Report a rate within ±10 points</td><td class="r">81</td><td>about 2.7 months</td></tr>
+    <tr><td>Report a rate within ±5 points</td><td class="r">323</td><td>about 10.8 months</td></tr>
+    <tr><td>Detect a 20-point change, month to month</td><td class="r">93</td><td>not possible within a month</td></tr>
+    <tr><td>Detect a 10-point change, month to month</td><td class="r">356</td><td>not possible within a month</td></tr>
+    <tr><td>Detect a 5-point change, month to month</td><td class="r">1,377</td><td>not possible within a month</td></tr>
+  </table>
+  <h3>The questions</h3>
+  <ol class="check">
+    <li>How many answers per prompt, per engine, per month does my plan actually collect?</li>
+    <li>Can I change runs per prompt, or is the cadence fixed?</li>
+    <li>Do you show a confidence range or sample size next to each rate?</li>
+    <li>Do you collect from the API or from the consumer app? Logged in or out? From which location?</li>
+    <li>How do you handle model updates? Do you mark them on trend charts?</li>
+    <li>When you report a change, what is the smallest change you consider real, and why?</li>
+    <li>Can I group prompts into topics and trend the topic rather than each prompt?</li>
+    <li>Where does your prompt-volume data come from, and has anyone outside the company validated it?</li>
+    <li>Can I export every raw answer with a timestamp, so I can check your numbers myself?</li>
+    <li>Which engines does my plan include, and what does each additional engine cost?</li>
+  </ol>
+  <div class="callout"><b>The bottom line</b>An AI visibility number without a sample size is an anecdote. Buy the sampling depth your decisions need, put it on the prompts you are working on, and judge results by topic. Then spend the rest of the budget changing what the models read.</div>
+</div>
+
+<div class="section">
+  <div class="eyebrow">Methodology and limits</div>
+  <h2>How the numbers were produced</h2>
+  <div class="two">
+    <div>
+      <h3>Model</h3>
+      <p>Each AI answer is treated as an independent Bernoulli trial: the brand appears or it doesn't. Intervals are 95% Wilson score intervals. "Smallest reliable change" is the smallest increase from a 30% baseline that a two-sided two-proportion z-test (α = 0.05) detects with 80% power, given n answers in each of two periods. The "noise band" is ±1.96 × √(2p(1−p)/n), which is ±23 points at n = 30.</p>
+      <h3>Simulations</h3>
+      <p>Phantom moves: 200 programmes × 100 prompts × 3 engines × 12 months. Prompt true rates are drawn from Beta(3, 7) (mean 30%) and held fixed. Leaderboard: 20,000 simulated months per sample size, fixed rates 34/31/30/28/25%, random tie-break. Topic clusters: 3,000 simulations per size, heterogeneous prompt rates, smallest reliable change ≈ 2.8 × the standard deviation of the month-over-month difference. Random seeds are fixed and the code is published.</p>
+    </div>
+    <div>
+      <h3>Why real dashboards are noisier</h3>
+      <p>Independence and fixed true rates are the best case. Real answers also vary with model and retrieval updates, memory and personalization (OpenAI extended memory-based personalization to Free and Go users in June 2026), location, logged-in state, and API versus app collection. Each of these widens the real ranges beyond what we show.</p>
+      <h3>What this study is not</h3>
+      <p>We did not collect AI answers for this report, and we make no claim about any vendor's data quality. Plan parameters come from public and third-party sources as of November 2026 and may change. Profound's front-end collection and panel-based prompt data are real strengths. The limits here come from sample size, which affects every vendor.</p>
+    </div>
+  </div>
+  <h3>Sources</h3>
+  <ol class="src">
+    <li>SparkToro / Gumshoe study coverage: <a href="https://www.searchenginejournal.com/ai-recommendations-change-with-nearly-every-query-sparktoro/566242">Search Engine Journal</a>; <a href="https://searchengineland.com/ai-recommendation-lists-rarely-repeat-study-468076">Search Engine Land</a> (Jan 2026).</li>
+    <li>Fishkin "baloney" quote as reported: <a href="https://dubadosolutions.com/rand-fishkin-proved-ai-recommendations-are-inconsistent-heres-why-and-how-to-fix-it/">Dubado</a>.</li>
+    <li>Kevin Indig: <a href="https://substack.com/@kevinindig/note/c-302753921">Substack note</a>; <a href="https://www.growth-memo.com/p/ai-halftime-report-h1-2026">Growth Memo, H1 2026</a>.</li>
+    <li>Digiday, "Marketers question expensive AI visibility tools…" (May 1, 2026): <a href="https://digiday.com/marketing/marketers-question-expensive-ai-visibility-tools-as-inconsistent-results-fuel-skepticism/">digiday.com</a>.</li>
+    <li>Surfer, LLM scraped answers vs API results: <a href="https://surferseo.com/blog/llm-scraped-ai-answers-vs-api-results">surferseo.com</a>.</li>
+    <li>40–60% monthly citation churn, attributed to Profound research: <a href="https://theadspend.com/blog/ai-search-scam-2026">The Ad Spend</a> (secondary).</li>
+    <li>Profound plan parameters: <a href="https://trakkr.ai/reviews/profound-review/pricing">Trakkr</a>; <a href="https://tools8020.com/tools/profound/pricing/">Tools8020</a>; <a href="https://citeprism.com/blog/profound-pricing">CitePrism</a> (third-party, Sep–Oct 2026).</li>
+    <li>Slate plan parameters: <a href="https://slatehq.com/pricing">slatehq.com/pricing</a>.</li>
+  </ol>
+  <div class="footer-note">© 2026 Slate. Data, simulations and code are available on request and may be reused with attribution. Figures marked † are third-party reported and dated November 2026.</div>
+</div>
+</body></html>

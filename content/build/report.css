@@ -1,0 +1,54 @@
+@page { size: A4; margin: 18mm 17mm 18mm 17mm; }
+@page :first { margin: 0; }
+:root { --ink:#0b0b0b; --ink2:#52514e; --muted:#8a8984; --line:#e6e5e1; --soft:#f5f4f1; --slate:#2a78d6; --slate-d:#184f95; --slate-l:#e8f1fc; --prof:#eb6834; }
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; background:#fff; color:var(--ink); font-family: "Inter", sans-serif; font-size: 9.6pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.cover { height: 297mm; width: 210mm; background: #0d2a52; color: #fff; padding: 26mm 22mm; position: relative; page-break-after: always; overflow: hidden; }
+.cover .kicker { font-size: 9pt; letter-spacing: .14em; text-transform: uppercase; color: #9ec5f4; font-weight: 600; }
+.cover h1 { font-family: "Inter Display", "Inter", sans-serif; font-size: 44pt; line-height: 1.02; margin: 18mm 0 6mm; font-weight: 700; letter-spacing: -.02em; }
+.cover .sub { font-size: 15pt; line-height: 1.35; color: #cde2fb; max-width: 150mm; font-weight: 400; }
+.cover .meta { position: absolute; left: 22mm; bottom: 24mm; font-size: 9pt; color: #9ec5f4; line-height: 1.6; }
+.cover .meta b { color: #fff; font-weight: 600; }
+.cover .dots { position: absolute; right: -10mm; top: 92mm; width: 120mm; opacity: .9; }
+h2 { font-family: "Inter Display", "Inter", sans-serif; font-size: 17pt; line-height: 1.2; margin: 0 0 3mm; letter-spacing: -.01em; font-weight: 700; }
+h3 { font-size: 11pt; margin: 6mm 0 2mm; font-weight: 700; }
+.section { page-break-before: always; }
+.eyebrow { font-size: 8pt; letter-spacing: .12em; text-transform: uppercase; color: var(--slate); font-weight: 700; margin-bottom: 2mm; }
+p { margin: 0 0 3mm; }
+.lede { font-size: 11.2pt; line-height: 1.5; color: var(--ink); }
+.muted { color: var(--ink2); }
+.small { font-size: 8.2pt; color: var(--ink2); }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin: 5mm 0; }
+.stat { background: var(--soft); border-radius: 3mm; padding: 4mm 5mm; break-inside: avoid; }
+.stat .n { font-family: "Inter Display", "Inter", sans-serif; font-size: 26pt; font-weight: 700; color: var(--slate-d); line-height: 1.05; letter-spacing: -.02em; }
+.stat .l { font-size: 8.8pt; color: var(--ink2); margin-top: 1.5mm; line-height: 1.4; }
+.callout { border-left: 3px solid var(--slate); background: var(--slate-l); padding: 3.5mm 5mm; border-radius: 0 2mm 2mm 0; margin: 4mm 0; break-inside: avoid; }
+.callout.warn { border-left-color: var(--prof); background: #fdf0ea; }
+.callout b { display: block; margin-bottom: 1mm; }
+figure { margin: 4mm 0 5mm; break-inside: avoid; }
+figure svg { width: 100%; height: auto; display: block; }
+figcaption { font-size: 8.2pt; color: var(--ink2); margin-top: 1.5mm; }
+figcaption b { color: var(--ink); }
+.figtitle { font-size: 9.6pt; font-weight: 700; margin-bottom: 1.5mm; }
+table { width: 100%; border-collapse: collapse; margin: 3mm 0 5mm; font-size: 8.4pt; break-inside: avoid; }
+th { text-align: left; font-weight: 600; color: var(--ink2); border-bottom: 1px solid var(--ink); padding: 1.6mm 2mm; vertical-align: bottom; }
+td { border-bottom: 1px solid var(--line); padding: 1.6mm 2mm; vertical-align: top; }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; }
+tr.hl td { background: var(--slate-l); }
+ol, ul { margin: 0 0 3mm; padding-left: 5mm; }
+li { margin-bottom: 1.6mm; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+.src { font-size: 7.6pt; color: var(--ink2); line-height: 1.45; }
+.src li { margin-bottom: 1mm; word-break: break-word; }
+.src a { color: var(--slate-d); text-decoration: none; }
+.dag { color: var(--prof); font-weight: 700; }
+.timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin: 4mm 0 5mm; }
+.tl { border-top: 3px solid var(--slate); padding-top: 2.5mm; break-inside: avoid; }
+.tl.gone { border-top-color: var(--prof); }
+.tl .d { font-size: 8pt; font-weight: 700; color: var(--ink2); text-transform: uppercase; letter-spacing: .06em; }
+.tl .p { font-family: "Inter Display", "Inter", sans-serif; font-size: 15pt; font-weight: 700; margin: 1mm 0; }
+.tl .t { font-size: 8.2pt; color: var(--ink2); line-height: 1.4; }
+.check li { list-style: none; position: relative; padding-left: 1mm; }
+.check { padding-left: 5mm; }
+.check li::before { content: ""; position: absolute; left: -5mm; top: 1.2mm; width: 2.6mm; height: 2.6mm; border: 1.3px solid var(--slate); border-radius: .6mm; }
+.footer-note { font-size: 7.6pt; color: var(--muted); margin-top: 6mm; border-top: 1px solid var(--line); padding-top: 2mm; }

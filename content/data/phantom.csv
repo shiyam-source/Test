@@ -1,0 +1,6 @@
+design,runs,phantom_10pt,phantom_20pt,brand_max_swing
+7 runs (trial-style),7,0.742,0.34,0.0253
+30 runs (daily),30,0.37,0.085,0.0121
+60 runs,60,0.208,0.017,0.0086
+100 runs,100,0.107,0.002,0.0066
+250 runs,250,0.013,0.0,0.0041

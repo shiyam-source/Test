@@ -1,0 +1,12 @@
+vendor,price,prompts,answers,per_prompt,per_answer,note
+Otterly Lite,29,15,450,1.93,0.0644,15 prompts; answers assume 1 engine daily
+Otterly Standard,189,100,,1.89,,100 prompts
+Peec Starter,95,50,4500,1.9,0.0211,"50 prompts, 3 models, daily"
+Peec Pro,245,150,13500,1.63,0.0181,"150 prompts, 3 models, daily"
+Scrunch Starter,300,350,,0.86,,350 prompts (sources conflict)
+AthenaHQ Starter,295,,3600,,0.0819,"3,600 credits = 3,600 responses"
+Ahrefs custom prompts,50,,2500,,0.02,"add-on: 2,500 checks; base plan may be required"
+Profound Starter (removed),99,50,1500,1.98,0.066,"50 prompts, ChatGPT, daily; removed Sep 2026"
+Profound Growth (removed),399,100,9000,3.99,0.0443,"100 prompts, 3 engines, daily; removed Sep 2026"
+Profound agency workspace,399,100,9000,3.99,0.0443,"per client, +$99/mo agency base"
+Slate Growth,499,,10000,,0.0499,"unlimited prompts; 10,000 answers; +15,000 execution credits"

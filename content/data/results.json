@@ -1,0 +1,771 @@
+{
+ "intervals": [
+  {
+   "n": 7,
+   "p": 0.1,
+   "lo": 0.0137,
+   "hi": 0.4697,
+   "width": 0.456,
+   "mdc": 0.6825
+  },
+  {
+   "n": 7,
+   "p": 0.3,
+   "lo": 0.089,
+   "hi": 0.6527,
+   "width": 0.5637,
+   "mdc": 0.663
+  },
+  {
+   "n": 7,
+   "p": 0.5,
+   "lo": 0.2024,
+   "hi": 0.7976,
+   "width": 0.5953,
+   "mdc": 0.4999
+  },
+  {
+   "n": 25,
+   "p": 0.1,
+   "lo": 0.0315,
+   "hi": 0.275,
+   "width": 0.2435,
+   "mdc": 0.3445
+  },
+  {
+   "n": 25,
+   "p": 0.3,
+   "lo": 0.1573,
+   "hi": 0.496,
+   "width": 0.3387,
+   "mdc": 0.3869
+  },
+  {
+   "n": 25,
+   "p": 0.5,
+   "lo": 0.3175,
+   "hi": 0.6825,
+   "width": 0.365,
+   "mdc": 0.3609
+  },
+  {
+   "n": 30,
+   "p": 0.1,
+   "lo": 0.0346,
+   "hi": 0.2562,
+   "width": 0.2216,
+   "mdc": 0.3089
+  },
+  {
+   "n": 30,
+   "p": 0.3,
+   "lo": 0.1666,
+   "hi": 0.4788,
+   "width": 0.3121,
+   "mdc": 0.3543
+  },
+  {
+   "n": 30,
+   "p": 0.5,
+   "lo": 0.3315,
+   "hi": 0.6685,
+   "width": 0.3369,
+   "mdc": 0.3342
+  },
+  {
+   "n": 60,
+   "p": 0.1,
+   "lo": 0.0466,
+   "hi": 0.2015,
+   "width": 0.1549,
+   "mdc": 0.2032
+  },
+  {
+   "n": 60,
+   "p": 0.3,
+   "lo": 0.199,
+   "hi": 0.4251,
+   "width": 0.2261,
+   "mdc": 0.2504
+  },
+  {
+   "n": 60,
+   "p": 0.5,
+   "lo": 0.3774,
+   "hi": 0.6226,
+   "width": 0.2453,
+   "mdc": 0.2455
+  },
+  {
+   "n": 90,
+   "p": 0.1,
+   "lo": 0.0535,
+   "hi": 0.1792,
+   "width": 0.1257,
+   "mdc": 0.1593
+  },
+  {
+   "n": 90,
+   "p": 0.3,
+   "lo": 0.2151,
+   "hi": 0.4013,
+   "width": 0.1862,
+   "mdc": 0.2034
+  },
+  {
+   "n": 90,
+   "p": 0.5,
+   "lo": 0.3988,
+   "hi": 0.6012,
+   "width": 0.2023,
+   "mdc": 0.2031
+  },
+  {
+   "n": 100,
+   "p": 0.1,
+   "lo": 0.0552,
+   "hi": 0.1744,
+   "width": 0.1191,
+   "mdc": 0.1496
+  },
+  {
+   "n": 100,
+   "p": 0.3,
+   "lo": 0.2189,
+   "hi": 0.3958,
+   "width": 0.1769,
+   "mdc": 0.1927
+  },
+  {
+   "n": 100,
+   "p": 0.5,
+   "lo": 0.4038,
+   "hi": 0.5962,
+   "width": 0.1923,
+   "mdc": 0.1932
+  },
+  {
+   "n": 250,
+   "p": 0.1,
+   "lo": 0.0687,
+   "hi": 0.1435,
+   "width": 0.0748,
+   "mdc": 0.0877
+  },
+  {
+   "n": 250,
+   "p": 0.3,
+   "lo": 0.2466,
+   "hi": 0.3595,
+   "width": 0.1129,
+   "mdc": 0.12
+  },
+  {
+   "n": 250,
+   "p": 0.5,
+   "lo": 0.4385,
+   "hi": 0.5615,
+   "width": 0.123,
+   "mdc": 0.124
+  },
+  {
+   "n": 500,
+   "p": 0.1,
+   "lo": 0.0767,
+   "hi": 0.1294,
+   "width": 0.0527,
+   "mdc": 0.0595
+  },
+  {
+   "n": 500,
+   "p": 0.3,
+   "lo": 0.2615,
+   "hi": 0.3416,
+   "width": 0.0801,
+   "mdc": 0.084
+  },
+  {
+   "n": 500,
+   "p": 0.5,
+   "lo": 0.4563,
+   "hi": 0.5437,
+   "width": 0.0873,
+   "mdc": 0.0881
+  },
+  {
+   "n": 1000,
+   "p": 0.1,
+   "lo": 0.0829,
+   "hi": 0.1202,
+   "width": 0.0372,
+   "mdc": 0.0407
+  },
+  {
+   "n": 1000,
+   "p": 0.3,
+   "lo": 0.2724,
+   "hi": 0.3291,
+   "width": 0.0567,
+   "mdc": 0.0589
+  },
+  {
+   "n": 1000,
+   "p": 0.5,
+   "lo": 0.4691,
+   "hi": 0.5309,
+   "width": 0.0619,
+   "mdc": 0.0625
+  }
+ ],
+ "n_for_change": {
+  "5pt": 1377,
+  "10pt": 356,
+  "15pt": 163,
+  "20pt": 93,
+  "25pt": 61
+ },
+ "n_for_halfwidth": {
+  "5pt": 323,
+  "10pt": 81,
+  "15pt": 36
+ },
+ "plans": [
+  {
+   "plan": "Profound 7-day trial",
+   "prompts": 50,
+   "engines": 3,
+   "runs": 7,
+   "answers": 1050,
+   "lo": 0.089,
+   "hi": 0.653,
+   "mdc": 0.663,
+   "mdc_pooled_engines": 0.42,
+   "note": "Reported trial: 50 prompts, 3 engines, daily for 7 days"
+  },
+  {
+   "plan": "Profound Starter (removed Sep 2026)",
+   "prompts": 50,
+   "engines": 1,
+   "runs": 30,
+   "answers": 1500,
+   "lo": 0.167,
+   "hi": 0.479,
+   "mdc": 0.354,
+   "mdc_pooled_engines": 0.354,
+   "note": "50 prompts, ChatGPT only, daily"
+  },
+  {
+   "plan": "Profound Growth / agency workspace",
+   "prompts": 100,
+   "engines": 3,
+   "runs": 30,
+   "answers": 9000,
+   "lo": 0.167,
+   "hi": 0.479,
+   "mdc": 0.354,
+   "mdc_pooled_engines": 0.203,
+   "note": "100 prompts, 3 engines, daily"
+  },
+  {
+   "plan": "Slate Growth, breadth allocation",
+   "prompts": 333,
+   "engines": 1,
+   "runs": 30,
+   "answers": 9990,
+   "lo": 0.167,
+   "hi": 0.479,
+   "mdc": 0.354,
+   "mdc_pooled_engines": 0.354,
+   "note": "10,000-answer pool spread across 333 prompts"
+  },
+  {
+   "plan": "Slate Growth, even allocation",
+   "prompts": 100,
+   "engines": 4,
+   "runs": 25,
+   "answers": 10000,
+   "lo": 0.157,
+   "hi": 0.496,
+   "mdc": 0.387,
+   "mdc_pooled_engines": 0.193,
+   "note": "10,000-answer pool: 100 prompts x 4 engines x 25 runs"
+  },
+  {
+   "plan": "Slate Growth, focus allocation",
+   "prompts": 40,
+   "engines": 4,
+   "runs": 60,
+   "answers": 9600,
+   "lo": 0.199,
+   "hi": 0.425,
+   "mdc": 0.25,
+   "mdc_pooled_engines": 0.123,
+   "note": "~9,600 answers: 40 priority prompts x 4 engines x 60 runs"
+  }
+ ],
+ "phantom": [
+  {
+   "design": "7 runs (trial-style)",
+   "runs": 7,
+   "phantom_10pt": 0.742,
+   "phantom_20pt": 0.34,
+   "brand_max_swing": 0.0253
+  },
+  {
+   "design": "30 runs (daily)",
+   "runs": 30,
+   "phantom_10pt": 0.37,
+   "phantom_20pt": 0.085,
+   "brand_max_swing": 0.0121
+  },
+  {
+   "design": "60 runs",
+   "runs": 60,
+   "phantom_10pt": 0.208,
+   "phantom_20pt": 0.017,
+   "brand_max_swing": 0.0086
+  },
+  {
+   "design": "100 runs",
+   "runs": 100,
+   "phantom_10pt": 0.107,
+   "phantom_20pt": 0.002,
+   "brand_max_swing": 0.0066
+  },
+  {
+   "design": "250 runs",
+   "runs": 250,
+   "phantom_10pt": 0.013,
+   "phantom_20pt": 0.0,
+   "brand_max_swing": 0.0041
+  }
+ ],
+ "leaderboard": [
+  {
+   "runs": 7,
+   "leader_correct": 0.278,
+   "order_correct": 0.0152,
+   "true_leader_ranked_3rd_or_worse": 0.497
+  },
+  {
+   "runs": 30,
+   "leader_correct": 0.367,
+   "order_correct": 0.03,
+   "true_leader_ranked_3rd_or_worse": 0.389
+  },
+  {
+   "runs": 60,
+   "leader_correct": 0.438,
+   "order_correct": 0.043,
+   "true_leader_ranked_3rd_or_worse": 0.313
+  },
+  {
+   "runs": 100,
+   "leader_correct": 0.51,
+   "order_correct": 0.0648,
+   "true_leader_ranked_3rd_or_worse": 0.238
+  },
+  {
+   "runs": 250,
+   "leader_correct": 0.668,
+   "order_correct": 0.1414,
+   "true_leader_ranked_3rd_or_worse": 0.117
+  },
+  {
+   "runs": 1000,
+   "leader_correct": 0.907,
+   "order_correct": 0.436,
+   "true_leader_ranked_3rd_or_worse": 0.011
+  }
+ ],
+ "clusters": [
+  {
+   "prompts_in_cluster": 1,
+   "answers_per_month": 90,
+   "sd_of_change": 0.0661,
+   "approx_mdc": 0.1851
+  },
+  {
+   "prompts_in_cluster": 5,
+   "answers_per_month": 450,
+   "sd_of_change": 0.0289,
+   "approx_mdc": 0.0808
+  },
+  {
+   "prompts_in_cluster": 10,
+   "answers_per_month": 900,
+   "sd_of_change": 0.0204,
+   "approx_mdc": 0.0572
+  },
+  {
+   "prompts_in_cluster": 25,
+   "answers_per_month": 2250,
+   "sd_of_change": 0.0129,
+   "approx_mdc": 0.0361
+  }
+ ],
+ "vendors": [
+  {
+   "vendor": "Otterly Lite",
+   "price": 29,
+   "prompts": 15,
+   "answers": 450,
+   "per_prompt": 1.93,
+   "per_answer": 0.0644,
+   "note": "15 prompts; answers assume 1 engine daily"
+  },
+  {
+   "vendor": "Otterly Standard",
+   "price": 189,
+   "prompts": 100,
+   "answers": null,
+   "per_prompt": 1.89,
+   "per_answer": null,
+   "note": "100 prompts"
+  },
+  {
+   "vendor": "Peec Starter",
+   "price": 95,
+   "prompts": 50,
+   "answers": 4500,
+   "per_prompt": 1.9,
+   "per_answer": 0.0211,
+   "note": "50 prompts, 3 models, daily"
+  },
+  {
+   "vendor": "Peec Pro",
+   "price": 245,
+   "prompts": 150,
+   "answers": 13500,
+   "per_prompt": 1.63,
+   "per_answer": 0.0181,
+   "note": "150 prompts, 3 models, daily"
+  },
+  {
+   "vendor": "Scrunch Starter",
+   "price": 300,
+   "prompts": 350,
+   "answers": null,
+   "per_prompt": 0.86,
+   "per_answer": null,
+   "note": "350 prompts (sources conflict)"
+  },
+  {
+   "vendor": "AthenaHQ Starter",
+   "price": 295,
+   "prompts": null,
+   "answers": 3600,
+   "per_prompt": null,
+   "per_answer": 0.0819,
+   "note": "3,600 credits = 3,600 responses"
+  },
+  {
+   "vendor": "Ahrefs custom prompts",
+   "price": 50,
+   "prompts": null,
+   "answers": 2500,
+   "per_prompt": null,
+   "per_answer": 0.02,
+   "note": "add-on: 2,500 checks; base plan may be required"
+  },
+  {
+   "vendor": "Profound Starter (removed)",
+   "price": 99,
+   "prompts": 50,
+   "answers": 1500,
+   "per_prompt": 1.98,
+   "per_answer": 0.066,
+   "note": "50 prompts, ChatGPT, daily; removed Sep 2026"
+  },
+  {
+   "vendor": "Profound Growth (removed)",
+   "price": 399,
+   "prompts": 100,
+   "answers": 9000,
+   "per_prompt": 3.99,
+   "per_answer": 0.0443,
+   "note": "100 prompts, 3 engines, daily; removed Sep 2026"
+  },
+  {
+   "vendor": "Profound agency workspace",
+   "price": 399,
+   "prompts": 100,
+   "answers": 9000,
+   "per_prompt": 3.99,
+   "per_answer": 0.0443,
+   "note": "per client, +$99/mo agency base"
+  },
+  {
+   "vendor": "Slate Growth",
+   "price": 499,
+   "prompts": null,
+   "answers": 10000,
+   "per_prompt": null,
+   "per_answer": 0.0499,
+   "note": "unlimited prompts; 10,000 answers; +15,000 execution credits"
+  }
+ ],
+ "decision_grade": [
+  {
+   "vendor": "Profound agency workspace",
+   "per_answer": 0.0443,
+   "cost_10pt": 3.59,
+   "cost_5pt": 14.32,
+   "months_to_10pt_fixed_daily": 2.7,
+   "months_to_5pt_fixed_daily": 10.8
+  },
+  {
+   "vendor": "Slate Growth (gross)",
+   "per_answer": 0.0499,
+   "cost_10pt": 4.04,
+   "cost_5pt": 16.12,
+   "months_to_10pt_fixed_daily": null,
+   "months_to_5pt_fixed_daily": null
+  },
+  {
+   "vendor": "Slate Growth (net of credits)",
+   "per_answer": 0.0124,
+   "cost_10pt": 1.0,
+   "cost_5pt": 4.01,
+   "months_to_10pt_fixed_daily": null,
+   "months_to_5pt_fixed_daily": null
+  },
+  {
+   "vendor": "AthenaHQ Starter",
+   "per_answer": 0.0819,
+   "cost_10pt": 6.64,
+   "cost_5pt": 26.47,
+   "months_to_10pt_fixed_daily": null,
+   "months_to_5pt_fixed_daily": null
+  },
+  {
+   "vendor": "Peec Starter",
+   "per_answer": 0.0211,
+   "cost_10pt": 1.71,
+   "cost_5pt": 6.82,
+   "months_to_10pt_fixed_daily": 2.7,
+   "months_to_5pt_fixed_daily": 10.8
+  },
+  {
+   "vendor": "Ahrefs custom prompts",
+   "per_answer": 0.02,
+   "cost_10pt": 1.62,
+   "cost_5pt": 6.46,
+   "months_to_10pt_fixed_daily": null,
+   "months_to_5pt_fixed_daily": null
+  }
+ ],
+ "agency": [
+  {
+   "clients": 1,
+   "profound": 498,
+   "peec_starter": 95,
+   "otterly_standard": 189,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 2,
+   "profound": 897,
+   "peec_starter": 190,
+   "otterly_standard": 378,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 3,
+   "profound": 1296,
+   "peec_starter": 285,
+   "otterly_standard": 567,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 4,
+   "profound": 1695,
+   "peec_starter": 380,
+   "otterly_standard": 756,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 5,
+   "profound": 2094,
+   "peec_starter": 475,
+   "otterly_standard": 945,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 6,
+   "profound": 2493,
+   "peec_starter": 570,
+   "otterly_standard": 1134,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 7,
+   "profound": 2892,
+   "peec_starter": 665,
+   "otterly_standard": 1323,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 8,
+   "profound": 3291,
+   "peec_starter": 760,
+   "otterly_standard": 1512,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 9,
+   "profound": 3690,
+   "peec_starter": 855,
+   "otterly_standard": 1701,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 10,
+   "profound": 4089,
+   "peec_starter": 950,
+   "otterly_standard": 1890,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 11,
+   "profound": 4488,
+   "peec_starter": 1045,
+   "otterly_standard": 2079,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 12,
+   "profound": 4887,
+   "peec_starter": 1140,
+   "otterly_standard": 2268,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 13,
+   "profound": 5286,
+   "peec_starter": 1235,
+   "otterly_standard": 2457,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 14,
+   "profound": 5685,
+   "peec_starter": 1330,
+   "otterly_standard": 2646,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 15,
+   "profound": 6084,
+   "peec_starter": 1425,
+   "otterly_standard": 2835,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 16,
+   "profound": 6483,
+   "peec_starter": 1520,
+   "otterly_standard": 3024,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 17,
+   "profound": 6882,
+   "peec_starter": 1615,
+   "otterly_standard": 3213,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 18,
+   "profound": 7281,
+   "peec_starter": 1710,
+   "otterly_standard": 3402,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 19,
+   "profound": 7680,
+   "peec_starter": 1805,
+   "otterly_standard": 3591,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 20,
+   "profound": 8079,
+   "peec_starter": 1900,
+   "otterly_standard": 3780,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 21,
+   "profound": 8478,
+   "peec_starter": 1995,
+   "otterly_standard": 3969,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 22,
+   "profound": 8877,
+   "peec_starter": 2090,
+   "otterly_standard": 4158,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 23,
+   "profound": 9276,
+   "peec_starter": 2185,
+   "otterly_standard": 4347,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 24,
+   "profound": 9675,
+   "peec_starter": 2280,
+   "otterly_standard": 4536,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 25,
+   "profound": 10074,
+   "peec_starter": 2375,
+   "otterly_standard": 4725,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 26,
+   "profound": 10473,
+   "peec_starter": 2470,
+   "otterly_standard": 4914,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 27,
+   "profound": 10872,
+   "peec_starter": 2565,
+   "otterly_standard": 5103,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 28,
+   "profound": 11271,
+   "peec_starter": 2660,
+   "otterly_standard": 5292,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 29,
+   "profound": 11670,
+   "peec_starter": 2755,
+   "otterly_standard": 5481,
+   "slate_agency_reported": 2000
+  },
+  {
+   "clients": 30,
+   "profound": 12069,
+   "peec_starter": 2850,
+   "otterly_standard": 5670,
+   "slate_agency_reported": 2000
+  }
+ ],
+ "agency_crossover_clients": 4.764411027568922
+}

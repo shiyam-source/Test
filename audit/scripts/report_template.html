@@ -1,0 +1,291 @@
+<title>Sanity Migration Audit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one 1120px reading column; dark-first in TripleDart's carbon + electric-lime, data set in mono. */
+:root {
+  --bg: #0B0B0B; --raised: #1A1A1A; --line: #272727; --line-strong: #404040;
+  --ink: #FFFFFF; --ink-2: #A3A3A3; --ink-3: #8a8a8a;
+  --lime: #D0FF00; --lime-ink: #D0FF00; --on-lime: #0B0B0B; --link: #7C9CFD;
+  --good: #3fcf8e; --good-bg: rgba(63,207,142,.14); --bad: #ff6b6b; --bad-bg: rgba(255,107,107,.14);
+  --warn: #f2b33d; --warn-bg: rgba(242,179,61,.15); --flat-bg: rgba(255,255,255,.07);
+  --display: "Rubik", system-ui, sans-serif; --body: "Rubik", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg: #FFFFFF; --raised: #F7F7F3; --line: #E6E6E6; --line-strong: #D6D6C4;
+  --ink: #0B0B0B; --ink-2: #535353; --ink-3: #6b6b6b;
+  --lime: #D0FF00; --lime-ink: #536600; --on-lime: #0B0B0B; --link: #3F50EB;
+  --good: #16794c; --good-bg: rgba(31,138,91,.12); --bad: #c42020; --bad-bg: rgba(220,38,38,.10);
+  --warn: #8a5d00; --warn-bg: rgba(217,151,0,.16); --flat-bg: rgba(0,0,0,.05); color-scheme: light; } }
+:root[data-theme="light"] {
+  --bg: #FFFFFF; --raised: #F7F7F3; --line: #E6E6E6; --line-strong: #D6D6C4;
+  --ink: #0B0B0B; --ink-2: #535353; --ink-3: #6b6b6b;
+  --lime: #D0FF00; --lime-ink: #536600; --on-lime: #0B0B0B; --link: #3F50EB;
+  --good: #16794c; --good-bg: rgba(31,138,91,.12); --bad: #c42020; --bad-bg: rgba(220,38,38,.10);
+  --warn: #8a5d00; --warn-bg: rgba(217,151,0,.16); --flat-bg: rgba(0,0,0,.05); color-scheme: light; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 48px 96px; display: grid; gap: 72px; }
+section { display: grid; gap: 20px; min-width: 0; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.02em; }
+h1 { overflow-wrap: anywhere; font-size: clamp(30px, 6vw, 60px); line-height: 1.04; font-weight: 800; }
+h2 { font-size: clamp(26px, 3.6vw, 38px); line-height: 1.12; font-weight: 700; }
+h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.005em; }
+p { margin: 0; max-width: 68ch; color: var(--ink-2); }
+p strong, li strong { color: var(--ink); font-weight: 500; }
+a { color: var(--link); }
+code { font-family: var(--mono); font-size: .86em; color: var(--ink-2); }
+.eyebrow { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--lime-ink); }
+.eyebrow::before { content: ""; width: 22px; height: 3px; background: var(--lime); border-radius: 2px; }
+header { display: grid; gap: 22px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; color: var(--ink-3); }
+.meta b { color: var(--ink); font-weight: 600; }
+.verdict { background: var(--lime); color: var(--on-lime); border-radius: 24px; padding: clamp(22px, 4vw, 40px); display: grid; gap: 16px; }
+.verdict h2 { font-size: clamp(24px, 3.4vw, 34px); }
+.verdict p { color: var(--on-lime); max-width: 75ch; opacity: .86; }
+.verdict p strong { color: var(--on-lime); font-weight: 700; }
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 820px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .tiles { grid-template-columns: 1fr; } }
+.tile { border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; display: grid; gap: 6px; align-content: start; }
+.tile .k { font-size: 13px; color: var(--ink-3); }
+.tile .v { font-family: var(--display); font-size: 30px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.tile .v small { font-size: 15px; font-weight: 500; color: var(--ink-2); letter-spacing: 0; }
+.tile .n { font-size: 13.5px; color: var(--ink-2); line-height: 1.4; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+tbody tr:last-child > * { border-bottom: 0; }
+thead th { font-size: 12px; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: .05em; background: var(--raised); white-space: nowrap; }
+thead tr.sub th { font-size: 11px; text-transform: none; letter-spacing: 0; font-weight: 500; }
+th[scope="row"] { font-weight: 500; min-width: 170px; }
+.tpl { display: block; color: var(--ink); }
+th[scope="row"] code { font-size: 11.5px; color: var(--ink-3); }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 13px; }
+.pill { display: inline-block; font-family: var(--mono); font-size: 12.5px; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.pill.good { background: var(--good-bg); color: var(--good); }
+.pill.bad { background: var(--bad-bg); color: var(--bad); }
+.pill.warn { background: var(--warn-bg); color: var(--warn); }
+.pill.flat { background: var(--flat-bg); color: var(--ink); }
+table.resp td small { display: block; color: var(--ink-3); font-size: 11.5px; margin-top: 4px; font-family: var(--mono); white-space: nowrap; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--ink-3); align-items: center; }
+.chartbox { border: 1px solid var(--line); border-radius: 16px; padding: 16px 12px 4px; overflow-x: auto; }
+.chart { width: 100%; min-width: 620px; height: auto; display: block; }
+.chart .grid { stroke: var(--line); stroke-width: 1; }
+.chart .thr { stroke: var(--line-strong); stroke-dasharray: 4 4; }
+.chart .thrlab, .chart .axis { fill: var(--ink-3); font: 11px var(--mono); }
+.chart .rowlab { fill: var(--ink); font: 500 13px var(--body); }
+.chart .vlab { fill: var(--ink-2); font: 12px var(--mono); }
+.chart .bar { stroke-width: 4; stroke-linecap: round; }
+.chart .bar.good { stroke: var(--good); } .chart .bar.bad { stroke: var(--bad); } .chart .bar.flat { stroke: var(--ink-3); }
+.chart .dot.prd { fill: var(--bg); stroke: var(--ink-2); stroke-width: 2.5; }
+.chart .dot.stg.good { fill: var(--good); } .chart .dot.stg.bad { fill: var(--bad); } .chart .dot.stg.flat { fill: var(--ink-3); }
+.key { display: inline-flex; align-items: center; gap: 6px; }
+.key i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.card { background: var(--raised); border-radius: 16px; padding: 20px 22px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.card p { font-size: 15px; }
+.issues { display: grid; gap: 10px; }
+.issue { display: grid; grid-template-columns: 92px 1fr; gap: 16px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px; }
+.issue > div { min-width: 0; display: grid; gap: 6px; }
+.issue h3 { font-size: 16.5px; }
+.issue p { font-size: 14.5px; }
+.issue .fix { color: var(--ink); }
+.issue .fix::before { content: "Fix: "; font-weight: 700; color: var(--lime-ink); }
+.sev { align-self: start; text-align: center; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 5px 0; border-radius: 8px; }
+.sev.p0 { background: var(--bad-bg); color: var(--bad); }
+.sev.p1 { background: var(--warn-bg); color: var(--warn); }
+.sev.p2 { background: var(--flat-bg); color: var(--ink-2); }
+.sev.ok { background: var(--good-bg); color: var(--good); }
+@media (max-width: 560px) { .issue { grid-template-columns: 1fr; gap: 10px; } .sev { justify-self: start; padding: 4px 10px; } }
+ul.check { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+ul.check li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; color: var(--ink-2); font-size: 15px; max-width: 90ch; }
+ul.check li::before { content: ""; width: 14px; height: 14px; margin-top: 4px; border: 2px solid var(--line-strong); border-radius: 4px; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.shot { margin: 0; display: grid; gap: 8px; }
+.shot figcaption { font-size: 13px; color: var(--ink-3); }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.pair div { display: grid; gap: 4px; min-width: 0; }
+.pair img { width: 100%; border-radius: 10px; border: 1px solid var(--line); display: block; }
+.pair span { font-size: 12px; color: var(--ink-3); font-family: var(--mono); }
+.method { font-size: 14px; }
+.method li { color: var(--ink-2); margin-bottom: 6px; max-width: 90ch; }
+footer { color: var(--ink-3); font-size: 13px; font-family: var(--mono); }
+:focus-visible { outline: 2px solid var(--lime); outline-offset: 2px; }
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">Technical audit · Webflow → Sanity</span>
+  <h1>staging.tripledart.com against www.tripledart.com</h1>
+  <p>A pre-launch audit of the new Sanity build (staging) compared with the current Webflow site (live). It covers page-level Core Web Vitals, mobile responsiveness, migration completeness, and what still has to happen before the domain switches.</p>
+  <div class="meta">
+    <span><b>551</b> sitemap URLs crawled on both</span>
+    <span><b>10</b> page templates</span>
+    <span><b>100</b> Lighthouse runs</span>
+    <span><b>5</b> viewports × 2 sites</span>
+    <span>10 Nov 2026</span>
+  </div>
+</header>
+
+<section class="verdict" aria-labelledby="verdict-h">
+  <h2 id="verdict-h">Verdict: the right move, but not ready to launch.</h2>
+  <p><strong>The Sanity build is the better platform.</strong> Its content templates (blog, case studies, research, coach) load faster, every page runs less JavaScript, and staging wins the desktop performance score on {{desktop_perf_W}} of 10 templates. The content migrated almost perfectly: all 551 URLs resolve with matching titles, descriptions, H1s and canonicals.</p>
+  <p><strong>Launching today would cost leads, attribution and rankings.</strong> HubSpot forms are gone from 85 pages, the HubSpot, GTM and Cookiebot tags are missing sitewide, there is no XML sitemap, and the homepage, service and industry pages are 1.5–2.3s slower to show their hero on mobile. Each of these can be fixed. Fix the P0 list below, re-measure, then switch DNS.</p>
+</section>
+
+<section aria-labelledby="score-h">
+  <span class="eyebrow">Scorecard</span>
+  <h2 id="score-h">Where staging wins and loses</h2>
+  <div class="tiles">
+    <div class="tile"><span class="k">Desktop perf score</span><span class="v">{{desktop_perf_W}}<small> / 10 better</small></span><span class="n">{{desktop_perf_L}} worse, {{desktop_perf_T}} level. Desktop LCP is better on {{desktop_lcp_W}}.</span></div>
+    <div class="tile"><span class="k">Mobile perf score</span><span class="v">{{mobile_perf_W}}<small> / 10 better</small></span><span class="n">{{mobile_perf_L}} worse, {{mobile_perf_T}} level. Pages with an animated hero regress.</span></div>
+    <div class="tile"><span class="k">Mobile LCP</span><span class="v">{{mobile_lcp_W}}<small> / 10 faster</small></span><span class="n">{{mobile_lcp_L}} slower (home, service, industry, about), {{mobile_lcp_T}} level.</span></div>
+    <div class="tile"><span class="k">Mobile TBT (INP proxy)</span><span class="v">{{mobile_tbt_W}}<small> / 10 lower</small></span><span class="n">Less main-thread JavaScript. The live homepage blocks for 964ms, staging for 444ms.</span></div>
+    <div class="tile"><span class="k">Layout shift (CLS)</span><span class="v">0.00–0.08</span><span class="n">The same on both sites and all under the 0.1 "good" limit. No regression.</span></div>
+    <div class="tile"><span class="k">URL parity</span><span class="v">551<small> / 551</small></span><span class="n">Every live sitemap URL returns 200 on staging. One linked page is missing (see below).</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="cwv-h">
+  <span class="eyebrow">Core Web Vitals · page level</span>
+  <h2 id="cwv-h">Mobile: content pages got faster, hero pages got slower</h2>
+  <p>Mobile LCP per template, Lighthouse mobile profile (Moto G Power, slow 4G), median of 3 runs. The hollow dot is live and the filled dot is staging. Green means staging is faster, red means slower.</p>
+  <div class="legend"><span class="key"><i style="border:2.5px solid var(--ink-2)"></i>Live (Webflow)</span><span class="key"><i style="background:var(--good)"></i>Staging faster</span><span class="key"><i style="background:var(--bad)"></i>Staging slower</span></div>
+  <div class="chartbox">{{LCP_CHART}}</div>
+
+  <h3>Mobile, median of 3 runs</h3>
+  {{PERF_MOBILE}}
+  <h3>Desktop, median of 2 runs</h3>
+  {{PERF_DESKTOP}}
+  <div class="legend"><span class="pill good">better</span><span class="pill bad">worse</span><span class="pill flat">within noise</span><span>Staging values are coloured against live. Thresholds: score ±2, LCP/FCP ±0.15s, TBT ±30ms, CLS ±0.01, weight ±50KB.</span></div>
+
+  <div class="cols">
+    <div class="card">
+      <h3>Why hero pages regressed</h3>
+      <p>On the homepage, service, industry and about pages, the LCP element is the hero headline. Its CSS starts it at <code>opacity: 0.001</code>, and it only appears once GSAP or webflow.js runs the entry animation. That JavaScript can only run after first render, and on staging first render waits for two render-blocking stylesheets: the 112KB <code>tripledart.min.css</code> (~1.2s) and Swiper's CSS from <code>cdn.jsdelivr.net</code> (~0.9s, which also needs a new connection). Webflow avoids the delay by sending both through <strong>103 Early Hints</strong> and preloads, so the live hero appears ~1.5–2.3s sooner.</p>
+    </div>
+    <div class="card">
+      <h3>Why content pages improved</h3>
+      <p>Blog posts, case studies, research and the listing pages no longer wait on Webflow's runtime chunks and jQuery from its CDN, and they ship smaller, properly sized Sanity images (<code>auto=format</code>, more srcsets). The blog post's mobile LCP went from 7.1s to 3.5s, and the blog index transfers 0.8MB instead of 3.4MB. Total blocking time is lower on {{mobile_tbt_W}} of 10 templates, which points to better INP for real users.</p>
+    </div>
+  </div>
+  <p class="method">These numbers isolate the platform: ad, analytics, consent and visitor-ID scripts were blocked on both sites. Live currently loads about 25 third-party scripts against about 6 on staging, so real-user numbers will move once tracking is re-added (see P0). No field (CrUX) data was collected, because PageSpeed Insights needs an API key this audit could not use.</p>
+</section>
+
+<section aria-labelledby="resp-h">
+  <span class="eyebrow">Mobile responsiveness</span>
+  <h2 id="resp-h">Layout holds up at every breakpoint</h2>
+  <p>Each template was rendered on both sites at 360, 390, 768, 1024 and 1440px, scrolled through to trigger lazy content and animations, and then checked for horizontal overflow, broken images and tiny tap targets. The above-the-fold screenshots of the two sites were diffed pixel by pixel.</p>
+  <div class="tiles">
+    <div class="tile"><span class="k">Horizontal overflow</span><span class="v">{{RS_stg_overflow}}<small> staging · {{RS_prd_overflow}} live</small></span><span class="n">Out of {{RS_combos}} page × viewport renders per site.</span></div>
+    <div class="tile"><span class="k">Broken images</span><span class="v">{{RS_stg_broken}}<small> staging · {{RS_prd_broken}} live</small></span><span class="n">Images that loaded with zero width after scroll-through. Tracking pixels blocked by the audit are excluded.</span></div>
+    <div class="tile"><span class="k">Above-the-fold diff</span><span class="v">{{RS_median_diff}}%<small> median</small></span><span class="n">Pixel difference between live and staging (max {{RS_max_diff}}%). Mostly animation timing, carousels and fonts.</span></div>
+    <div class="tile"><span class="k">Tap targets &lt; 24px</span><span class="v">{{RS_stg_small}}<small> staging · {{RS_prd_small}} live</small></span><span class="n">Average per render. Inherited from the shared Webflow markup, so the same on both.</span></div>
+  </div>
+  {{RESP_TABLE}}
+  <div class="legend"><span class="pill good">OK</span><span>no issue</span><span class="pill warn">check</span><span>page height differs by more than 5% or fold diff over 8%</span><span class="pill bad">issue</span><span>overflow or broken image that live doesn't have</span></div>
+  <div class="shots">{{SHOTS}}</div>
+</section>
+
+<section aria-labelledby="mig-h">
+  <span class="eyebrow">Migration completeness</span>
+  <h2 id="mig-h">What carried over, and what didn't</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Check (all 551 sitemap URLs)</th><th>Live</th><th>Staging</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">URLs returning 200</th><td>551</td><td>551</td><td><span class="pill good">match</span></td></tr>
+      <tr><th scope="row">Titles / meta descriptions identical</th><td colspan="2">550 / 550 (one intentional edit: "13 → 12 Best B2B SEO Agencies")</td><td><span class="pill good">match</span></td></tr>
+      <tr><th scope="row">Canonical tags</th><td colspan="2">Identical on all 551, pointing at www</td><td><span class="pill good">match</span></td></tr>
+      <tr><th scope="row">H1s</th><td colspan="2">537 identical. 7 category H1s got a suffix; 6 industry H1s had stray zero-width characters cleaned</td><td><span class="pill good">improved</span></td></tr>
+      <tr><th scope="row">Body content (word count within 10%)</th><td colspan="2">288 match. 263 blog posts have ~800 more words on staging: related posts are now server-rendered</td><td><span class="pill good">improved</span></td></tr>
+      <tr><th scope="row">Blog hero subtitle (CMS field)</th><td colspan="2">~160 posts show the summary/description where live shows a dedicated hero line ("Maximize your B2B PPC ROI…")</td><td><span class="pill bad">field not mapped</span></td></tr>
+      <tr><th scope="row">Content edited after migration</th><td colspan="2">Pricing FAQ on <code>/book-meeting</code> and the fractional-CMO pages, plus the newest 3 reports missing from "related research" on 17 research pages</td><td><span class="pill warn">drift</span></td></tr>
+      <tr><th scope="row">Valid JSON-LD structured data</th><td>550</td><td>533</td><td><span class="pill bad">18 broken</span></td></tr>
+      <tr><th scope="row">OG image present</th><td>300</td><td>378</td><td><span class="pill good">+78</span></td></tr>
+      <tr><th scope="row"><code>og:url</code> present</th><td>551</td><td>84</td><td><span class="pill warn">−467</span></td></tr>
+      <tr><th scope="row">Images with srcset</th><td>8,080</td><td>19,686</td><td><span class="pill good">improved</span></td></tr>
+      <tr><th scope="row">Legacy redirects (sampled)</th><td colspan="2"><code>/insight/*</code>, <code>/insights/*</code>, renamed blog slugs: all 301 to the same target</td><td><span class="pill good">match</span></td></tr>
+      <tr><th scope="row">Leftover Webflow CDN asset URLs</th><td>—</td><td>2 (on 2 pages)</td><td><span class="pill warn">tidy up</span></td></tr>
+      <tr><th scope="row">HubSpot form embeds</th><td>87 pages</td><td>2 pages</td><td><span class="pill bad">−85</span></td></tr>
+      <tr><th scope="row">HubSpot tracking · Cookiebot · GTM</th><td>467 · 551 · 551</td><td>0 · 0 · 1</td><td><span class="pill bad">missing</span></td></tr>
+      <tr><th scope="row">XML sitemap · llms.txt</th><td>554 URLs · 200</td><td>404 · 404</td><td><span class="pill bad">missing</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section aria-labelledby="fix-h">
+  <span class="eyebrow">Launch checklist</span>
+  <h2 id="fix-h">What to fix, in order</h2>
+
+  <div class="issues">
+    <div class="issue"><span class="sev p0">P0</span><div><h3>HubSpot forms removed from 85 pages</h3><p>The calculators, playbooks, service pages and event pages lost their <code>js.hsforms.net/forms/v2.js</code> loader and <code>hbspt.forms.create</code> embed (for example <code>/tools/acv-calculator</code>, form <code>4d3453aa…</code>). Gated content shows no form, so these pages capture no leads.</p><p class="fix">Re-add the embeds as a Sanity "HubSpot form" block keyed by form ID, then submit a test lead on each template.</p></div></div>
+    <div class="issue"><span class="sev p0">P0</span><div><h3>Every form submission is blocked, and Webflow forms will die with the Webflow plan</h3><p>A sitewide script calls <code>preventDefault()</code> on every <code>submit</code> unless the form has <code>data-td-local</code>, which is fine as a staging guard. The newsletter and "get this guide" forms on 400 pages are still Webflow-native and post to <code>webflow.com/api/v1/form/&lt;siteId&gt;</code>, which stops accepting submissions once the Webflow site is unpublished.</p><p class="fix">Move these forms to HubSpot (or a Cloudflare Worker that writes to HubSpot), and remove the submit guard in the production build.</p></div></div>
+    <div class="issue"><span class="sev p0">P0</span><div><h3>Tracking and consent stack missing</h3><p>Missing on staging: GTM <code>GTM-N8NS3MP</code> (all pages) and <code>GTM-5BMJZCMD</code> (84 pages), HubSpot tracking <code>20036758</code>, Cookiebot, and the dataLayer listeners for <code>hubspot-form-success</code>, <code>formsubmit_event</code> and <code>calendly</code>. Without them, LinkedIn Insight, the Meta pixel, Clarity, Leadfeeder, Apollo, Warmly and the other visitor-ID tools stop firing, and the Ads and GA4 conversion events disappear.</p><p class="fix">Port the Webflow head and footer custom code into the site layout, in order: Cookiebot, then GTM, then HubSpot, then the listeners. Check with GTM Preview and HubSpot's source report.</p></div></div>
+    <div class="issue"><span class="sev p0">P0</span><div><h3>Staging is writing into production analytics without consent</h3><p>Cloudflare's tag gateway (<code>/gjbe/</code>) on staging already sends GA4 <code>G-8HV2B4EJMJ</code> and Google Ads <code>AW-11267922091</code> hits from <code>staging.tripledart.com</code>, with no consent banner. Test traffic is inflating production reports and remarketing lists.</p><p class="fix">Turn the gateway off for the staging hostname, or filter it out in GA4, until launch.</p></div></div>
+    <div class="issue"><span class="sev p0">P0</span><div><h3>Indexing switches: noindex, robots.txt, sitemap</h3><p>All staging pages send <code>X-Robots-Tag: noindex, nofollow</code> plus a robots meta tag, and robots.txt disallows everyone except Googlebot and Bingbot. Staging has no <code>/sitemap.xml</code>. Going live with any of these left in place de-indexes the site.</p><p class="fix">Make all three environment-driven. Generate <code>/sitemap.xml</code> from Sanity, leaving out <code>/marketing/b2b-saas-marketing-agency</code> (noindex on live) and including the 44 <code>/case-studies/*</code> and ~10 <code>/tools/*</code> pages the live sitemap misses. Restore the live robots.txt and submit the sitemap in Search Console on launch day.</p></div></div>
+    <div class="issue"><span class="sev p0">P0</span><div><h3>Mobile LCP regression on hero pages (+1.5–2.3s)</h3><p>The homepage (3.6 → 5.1s), service (5.1 → 7.2s), industry (3.2 → 5.3s) and about (3.8 → 5.7s) pages are slower because of render-blocking CSS combined with a JavaScript-revealed hero. These are your highest-intent landing pages.</p><p class="fix">Self-host or inline Swiper's CSS, inline the above-the-fold CSS and load <code>tripledart.min.css</code> without blocking, send <code>Link: rel=preload</code> headers so Cloudflare emits 103 Early Hints, and render the hero headline visible by default (animate from a visible state, not from opacity 0).</p></div></div>
+    <div class="issue"><span class="sev p1">P1</span><div><h3>Content drift: one CMS field unmapped, and edits made in Webflow after the snapshot</h3><p>On about 160 blog posts the hero subtitle differs. Live uses a dedicated hero field (for example <code>/blog/b2b-ppc</code>: "Maximize your B2B PPC ROI. Let TripleDart manage your campaigns."), while staging renders the post summary in that spot. Webflow is still being published (last publish 10 Nov), so changes keep landing there: the pricing FAQ on <code>/book-meeting</code> and <code>/fractional-cmo/*</code> differs, and the three newest research reports are missing from the related cards on 17 research pages.</p><p class="fix">Map the Webflow hero-subtitle field into Sanity and re-run the import for it. Freeze Webflow edits from now until launch (or log them), then do a final delta sync and re-run this text diff.</p></div></div>
+    <div class="issue"><span class="sev p1">P1</span><div><h3>Static assets are never cached by the browser</h3><p>CSS, JS, fonts and images under <code>/webflow/*</code> and <code>/base.css</code> are served with <code>Cache-Control: public, max-age=0, must-revalidate</code>, so every repeat page view revalidates every file. Live caches them for about 24 hours.</p><p class="fix">Fingerprint the filenames and serve <code>public, max-age=31536000, immutable</code> through a <code>_headers</code> rule. Keep HTML at <code>max-age=0</code>.</p></div></div>
+    <div class="issue"><span class="sev p1">P1</span><div><h3>Broken JSON-LD on 18 pages</h3><p>16 blog posts (for example <code>/blog/aeo-checklist</code> and <code>/blog/top-abm-agencies</code>) plus <code>/google-analytics-4-consulting-services</code> and <code>/saas-performance-marketing-agency</code> put several JSON objects in one <code>&lt;script type="application/ld+json"&gt;</code>. That's invalid JSON, so Google drops all of their BlogPosting, FAQ, Breadcrumb and HowTo markup. On live, the second service page is also broken, by a raw control character.</p><p class="fix">Emit one script tag per object, or wrap them in an <code>@graph</code> array. Validate in the build.</p></div></div>
+    <div class="issue"><span class="sev p1">P1</span><div><h3>Missing page, missing llms.txt, soft duplicates</h3><p><code>/coach/how-to-approach-brand-mention-building-to-improve-geo</code> is live (200) and linked internally but returns 404 on staging. <code>/llms.txt</code> (6KB on live) returns 404, which matters for an AEO/GEO agency. <code>/home</code> returns a 200 duplicate of the homepage.</p><p class="fix">Migrate the coach entry, publish llms.txt (ideally generated from Sanity), and 301 <code>/home</code> to <code>/</code>.</p></div></div>
+    <div class="issue"><span class="sev p1">P1</span><div><h3>Trailing-slash redirects are 307, not 301</h3><p><code>/about/</code> → <code>/about</code> returns a temporary 307 on staging, where live returns a 301. A temporary redirect doesn't consolidate signals as reliably.</p><p class="fix">Switch to a 301 or 308 in the Cloudflare redirect rule.</p></div></div>
+    <div class="issue"><span class="sev p1">P1</span><div><h3>Images point at the Sanity "staging" dataset</h3><p>All ~3,900 image and OG references (project <code>p18mi3o7</code>) are served from <code>/images/p18mi3o7/staging/…</code>. If that dataset is renamed, cleaned or replaced after launch, every image breaks.</p><p class="fix">Decide now: promote the content to a <code>production</code> dataset before launch and rebuild, or formally keep <code>staging</code> as the live dataset and protect it.</p></div></div>
+    <div class="issue"><span class="sev p1">P1</span><div><h3>Security headers dropped</h3><p>Live sends HSTS, <code>X-Content-Type-Options: nosniff</code>, <code>X-Frame-Options: SAMEORIGIN</code> and <code>frame-ancestors 'self'</code>. Staging sends none of them, and its HTML has no <code>charset</code> in Content-Type.</p><p class="fix">Add them to <code>_headers</code>, along with <code>Content-Type: text/html; charset=utf-8</code>.</p></div></div>
+    <div class="issue"><span class="sev p2">P2</span><div><h3>Smaller gaps</h3><p><code>og:url</code> is missing on 467 pages. The 11 author pages use the share title "TripleDart 2.0". <code>/blog</code> is 974KB of HTML with 559 images (live: 197KB and 41), so consider paginating it. The calculator pages load a render-blocking <code>old-site.scoped.css</code> (~1.7s). Brand font preloads use <code>.otf</code>; switch to woff2. Two Webflow CDN asset links remain (<code>/blog/outsourcing-b2b-marketing</code>, <code>/saas-paid-social-agency</code>).</p></div></div>
+    <div class="issue"><span class="sev p2">P2</span><div><h3>Carried over from Webflow (unchanged, worth fixing while you're in there)</h3><p>26 pages have no meta description (author pages, several playbooks), 10 pages have multiple H1s, 2 have none (<code>/ai-instructions</code>, <code>/llm-info</code>), 183 have no structured data, and 173 still have no OG image. About 34k of 36k images are lazy-loaded with no width and height attributes, including some above the fold, and colour contrast and ARIA roles fail Lighthouse audits on both sites.</p></div></div>
+  </div>
+</section>
+
+<section aria-labelledby="else-h">
+  <span class="eyebrow">Webflow → Sanity specifics</span>
+  <h2 id="else-h">Easy-to-miss items when leaving Webflow</h2>
+  <div class="cols">
+    <div class="card"><h3>Before DNS switch</h3>
+      <ul class="check">
+        <li>Export Webflow's 301 list (Site settings → Publishing → 301 redirects) and replay every row against staging. This audit only sampled them.</li>
+        <li>Export the custom code from site settings (head and footer) and every page's custom code. That's where GTM, HubSpot, Cookiebot and the listeners lived.</li>
+        <li>Download Webflow form submission history, and repoint any Zapier or Make zaps that use Webflow form triggers.</li>
+        <li>Find every PDF or file linked from <code>cdn.prod.website-files.com</code> in content or emails, and re-host the ones that are still in use.</li>
+        <li>Lower the DNS TTL a day ahead, check the Cloudflare SSL mode, and make sure <code>tripledart.com</code> 301s to www (it does on live today).</li>
+        <li>Note any Search Console or Bing verification that relies on Webflow-hosted files or tags. Neither site uses meta tags, so DNS verification will carry over.</li>
+      </ul></div>
+    <div class="card"><h3>Sanity / build pipeline</h3>
+      <ul class="check">
+        <li>Publish webhook → rebuild: measure how long a content edit takes to go live, and set up preview for drafts.</li>
+        <li>Scheduled publishing for blog posts, which Webflow handled natively.</li>
+        <li>Editor roles and SSO, plus dataset backups or exports on a schedule (Sanity doesn't version-control deleted documents forever).</li>
+        <li>Sanity image CDN bandwidth and plan limits, since every page now pulls from <code>cdn.sanity.io</code>.</li>
+        <li>A rich-text block for each Webflow embed type in posts: HubSpot forms, Calendly, YouTube and Wistia (48 and 6 pages), tables (174 pages), and code embeds.</li>
+        <li>An automated check in CI for JSON-LD validity, a noindex leak, a missing canonical and sitemap generation.</li>
+      </ul></div>
+    <div class="card"><h3>Launch day and the following weeks</h3>
+      <ul class="check">
+        <li>Submit the sitemap, then watch the Search Console Pages report and 404s daily for two weeks.</li>
+        <li>Add an annotation in GA4, compare conversions by form ID week over week, and check the HubSpot "original source" mix.</li>
+        <li>Turn on Cloudflare Web Analytics or a RUM tool so you get real CWV for the new stack before CrUX's 28-day window catches up.</li>
+        <li>Re-run this audit against www after launch, with tracking restored, to confirm the third-party cost.</li>
+        <li>Keep the Webflow site published on a staging subdomain for 30 days as a rollback.</li>
+      </ul></div>
+  </div>
+</section>
+
+<section aria-labelledby="meth-h">
+  <span class="eyebrow">Method</span>
+  <h2 id="meth-h">How this was measured</h2>
+  <ul class="method">
+    <li><strong>Crawl:</strong> all 554 URLs from the live <code>/sitemap.xml</code> (551 unique paths) fetched on both hosts, with no redirects followed. Compared fields were status, title, description, robots, canonical, OG, H1, schema types, images, internal links and word count. A further 61 internally linked URLs that aren't in the sitemap were also checked.</li>
+    <li><strong>Embeds and tags:</strong> a regex scan of every page's HTML on both hosts for HubSpot, GTM, Cookiebot, Calendly, iframes, video, Lottie and forms, plus a headless render to see which tags actually fire.</li>
+    <li><strong>Performance:</strong> Lighthouse 12 on headless Chromium. Mobile used the default Moto G Power, slow-4G simulated throttle (3 runs); desktop used the desktop preset (2 runs). Medians are reported. Third-party marketing tags were blocked on both sites to compare the platforms like for like. Lab data, not field data.</li>
+    <li><strong>Responsive:</strong> Playwright at 360/390/768 (touch) and 1024/1440 widths. Each page was scrolled fully, measured for overflow, broken images, tap targets under 24px and text under 12px, and its above-the-fold screenshot pixel-diffed against live.</li>
+    <li><strong>Not covered:</strong> real-user CrUX data (no API key), a full replay of Webflow's redirect list (needs the export), and actual form submission tests (staging blocks submits by design).</li>
+  </ul>
+</section>
+
+<footer>Audit run 10 Nov 2026 from a US-East cloud container. The figures are lab measurements; expect variance of about ±10% between runs.</footer>
+</div>

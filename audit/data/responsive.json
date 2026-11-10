@@ -1,0 +1,2924 @@
+[
+ {
+  "path": "/",
+  "vp": "m360",
+  "site": "prd",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 234,
+  "height": 25357,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/",
+  "vp": "m360",
+  "site": "stg",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 210,
+  "height": 25327,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/",
+  "vp": "m360",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/",
+  "vp": "m390",
+  "site": "prd",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 234,
+  "height": 25582,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/",
+  "vp": "m390",
+  "site": "stg",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 210,
+  "height": 25552,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/",
+  "vp": "m390",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/",
+  "vp": "t768",
+  "site": "prd",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 234,
+  "height": 27249,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/",
+  "vp": "t768",
+  "site": "stg",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 210,
+  "height": 27233,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/",
+  "vp": "t768",
+  "site": "diff",
+  "foldDiffPct": 0.24
+ },
+ {
+  "path": "/",
+  "vp": "d1024",
+  "site": "prd",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 210,
+  "height": 25375,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/",
+  "vp": "d1024",
+  "site": "stg",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 210,
+  "height": 25359,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/",
+  "vp": "d1024",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/",
+  "vp": "d1440",
+  "site": "prd",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 210,
+  "height": 27620,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/",
+  "vp": "d1440",
+  "site": "stg",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 210,
+  "height": 27603,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/",
+  "vp": "d1440",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "m360",
+  "site": "prd",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 15,
+  "broken": [],
+  "imgCount": 162,
+  "height": 37787,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "m360",
+  "site": "stg",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 15,
+  "broken": [],
+  "imgCount": 162,
+  "height": 37757,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "m360",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "m390",
+  "site": "prd",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 15,
+  "broken": [],
+  "imgCount": 162,
+  "height": 37163,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "m390",
+  "site": "stg",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 15,
+  "broken": [],
+  "imgCount": 162,
+  "height": 37133,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "m390",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "t768",
+  "site": "prd",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 45,
+  "broken": [],
+  "imgCount": 162,
+  "height": 34123,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "t768",
+  "site": "stg",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 45,
+  "broken": [],
+  "imgCount": 162,
+  "height": 34277,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "t768",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "d1024",
+  "site": "prd",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 40,
+  "broken": [],
+  "imgCount": 162,
+  "height": 30254,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "d1024",
+  "site": "stg",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 40,
+  "broken": [],
+  "imgCount": 162,
+  "height": 30452,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "d1024",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "d1440",
+  "site": "prd",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 15,
+  "broken": [],
+  "imgCount": 162,
+  "height": 30661,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "d1440",
+  "site": "stg",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 15,
+  "broken": [],
+  "imgCount": 162,
+  "height": 30907,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/saas-seo-agency",
+  "vp": "d1440",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/blog",
+  "vp": "m360",
+  "site": "prd",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 53,
+  "height": 10929,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog",
+  "vp": "m360",
+  "site": "stg",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 559,
+  "height": 10980,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog",
+  "vp": "m360",
+  "site": "diff",
+  "foldDiffPct": 0.3
+ },
+ {
+  "path": "/blog",
+  "vp": "m390",
+  "site": "prd",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 53,
+  "height": 11013,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog",
+  "vp": "m390",
+  "site": "stg",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 559,
+  "height": 11064,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog",
+  "vp": "m390",
+  "site": "diff",
+  "foldDiffPct": 0.26
+ },
+ {
+  "path": "/blog",
+  "vp": "t768",
+  "site": "prd",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 65,
+  "height": 9083,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog",
+  "vp": "t768",
+  "site": "stg",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 559,
+  "height": 9134,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog",
+  "vp": "t768",
+  "site": "diff",
+  "foldDiffPct": 0.02
+ },
+ {
+  "path": "/blog",
+  "vp": "d1024",
+  "site": "prd",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 65,
+  "height": 6139,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog",
+  "vp": "d1024",
+  "site": "stg",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 559,
+  "height": 6189,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog",
+  "vp": "d1024",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/blog",
+  "vp": "d1440",
+  "site": "prd",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 65,
+  "height": 5841,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog",
+  "vp": "d1440",
+  "site": "stg",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 559,
+  "height": 5891,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog",
+  "vp": "d1440",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "m360",
+  "site": "prd",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 36,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 42,
+  "height": 21476,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "m360",
+  "site": "stg",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 36,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 82,
+  "height": 21593,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "m360",
+  "site": "diff",
+  "foldDiffPct": 20.18
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "m390",
+  "site": "prd",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 35,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 42,
+  "height": 20693,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "m390",
+  "site": "stg",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 35,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 82,
+  "height": 20810,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "m390",
+  "site": "diff",
+  "foldDiffPct": 21.86
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "t768",
+  "site": "prd",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 37,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 42,
+  "height": 16902,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "t768",
+  "site": "stg",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 37,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 82,
+  "height": 16968,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "t768",
+  "site": "diff",
+  "foldDiffPct": 10.72
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "d1024",
+  "site": "prd",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 38,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 42,
+  "height": 16830,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "d1024",
+  "site": "stg",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 38,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 82,
+  "height": 16896,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "d1024",
+  "site": "diff",
+  "foldDiffPct": 6.14
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "d1440",
+  "site": "prd",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 42,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 42,
+  "height": 15975,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "gsap is not defined"
+  ]
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "d1440",
+  "site": "stg",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 42,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 82,
+  "height": 16039,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/blog/aeo-vs-seo",
+  "vp": "d1440",
+  "site": "diff",
+  "foldDiffPct": 4.11
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "m360",
+  "site": "prd",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 33,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 28,
+  "height": 11950,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "m360",
+  "site": "stg",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 33,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 28,
+  "height": 12001,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "m360",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "m390",
+  "site": "prd",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 33,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 28,
+  "height": 11250,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "m390",
+  "site": "stg",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 33,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 28,
+  "height": 11301,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "m390",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "t768",
+  "site": "prd",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 35,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 28,
+  "height": 9451,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "t768",
+  "site": "stg",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 35,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 28,
+  "height": 9502,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "t768",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "d1024",
+  "site": "prd",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 35,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 28,
+  "height": 9362,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "d1024",
+  "site": "stg",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 35,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 28,
+  "height": 9412,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "d1024",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "d1440",
+  "site": "prd",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 38,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 28,
+  "height": 8753,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "d1440",
+  "site": "stg",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 38,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 28,
+  "height": 8804,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/customers/locus",
+  "vp": "d1440",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "m360",
+  "site": "prd",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 25,
+  "smallSample": [
+   "Slate",
+   "Organic Growth",
+   "GTM Engineering",
+   "Startups",
+   "Scaleups",
+   "Full Service"
+  ],
+  "tinyText": 0,
+  "broken": [
+   "https://api.slatehq.ai/traffic-inspector/track.gif?siteId=tc89"
+  ],
+  "imgCount": 40,
+  "height": 14407,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot set properties of null (setting 'textContent')",
+   "hbspt is not defined",
+   "Cannot read properties of null (reading 'querySelectorAll')"
+  ]
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "m360",
+  "site": "stg",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [
+   "https://api.slatehq.ai/traffic-inspector/track.gif?siteId=tc89"
+  ],
+  "imgCount": 29,
+  "height": 14354,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot set properties of null (setting 'textContent')",
+   "Cannot read properties of null (reading 'querySelectorAll')"
+  ]
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "m360",
+  "site": "diff",
+  "foldDiffPct": 21.9
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "m390",
+  "site": "prd",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 26,
+  "smallSample": [
+   "Slate",
+   "Organic Growth",
+   "GTM Engineering",
+   "Paid · Creative · ABM",
+   "Startups",
+   "Scaleups"
+  ],
+  "tinyText": 0,
+  "broken": [
+   "https://api.slatehq.ai/traffic-inspector/track.gif?siteId=tc89"
+  ],
+  "imgCount": 40,
+  "height": 13722,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot set properties of null (setting 'textContent')",
+   "hbspt is not defined",
+   "Cannot read properties of null (reading 'querySelectorAll')"
+  ]
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "m390",
+  "site": "stg",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [
+   "https://api.slatehq.ai/traffic-inspector/track.gif?siteId=tc89"
+  ],
+  "imgCount": 29,
+  "height": 13714,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot set properties of null (setting 'textContent')",
+   "Cannot read properties of null (reading 'querySelectorAll')"
+  ]
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "m390",
+  "site": "diff",
+  "foldDiffPct": 13.98
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "t768",
+  "site": "prd",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "Slate",
+   "GEO Platform for Enterprises",
+   "SEO & Content Automation Platf",
+   "Organic Growth",
+   "GTM Engineering",
+   "Paid · Creative · ABM"
+  ],
+  "tinyText": 0,
+  "broken": [
+   "https://api.slatehq.ai/traffic-inspector/track.gif?siteId=tc89"
+  ],
+  "imgCount": 40,
+  "height": 9396,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot set properties of null (setting 'textContent')",
+   "hbspt is not defined",
+   "Cannot read properties of null (reading 'querySelectorAll')"
+  ]
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "t768",
+  "site": "stg",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 36,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [
+   "https://api.slatehq.ai/traffic-inspector/track.gif?siteId=tc89"
+  ],
+  "imgCount": 29,
+  "height": 9350,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot set properties of null (setting 'textContent')",
+   "Cannot read properties of null (reading 'querySelectorAll')"
+  ]
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "t768",
+  "site": "diff",
+  "foldDiffPct": 19.68
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "d1024",
+  "site": "prd",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 22,
+  "smallSample": [
+   "Slate",
+   "Startups",
+   "Scaleups",
+   "Full Service",
+   "Industries",
+   "Enterprise"
+  ],
+  "tinyText": 0,
+  "broken": [
+   "https://api.slatehq.ai/traffic-inspector/track.gif?siteId=tc89"
+  ],
+  "imgCount": 40,
+  "height": 8244,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot set properties of null (setting 'textContent')",
+   "hbspt is not defined",
+   "Cannot read properties of null (reading 'querySelectorAll')"
+  ]
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "d1024",
+  "site": "stg",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [
+   "div.hide-tablet",
+   "div.button",
+   "div.button_contain",
+   "div.button_icon.w-variant-cc505d27-9953-3e25-17ea-3ac3da1d7657"
+  ],
+  "offenderCount": 4,
+  "smallTargets": 30,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [
+   "https://api.slatehq.ai/traffic-inspector/track.gif?siteId=tc89"
+  ],
+  "imgCount": 29,
+  "height": 8222,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot set properties of null (setting 'textContent')",
+   "Cannot read properties of null (reading 'querySelectorAll')"
+  ]
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "d1024",
+  "site": "diff",
+  "foldDiffPct": 14.33
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "d1440",
+  "site": "prd",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 23,
+  "smallSample": [
+   "Slate",
+   "Organic Growth",
+   "GTM Engineering",
+   "Paid · Creative · ABM",
+   "Startups",
+   "Scaleups"
+  ],
+  "tinyText": 0,
+  "broken": [
+   "https://api.slatehq.ai/traffic-inspector/track.gif?siteId=tc89"
+  ],
+  "imgCount": 40,
+  "height": 8084,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot set properties of null (setting 'textContent')",
+   "hbspt is not defined",
+   "Cannot read properties of null (reading 'querySelectorAll')"
+  ]
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "d1440",
+  "site": "stg",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [
+   "https://api.slatehq.ai/traffic-inspector/track.gif?siteId=tc89"
+  ],
+  "imgCount": 29,
+  "height": 8093,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot set properties of null (setting 'textContent')",
+   "Cannot read properties of null (reading 'querySelectorAll')"
+  ]
+ },
+ {
+  "path": "/tools/acv-calculator",
+  "vp": "d1440",
+  "site": "diff",
+  "foldDiffPct": 12.29
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "m360",
+  "site": "prd",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 40,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 52,
+  "height": 25548,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "m360",
+  "site": "stg",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 40,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 52,
+  "height": 25512,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "m360",
+  "site": "diff",
+  "foldDiffPct": 1.11
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "m390",
+  "site": "prd",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 39,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 52,
+  "height": 24875,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "m390",
+  "site": "stg",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 39,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 52,
+  "height": 24814,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "m390",
+  "site": "diff",
+  "foldDiffPct": 0.99
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "t768",
+  "site": "prd",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 45,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 52,
+  "height": 23435,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "t768",
+  "site": "stg",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 45,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 52,
+  "height": 23388,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "t768",
+  "site": "diff",
+  "foldDiffPct": 0.49
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "d1024",
+  "site": "prd",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 36,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 52,
+  "height": 22432,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "d1024",
+  "site": "stg",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 36,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 52,
+  "height": 22390,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "d1024",
+  "site": "diff",
+  "foldDiffPct": 0.47
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "d1440",
+  "site": "prd",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 43,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 52,
+  "height": 23070,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "d1440",
+  "site": "stg",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 43,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 52,
+  "height": 23010,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/research/saas-ppc-2026-report",
+  "vp": "d1440",
+  "site": "diff",
+  "foldDiffPct": 0.33
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "m360",
+  "site": "prd",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 114,
+  "height": 9768,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "m360",
+  "site": "stg",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 114,
+  "height": 9818,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "m360",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "m390",
+  "site": "prd",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 114,
+  "height": 9544,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "m390",
+  "site": "stg",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 114,
+  "height": 9595,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "m390",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "t768",
+  "site": "prd",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 114,
+  "height": 7552,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "t768",
+  "site": "stg",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 114,
+  "height": 7602,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "t768",
+  "site": "diff",
+  "foldDiffPct": 0.13
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "d1024",
+  "site": "prd",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 114,
+  "height": 6704,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "d1024",
+  "site": "stg",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 114,
+  "height": 6754,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "d1024",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "d1440",
+  "site": "prd",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 114,
+  "height": 6474,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Cannot read properties of null (reading 'offsetWidth')"
+  ]
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "d1440",
+  "site": "stg",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 114,
+  "height": 6525,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/industries/fintech-seo-agency",
+  "vp": "d1440",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/about",
+  "vp": "m360",
+  "site": "prd",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 81,
+  "height": 20910,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'."
+  ]
+ },
+ {
+  "path": "/about",
+  "vp": "m360",
+  "site": "stg",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 81,
+  "height": 20880,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/about",
+  "vp": "m360",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/about",
+  "vp": "m390",
+  "site": "prd",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 81,
+  "height": 21144,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'."
+  ]
+ },
+ {
+  "path": "/about",
+  "vp": "m390",
+  "site": "stg",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 81,
+  "height": 21113,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/about",
+  "vp": "m390",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/about",
+  "vp": "t768",
+  "site": "prd",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 81,
+  "height": 20699,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'."
+  ]
+ },
+ {
+  "path": "/about",
+  "vp": "t768",
+  "site": "stg",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 81,
+  "height": 20683,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/about",
+  "vp": "t768",
+  "site": "diff",
+  "foldDiffPct": 0.14
+ },
+ {
+  "path": "/about",
+  "vp": "d1024",
+  "site": "prd",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 81,
+  "height": 17907,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'."
+  ]
+ },
+ {
+  "path": "/about",
+  "vp": "d1024",
+  "site": "stg",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 81,
+  "height": 17891,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/about",
+  "vp": "d1024",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/about",
+  "vp": "d1440",
+  "site": "prd",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 81,
+  "height": 19192,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": [
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'.",
+   "Failed to execute 'scrollTo' on 'Element': The provided value is not of type 'ScrollToOptions'."
+  ]
+ },
+ {
+  "path": "/about",
+  "vp": "d1440",
+  "site": "stg",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 81,
+  "height": 19175,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/about",
+  "vp": "d1440",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/coach",
+  "vp": "m360",
+  "site": "prd",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 45,
+  "height": 10764,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/coach",
+  "vp": "m360",
+  "site": "stg",
+  "vw": 360,
+  "sw": 360,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 44,
+  "height": 10409,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/coach",
+  "vp": "m360",
+  "site": "diff",
+  "foldDiffPct": 0.1
+ },
+ {
+  "path": "/coach",
+  "vp": "m390",
+  "site": "prd",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 45,
+  "height": 10900,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/coach",
+  "vp": "m390",
+  "site": "stg",
+  "vw": 390,
+  "sw": 390,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 44,
+  "height": 10554,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/coach",
+  "vp": "m390",
+  "site": "diff",
+  "foldDiffPct": 0
+ },
+ {
+  "path": "/coach",
+  "vp": "t768",
+  "site": "prd",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 45,
+  "height": 6969,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/coach",
+  "vp": "t768",
+  "site": "stg",
+  "vw": 768,
+  "sw": 768,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 34,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 44,
+  "height": 7019,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/coach",
+  "vp": "t768",
+  "site": "diff",
+  "foldDiffPct": 0.01
+ },
+ {
+  "path": "/coach",
+  "vp": "d1024",
+  "site": "prd",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 45,
+  "height": 5222,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/coach",
+  "vp": "d1024",
+  "site": "stg",
+  "vw": 1024,
+  "sw": 1024,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 28,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 44,
+  "height": 5245,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/coach",
+  "vp": "d1024",
+  "site": "diff",
+  "foldDiffPct": 0.08
+ },
+ {
+  "path": "/coach",
+  "vp": "d1440",
+  "site": "prd",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 45,
+  "height": 5340,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/coach",
+  "vp": "d1440",
+  "site": "stg",
+  "vw": 1440,
+  "sw": 1440,
+  "hOverflow": false,
+  "offenders": [],
+  "offenderCount": 0,
+  "smallTargets": 32,
+  "smallSample": [
+   "TECH",
+   "SERVICES",
+   "SOLUTIONS",
+   "RESOURCES",
+   "COMPANY",
+   "CUSTOMERS"
+  ],
+  "tinyText": 0,
+  "broken": [],
+  "imgCount": 44,
+  "height": 5390,
+  "viewportMeta": "width=device-width, initial-scale=1",
+  "jsErrors": []
+ },
+ {
+  "path": "/coach",
+  "vp": "d1440",
+  "site": "diff",
+  "foldDiffPct": 0.11
+ }
+]

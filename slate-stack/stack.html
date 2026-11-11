@@ -38,7 +38,7 @@
   .thead, .row { display: grid; grid-template-columns: 300px 1fr 104px; align-items: center; column-gap: 18px; padding: 0 20px; }
   .thead { height: 34px; font-size: 11px; letter-spacing: .16em; color: var(--dim); border-bottom: 1px solid var(--line); }
   .thead div:last-child { text-align: right; }
-  .row { height: 56px; border-bottom: 1px solid #202020; }
+  .row { height: 51px; border-bottom: 1px solid #202020; }
   .tool { display: flex; align-items: center; gap: 13px; min-width: 0; }
   .logo { width: 34px; height: 34px; border-radius: 9px; overflow: hidden; flex: none; display: flex; align-items: center; justify-content: center; }
   .logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -51,9 +51,15 @@
   .price small { font-size: 12px; color: var(--dim); font-weight: 500; letter-spacing: 0; }
   .price.q { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; color: var(--accent); letter-spacing: .04em; line-height: 1.25; }
 
-  .sum { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 0 20px; height: 52px; background: #1c1917; border-bottom: 1px solid var(--line); }
+  .sum { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 0 20px; height: 58px; background: #24150d; border-top: 1px solid #5a2a10; }
+  .sum .l { color: var(--accent) !important; }
+  .sub2 { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 0 20px; height: 40px; background: #1a1a1a; border-bottom: 1px solid var(--line); }
+  .sub2 .l { font-size: 11px; letter-spacing: .16em; color: var(--dim); }
+  .sub2 .r { font-size: 18px; font-weight: 600; letter-spacing: -0.03em; color: var(--mute); }
+  .sub2 .r small { font-size: 12px; color: var(--dim); font-weight: 500; }
+  .est { font-size: 9.5px; letter-spacing: .14em; color: var(--accent); font-weight: 500; margin-top: 1px; }
   .sum .l { font-size: 12px; letter-spacing: .16em; color: var(--mute); }
-  .sum .r { font-size: 26px; font-weight: 600; letter-spacing: -0.035em; }
+  .sum .r { font-size: 30px; font-weight: 600; letter-spacing: -0.035em; }
   .sum .r small { font-size: 14px; color: var(--mute); font-weight: 500; letter-spacing: -0.01em; }
   .group { padding: 10px 20px 4px; font-size: 11px; letter-spacing: .16em; color: var(--dim); }
   .row.last { border-bottom: 0; }
@@ -86,8 +92,8 @@
     </header>
 
     <div class="eyebrow mono">THE SEO + AI SEARCH STACK, PRICED</div>
-    <h1>8 tools: $1,630 a month.<br><span class="grey">Slate: <em>$499.</em></span></h1>
-    <p class="sub">And 3 more tools won't show you a price until you book a demo. Here's what a single brand pays to <b>track, write, optimise, pitch and report</b>, tool by tool.</p>
+    <h1>11 tools: $8,297 a month.<br><span class="grey">Slate: <em>$499.</em></span></h1>
+    <p class="sub">That's <b>$99,560 a year</b> for one brand to track, write, optimise, pitch and report. 8 published list prices, plus 3 enterprise tools that only quote on a sales call.</p>
 
     <div class="table">
       <div class="thead mono"><div>TOOL · PLAN</div><div>WHAT YOU PAY IT FOR</div><div>PER MONTH</div></div>
@@ -109,15 +115,16 @@
       <div class="row"><div class="tool"><div class="logo"><img src="logos/databox.png"></div><div><div class="name">Databox</div><div class="plan mono">Business</div></div></div>
         <div class="job">AI analytics and reporting</div><div class="price">$499</div></div>
 
-      <div class="sum"><div class="l mono">8 TOOLS WITH PUBLIC PRICES</div><div class="r">$1,630<small> /mo · $19,560 /yr</small></div></div>
+      <div class="sub2"><div class="l mono">8 PUBLISHED LIST PRICES</div><div class="r">$1,630<small> /mo</small></div></div>
 
-      <div class="group mono">PLUS: PRICE ON REQUEST</div>
-      <div class="row"><div class="tool"><div class="logo"><img src="logos/profound.png"></div><div><div class="name">Profound</div><div class="plan mono">Enterprise only · free 7-day trial</div></div></div>
-        <div class="job">AI visibility and AI marketing agents</div><div class="price q">CUSTOM<br>QUOTE</div></div>
-      <div class="row"><div class="tool"><div class="logo"><img src="logos/airops.png"></div><div><div class="name">AirOps</div><div class="plan mono">Solo / Pro · no price listed</div></div></div>
-        <div class="job">AEO content engineering</div><div class="price q">NOT<br>LISTED</div></div>
-      <div class="row last"><div class="tool"><div class="logo pad"><img src="logos/crayon.png"></div><div><div class="name">Crayon</div><div class="plan mono">"Tailored to your program"</div></div></div>
-        <div class="job">Competitor monitoring</div><div class="price q">CUSTOM<br>QUOTE</div></div>
+      <div class="group mono">+ 3 ENTERPRISE TOOLS · NO PUBLIC PRICE, LOW-END ESTIMATES</div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/profound.png"></div><div><div class="name">Profound</div><div class="plan mono">Enterprise only · est. $20K+/yr</div></div></div>
+        <div class="job">AI visibility and AI marketing agents</div><div class="price">$1,667<div class="est mono">EST.</div></div></div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/airops.png"></div><div><div class="name">AirOps</div><div class="plan mono">No price listed · est. $30K+/yr</div></div></div>
+        <div class="job">AEO content engineering</div><div class="price">$2,500<div class="est mono">EST.</div></div></div>
+      <div class="row last"><div class="tool"><div class="logo pad"><img src="logos/crayon.png"></div><div><div class="name">Crayon</div><div class="plan mono">Custom quote · Vendr median $30K/yr</div></div></div>
+        <div class="job">Competitor monitoring</div><div class="price">$2,500<div class="est mono">EST.</div></div></div>
+      <div class="sum"><div class="l mono">THE FULL STACK · 11 TOOLS</div><div class="r">$8,297<small> /mo · $99,560 /yr</small></div></div>
     </div>
 
     <div class="slate">
@@ -129,7 +136,7 @@
       <div class="p"><div class="big">$499<small>/mo</small></div><div class="yr mono">$5,988 /YR</div></div>
     </div>
 
-    <div class="note mono">Monthly-billing list prices from each vendor's pricing page, 11 Nov 2026. Entry or closest plan for one brand. Annual billing is cheaper for every tool, Slate included (20% off). Logos belong to their owners.</div>
+    <div class="note mono">List prices: monthly billing, vendor pricing pages, 11 Nov 2026, entry or closest plan for one brand. Estimates: Profound and AirOps publish no paid price; figures are low-end annual contracts reported by third-party reviews. Crayon: Vendr median. Logos belong to their owners.</div>
 
     <footer>
       <div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div>

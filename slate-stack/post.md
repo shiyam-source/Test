@@ -9,10 +9,11 @@
 
 I priced the SEO + AI search stack a single brand pays for today.
 
-8 tools with public prices: $1,630 a month.
-3 more that won't show you a price until you book a demo.
+11 tools. $8,297 a month. Almost $100K a year.
 
-Slate Growth is $499.
+Slate Growth is $499 a month.
+
+The expensive part isn't the tools with price tags. It's the three that make you book a sales call before they'll tell you.
 
 Here's the stack, at the plan closest to one brand's needs, billed monthly:
 
@@ -25,12 +26,14 @@ Here's the stack, at the plan closest to one brand's needs, billed monthly:
 → Octolens Pro, Reddit and community mentions: $199
 → Databox Business, AI analytics and reporting: $499
 
-That's $19,560 a year, before you add a second seat anywhere.
+That's $1,630 a month in published list prices, before you add a second seat anywhere.
 
 Then the three without a price tag:
-→ Profound sells one paid plan, Enterprise, on a custom quote. The only self-serve option is a 7-day trial.
-→ AirOps lists Solo and Pro plans with no prices.
-→ Crayon says its pricing is "tailored to your program."
+→ Profound, AI visibility and agents: Enterprise only, custom quote. Reported deals start around $20K a year.
+→ AirOps, AEO content engineering: no price on the page. Estimates start around $30K a year.
+→ Crayon, competitor monitoring: "tailored to your program." Vendr's median contract is $30K a year.
+
+Add those at the low end and you're at $8,297 a month, or $99,560 a year.
 
 Are these 1:1 swaps? Not all of them. Databox is a full BI tool, and Crayon goes deeper on sales battlecards than we do. But most teams buy each one for a single job, and each job ends in the same place: a dashboard, waiting for someone to act on it.
 
@@ -44,7 +47,7 @@ That's the gap we built Slate for. On Growth you get:
 
 One coworker, one memory, every job. And it does the work, not just the tracking.
 
-Every price in the image is from the vendor's own pricing page this week. Sources in the first comment.
+List prices come from each vendor's own pricing page this week. The three enterprise figures are low-end estimates, because those vendors don't publish one. Sources in the first comment.
 
 What's in your stack that I missed?
 
@@ -52,8 +55,8 @@ What's in your stack that I missed?
 
 ## Alternate hooks (swap for the first line)
 
-1. Profound doesn't publish a price. Neither does AirOps. So I priced everything else.
-2. $1,630 a month for 8 marketing tools, and 3 more that need a sales call to quote you.
+1. Profound doesn't publish a price. Neither does AirOps. So I priced the whole stack anyway.
+2. $99,560 a year. That's what one brand's SEO + AI search stack costs at the low end.
 3. The average AI search stack has more dashboards than people to read them. Here's what it costs.
 
 ---
@@ -61,7 +64,9 @@ What's in your stack that I missed?
 ## First comment
 
 Sources, all checked 11 Nov 2026 on monthly billing:
-Peec AI peec.ai/pricing · Ahrefs ahrefs.com/pricing · Jasper jasper.ai/pricing · Clearscope clearscope.io/pricing · Midjourney docs.midjourney.com (Comparing Midjourney Plans) · Pitchbox pitchbox.com/pricing · Octolens octolens.com/pricing · Databox databox.com/pricing · Profound tryprofound.com/pricing · AirOps airops.com/pricing · Crayon crayon.co/pricing · Slate slatehq.com/pricing
+Peec AI peec.ai/pricing · Ahrefs ahrefs.com/pricing · Jasper jasper.ai/pricing · Clearscope clearscope.io/pricing · Midjourney docs.midjourney.com (Comparing Midjourney Plans) · Pitchbox pitchbox.com/pricing · Octolens octolens.com/pricing · Databox databox.com/pricing · Slate slatehq.com/pricing
+
+Estimates (no published price): Profound, Enterprise only per tryprofound.com/pricing, with reported deals from about $20K/yr. AirOps, no price on airops.com/pricing, with third-party estimates from about $24K/yr (Pro) to $50K+/yr (Enterprise). Crayon, Vendr median of $30K/yr across 93 purchases.
 
 Annual billing cuts most of these by 17–30%, and Slate's by 20%.
 

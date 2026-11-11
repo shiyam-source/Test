@@ -38,6 +38,26 @@ Try it free for 14 days, no card needed: slatehq.com
 
 ---
 
+## Contrarian hooks (swap in for the first line)
+
+Top picks:
+1. Your AI visibility tool doesn't make you visible. It just tells you you're not.
+2. Hot take: if your marketing tool needs a human to act on it, it's not AI. It's a to-do list.
+3. Marketing changes every week. Your tools ship features every quarter. That's the whole problem.
+
+More:
+4. Stop buying marketing tools. Every one you add makes your team slower.
+5. Twelve tools. Twelve logins. Not one of them does the actual work.
+6. Unpopular opinion: most "AI marketing tools" are just dashboards with a renewal date.
+7. Your marketing stack isn't a stack. It's a $100K tax on your team's time.
+8. Profound won't show you its price. Neither will AirOps. So I priced the whole stack myself.
+9. I'd cut half my marketing stack before I'd cut one marketer.
+10. The best marketing teams next year will run fewer tools, not more.
+11. $99,800 a year to be told what's broken. That's what a typical marketing stack costs.
+12. Dashboards don't grow companies. Someone acting on them does. Most tools forget that part.
+
+---
+
 ## Shorter version (if you want it tighter)
 
 Most marketing tools tell you what's wrong. Very few fix it.

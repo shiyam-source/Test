@@ -9,27 +9,32 @@
 
 ## Post
 
-A lot of marketing software is just a dashboard with a renewal date.
+Marketing changes every week now. A tool with fixed features can't keep up. You need a coworker that can.
 
-It tells you what's broken. Then it waits for someone on your team to go fix it.
+Look at what most marketing teams are running right now:
 
-Look at the stack most marketing teams run today. A tool to track AI search. A tool to write. A tool to optimise what got written. A tool to find people to pitch. A tool to watch Reddit. A tool to report on all the other tools.
+A tool to track AI search.
+A tool to write.
+A tool to optimize what you wrote.
+A tool to find people to pitch.
+A tool to watch Reddit.
+A tool to report on all the other tools.
 
-Twelve logins. Twelve renewals. Close to $100,000 a year.
+Twelve logins. Twelve renewals. Almost $100K a year.
 
-And the team still does all the work.
+And your team's still doing all the work.
 
-We didn't want to build tool number thirteen.
+When Joe and I sat down to fix this, we knew one thing: we weren't building tool number thirteen.
 
-So we built Slate as a coworker. You give it a goal and it gets on with it. It tracks where you show up in AI answers, writes and refreshes your pages, pitches the sites the models cite, watches Reddit and your competitors, and sends you the report. Nothing ships without your approval.
+So we built Slate as a coworker. Give it a goal and it runs with it. It tracks where you show up in AI answers, writes and refreshes your pages, pitches the sites AI pulls from, keeps an eye on Reddit and your competitors, and sends you the report. Nothing goes live without your OK.
 
-It's $499 a month.
+$499 a month.
 
-Don't let the fluff fool you. Our little orange coworker packs a punch.
+Don't let the fluff fool you. This little orange coworker packs a punch.
 
-Here's everything it replaces, and what each of those tools costs today.
+Here's everything it replaces, and what it all costs today.
 
-Want to see what it would cancel in your stack? Try it free for 14 days, no card needed: slatehq.com
+Try it free for 14 days, no card needed: slatehq.com
 
 ---
 

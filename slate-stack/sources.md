@@ -46,3 +46,25 @@ All prices were read from each vendor's live pricing page in a headless browser 
 4. **Enterprise estimates.** Profound ($20K+/yr), AirOps ($30K+/yr) and Crayon ($30K/yr) aren't published prices. The image and post label them "est." and call them low-end. If you have real quotes from prospects or customers, use those instead.
 5. **Prices change.** Re-check on posting day if it is more than a week after 11 Nov 2026.
 6. **Logos** are the vendors' own favicons and app icons, downloaded from their sites. Using them to identify the products in a factual price comparison is standard practice, but your call.
+
+## Image mapping: tool → Slate feature
+
+Each arrow on the image points to a real Slate product or agent name from slatehq.com:
+
+| Tool | Slate feature on image | Slate source |
+|---|---|---|
+| AirOps | Workflows + Power Sheets | Product nav: Workflows, Power Sheets; pricing table: Bulk execution |
+| Crayon | Competitor Intelligence | /agents/competitor-intelligence-agent |
+| Profound | Cowork | /cowork. Profound's own pitch is an "AI Marketer" teammate |
+| Databox | Pages + Reports | /pages; pricing table "Reports"; FAQ: weekly summaries and executive reports |
+| Pitchbox | Offsite Outreach | /offsite; pricing table "Outreach (LinkedIn & Email)" |
+| Peec AI | AI Visibility Tracker | /ai-visibility-tracker |
+| Octolens | Reddit Mentions Tracker | /agents/reddit-mentions-research-tracker |
+| Ahrefs | Keywords + SEO Audit | Pricing table "Keywords tracked" (750); Domain SEO audit agent |
+| Clearscope | Content Refresh | /content-refresh |
+| Jasper | SEO Article Writer | /agents: "Brief to SEO article writer" |
+| Midjourney | Visual Content Agent | /agents: "Visual Content Agent" |
+
+Headline savings: $99,560 − $5,988 (Slate Growth, $499 × 12) = **$93,572 a year**.
+
+Mascot: rendered from Slate's own Lottie file at https://slatehq.com/mascot/fuzzy-float.json (frame 0), as used on the slatehq.com homepage.

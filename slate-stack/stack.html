@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Slate Stack</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #111111;
+    --tile: #181818;
+    --line: #2a2a2a;
+    --ink: #f5f4f0;
+    --mute: #a9a59d;
+    --dim: #6f6c66;
+    --accent: #ee6216;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; background: var(--bg); }
+  body {
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .bar { position: absolute; top: 0; left: 0; height: 4px; width: 100%; background: #1d1d1d; }
+  .bar::before { content: ''; position: absolute; left: 0; top: 0; height: 4px; width: 84px; background: var(--accent); }
+  .rings { position: absolute; inset: 0; pointer-events: none; }
+
+  .wrap { position: absolute; inset: 0; padding: 50px 64px 44px; display: flex; flex-direction: column; }
+
+  header { display: flex; justify-content: space-between; align-items: center; }
+  header img { height: 34px; }
+  header .tag { font-size: 13px; letter-spacing: .22em; color: var(--mute); }
+
+  .eyebrow { margin-top: 54px; font-size: 14px; letter-spacing: .24em; color: var(--accent); }
+  h1 {
+    margin-top: 16px;
+    font-size: 76px; line-height: .98; font-weight: 600; letter-spacing: -0.045em;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  h1 .grey { color: #b9b5ad; }
+  .sub { margin-top: 20px; font-size: 22px; line-height: 1.38; color: var(--mute); max-width: 860px; letter-spacing: -0.01em; }
+  .sub b { color: var(--ink); font-weight: 500; }
+
+  .grid {
+    margin-top: 34px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  }
+  .tile {
+    background: var(--tile); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 18px 14px; display: flex; flex-direction: column; min-height: 152px;
+  }
+  .tile .top { display: flex; align-items: baseline; gap: 10px; }
+  .tile .n { font-size: 12px; color: var(--accent); letter-spacing: .08em; }
+  .tile h3 { font-size: 23px; font-weight: 600; letter-spacing: -0.025em; }
+  .tile p { margin-top: 7px; font-size: 15px; line-height: 1.34; color: var(--mute); flex: 1; }
+  .tile .rep {
+    margin-top: 10px; padding-top: 9px; border-top: 1px dashed #333;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 11.5px; color: var(--dim); letter-spacing: .02em;
+  }
+  .tile .rep s { text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; color: #b9b5ad; font-size: 13.5px; font-weight: 500; }
+
+  .total {
+    margin-top: 16px;
+    border: 1px solid #3a2a20; border-radius: 16px;
+    background: linear-gradient(90deg, #1a1411 0%, #181818 100%);
+    padding: 20px 26px; display: flex; align-items: center; gap: 26px;
+  }
+  .total .lbl { font-size: 12px; letter-spacing: .2em; color: var(--dim); }
+  .total .old { font-size: 44px; font-weight: 600; letter-spacing: -0.04em; color: #8a867f; margin-top: 4px; }
+  .total .old s { text-decoration-color: var(--accent); text-decoration-thickness: 3px; }
+  .total .old small { font-size: 20px; letter-spacing: -0.01em; }
+  .total .arrow { font-size: 30px; color: var(--accent); }
+  .total .new { flex: 1; }
+  .total .new .big { font-size: 34px; font-weight: 600; letter-spacing: -0.035em; margin-top: 4px; line-height: 1.05; }
+  .total .new .big em { font-style: normal; color: var(--accent); }
+
+  .note { margin-top: 12px; font-size: 11.5px; color: var(--dim); letter-spacing: .02em; }
+
+  footer { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; font-size: 19px; }
+  footer b { font-weight: 600; }
+  footer span { color: var(--mute); }
+  footer .mono { font-size: 15px; color: var(--mute); letter-spacing: .12em; }
+</style>
+</head>
+<body>
+  <div class="bar"></div>
+  <svg class="rings" viewBox="0 0 1080 1350" fill="none">
+    <g stroke="#1c1c1c" stroke-width="1">
+      <circle cx="1080" cy="0" r="210"/><circle cx="1080" cy="0" r="340"/>
+      <circle cx="1080" cy="0" r="470"/><circle cx="1080" cy="0" r="600"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <header>
+      <img src="logo.png" alt="Slate">
+      <div class="tag mono">THE MARKETING STACK · 2026</div>
+    </header>
+
+    <div class="eyebrow mono">ONE AI MARKETING COWORKER</div>
+    <h1>Cancel a <em>dozen</em> marketing<br><span class="grey">subscriptions.</span></h1>
+    <p class="sub">Most tools in your stack <b>track</b> the work. Slate <b>does</b> it. Give it a goal and it watches, plans, ships and learns, with one memory across every channel.</p>
+
+    <div class="grid">
+      <div class="tile"><div class="top"><span class="n mono">01</span><h3>Content</h3></div>
+        <p>Briefs, drafts and refreshes in your voice, published straight to your CMS.</p>
+        <div class="rep mono"><span>REPLACES AI WRITER</span><s>$6K/yr</s></div></div>
+      <div class="tile"><div class="top"><span class="n mono">02</span><h3>Image</h3></div>
+        <p>Blog visuals, social graphics and ad creative, on brand every time.</p>
+        <div class="rep mono"><span>REPLACES DESIGN SEATS</span><s>$3K/yr</s></div></div>
+      <div class="tile"><div class="top"><span class="n mono">03</span><h3>SEO</h3></div>
+        <p>Technical audits, on-page fixes, keyword research and rank tracking.</p>
+        <div class="rep mono"><span>REPLACES SEO SUITE</span><s>$6K/yr</s></div></div>
+
+      <div class="tile"><div class="top"><span class="n mono">04</span><h3>AEO</h3></div>
+        <p>Tracks how ChatGPT, Perplexity, Claude, Gemini and AI Overviews cite you.</p>
+        <div class="rep mono"><span>REPLACES AI VISIBILITY TOOL</span><s>$9K/yr</s></div></div>
+      <div class="tile"><div class="top"><span class="n mono">05</span><h3>Outreach</h3></div>
+        <p>Finds the publishers, lists and threads AI trusts, then drafts the pitch.</p>
+        <div class="rep mono"><span>REPLACES OUTREACH + PR</span><s>$5K/yr</s></div></div>
+      <div class="tile"><div class="top"><span class="n mono">06</span><h3>Landing pages</h3></div>
+        <p>Builds and ships a page for every campaign, keyword and competitor.</p>
+        <div class="rep mono"><span>REPLACES PAGE BUILDER</span><s>$4K/yr</s></div></div>
+
+      <div class="tile"><div class="top"><span class="n mono">07</span><h3>AI analytics</h3></div>
+        <p>Ask GA4, Search Console and your CRM anything, in plain English.</p>
+        <div class="rep mono"><span>REPLACES BI + REPORTING</span><s>$10K/yr</s></div></div>
+      <div class="tile"><div class="top"><span class="n mono">08</span><h3>Paid media</h3></div>
+        <p>Watches ad accounts, flags wasted spend, writes and tests new variants.</p>
+        <div class="rep mono"><span>REPLACES AD OPTIMIZER</span><s>$12K/yr</s></div></div>
+      <div class="tile"><div class="top"><span class="n mono">09</span><h3>Competitor intel</h3></div>
+        <p>Watches rival pages, pricing and launches around the clock.</p>
+        <div class="rep mono"><span>REPLACES CI PLATFORM</span><s>$15K/yr</s></div></div>
+
+      <div class="tile"><div class="top"><span class="n mono">10</span><h3>Content refresh</h3></div>
+        <p>Spots decaying pages and lost AI citations, then rewrites them.</p>
+        <div class="rep mono"><span>REPLACES CONTENT OPTIMIZER</span><s>$3K/yr</s></div></div>
+      <div class="tile"><div class="top"><span class="n mono">11</span><h3>Research</h3></div>
+        <p>ICP, keyword and market research with sources, in minutes, not weeks.</p>
+        <div class="rep mono"><span>REPLACES RESEARCH TOOLS</span><s>$5K/yr</s></div></div>
+      <div class="tile"><div class="top"><span class="n mono">12</span><h3>Workflows</h3></div>
+        <p>Agent library, shared memory, Slack and MCP. Runs on a schedule.</p>
+        <div class="rep mono"><span>REPLACES AUTOMATION TOOL</span><s>$3K/yr</s></div></div>
+    </div>
+
+    <div class="total">
+      <div>
+        <div class="lbl mono">THE TYPICAL STACK</div>
+        <div class="old"><s>$81K</s> <small>/ year</small></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="new">
+        <div class="lbl mono">SLATE</div>
+        <div class="big">One coworker. One memory.<br><em>Every channel.</em></div>
+      </div>
+    </div>
+    <div class="note mono">Estimated typical annual spend per tool category for a mid-market B2B marketing team. Your stack will vary.</div>
+
+    <footer>
+      <div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div>
+      <div class="mono">give it a goal →</div>
+    </footer>
+  </div>
+</body>
+</html>

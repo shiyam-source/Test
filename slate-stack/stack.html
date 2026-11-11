@@ -7,161 +7,133 @@
 <style>
   :root {
     --bg: #111111;
-    --tile: #181818;
-    --line: #2a2a2a;
+    --tile: #171717;
+    --line: #262626;
     --ink: #f5f4f0;
     --mute: #a9a59d;
-    --dim: #6f6c66;
+    --dim: #75716a;
     --accent: #ee6216;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1080px; height: 1350px; background: var(--bg); }
-  body {
-    font-family: 'Inter Tight', system-ui, sans-serif;
-    color: var(--ink);
-    position: relative;
-    overflow: hidden;
-  }
+  body { font-family: 'Inter Tight', system-ui, sans-serif; color: var(--ink); position: relative; overflow: hidden; }
   .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
   .bar { position: absolute; top: 0; left: 0; height: 4px; width: 100%; background: #1d1d1d; }
   .bar::before { content: ''; position: absolute; left: 0; top: 0; height: 4px; width: 84px; background: var(--accent); }
   .rings { position: absolute; inset: 0; pointer-events: none; }
 
-  .wrap { position: absolute; inset: 0; padding: 50px 64px 44px; display: flex; flex-direction: column; }
-
+  .wrap { position: absolute; inset: 0; padding: 44px 60px 36px; display: flex; flex-direction: column; }
   header { display: flex; justify-content: space-between; align-items: center; }
-  header img { height: 34px; }
-  header .tag { font-size: 13px; letter-spacing: .22em; color: var(--mute); }
+  header img { height: 30px; }
+  header .tag { font-size: 12px; letter-spacing: .2em; color: var(--mute); }
 
-  .eyebrow { margin-top: 54px; font-size: 14px; letter-spacing: .24em; color: var(--accent); }
-  h1 {
-    margin-top: 16px;
-    font-size: 76px; line-height: .98; font-weight: 600; letter-spacing: -0.045em;
-  }
-  h1 em { font-style: normal; color: var(--accent); }
+  .eyebrow { margin-top: 36px; font-size: 13px; letter-spacing: .24em; color: var(--accent); }
+  h1 { margin-top: 12px; font-size: 64px; line-height: 1; font-weight: 600; letter-spacing: -0.045em; }
   h1 .grey { color: #b9b5ad; }
-  .sub { margin-top: 20px; font-size: 22px; line-height: 1.38; color: var(--mute); max-width: 860px; letter-spacing: -0.01em; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .sub { margin-top: 14px; font-size: 19px; line-height: 1.38; color: var(--mute); letter-spacing: -0.01em; max-width: 900px; }
   .sub b { color: var(--ink); font-weight: 500; }
 
-  .grid {
-    margin-top: 34px;
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
-  }
-  .tile {
-    background: var(--tile); border: 1px solid var(--line); border-radius: 14px;
-    padding: 16px 18px 14px; display: flex; flex-direction: column; min-height: 152px;
-  }
-  .tile .top { display: flex; align-items: baseline; gap: 10px; }
-  .tile .n { font-size: 12px; color: var(--accent); letter-spacing: .08em; }
-  .tile h3 { font-size: 23px; font-weight: 600; letter-spacing: -0.025em; }
-  .tile p { margin-top: 7px; font-size: 15px; line-height: 1.34; color: var(--mute); flex: 1; }
-  .tile .rep {
-    margin-top: 10px; padding-top: 9px; border-top: 1px dashed #333;
-    display: flex; justify-content: space-between; align-items: baseline;
-    font-size: 11.5px; color: var(--dim); letter-spacing: .02em;
-  }
-  .tile .rep s { text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; color: #b9b5ad; font-size: 13.5px; font-weight: 500; }
+  .table { margin-top: 22px; border: 1px solid var(--line); border-radius: 16px; background: var(--tile); overflow: hidden; }
+  .thead, .row { display: grid; grid-template-columns: 300px 1fr 104px; align-items: center; column-gap: 18px; padding: 0 20px; }
+  .thead { height: 34px; font-size: 11px; letter-spacing: .16em; color: var(--dim); border-bottom: 1px solid var(--line); }
+  .thead div:last-child { text-align: right; }
+  .row { height: 56px; border-bottom: 1px solid #202020; }
+  .tool { display: flex; align-items: center; gap: 13px; min-width: 0; }
+  .logo { width: 34px; height: 34px; border-radius: 9px; overflow: hidden; flex: none; display: flex; align-items: center; justify-content: center; }
+  .logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .logo.pad { background: #fff; } .logo.pad img { width: 82%; height: 82%; object-fit: contain; }
+  .logo.dk { background: #0b0b0b; } .logo.dk img { width: 78%; height: 78%; object-fit: contain; }
+  .name { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+  .plan { font-size: 11px; color: var(--dim); margin-top: 3px; letter-spacing: .01em; white-space: nowrap; }
+  .job { font-size: 15.5px; color: var(--mute); letter-spacing: -0.005em; }
+  .price { text-align: right; font-size: 21px; font-weight: 600; letter-spacing: -0.03em; }
+  .price small { font-size: 12px; color: var(--dim); font-weight: 500; letter-spacing: 0; }
+  .price.q { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; color: var(--accent); letter-spacing: .04em; line-height: 1.25; }
 
-  .total {
-    margin-top: 16px;
-    border: 1px solid #3a2a20; border-radius: 16px;
-    background: linear-gradient(90deg, #1a1411 0%, #181818 100%);
-    padding: 20px 26px; display: flex; align-items: center; gap: 26px;
-  }
-  .total .lbl { font-size: 12px; letter-spacing: .2em; color: var(--dim); }
-  .total .old { font-size: 44px; font-weight: 600; letter-spacing: -0.04em; color: #8a867f; margin-top: 4px; }
-  .total .old s { text-decoration-color: var(--accent); text-decoration-thickness: 3px; }
-  .total .old small { font-size: 20px; letter-spacing: -0.01em; }
-  .total .arrow { font-size: 30px; color: var(--accent); }
-  .total .new { flex: 1; }
-  .total .new .big { font-size: 34px; font-weight: 600; letter-spacing: -0.035em; margin-top: 4px; line-height: 1.05; }
-  .total .new .big em { font-style: normal; color: var(--accent); }
+  .sum { display: grid; grid-template-columns: 1fr auto; align-items: center; padding: 0 20px; height: 52px; background: #1c1917; border-bottom: 1px solid var(--line); }
+  .sum .l { font-size: 12px; letter-spacing: .16em; color: var(--mute); }
+  .sum .r { font-size: 26px; font-weight: 600; letter-spacing: -0.035em; }
+  .sum .r small { font-size: 14px; color: var(--mute); font-weight: 500; letter-spacing: -0.01em; }
+  .group { padding: 10px 20px 4px; font-size: 11px; letter-spacing: .16em; color: var(--dim); }
+  .row.last { border-bottom: 0; }
 
-  .note { margin-top: 12px; font-size: 11.5px; color: var(--dim); letter-spacing: .02em; }
+  .slate { margin-top: 14px; border-radius: 16px; border: 1px solid #5a2a10; background: linear-gradient(100deg, #24150d 0%, #171310 55%, #151515 100%); padding: 18px 22px; display: grid; grid-template-columns: auto 1fr auto; column-gap: 18px; align-items: center; }
+  .slate .logo { width: 52px; height: 52px; border-radius: 13px; }
+  .slate .t { font-size: 26px; font-weight: 600; letter-spacing: -0.03em; }
+  .slate .t span { color: var(--mute); font-weight: 500; font-size: 18px; letter-spacing: -0.01em; }
+  .slate .d { margin-top: 5px; font-size: 13.5px; color: var(--mute); line-height: 1.4; }
+  .slate .p { text-align: right; }
+  .slate .p .big { font-size: 46px; font-weight: 600; letter-spacing: -0.045em; color: var(--accent); line-height: 1; }
+  .slate .p .big small { font-size: 18px; color: var(--mute); letter-spacing: -0.01em; font-weight: 500; }
+  .slate .p .yr { font-size: 11.5px; color: var(--dim); margin-top: 6px; letter-spacing: .04em; }
 
-  footer { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; font-size: 19px; }
-  footer b { font-weight: 600; }
-  footer span { color: var(--mute); }
-  footer .mono { font-size: 15px; color: var(--mute); letter-spacing: .12em; }
+  .note { margin-top: 12px; font-size: 10.5px; line-height: 1.5; color: var(--dim); letter-spacing: .01em; }
+  footer { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; font-size: 18px; }
+  footer b { font-weight: 600; } footer span { color: var(--mute); }
+  footer .mono { font-size: 14px; color: var(--mute); letter-spacing: .1em; }
 </style>
 </head>
 <body>
   <div class="bar"></div>
-  <svg class="rings" viewBox="0 0 1080 1350" fill="none">
-    <g stroke="#1c1c1c" stroke-width="1">
-      <circle cx="1080" cy="0" r="210"/><circle cx="1080" cy="0" r="340"/>
-      <circle cx="1080" cy="0" r="470"/><circle cx="1080" cy="0" r="600"/>
-    </g>
-  </svg>
+  <svg class="rings" viewBox="0 0 1080 1350" fill="none"><g stroke="#1b1b1b" stroke-width="1">
+    <circle cx="1080" cy="0" r="200"/><circle cx="1080" cy="0" r="330"/><circle cx="1080" cy="0" r="460"/></g></svg>
 
   <div class="wrap">
     <header>
       <img src="logo.png" alt="Slate">
-      <div class="tag mono">THE MARKETING STACK · 2026</div>
+      <div class="tag mono">LIST PRICES · 11 NOV 2026</div>
     </header>
 
-    <div class="eyebrow mono">ONE AI MARKETING COWORKER</div>
-    <h1>Cancel a <em>dozen</em> marketing<br><span class="grey">subscriptions.</span></h1>
-    <p class="sub">Most tools in your stack <b>track</b> the work. Slate <b>does</b> it. Give it a goal and it watches, plans, ships and learns, with one memory across every channel.</p>
+    <div class="eyebrow mono">THE SEO + AI SEARCH STACK, PRICED</div>
+    <h1>8 tools: $1,630 a month.<br><span class="grey">Slate: <em>$499.</em></span></h1>
+    <p class="sub">And 3 more tools won't show you a price until you book a demo. Here's what a single brand pays to <b>track, write, optimise, pitch and report</b>, tool by tool.</p>
 
-    <div class="grid">
-      <div class="tile"><div class="top"><span class="n mono">01</span><h3>Content</h3></div>
-        <p>Briefs, drafts and refreshes in your voice, published straight to your CMS.</p>
-        <div class="rep mono"><span>REPLACES AI WRITER</span><s>$6K/yr</s></div></div>
-      <div class="tile"><div class="top"><span class="n mono">02</span><h3>Image</h3></div>
-        <p>Blog visuals, social graphics and ad creative, on brand every time.</p>
-        <div class="rep mono"><span>REPLACES DESIGN SEATS</span><s>$3K/yr</s></div></div>
-      <div class="tile"><div class="top"><span class="n mono">03</span><h3>SEO</h3></div>
-        <p>Technical audits, on-page fixes, keyword research and rank tracking.</p>
-        <div class="rep mono"><span>REPLACES SEO SUITE</span><s>$6K/yr</s></div></div>
+    <div class="table">
+      <div class="thead mono"><div>TOOL · PLAN</div><div>WHAT YOU PAY IT FOR</div><div>PER MONTH</div></div>
 
-      <div class="tile"><div class="top"><span class="n mono">04</span><h3>AEO</h3></div>
-        <p>Tracks how ChatGPT, Perplexity, Claude, Gemini and AI Overviews cite you.</p>
-        <div class="rep mono"><span>REPLACES AI VISIBILITY TOOL</span><s>$9K/yr</s></div></div>
-      <div class="tile"><div class="top"><span class="n mono">05</span><h3>Outreach</h3></div>
-        <p>Finds the publishers, lists and threads AI trusts, then drafts the pitch.</p>
-        <div class="rep mono"><span>REPLACES OUTREACH + PR</span><s>$5K/yr</s></div></div>
-      <div class="tile"><div class="top"><span class="n mono">06</span><h3>Landing pages</h3></div>
-        <p>Builds and ships a page for every campaign, keyword and competitor.</p>
-        <div class="rep mono"><span>REPLACES PAGE BUILDER</span><s>$4K/yr</s></div></div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/peec.png"></div><div><div class="name">Peec AI</div><div class="plan mono">Pro · 150 prompts, 3 models</div></div></div>
+        <div class="job">AI visibility tracking</div><div class="price">$245</div></div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/ahrefs.png"></div><div><div class="name">Ahrefs</div><div class="plan mono">Lite · 750 keywords, 1 user</div></div></div>
+        <div class="job">Rank tracking and site audits</div><div class="price">$129</div></div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/jasper.png"></div><div><div class="name">Jasper</div><div class="plan mono">Pro · 1 seat</div></div></div>
+        <div class="job">AI content writing</div><div class="price">$69</div></div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/clearscope48.png"></div><div><div class="name">Clearscope</div><div class="plan mono">Essentials · 50 pages</div></div></div>
+        <div class="job">Content optimisation and refresh</div><div class="price">$129</div></div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/midjourney.svg"></div><div><div class="name">Midjourney</div><div class="plan mono">Pro · required over $1M revenue</div></div></div>
+        <div class="job">Image generation</div><div class="price">$60</div></div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/pitchbox.png"></div><div><div class="name">Pitchbox</div><div class="plan mono">Pro · 2 users, 2,000 emails</div></div></div>
+        <div class="job">Link building and placement outreach</div><div class="price">$300</div></div>
+      <div class="row"><div class="tool"><div class="logo dk"><img src="logos/octolens.png"></div><div><div class="name">Octolens</div><div class="plan mono">Pro · 10 keywords</div></div></div>
+        <div class="job">Reddit and community mentions</div><div class="price">$199</div></div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/databox.png"></div><div><div class="name">Databox</div><div class="plan mono">Business</div></div></div>
+        <div class="job">AI analytics and reporting</div><div class="price">$499</div></div>
 
-      <div class="tile"><div class="top"><span class="n mono">07</span><h3>AI analytics</h3></div>
-        <p>Ask GA4, Search Console and your CRM anything, in plain English.</p>
-        <div class="rep mono"><span>REPLACES BI + REPORTING</span><s>$10K/yr</s></div></div>
-      <div class="tile"><div class="top"><span class="n mono">08</span><h3>Paid media</h3></div>
-        <p>Watches ad accounts, flags wasted spend, writes and tests new variants.</p>
-        <div class="rep mono"><span>REPLACES AD OPTIMIZER</span><s>$12K/yr</s></div></div>
-      <div class="tile"><div class="top"><span class="n mono">09</span><h3>Competitor intel</h3></div>
-        <p>Watches rival pages, pricing and launches around the clock.</p>
-        <div class="rep mono"><span>REPLACES CI PLATFORM</span><s>$15K/yr</s></div></div>
+      <div class="sum"><div class="l mono">8 TOOLS WITH PUBLIC PRICES</div><div class="r">$1,630<small> /mo · $19,560 /yr</small></div></div>
 
-      <div class="tile"><div class="top"><span class="n mono">10</span><h3>Content refresh</h3></div>
-        <p>Spots decaying pages and lost AI citations, then rewrites them.</p>
-        <div class="rep mono"><span>REPLACES CONTENT OPTIMIZER</span><s>$3K/yr</s></div></div>
-      <div class="tile"><div class="top"><span class="n mono">11</span><h3>Research</h3></div>
-        <p>ICP, keyword and market research with sources, in minutes, not weeks.</p>
-        <div class="rep mono"><span>REPLACES RESEARCH TOOLS</span><s>$5K/yr</s></div></div>
-      <div class="tile"><div class="top"><span class="n mono">12</span><h3>Workflows</h3></div>
-        <p>Agent library, shared memory, Slack and MCP. Runs on a schedule.</p>
-        <div class="rep mono"><span>REPLACES AUTOMATION TOOL</span><s>$3K/yr</s></div></div>
+      <div class="group mono">PLUS: PRICE ON REQUEST</div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/profound.png"></div><div><div class="name">Profound</div><div class="plan mono">Enterprise only · free 7-day trial</div></div></div>
+        <div class="job">AI visibility and AI marketing agents</div><div class="price q">CUSTOM<br>QUOTE</div></div>
+      <div class="row"><div class="tool"><div class="logo"><img src="logos/airops.png"></div><div><div class="name">AirOps</div><div class="plan mono">Solo / Pro · no price listed</div></div></div>
+        <div class="job">AEO content engineering</div><div class="price q">NOT<br>LISTED</div></div>
+      <div class="row last"><div class="tool"><div class="logo pad"><img src="logos/crayon.png"></div><div><div class="name">Crayon</div><div class="plan mono">"Tailored to your program"</div></div></div>
+        <div class="job">Competitor monitoring</div><div class="price q">CUSTOM<br>QUOTE</div></div>
     </div>
 
-    <div class="total">
+    <div class="slate">
+      <div class="logo"><img src="logos/slate.png"></div>
       <div>
-        <div class="lbl mono">THE TYPICAL STACK</div>
-        <div class="old"><s>$81K</s> <small>/ year</small></div>
+        <div class="t">Slate Growth <span>· one AI marketing coworker</span></div>
+        <div class="d">AI visibility on ChatGPT, Perplexity, AI Overviews and AI Mode · 750 keywords · site audits · writing, refresh and images · email and LinkedIn outreach · Reddit, G2 and competitor research · reports</div>
       </div>
-      <div class="arrow">→</div>
-      <div class="new">
-        <div class="lbl mono">SLATE</div>
-        <div class="big">One coworker. One memory.<br><em>Every channel.</em></div>
-      </div>
+      <div class="p"><div class="big">$499<small>/mo</small></div><div class="yr mono">$5,988 /YR</div></div>
     </div>
-    <div class="note mono">Estimated typical annual spend per tool category for a mid-market B2B marketing team. Your stack will vary.</div>
+
+    <div class="note mono">Monthly-billing list prices from each vendor's pricing page, 11 Nov 2026. Entry or closest plan for one brand. Annual billing is cheaper for every tool, Slate included (20% off). Logos belong to their owners.</div>
 
     <footer>
       <div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div>
-      <div class="mono">give it a goal →</div>
+      <div class="mono">slatehq.com →</div>
     </footer>
   </div>
 </body>

@@ -1,56 +1,68 @@
-# Slate: "Cancel a dozen marketing subscriptions" post
+# Slate: "The stack, priced" LinkedIn post
 
-**Image:** `slate-stack.png` (4:5, 2160×2700). Source: `stack.html`. To re-render, open it in Chromium at 1080×1350 with a 2× device scale factor.
-**Format:** single image post, modelled on the "cancel a dozen subscriptions" consolidation post.
-**Before posting:** the dollar figures are rough estimates of typical annual spend per tool category. Check them against what our customers actually pay before this goes live. Also confirm Paid Media is live for customers. The investor deck lists it as "next" on the roadmap.
-
----
-
-## Main post
-
-Most marketing teams aren't short on software.
-
-They're short on people to use it.
-
-The average B2B marketing team I talk to pays for 10 to 15 tools. An SEO suite. An AI visibility tracker. A writing tool. A page builder. A BI tool. A competitive intel platform. Each one costs $3K to $15K a year, and each one does the same thing: it shows you a dashboard and waits for a human to act on it.
-
-The team got smaller. The dashboards didn't.
-
-That's why we built Slate as a coworker, not another tool. You give it a goal, like "grow organic signups 40% this quarter". It watches your rankings, pages, competitors and AI citations, plans the work, does most of it itself, and hands the rest to named people on your team. Then it remembers what worked for the next cycle.
-
-Here's what that covers today:
-
-→ Content: briefs, drafts and refreshes in your voice, published to your CMS
-→ Image: blog visuals, social graphics and ad creative
-→ SEO: audits, on-page fixes, keyword research, rank tracking
-→ AEO: how ChatGPT, Perplexity, Claude, Gemini and AI Overviews cite you
-→ Outreach: the publishers, lists and threads AI engines trust, plus the pitch
-→ Landing pages: one for every campaign, keyword and competitor
-→ AI analytics: ask GA4, Search Console and your CRM anything
-→ Paid media: wasted spend flagged, new variants written and tested
-→ Competitor intel: rival pages, pricing and launches, watched 24/7
-→ Content refresh: decaying pages and lost citations, rewritten
-→ Research: ICP, keyword and market research with sources
-→ Workflows: agent library, shared memory, Slack and MCP, on a schedule
-
-Add up the tool categories and the typical stack lands around $81K a year. That's before you count the hours spent copying data between them.
-
-We'd rather put that money into one system that does the work, and shares one memory across every channel.
-
-If you want to see what Slate would cancel in your stack, comment "stack" and I'll send you a free visibility report.
+**Image:** `slate-stack.png` (4:5, 2160×2700). Source: `stack.html` + `logos/`.
+**Every price, plan and limit** is listed with its source URL in `sources.md`, checked on each vendor's live pricing page on 11 Nov 2026.
 
 ---
 
-## Alternate hooks (swap in for the first two lines)
+## Post
 
-1. Your marketing stack has 12 dashboards and nobody to read them.
-2. We counted the tools a typical B2B marketing team pays for. Twelve. About $81K a year.
-3. Most marketing software watches you do the work. We built one that does it.
+I priced the SEO + AI search stack a single brand pays for today.
+
+8 tools with public prices: $1,630 a month.
+3 more that won't show you a price until you book a demo.
+
+Slate Growth is $499.
+
+Here's the stack, at the plan closest to one brand's needs, billed monthly:
+
+→ Peec AI Pro, AI visibility tracking: $245
+→ Ahrefs Lite, rank tracking and site audits: $129
+→ Jasper Pro, AI writing: $69 a seat
+→ Clearscope Essentials, content optimisation: $129
+→ Midjourney Pro, images: $60 (Pro is required once your company makes over $1M a year)
+→ Pitchbox Pro, link building outreach: $300
+→ Octolens Pro, Reddit and community mentions: $199
+→ Databox Business, AI analytics and reporting: $499
+
+That's $19,560 a year, before you add a second seat anywhere.
+
+Then the three without a price tag:
+→ Profound sells one paid plan, Enterprise, on a custom quote. The only self-serve option is a 7-day trial.
+→ AirOps lists Solo and Pro plans with no prices.
+→ Crayon says its pricing is "tailored to your program."
+
+Are these 1:1 swaps? Not all of them. Databox is a full BI tool, and Crayon goes deeper on sales battlecards than we do. But most teams buy each one for a single job, and each job ends in the same place: a dashboard, waiting for someone to act on it.
+
+That's the gap we built Slate for. On Growth you get:
+→ 10,000 AI answers a month across ChatGPT, Perplexity, AI Overviews and AI Mode
+→ 750 keywords tracked and 1,000 pages monitored
+→ Site audits, briefs, articles, refreshes and visuals, published to your CMS with your approval
+→ Outreach over email and LinkedIn
+→ Reddit, G2 and competitor research
+→ Weekly reports in Slack
+
+One coworker, one memory, every job. And it does the work, not just the tracking.
+
+Every price in the image is from the vendor's own pricing page this week. Sources in the first comment.
+
+What's in your stack that I missed?
+
+---
+
+## Alternate hooks (swap for the first line)
+
+1. Profound doesn't publish a price. Neither does AirOps. So I priced everything else.
+2. $1,630 a month for 8 marketing tools, and 3 more that need a sales call to quote you.
+3. The average AI search stack has more dashboards than people to read them. Here's what it costs.
 
 ---
 
 ## First comment
 
-What each tile replaces, and how we estimated it: we used the typical annual spend for a mid-market B2B team on each tool category, at list price. Your numbers will differ. The pattern doesn't: most of the stack reports on work that still needs a human.
+Sources, all checked 11 Nov 2026 on monthly billing:
+Peec AI peec.ai/pricing · Ahrefs ahrefs.com/pricing · Jasper jasper.ai/pricing · Clearscope clearscope.io/pricing · Midjourney docs.midjourney.com (Comparing Midjourney Plans) · Pitchbox pitchbox.com/pricing · Octolens octolens.com/pricing · Databox databox.com/pricing · Profound tryprofound.com/pricing · AirOps airops.com/pricing · Crayon crayon.co/pricing · Slate slatehq.com/pricing
 
-Try Slate: [link]
+Annual billing cuts most of these by 17–30%, and Slate's by 20%.
+
+Start a 14-day Slate trial (no card): slatehq.com

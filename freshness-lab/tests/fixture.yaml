@@ -1,0 +1,17 @@
+repetitions: 2
+engines:
+  chatgpt:    {enabled: true, model: gpt-5.4-mini}
+  perplexity: {enabled: true, model: sonar-pro}
+  claude:     {enabled: true, model: claude-opus-5-5}
+  gemini:     {enabled: true, model: gemini-2.5-flash}
+canaries:
+  - id: pricing-change
+    url: https://slatehq.com/pricing
+    page_type: pricing
+    arm: ping
+    old_value: "$499"
+    new_value: "$449"
+    changed_at: "2026-11-17T09:00:00+00:00"
+    prompts:
+      - "How much does Slate cost per month?"
+      - "According to slatehq.com/pricing, what does Slate cost?"

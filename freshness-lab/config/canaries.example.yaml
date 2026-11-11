@@ -1,0 +1,50 @@
+# Freshness Lab: canary configuration.
+# Copy to config/canaries.yaml and fill in the TODOs before the first live run.
+#
+# Every canary is a TRUE fact on a page you control that changes on a known date.
+# Never plant false information: probes ask public AI engines, and real buyers read these pages.
+
+repetitions: 2            # runs per prompt per engine per round (engines are non-deterministic)
+
+engines:
+  chatgpt:    {enabled: true, model: gpt-5.4-mini}       # OpenAI Responses API + web_search
+  perplexity: {enabled: true, model: sonar-pro}
+  claude:     {enabled: true, model: claude-opus-5-5}    # set claude-sonnet-4-6 to match the 1,000-query study
+  gemini:     {enabled: true, model: gemini-2.5-flash}   # Google Search grounding
+
+canaries:
+  # 1. The hook: a real price change on a pricing page.
+  - id: pricing-change
+    url: https://slatehq.com/pricing          # TODO confirm page
+    page_type: pricing
+    arm: ping                                 # ping = IndexNow + GSC "request indexing" + sitemap lastmod on change day
+    old_value: "TODO current price, e.g. $499"
+    new_value: "TODO new price, e.g. $449"
+    changed_at: "2026-11-17T09:00:00+05:30"   # TODO exact time the edit went live
+    prompts:
+      - "How much does Slate (slatehq.com) cost per month?"
+      - "What is the price of Slate's main plan?"
+      - "According to slatehq.com/pricing, what does Slate cost?"
+
+  # 2. A number that changes naturally: the SlateIndex brand count.
+  - id: slateindex-count
+    url: https://slateindex.ai/               # TODO page that states the count
+    page_type: homepage
+    arm: no-ping
+    old_value: "TODO e.g. 1,304"
+    new_value: "TODO e.g. 1,412"
+    new_patterns: ["1,?412"]                  # optional regexes; default = exact value
+    old_patterns: ["1,?304"]
+    changed_at: "2026-11-17T09:00:00+05:30"
+    prompts:
+      - "How many brands does SlateIndex track?"
+      - "What is SlateIndex and how many brands are in it?"
+      - "According to slateindex.ai, how many brands are tracked?"
+
+  # 3. A stat inside a ranking blog post (same edit, no ping) - TODO
+  # 4. A changelog / docs entry - TODO
+  # 5. A brand-new URL (discovery latency instead of update latency) - TODO
+
+  # Control: an unchanged page probed the same way, to measure false "fresh" detections.
+  # - id: control-unchanged
+  #   ...

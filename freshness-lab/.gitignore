@@ -1,0 +1,3 @@
+__pycache__/
+config/canaries.yaml.bak
+data/logs/processed/

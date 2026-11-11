@@ -1,6 +1,8 @@
 # Slate: "Cancel 11 tools" LinkedIn post
 
-**Image:** `slate-stack.png` (4:5, 2160×2700). Source: `stack.html`, `logos/`, and `mascot.png`. The mascot is rendered from Slate's own animation file, slatehq.com/mascot/fuzzy-float.json.
+**Attach (recommended):** `slate-stack-animated.mp4` (4:5, 1080×1350, 10s loop, silent). LinkedIn autoplays video muted in the feed, and the motion holds attention longer than a still image.
+**Fallbacks:** `slate-stack-animated.gif` (540×675) or the still `slate-stack.png` (2160×2700).
+**Source:** `anim.html` (animated) and `stack.html` (still). The mascot is Slate's own Lottie file (`anim-assets/fuzzy-float.json`, from slatehq.com/mascot/). To re-render, see the comment at the top of `anim.html`.
 **Prices and claims:** every number and its source URL is in `sources.md`.
 
 ---
@@ -27,6 +29,8 @@ Don't let the fluff fool you. Our little orange coworker packs a punch.
 
 Here's everything it replaces, and what each of those tools costs today.
 
+Want to see what it would cancel in your stack? Try it free for 14 days, no card needed: slatehq.com
+
 ---
 
 ## Shorter version (if you want it tighter)
@@ -39,7 +43,7 @@ We built Slate to be the one that does the work. Track AI search, write, refresh
 
 Small, orange, fluffy. Surprisingly hard-working.
 
-Here's what it replaces.
+Here's what it replaces. Try it free for 14 days: slatehq.com
 
 ---
 

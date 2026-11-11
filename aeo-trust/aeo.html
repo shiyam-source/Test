@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AEO Trust Gap</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#111111; --card:#171717; --line:#262626; --ink:#f5f4f0; --mute:#a9a59d; --dim:#75716a; --accent:#ee6216; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; background: var(--bg); }
+  body { font-family: 'Inter Tight', system-ui, sans-serif; color: var(--ink); position: relative; overflow: hidden; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .bar { position: absolute; top: 0; left: 0; height: 4px; width: 100%; background: #1d1d1d; }
+  .bar::before { content: ''; position: absolute; left: 0; top: 0; height: 4px; width: 84px; background: var(--accent); }
+
+  header { position: absolute; top: 44px; left: 60px; right: 60px; display: flex; justify-content: space-between; align-items: center; }
+  header img { height: 30px; }
+  header .tag { font-size: 12px; letter-spacing: .2em; color: var(--mute); }
+
+  .eyebrow { position: absolute; top: 116px; left: 60px; font-size: 13px; letter-spacing: .24em; color: var(--accent); }
+  h1 { position: absolute; top: 140px; left: 60px; right: 60px; font-size: 58px; line-height: 1; font-weight: 600; letter-spacing: -0.045em; }
+  h1 .grey { color: #b9b5ad; }
+
+  /* matrix */
+  .matrix { position: absolute; left: 112px; top: 300px; width: 908px; height: 520px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; }
+  .q { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; position: relative; overflow: hidden; }
+  .q .k { font-size: 11px; letter-spacing: .16em; color: var(--dim); }
+  .q h3 { margin-top: 10px; font-size: 30px; font-weight: 600; letter-spacing: -0.035em; }
+  .q p { margin-top: 8px; font-size: 16.5px; line-height: 1.38; color: var(--mute); max-width: 360px; }
+  .q.win { background: linear-gradient(140deg, #2a170c 0%, #1b1411 60%, #171717 100%); border-color: #6a3214; overflow: visible; }
+  .q.win h3 { color: var(--accent); }
+  .q.win p { max-width: 230px; color: #cfc9c0; }
+  .q.win .ask { position: absolute; left: 24px; bottom: 22px; font-size: 13px; letter-spacing: .12em; color: var(--accent); }
+  .q .say { position: absolute; left: 24px; bottom: 22px; font-size: 17px; font-style: italic; color: #d8d3cb; letter-spacing: -0.01em; }
+  .q .say::before { content: ''; display: inline-block; width: 3px; height: 16px; background: #3a3733; margin-right: 10px; vertical-align: -2px; }
+  .lean { position: absolute; right: -6px; bottom: -14px; height: 214px; filter: drop-shadow(0 14px 22px rgba(0,0,0,.55)); }
+
+  .yaxis { position: absolute; left: 60px; top: 300px; height: 520px; width: 40px; display: flex; align-items: center; justify-content: center; }
+  .yaxis span { transform: rotate(-90deg); white-space: nowrap; font-size: 12px; letter-spacing: .16em; color: var(--mute); }
+  .yaxis span b { color: var(--ink); font-weight: 500; }
+  .yline { position: absolute; left: 96px; top: 300px; height: 520px; width: 1px; background: #3a3733; }
+  .yline::before { content: ''; position: absolute; left: -4px; top: -1px; width: 8px; height: 8px; border-left: 1px solid #6b6760; border-top: 1px solid #6b6760; transform: rotate(45deg); }
+  .xaxis { position: absolute; left: 112px; top: 836px; width: 908px; display: flex; justify-content: center; font-size: 12px; letter-spacing: .16em; color: var(--mute); }
+  .xaxis b { color: var(--ink); font-weight: 500; }
+  .xline { position: absolute; left: 112px; top: 830px; width: 908px; height: 1px; background: #3a3733; }
+  .xline::after { content: ''; position: absolute; right: -1px; top: -4px; width: 8px; height: 8px; border-right: 1px solid #6b6760; border-top: 1px solid #6b6760; transform: rotate(45deg); }
+
+  /* stats */
+  .slabel { position: absolute; left: 60px; top: 890px; font-size: 12px; letter-spacing: .18em; color: var(--mute); }
+  .slabel b { color: var(--accent); font-weight: 500; }
+  .stats { position: absolute; left: 60px; right: 60px; top: 918px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px 18px; }
+  .stat .n { font-size: 50px; font-weight: 600; letter-spacing: -0.05em; line-height: 1; color: var(--accent); }
+  .stat .t { margin-top: 10px; font-size: 15px; line-height: 1.35; color: var(--ink); }
+  .stat .s { margin-top: 8px; font-size: 13px; line-height: 1.35; color: var(--dim); }
+
+  /* fix */
+  .fix { position: absolute; left: 60px; right: 60px; top: 1112px; border-radius: 16px; border: 1px solid #5a2a10; background: linear-gradient(100deg, #24150d 0%, #171310 60%, #151515 100%); padding: 16px 22px; display: grid; grid-template-columns: 150px 1fr 1fr; column-gap: 22px; align-items: center; }
+  .fix .h { font-size: 22px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+  .fix .h em { font-style: normal; color: var(--accent); }
+  .fix .c .k { font-size: 11px; letter-spacing: .16em; color: var(--accent); }
+  .fix .c p { margin-top: 5px; font-size: 14.5px; line-height: 1.38; color: #d8d3cb; }
+
+  .note { position: absolute; left: 60px; right: 60px; top: 1238px; font-size: 10.5px; line-height: 1.5; color: var(--dim); }
+  footer { position: absolute; left: 60px; right: 60px; bottom: 30px; display: flex; justify-content: space-between; align-items: baseline; font-size: 17px; }
+  footer b { font-weight: 600; } footer span { color: var(--mute); }
+  footer .mono { font-size: 13px; color: var(--mute); letter-spacing: .1em; }
+</style>
+</head>
+<body>
+  <div class="bar"></div>
+  <header>
+    <img src="logo.png" alt="Slate">
+    <div class="tag mono">AEO · THE TRUST GAP</div>
+  </header>
+
+  <div class="eyebrow mono">WHY MOST AEO PROGRAMS STALL</div>
+  <h1>AEO needs two leaps of faith.<br><span class="grey">Most companies only get one.</span></h1>
+
+  <div class="yaxis"><span class="mono"><b>YOUR AEO TEAM IS REALLY GOOD</b> · HARD TO VERIFY</span></div>
+  <div class="yline"></div>
+
+  <div class="matrix">
+    <div class="q">
+      <div class="k mono">GREAT TEAM · SKEPTICAL EXECS</div>
+      <h3>Starved</h3>
+      <p>The work is good, but nobody can prove it pays. It gets cut at the next budget review.</p>
+      <div class="say">"Can you tie this to pipeline?"</div>
+    </div>
+    <div class="q win">
+      <div class="k mono">GREAT TEAM · EXECS ALL IN</div>
+      <h3>Compounding</h3>
+      <p>Execs keep funding it. The team keeps earning it.</p>
+      <div class="ask mono">HOW MANY ARE HERE?</div>
+      <img class="lean" src="mascot-lean.png" alt="Slate mascot">
+    </div>
+    <div class="q">
+      <div class="k mono">WEAK TEAM · SKEPTICAL EXECS</div>
+      <h3>Waiting</h3>
+      <p>No budget, no owner. Waiting for a competitor to prove it first.</p>
+      <div class="say">"Let's revisit next quarter."</div>
+    </div>
+    <div class="q">
+      <div class="k mono">WEAK TEAM · EXECS ALL IN</div>
+      <h3>Expensive guessing</h3>
+      <p>Budget and dashboards, but no way to tell if any of it is working.</p>
+      <div class="say">"So... is it working?"</div>
+    </div>
+  </div>
+
+  <div class="xline"></div>
+  <div class="xaxis mono"><span><b>YOUR EXECS REALLY BELIEVE IN AEO</b> · HARD TO PROVE</span></div>
+
+  <div class="slabel mono">WHY IT'S SO HARD TO PROVE · <b>SLATE CITATION LAB, 1,000 B2B QUERIES</b></div>
+  <div class="stats">
+    <div class="stat"><div class="n">8%</div><div class="t">of ChatGPT's top-of-funnel answers showed a link.</div><div class="s">Buyers learn about you with no click to track.</div></div>
+    <div class="stat"><div class="n">74%</div><div class="t">of cited pages weren't in Google's top 10 or AI Overview.</div><div class="s">Your SEO tools can't see most of it.</div></div>
+    <div class="stat"><div class="n">0.09%</div><div class="t">of citations were shared by all three link-showing engines.</div><div class="s">"Are we winning?" has a different answer per engine.</div></div>
+  </div>
+
+  <div class="fix">
+    <div class="h">Swap faith<br>for <em>proof.</em></div>
+    <div class="c"><div class="k mono">FOR THE EXEC</div><p>A weekly report: where you show up in AI answers, which pages get cited, and the sessions they bring in.</p></div>
+    <div class="c"><div class="k mono">FOR THE TEAM</div><p>Slate does the tracking and much of the work. Every change is logged and reversible, so it's easy to check.</p></div>
+  </div>
+
+  <div class="note mono">Slate Citation Lab: 1,000 B2B SaaS queries via API with web search (ChatGPT, Perplexity, Claude, Gemini), captured 3 Aug 2026. API results, not the consumer apps.</div>
+
+  <footer>
+    <div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div>
+    <div class="mono">try it free · slatehq.com →</div>
+  </footer>
+</body>
+</html>

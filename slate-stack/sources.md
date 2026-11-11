@@ -12,11 +12,12 @@ All prices were read from each vendor's live pricing page in a headless browser 
 | Pitchbox | Pro | $300/mo | $210/mo billed annually | 2 users, 2 email accounts, 2,000 outreach emails | https://pitchbox.com/pricing/ |
 | Octolens | Pro | $199/month | $159/month billed annually | 15,000 mentions, 10 keywords, all socials and communities | https://octolens.com/pricing |
 | Databox | Business | $499 billed monthly | $399/mo ($4,788/yr) | "Built for teams…" | https://databox.com/pricing |
-| **Total, 8 tools** | | **$1,630/mo · $19,560/yr** | | | |
+| Zapier | Professional | $19.99/month ("Pay monthly" selected) | Pay yearly saves 33% | Multi-step Zaps, unlimited premium apps, webhooks, AI fields; 1 user | https://zapier.com/pricing |
+| **Total, 9 tools** | | **$1,649.99/mo · $19,799.88/yr** | | | |
 | Profound | Enterprise only | **$1,667 (est.)** | $20K+/yr est. | No public paid price. Pricing page shows only a free trial (50 prompts daily for 7 days) and Enterprise "Custom". Third-party reviews report enterprise deals at about $2,000–$5,000+/mo. $20K/yr is used as the low end. | https://www.tryprofound.com/pricing · https://loudmink.ai/blog/is-profound-worth-it · https://www.cruelx.com/resources/profound-pricing-alternatives |
 | AirOps | Pro / Enterprise | **$2,500 (est.)** | $30K+/yr est. | No public price. Solo and Pro say "Start for free"; overage $0.025 per task. Third-party estimates: about $24K/yr for a team on Pro, $50K+/yr for Enterprise. $30K/yr is used. | https://www.airops.com/pricing · https://www.rankup.so/academy/airops-pricing · https://checkthat.ai/brands/airops/pricing |
 | Crayon | Custom | **$2,500 (est.)** | $30K/yr (Vendr median) | "pricing is tailored to the needs of your competitive intelligence program". Vendr-reported median $30,000/yr (93 purchases, range $12.7K–$46K) | https://www.crayon.co/pricing · https://marketintelligencetools.com/reports/crayon-pricing/ · https://elevatedsignal.com/compare/crayon/ |
-| **Full stack, 11 tools** | | **$8,297/mo** | **$99,560/yr** | $19,560 list + $20,000 + $30,000 + $30,000 | |
+| **Full stack, 12 tools** | | **≈$8,317/mo** | **$99,800/yr (rounded from $99,799.88)** | $19,799.88 list + $20,000 + $30,000 + $30,000 | |
 | **Slate** | **Growth** | **$499/mo** | 20% off annually | 15,000 credits, 10,000 AI answers/mo, 1,000 pages monitored, 750 keywords tracked weekly, 1 user, 1 workspace, BYOK. Comparison table shows Outreach (LinkedIn & Email), Slate Coworker, Bulk execution, Custom Agent Build and MCP Server checked on every plan. Claude and Gemini tracking is an add-on. | https://www.slatehq.com/pricing |
 
 ## How plans were chosen
@@ -64,7 +65,8 @@ Each arrow on the image points to a real Slate product or agent name from slateh
 | Clearscope | Content Refresh | /content-refresh |
 | Jasper | SEO Article Writer | /agents: "Brief to SEO article writer" |
 | Midjourney | Visual Content Agent | /agents: "Visual Content Agent" |
+| Zapier | Custom Agents + MCP | Pricing table: Custom Agent Build and MCP Server on every plan; Slack and scheduled agents (/cowork); Slate's own comparison page /slate-vs-n8n-vs-make-vs-relevance-light positions it against automation tools |
 
-Headline savings: $99,560 − $5,988 (Slate Growth, $499 × 12) = **$93,572 a year**.
+Headline: "1 AI marketing coworker vs 12+ subscriptions" (12 tools are shown). Savings in the header: $99,800 − $5,988 (Slate Growth, $499 × 12) = **$93,812 a year**.
 
 Mascot: rendered from Slate's own Lottie file at https://slatehq.com/mascot/fuzzy-float.json (frame 0), as used on the slatehq.com homepage.

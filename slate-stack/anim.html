@@ -29,13 +29,13 @@
   header img { height: 30px; }
   header .tag { font-size: 12px; letter-spacing: .2em; color: var(--mute); }
 
-  h1 { position: absolute; top: 112px; left: 0; right: 0; text-align: center; font-size: 46px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; }
-  h1 em { font-style: normal; color: var(--accent); display: inline-block; margin: 0 11px; }
+  h1 { position: absolute; top: 112px; left: 0; right: 0; text-align: center; font-size: 44px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; }
+  h1 em { font-style: normal; color: var(--accent); display: inline-block; transform-origin: 50% 60%; }
 
   .mascot { position: absolute; left: 50%; top: 170px; width: 318px; transform: translateX(-50%); z-index: 2; filter: drop-shadow(0 18px 30px rgba(0,0,0,.55)); }
 
   .card { position: absolute; left: 60px; right: 60px; top: 418px; background: var(--card); border: 1px solid #2a2a2a; border-radius: 22px; padding: 14px 18px 16px; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
-  .row { display: grid; grid-template-columns: 1fr 92px 64px 360px; align-items: center; height: 56px; border-bottom: 1px solid var(--line); }
+  .row { display: grid; grid-template-columns: 1fr 92px 64px 360px; align-items: center; height: 52px; border-bottom: 1px solid var(--line); }
   .row.last { border-bottom: 0; }
   .tool { display: flex; align-items: center; gap: 12px; }
   .logo { width: 28px; height: 28px; border-radius: 7px; overflow: hidden; flex: none; display: flex; align-items: center; justify-content: center; }
@@ -64,7 +64,7 @@
   .total .new .b { font-size: 27px; font-weight: 700; letter-spacing: -0.035em; color: #fff; margin-top: 1px; }
   .total .new .b small { font-size: 15px; font-weight: 500; color: #ffe6d6; letter-spacing: -0.01em; }
 
-  .note { position: absolute; left: 60px; right: 60px; top: 1252px; font-size: 10.5px; line-height: 1.5; color: var(--dim); }
+  .note { position: absolute; left: 60px; right: 60px; top: 1244px; font-size: 10.5px; line-height: 1.5; color: var(--dim); }
   footer { position: absolute; left: 60px; right: 60px; bottom: 26px; display: flex; justify-content: space-between; align-items: baseline; font-size: 17px; }
   footer b { font-weight: 600; } footer span { color: var(--mute); }
   footer .mono { font-size: 13px; color: var(--mute); letter-spacing: .1em; }
@@ -79,7 +79,7 @@
   #sparks { position: absolute; left: 540px; top: 330px; z-index: 3; width: 0; height: 0; }
   #sparks svg { position: absolute; left: -12px; top: -12px; width: 24px; height: 24px; }
   .pill { transition: none; }
-  #cta { position: absolute; left: 0; right: 0; top: 1160px; display: flex; align-items: center; justify-content: center; gap: 18px; }
+  #cta { position: absolute; left: 0; right: 0; top: 1172px; display: flex; align-items: center; justify-content: center; gap: 18px; }
   #btn { position: relative; z-index: 2; height: 54px; padding: 0 30px; border-radius: 27px; background: var(--accent); color: #fff; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(238,98,22,.35); }
   #arr { display: inline-block; }
   #ring { position: absolute; left: 50%; top: 27px; width: 0; height: 0; z-index: 1; }
@@ -94,10 +94,10 @@
 
   <header>
     <img src="logo.png" alt="Slate">
-    <div class="tag mono">11 SUBSCRIPTIONS → 1 COWORKER</div>
+    <div class="tag mono">SAVE $93,812 A YEAR</div>
   </header>
 
-  <h1>Cancel 11 tools. Save<em>$93,572</em>a year.</h1>
+  <h1><em>1 AI marketing coworker</em> vs 12+ subscriptions.</h1>
 
   <div id="mw"><div id="lot"></div></div>
   <div id="sparks"></div>
@@ -114,18 +114,19 @@
     <div class="row"><div class="tool"><div class="logo"><img src="logos/ahrefs.png"></div><span class="name">Ahrefs</span></div><div class="price"><span>$1,548</span></div><div class="arrow"><i></i></div><div class="pill"><img src="logos/slate-mark.png">Keywords + SEO Audit</div></div>
     <div class="row"><div class="tool"><div class="logo"><img src="logos/clearscope48.png"></div><span class="name">Clearscope</span></div><div class="price"><span>$1,548</span></div><div class="arrow"><i></i></div><div class="pill"><img src="logos/slate-mark.png">Content Refresh</div></div>
     <div class="row"><div class="tool"><div class="logo"><img src="logos/jasper.png"></div><span class="name">Jasper</span></div><div class="price"><span>$828</span></div><div class="arrow"><i></i></div><div class="pill"><img src="logos/slate-mark.png">SEO Article Writer</div></div>
-    <div class="row last"><div class="tool"><div class="logo"><img src="logos/midjourney.svg"></div><span class="name">Midjourney</span></div><div class="price"><span>$720</span></div><div class="arrow"><i></i></div><div class="pill"><img src="logos/slate-mark.png">Visual Content Agent</div></div>
+    <div class="row"><div class="tool"><div class="logo"><img src="logos/midjourney.svg"></div><span class="name">Midjourney</span></div><div class="price"><span>$720</span></div><div class="arrow"><i></i></div><div class="pill"><img src="logos/slate-mark.png">Visual Content Agent</div></div>
+    <div class="row last"><div class="tool"><div class="logo"><img src="logos/zapier.png"></div><span class="name">Zapier</span></div><div class="price"><span>$240</span></div><div class="arrow"><i></i></div><div class="pill"><img src="logos/slate-mark.png">Custom Agents + MCP</div></div>
 
     <div class="total">
-      <div class="l mono">YOUR STACK TODAY<b>11 tools, per year</b></div>
-      <div class="old">$99,560<small>/yr</small></div>
+      <div class="l mono">YOUR STACK TODAY<b>12 tools, per year</b></div>
+      <div class="old">$99,800<small>/yr</small></div>
       <div class="arrow"><i></i></div>
       <div class="new"><div class="a">SLATE GROWTH</div><div class="b">$5,988<small> /yr · $499/mo</small></div></div>
     </div>
   </div>
 
   <div id="cta"><div id="ring"></div><div id="btn">Start your free trial <span id="arr">→</span></div><div id="ctasub" class="mono">14 DAYS · NO CARD NEEDED · SLATEHQ.COM</div></div>
-  <div class="note mono">Yearly cost at monthly-billing list price, from each vendor's pricing page on 11 Nov 2026 (entry or closest plan for one brand).<br>* No public price. Profound and AirOps: low-end contract estimates from third-party reviews. Crayon: Vendr median. Logos belong to their owners.</div>
+  <div class="note mono">Yearly cost at monthly-billing list price, from each vendor's pricing page on 11 Nov 2026 (entry or closest plan for one brand), rounded.<br>* No public price. Profound and AirOps: low-end contract estimates from third-party reviews. Crayon: Vendr median. Logos belong to their owners.</div>
 
   <footer>
     <div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div>
@@ -188,14 +189,14 @@ window.render = (t) => {
   });
 
   // total
-  const pt = ease((t - 3.75) / 0.35) * (1 - out);
+  const pt = ease((t - 3.95) / 0.35) * (1 - out);
   oldT.style.setProperty('--p', pt.toFixed(3));
   oldT.style.color = `rgb(${mix(INK, RED, pt).join(',')})`;
-  const pn = backOut((t - 3.95) / 0.5) * (1 - out);
+  const pn = backOut((t - 4.15) / 0.5) * (1 - out);
   newT.style.opacity = clamp(pn * 1.4).toFixed(3);
   newT.style.transform = `translateX(${((1 - clamp(pn)) * 40).toFixed(1)}px) scale(${(0.9 + 0.1 * pn).toFixed(3)})`;
   h1em.style.display = 'inline-block';
-  h1em.style.transform = `scale(${(1 + 0.07 * bump((t - 4.15) / 0.45)).toFixed(3)})`;
+  h1em.style.transform = `scale(${(1 + 0.05 * bump((t - 4.4) / 0.45)).toFixed(3)})`;
 
   // mascot: nod per strike, crouch + hop + squash, tilt toward bubble, wiggle
   let ty = 0, sx = 1, sy = 1, rot = 0;

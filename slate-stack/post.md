@@ -1,7 +1,7 @@
-# Slate: "Cancel 11 tools" LinkedIn post
+# Slate: "1 AI marketing coworker vs 12+ subscriptions" LinkedIn post
 
 **Attach (recommended):** `slate-stack-animated.mp4` (4:5, 1080×1350, 10s loop, silent). LinkedIn autoplays video muted in the feed, and the motion holds attention longer than a still image.
-**Fallbacks:** `slate-stack-animated.gif` (540×675) or the still `slate-stack.png` (2160×2700).
+**Fallbacks:** `slate-stack-animated.gif` (full HD 1080×1350, 30fps, 20 MB), `slate-stack-animated-light.gif` (1080×1350, 20fps, 10 MB), or the still `slate-stack.png` (2160×2700).
 **Source:** `anim.html` (animated) and `stack.html` (still). The mascot is Slate's own Lottie file (`anim-assets/fuzzy-float.json`, from slatehq.com/mascot/). To re-render, see the comment at the top of `anim.html`.
 **Prices and claims:** every number and its source URL is in `sources.md`.
 
@@ -15,11 +15,11 @@ It tells you what's broken. Then it waits for someone on your team to go fix it.
 
 Look at the stack most marketing teams run today. A tool to track AI search. A tool to write. A tool to optimise what got written. A tool to find people to pitch. A tool to watch Reddit. A tool to report on all the other tools.
 
-Eleven logins. Eleven renewals. Close to $100,000 a year.
+Twelve logins. Twelve renewals. Close to $100,000 a year.
 
 And the team still does all the work.
 
-We didn't want to build tool number twelve.
+We didn't want to build tool number thirteen.
 
 So we built Slate as a coworker. You give it a goal and it gets on with it. It tracks where you show up in AI answers, writes and refreshes your pages, pitches the sites the models cite, watches Reddit and your competitors, and sends you the report. Nothing ships without your approval.
 
@@ -37,7 +37,7 @@ Want to see what it would cancel in your stack? Try it free for 14 days, no card
 
 Most marketing tools tell you what's wrong. Very few fix it.
 
-So teams end up paying for eleven of them. Close to $100K a year, and the work still lands on people.
+So teams end up paying for a dozen of them. Close to $100K a year, and the work still lands on people.
 
 We built Slate to be the one that does the work. Track AI search, write, refresh, pitch, watch Reddit and competitors, report. All in one coworker, for $499 a month.
 
@@ -51,7 +51,7 @@ Here's what it replaces. Try it free for 14 days: slatehq.com
 
 Where the numbers come from:
 
-Prices are yearly at each vendor's monthly list price, checked on their own pricing pages on 11 Nov 2026, using the entry or closest plan for one brand: Peec AI, Ahrefs, Jasper, Clearscope, Midjourney, Pitchbox, Octolens and Databox.
+Prices are yearly at each vendor's monthly list price, checked on their own pricing pages on 11 Nov 2026, using the entry or closest plan for one brand: Peec AI, Ahrefs, Jasper, Clearscope, Midjourney, Pitchbox, Octolens, Databox and Zapier.
 
 Three don't publish a price, so I used the low end of what's been reported. Profound: about $20K a year. AirOps: about $30K a year. Crayon: Vendr's median of $30K a year.
 

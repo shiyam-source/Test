@@ -11,6 +11,10 @@
 
 ## Post
 
+ChatGPT ignored 99% of Google's top 10 pages.
+
+Is yours in the 1%?
+
 SEO isn't dead. But "rank your website" isn't the whole job anymore.
 
 When a buyer asks ChatGPT or Perplexity for the best tool in your category, the answer doesn't come from your site alone. It comes from the whole web around it: Reddit threads, G2 reviews, "best X" roundups, YouTube walkthroughs, Wikipedia, marketplaces.
@@ -19,7 +23,6 @@ Your website is one node. AI reads the whole map.
 
 We ran 1,000 B2B software questions through ChatGPT, Perplexity, Claude and Gemini to see how that map actually gets read. A few things that surprised us:
 
-→ Only 1% of Google's top-10 pages ever showed up in a ChatGPT answer.
 → 74% of the pages AI cited weren't in Google's top 10 at all.
 → Reddit was Perplexity's #1 source. ChatGPT and Claude cited it zero times.
 → A third of ChatGPT's links went to pricing pages.
@@ -45,6 +48,7 @@ Which surface is your team ignoring right now?
 
 ## Hook options (swap for the first line)
 
+0. ChatGPT ignored 99% of Google's top 10 pages. Is yours in the 1%? (matches the image)
 1. SEO isn't dead. But "rank your website" isn't the whole job anymore.
 2. Only 1% of Google's top-10 pages ever showed up in a ChatGPT answer. We checked 1,000 queries.
 3. Your website is one node. AI reads the whole map.

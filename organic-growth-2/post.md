@@ -11,9 +11,7 @@
 
 ## Post
 
-ChatGPT ignored 99% of Google's top 10 pages.
-
-Is yours in the 1%?
+The Organic Growth Cheat Sheet 2.0. Save this one.
 
 SEO isn't dead. But "rank your website" isn't the whole job anymore.
 
@@ -48,7 +46,8 @@ Which surface is your team ignoring right now?
 
 ## Hook options (swap for the first line)
 
-0. ChatGPT ignored 99% of Google's top 10 pages. Is yours in the 1%? (matches the image)
+0. The Organic Growth Cheat Sheet 2.0. Save this one. (matches the image)
+1b. ChatGPT ignored 99% of Google's top 10 pages. Is yours in the 1%?
 1. SEO isn't dead. But "rank your website" isn't the whole job anymore.
 2. Only 1% of Google's top-10 pages ever showed up in a ChatGPT answer. We checked 1,000 queries.
 3. Your website is one node. AI reads the whole map.

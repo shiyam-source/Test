@@ -1,10 +1,11 @@
-# Slate: Organic Growth 2.0 playbook (LinkedIn carousel)
+# Slate: Organic Growth 2.0 playbook (single tall GIF)
 
-**Attach:** `organic-growth-2.0-playbook.pdf` (10 slides, 4:5). Document title: "The Organic Growth 2.0 Playbook"
-**Individual slides:** `slides/slide-01.png` to `slide-10.png` (2160×2700).
-**Source:** `playbook.html`. Every stat comes from the Slate Citation Lab study (`../citation-lab/`): 1,000 B2B SaaS queries via API, captured 3 Aug 2026.
+**Attach:** `organic-growth-2.0-playbook.gif`: one tall animated infographic, 1080×8044, 10-second loop, 13.9 MB. The mascot floats and leans, signal dots travel across the map into "The AI answer", the 5-step loop lights up step by step, and the trial button pulses.
+**Still version:** `organic-growth-2.0-infographic.png` (same layout, one frame).
+**Source:** `infographic.html` (uses `lottie.min.js` and Slate's own mascot files `fuzzy-float.json` / `fuzzy-lean.json`). Every stat comes from the Slate Citation Lab study (`../citation-lab/`): 1,000 B2B SaaS queries via API, captured 3 Aug 2026.
+**Older carousel version** (not needed): `playbook.html`, `slides/`, `organic-growth-2.0-playbook.pdf`.
 
-**Slate vs education:** the carousel is education-first. Slate shows up only as honest labels on each play (Slate automates / Slate assists / Your team) and on the last slide. A playbook that works without Slate gets saved and shared, and the "Your team" labels make the "Slate automates" ones believable.
+**Slate vs education:** the playbook is education-first. Slate shows up only as honest labels on each play (Slate automates / Slate assists / Your team) and in the closing CTA.
 
 ---
 
@@ -25,19 +26,18 @@ We ran 1,000 B2B software questions through ChatGPT, Perplexity, Claude and Gemi
 
 So "just get on Reddit" or "just write more blog posts" is engine-specific advice at best.
 
-We turned the data into a playbook. 10 slides:
+We turned the data into one playbook. Everything's in the image:
 
-1. Organic 1.0 vs 2.0, side by side
-2. The map: 7 surfaces AI pulls from, plus your site
-3. How each engine reads the map differently
-4. A 5-step weekly loop
-5. Plays for all 8 surfaces, with what to measure
-6. A 90-day plan, in order
-7. What to hand to AI, and what to keep human
+→ Organic 1.0 vs 2.0, side by side
+→ The map: 7 surfaces AI pulls from, plus your site
+→ How each engine reads the map differently
+→ A 5-step weekly loop
+→ Plays for all 8 surfaces, with what to measure
+→ A 90-day plan, in order
 
 Every play is tagged so you know what's worth automating and what isn't. Press, Wikipedia, community posts and asking for reviews stay human. Tracking, audits and refreshes don't need to be.
 
-Save it for your next planning session. And if you want the tracking and the weekly report off your plate, the last slide has a free trial.
+Save it for your next planning session. And if you want the tracking and the weekly report off your plate, try Slate free for 14 days: slatehq.com
 
 Which surface is your team ignoring right now?
 

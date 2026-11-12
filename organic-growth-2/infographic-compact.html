@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Organic Growth Playbook</title>
+<!-- 1080x1350 animated infographic, same format as the Razorpay teardown. window.setup(floatJson) then window.render(t), t in [0,8)s. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#111111; --box:#1a1a1a; --bd:#3a3733; --ink:#f5f4f0; --mute:#a9a59d; --dim:#7d7870; --accent:#ee6216; --peach:#f6b48d;
+          --c-search:#6ea8fe; --c-social:#5ec8d8; --c-shop:#b18cff; --c-review:#6fcf97; --c-comm:#e0a458; --c-video:#ff7a8a; --c-ref:#f2c14e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; background: var(--bg); overflow: hidden; }
+  body { font-family: 'Inter Tight', system-ui, sans-serif; color: var(--ink); position: relative; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  #stars { position: absolute; inset: 0; }
+
+  .top { position: absolute; top: 34px; left: 44px; right: 44px; display: flex; justify-content: space-between; align-items: center; }
+  .top img { height: 30px; }
+  .top .c { font-size: 14px; letter-spacing: .24em; color: var(--mute); }
+  .top .r { font-size: 15px; letter-spacing: .1em; color: var(--mute); }
+  .eyebrow { position: absolute; top: 84px; left: 0; right: 0; text-align: center; font-size: 13.5px; letter-spacing: .26em; color: var(--accent); }
+  h1 { position: absolute; top: 104px; left: 0; right: 0; text-align: center; font-size: 62px; line-height: 1.02; font-weight: 600; letter-spacing: -0.045em; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .subt { position: absolute; top: 236px; left: 0; right: 0; text-align: center; font-size: 21px; color: #d8d3cb; letter-spacing: -0.01em; }
+  .subt b { background: var(--peach); color: #111; padding: 2px 9px; font-weight: 600; border-radius: 2px; }
+  #mascot { position: absolute; left: 846px; top: 128px; width: 150px; height: 150px; }
+
+  /* rows */
+  .rows { position: absolute; left: 0; right: 0; top: 276px; }
+  .row { position: absolute; left: 0; right: 0; }
+  .lab { position: absolute; left: 44px; width: 200px; }
+  .lab .n { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--accent); }
+  .lab h3 { margin-top: 2px; font-size: 22px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; }
+  .lab p { margin-top: 3px; font-size: 13px; color: var(--mute); }
+  .area { position: absolute; left: 262px; right: 44px; }
+  .grp { border: 1px solid var(--bd); border-radius: 12px; padding: 8px; display: grid; gap: 10px; background: rgba(17,17,17,.6); }
+  .bx { background: var(--box); border: 1px solid #34312d; border-radius: 9px; padding: 7px 9px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+  .bx b { font-size: 16px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.15; }
+  .bx span { margin-top: 2px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--dim); line-height: 1.3; }
+  .bx.white { background: #f5f4f0; border-color: #f5f4f0; } .bx.white b { color: #111; } .bx.white span { color: #6b665f; }
+  .bx.orange { background: var(--accent); border-color: var(--accent); } .bx.orange b { color: #fff; } .bx.orange span { color: #ffe1cf; }
+  .bx.peach { background: var(--peach); border-color: var(--peach); } .bx.peach b { color: #1a1a1a; } .bx.peach span { color: #6a4b38; }
+  .bx.own { border-color: var(--accent); background: #24150d; }
+  .bx .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .arrow { color: #6b6760; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .gt { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-align: center; margin-bottom: -2px; }
+  .spine { position: absolute; left: 631px; top: 276px; width: 1px; height: 836px; background: #3a3733; }
+  #pulse { position: absolute; left: 627px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px 3px rgba(238,98,22,.6); }
+
+  .big { position: absolute; left: 262px; right: 44px; display: grid; grid-template-columns: 1fr 230px 1fr; gap: 16px; align-items: center; }
+  .big .side { font-size: 14.5px; line-height: 1.38; color: #d8d3cb; }
+  .big .side i { display: block; font-style: normal; color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 12px; margin-bottom: 3px; }
+  .big .ctr { background: var(--accent); border-radius: 12px; padding: 10px 12px; text-align: center; }
+  .big .ctr b { display: block; font-size: 50px; font-weight: 700; letter-spacing: -0.05em; line-height: 1; color: #fff; }
+  .big .ctr span { display: block; margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #ffe1cf; line-height: 1.35; }
+
+  .nums { position: absolute; left: 262px; right: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .nums div { border-top: 1px solid #4a4743; padding-top: 6px; }
+  .nums b { display: block; font-size: 34px; font-weight: 600; letter-spacing: -0.05em; color: var(--accent); line-height: 1.05; }
+  .nums span { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #d8d3cb; }
+
+  .srcs { position: absolute; left: 44px; right: 44px; top: 1176px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--dim); }
+  .footer { position: absolute; left: 0; right: 0; bottom: 0; height: 128px; border-top: 1px solid #262626; background: #0d0d0d; }
+  .av { position: absolute; left: 44px; top: 34px; width: 56px; height: 56px; border-radius: 50%; background: var(--accent); color: #111; font-weight: 700; font-size: 20px; display: flex; align-items: center; justify-content: center; }
+  .who { position: absolute; left: 116px; top: 36px; }
+  .who b { display: block; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
+  .who span { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mute); }
+  .save { position: absolute; right: 44px; top: 48px; font-size: 21px; color: var(--ink); display: flex; gap: 10px; align-items: center; }
+  .save i { font-style: normal; color: var(--accent); display: inline-block; }
+</style>
+</head>
+<body>
+  <svg id="stars" viewBox="0 0 1080 1350"></svg>
+  <div class="top"><img src="logo.png"><div class="c mono">ORGANIC GROWTH, ENGINEERED</div><div class="r mono">01 / 01</div></div>
+  <div class="eyebrow mono">PLAYBOOK · AI SEARCH · B2B SAAS</div>
+  <h1>the <em>organic growth 2.0</em><br>playbook</h1>
+  <div class="subt">your website is one node. <b>ai reads the whole map.</b></div>
+  <div id="mascot"></div>
+
+  <div class="spine"></div>
+  <div id="pulse"></div>
+
+  <div class="rows">
+    <!-- 01 -->
+    <div class="row" style="top:0">
+      <div class="lab"><div class="n">(01)</div><h3>the shift</h3><p>from ranking to being named</p></div>
+      <div class="area"><div class="grp" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="bx"><b>keywords → prompts</b><span>(questions buyers ask ai)</span></div>
+        <div class="bx"><b>your site → the map</b><span>(7 surfaces + your site)</span></div>
+        <div class="bx"><b>clicks → mentions</b><span>(share of the answer)</span></div>
+      </div></div>
+    </div>
+    <!-- 02 -->
+    <div class="row" style="top:88px">
+      <div class="lab"><div class="n">(02)</div><h3>the map</h3><p>where ai gets its answers</p></div>
+      <div class="area"><div class="grp" style="grid-template-columns: repeat(4, 1fr); gap:8px;">
+        <div class="bx"><b><i class="dot" style="background:var(--c-search)"></i>search</b><span>google · bing</span></div>
+        <div class="bx"><b><i class="dot" style="background:var(--c-ref)"></i>reference</b><span>wikipedia · roundups</span></div>
+        <div class="bx"><b><i class="dot" style="background:var(--c-comm)"></i>communities</b><span>reddit · quora</span></div>
+        <div class="bx"><b><i class="dot" style="background:var(--c-review)"></i>reviews</b><span>g2 · capterra</span></div>
+        <div class="bx"><b><i class="dot" style="background:var(--c-video)"></i>video</b><span>youtube</span></div>
+        <div class="bx"><b><i class="dot" style="background:var(--c-social)"></i>social</b><span>linkedin · x</span></div>
+        <div class="bx"><b><i class="dot" style="background:var(--c-shop)"></i>marketplaces</b><span>aws · appexchange</span></div>
+        <div class="bx own"><b><i class="dot" style="background:var(--accent)"></i>your site</b><span>the 1 node you own</span></div>
+      </div></div>
+    </div>
+    <!-- 03 -->
+    <div class="row" style="top:232px">
+      <div class="lab"><div class="n">(03)</div><h3>the split</h3><p>each engine reads it differently</p></div>
+      <div class="area"><div class="grp" style="grid-template-columns: repeat(4, 1fr); gap:8px;">
+        <div class="bx"><b>perplexity</b><span>cites #1 result 87% · reddit is top source</span></div>
+        <div class="bx"><b>ai overviews</b><span>definition pages · cites #1 result 55%</span></div>
+        <div class="bx"><b>claude</b><span>deeper, structured pages · 0 reddit</span></div>
+        <div class="bx"><b>chatgpt</b><span>33% of links: pricing pages · 0 reddit</span></div>
+      </div></div>
+    </div>
+    <!-- 04 -->
+    <div class="row" style="top:340px">
+      <div class="lab"><div class="n">(04)</div><h3>the blind spot</h3><p>most of the map is off-radar</p></div>
+      <div class="big" style="top:0">
+        <div class="side"><i>(the problem)</i>rank trackers only see google. ai cites far more than google's top 10.</div>
+        <div class="ctr" id="big"><b>74%</b><span>of pages ai cited weren't in google's top 10</span></div>
+        <div class="side"><i>(the response)</i>track prompts per engine, and log every source each one cites.</div>
+      </div>
+    </div>
+    <!-- 05 -->
+    <div class="row" style="top:460px">
+      <div class="lab"><div class="n">(05)</div><h3>the loop</h3><p>every week, not once</p></div>
+      <div class="area"><div class="grp" style="grid-template-columns: repeat(5, 1fr); gap:8px;">
+        <div class="bx lp"><b>map prompts</b><span>slate automates</span></div>
+        <div class="bx lp"><b>fix your node</b><span>slate assists</span></div>
+        <div class="bx lp"><b>earn the map</b><span>assists + team</span></div>
+        <div class="bx lp"><b>refresh decay</b><span>slate automates</span></div>
+        <div class="bx lp"><b>prove it</b><span>slate automates</span></div>
+      </div></div>
+    </div>
+    <!-- 06 -->
+    <div class="row" style="top:556px">
+      <div class="lab"><div class="n">(06)</div><h3>the plays</h3><p>what moves the needle</p></div>
+      <div class="area" style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px;">
+        <div class="grp" style="grid-template-columns:1fr; gap:6px; padding:8px 10px 10px;"><div class="gt" style="color:var(--accent)">YOUR SITE</div><div class="bx"><b>pricing in text</b><span>(plans, not images)</span></div><div class="bx"><b>"x vs y" pages</b><span>(honest comparisons)</span></div></div>
+        <div class="grp" style="grid-template-columns:1fr; gap:6px; padding:8px 10px 10px;"><div class="gt" style="color:var(--accent)">OFF-SITE</div><div class="bx"><b>pitch cited roundups</b><span>(most-cited first)</span></div><div class="bx"><b>monthly reviews</b><span>(g2 · capterra)</span></div></div>
+        <div class="grp" style="grid-template-columns:1fr; gap:6px; padding:8px 10px 10px;"><div class="gt" style="color:var(--accent)">COMMUNITIES</div><div class="bx"><b>answer as a person</b><span>(not a brand account)</span></div><div class="bx"><b>if perplexity matters</b><span>(chatgpt, claude: 0)</span></div></div>
+      </div>
+    </div>
+    <!-- 07 -->
+    <div class="row" style="top:742px">
+      <div class="lab"><div class="n">(07)</div><h3>who does what</h3><p>automate the grind</p></div>
+      <div class="area" style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; left:300px; right:80px;">
+        <div class="bx white"><b>automate</b><span>tracking · audits · refreshes · weekly report</span></div>
+        <div class="bx orange"><b>keep human</b><span>press · wikipedia · community posts · reviews</span></div>
+      </div>
+    </div>
+    <!-- 08 -->
+    <div class="row" style="top:820px">
+      <div class="lab"><div class="n">(08)</div><h3>your version</h3><p>start this week</p></div>
+      <div class="area" style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px;">
+        <div class="bx peach"><b>25 buyer questions</b><span>(from sales calls)</span></div>
+        <div class="bx peach"><b>ask 3 engines</b><span>(note who gets named)</span></div>
+        <div class="bx peach"><b>pitch 3 roundups</b><span>(the most-cited ones)</span></div>
+      </div>
+    </div>
+    <!-- 09 -->
+    <div class="row" style="top:900px">
+      <div class="lab"><div class="n">(09)</div><h3>the numbers</h3></div>
+      <div class="nums" style="top:0">
+        <div><b>1,000</b><span>b2b queries tested</span></div>
+        <div><b>1%</b><span>of top-10 in chatgpt</span></div>
+        <div><b>87%</b><span>perplexity cites #1</span></div>
+        <div><b>0</b><span>reddit cites by chatgpt</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="srcs">source: slate citation lab · 1,000 b2b saas queries via api (chatgpt, perplexity, claude, gemini, ai overviews) · 3 aug 2026</div>
+  <div class="footer">
+    <div class="av">SS</div>
+    <div class="who"><b>shiyam sunder</b><span>(ceo, slate · founder, tripledart)</span></div>
+    <div class="save"><i id="saveArr">↳</i> save this</div>
+  </div>
+
+<script src="lottie.min.js"></script>
+<script>
+
+// stack rows with even gaps and centre labels on their content
+(function layout() {
+  const rows = [...document.querySelectorAll('.row')]; let y = 0; const GAP = 11;
+  rows.forEach(r => { r.style.top = y + 'px'; const a = r.querySelector('.area, .big, .nums'); a.style.top = '0px';
+    const ah = a.getBoundingClientRect().height; const lab = r.querySelector('.lab'); const lh = lab.getBoundingClientRect().height;
+    const h = Math.max(ah, lh); a.style.top = ((h - ah) / 2) + 'px'; lab.style.top = ((h - lh) / 2) + 'px'; r.style.height = h + 'px'; y += h + GAP; });
+  const last = rows[rows.length - 2]; // spine ends at the "your version" row
+  document.querySelector('.spine').style.height = (parseFloat(last.style.top) + parseFloat(last.style.height)) + 'px';
+  window.SPINE = parseFloat(document.querySelector('.spine').style.height);
+})();
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const stars = Array.from({ length: 70 }, () => ({ x: rnd() * 1080, y: rnd() * 1220, r: rnd() < .2 ? 1.6 : 1, ph: rnd() * 6.28 }));
+const st = document.getElementById('stars');
+stars.forEach(s => { const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); c.setAttribute('cx', s.x); c.setAttribute('cy', s.y); c.setAttribute('r', s.r); c.setAttribute('fill', '#ffffff'); st.appendChild(c); s.el = c; });
+const arcs = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+arcs.innerHTML = '<circle cx="1080" cy="0" r="380" stroke="#1d1d1d" fill="none"/><circle cx="1080" cy="0" r="560" stroke="#1a1a1a" fill="none"/>';
+st.prepend(arcs);
+
+let anim;
+window.setup = (f) => new Promise(r => { anim = lottie.loadAnimation({ container: document.getElementById('mascot'), renderer: 'svg', loop: false, autoplay: false, animationData: f }); anim.addEventListener('DOMLoaded', r); });
+const T = 8, lp = [...document.querySelectorAll('.lp')], big = document.getElementById('big'), pulse = document.getElementById('pulse'), saveArr = document.getElementById('saveArr');
+window.render = (t) => {
+  t = ((t % T) + T) % T;
+  anim.goToAndStop((t / T) * 600, true);           // full mascot loop over 8s
+  stars.forEach(s => s.el.setAttribute('opacity', (0.15 + 0.35 * (0.5 + 0.5 * Math.sin(s.ph + t * 2 * Math.PI / 4))).toFixed(2)));
+  const ph = (t % 4) / 4;                           // pulse travels down the spine twice per loop
+  pulse.style.top = (276 + window.SPINE * ph - 4).toFixed(1) + 'px';
+  pulse.style.opacity = Math.sin(Math.PI * ph).toFixed(2);
+  const on = Math.floor(t / 1.6) % 5;              // loop boxes light up in turn
+  lp.forEach((b, i) => { b.style.borderColor = i === on ? '#ee6216' : ''; b.style.background = i === on ? '#24150d' : ''; });
+  const g = 0.5 + 0.5 * Math.sin(t * 2 * Math.PI / 2);
+  big.style.boxShadow = `0 0 ${18 + 26 * g}px rgba(238,98,22,${(0.25 + 0.3 * g).toFixed(2)})`;
+  saveArr.style.transform = `translateY(${(3 * Math.sin(t * 2 * Math.PI / 1.6)).toFixed(2)}px)`;
+};
+</script>
+</body>
+</html>

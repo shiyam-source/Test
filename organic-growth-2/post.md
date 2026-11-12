@@ -1,6 +1,6 @@
 # Slate: Organic Growth 2.0 playbook (single tall GIF)
 
-**Attach:** `organic-growth-2.0-playbook.gif`: one tall animated infographic, 1080×8044, 10-second loop, 13.9 MB. The mascot floats and leans, signal dots travel across the map into "The AI answer", the 5-step loop lights up step by step, and the trial button pulses.
+**Attach:** `organic-growth-2.0-playbook.gif`: one tall animated infographic, 1080×7966, 10-second loop, 13.7 MB. The mascot floats and leans, signal dots travel across the map into "The AI answer", the 5-step loop lights up step by step, and the trial button pulses.
 **Still version:** `organic-growth-2.0-infographic.png` (same layout, one frame).
 **Source:** `infographic.html` (uses `lottie.min.js` and Slate's own mascot files `fuzzy-float.json` / `fuzzy-lean.json`). Every stat comes from the Slate Citation Lab study (`../citation-lab/`): 1,000 B2B SaaS queries via API, captured 3 Aug 2026.
 **Older carousel version** (not needed): `playbook.html`, `slides/`, `organic-growth-2.0-playbook.pdf`.

@@ -60,7 +60,7 @@ node render.js out/carousel.html out                 # PNGs at 2x + PDF for Link
 
 ## Status
 - [x] Study design, analysis, statistical tests
-- [x] Carousel (7 slides) and post copy generated from the results
+- [x] Carousel (6 slides: decay curve as the hook, then churn, source type, engine, method, limits) and post copy generated from the results
 - [x] Dry run on simulated data, watermarked
 - [ ] SlateIndex export (see DATA_REQUEST.md)
 - [ ] Real run, a sanity review of the numbers, then publish

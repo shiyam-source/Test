@@ -98,7 +98,7 @@ def build(s: dict) -> tuple[str, str]:
     churn = s["weekly_churn"]
     wm = '<div class="wm">SIMULATED DATA · LAYOUT PREVIEW · NOT A FINDING</div>' if sim else ""
     logo = re.sub(r'width="100%" height="100%" ', "", open(os.path.join(HERE, "assets/slate-logo.svg")).read(), count=1)
-    N = 7
+    N = 6
 
     def slide(i, kick, title, body, so=""):
         sw = '<span class="sw">swipe <b>→</b></span>' if i < N else '<span class="sw">end</span>'
@@ -109,37 +109,37 @@ def build(s: dict) -> tuple[str, str]:
 <div class="ftr"><span>SlateIndex · {s["collected"]:,} AI answers · {s["runs"]} weekly runs · {s["first_run"]} to {s["last_run"]}</span>{sw}</div></section>'''
 
     slides = [
+        # 1 · the decay curve, as the hook
         f'''<section class="slide cover">{wm}<div class="prog"><i style="width:{100 / N:.1f}%"></i></div>
 <div class="hdr"><div class="logo">{logo}</div><div class="pg">CITATION LAB · HALF-LIFE · 01 / {N:02d}</div></div>
-<div class="kick" style="margin-top:150px">SLATE CITATION LAB · THE HALF-LIFE OF AN AI CITATION</div>
-<div class="cbig">Half of this week's AI citations are gone in <span>{url_hl} days</span>.</div>
-<div class="cbig m">Brand mentions last <span>{ratio_txt}</span> longer.</div>
-<div class="chips">{"".join(f"<span>{e}</span>" for e in engines)}</div>
-<div class="clist"><div><b>{s["collected"]:,}</b> AI answers · <b>{s["runs"]}</b> weekly runs · <b>{s["prompts"]:,}</b> fixed prompts · <b>{s["categories"]}</b> categories</div>
-<div>Survival analysis on every cited URL, domain and named brand</div></div>
-<div class="cby"><span><b>Shiyam Sunder</b> · CEO, Slate</span><span class="sw">swipe <b>→</b></span></div></section>''',
-        slide(2, "METHOD", "How we measured decay.", f'''<div class="steps">
+<div class="kick">SLATE CITATION LAB · FINDING 01 · THE HALF-LIFE OF AN AI CITATION</div>
+<h2 class="hook">Half of this week's AI citations are gone in <span class="o nw">{url_hl} days</span>.<br><span class="m">Brand mentions last {ratio_txt} longer.</span></h2>
+<div class="body" style="margin-top:28px"><div class="sh">SHARE STILL BEING CITED OR NAMED · BY DAYS SINCE FIRST APPEARANCE</div>{curve_svg(s, W=840, H=580)}
+<div class="stats3"><div><b>{url_hl}d</b><span>half-life of a cited URL</span></div><div><b>{dom_hl}d</b><span>half-life of a cited domain</span></div><div><b class="o">{br_hl}d</b><span>half-life of a brand mention</span></div></div></div>
+<div class="cby"><span><b>Shiyam Sunder</b> · CEO, Slate · {s["collected"]:,} AI answers · {s["runs"]} weekly runs</span><span class="sw">swipe <b>→</b></span></div></section>''',
+        # 2 · weekly churn
+        slide(2, "FINDING 02 · WEEKLY CHURN", f'<span class="o">{pct(churn.get("url"))}</span> of cited URLs are replaced<br>every single week.',
+              f'''<div class="churn"><div><b>{pct(churn.get("url"))}</b><span>of URLs cited one week are gone the next</span></div><div><b>{pct(churn.get("domain"))}</b><span>of domains</span></div><div><b class="o">{pct(churn.get("brand"))}</b><span>of brands</span></div></div>
+<div class="sh" style="margin-top:44px">STILL PRESENT AFTER…</div><table class="tb"><tr><th></th><th>URL</th><th>domain</th><th>brand</th></tr>{surv_tbl}</table>''',
+              'A single weekly snapshot of "cited pages" is mostly noise. A brand-level trend is mostly signal.'),
+        # 3 · by source type
+        slide(3, "FINDING 03 · BY SOURCE TYPE", f'{cap(long_src[0])} citations last longest.<br><span class="o">{cap(short_src[0])} churns fastest.</span>',
+              f'<div class="sh">URL CITATION HALF-LIFE BY SOURCE TYPE</div>{src_rows}'
+              f'<div class="note" style="margin-top:20px">Source type from the cited domain: vendor sites (tracked brands\' own domains), review sites, community / UGC (Reddit, YouTube, LinkedIn, Quora…), and everything else.</div>',
+              f'If you want citations that stick, {long_src[0]} pages hold on {long_src[1] / short_src[1]:.1f}× longer than {short_src[0]} ones.' if short_src[1] else ''),
+        # 4 · by engine
+        slide(4, "FINDING 04 · BY ENGINE", 'Every engine churns citations.<br>None of them churn the shortlist.',
+              f'<div class="sh">HALF-LIFE IN DAYS · URL VS BRAND</div>{bars(eng_rows, eng_max)}',
+              'The gap between citation churn and brand stability shows up on every engine.'),
+        # 5 · method
+        slide(5, "METHOD", "How we measured decay.", f'''<div class="steps">
 <div class="st"><b>01</b><div><h4>Same prompts, every week</h4><p>{s["prompts"]:,} fixed buyer prompts across {s["categories"]} categories, run every Monday on {", ".join(engines)}. Answers collected from the consumer apps through data providers, not the APIs.</p></div></div>
 <div class="st"><b>02</b><div><h4>Track every item's spell</h4><p>A spell is an unbroken run of weeks in which the same URL, domain or brand appears in the answer to the same prompt on the same engine.</p></div></div>
 <div class="st"><b>03</b><div><h4>Strict rules for "gone"</h4><p>Gone = absent for 2 straight collected runs (one-week flickers don't count). A missing response is skipped, never counted as absent. Only spells that start after week 1 are used.</p></div></div>
 <div class="st"><b>04</b><div><h4>Kaplan-Meier survival</h4><p>Half-life = median survival. Spells still alive at the last run are censored, not dropped. URL vs brand compared with a log-rank test.</p></div></div></div>''',
               f'{o["url"]["n_spells"]:,} URL spells and {o["brand"]["n_spells"]:,} brand spells analysed.'),
-        slide(3, "FINDING 01 · THE DECAY CURVE", f'Citations fade in <span class="o">days</span>.<br>Brand mentions hold for weeks.',
-              f'<div class="sh">SHARE OF SPELLS STILL ALIVE · BY DAYS SINCE FIRST APPEARANCE</div>{curve_svg(s)}'
-              f'<div class="stats3"><div><b>{url_hl}d</b><span>half-life of a cited URL</span></div><div><b>{dom_hl}d</b><span>half-life of a cited domain</span></div><div><b class="o">{br_hl}d</b><span>half-life of a brand mention</span></div></div>',
-              f'Same answers, same prompts. What the engine says about you outlives the page it cited.'),
-        slide(4, "FINDING 02 · WEEKLY CHURN", f'<span class="o">{pct(churn.get("url"))}</span> of cited URLs are replaced<br>every single week.',
-              f'''<div class="churn"><div><b>{pct(churn.get("url"))}</b><span>of URLs cited one week are gone the next</span></div><div><b>{pct(churn.get("domain"))}</b><span>of domains</span></div><div><b class="o">{pct(churn.get("brand"))}</b><span>of brands</span></div></div>
-<div class="sh" style="margin-top:44px">STILL PRESENT AFTER…</div><table class="tb"><tr><th></th><th>URL</th><th>domain</th><th>brand</th></tr>{surv_tbl}</table>''',
-              'A single weekly snapshot of "cited pages" is mostly noise. A brand-level trend is mostly signal.'),
-        slide(5, "FINDING 03 · BY ENGINE", 'Every engine churns citations.<br>None of them churn the shortlist.',
-              f'<div class="sh">HALF-LIFE IN DAYS · URL VS BRAND</div>{bars(eng_rows, eng_max)}',
-              'The gap between citation churn and brand stability shows up on every engine.'),
-        slide(6, "FINDING 04 · BY SOURCE TYPE", f'{cap(long_src[0])} citations last longest.<br><span class="o">{cap(short_src[0])} churns fastest.</span>',
-              f'<div class="sh">URL CITATION HALF-LIFE BY SOURCE TYPE</div>{src_rows}'
-              f'<div class="note" style="margin-top:20px">Source type from the cited domain: vendor sites (tracked brands\' own domains), review sites, community / UGC (Reddit, YouTube, LinkedIn, Quora…), and everything else.</div>',
-              f'If you want citations that stick, {long_src[0]} pages hold on {long_src[1] / short_src[1]:.1f}× longer than {short_src[0]} ones.' if short_src[1] else ''),
-        slide(7, "LIMITS · WHAT IT MEANS", 'Measure the shortlist, not the snapshot.',
+        # 6 · what it means + limits
+        slide(6, "LIMITS · WHAT IT MEANS", 'Measure the shortlist, not the snapshot.',
               f'''<div class="g2"><div><div class="sh">WHAT TO DO WITH THIS</div>
 <p class="li">Report citations on a rolling 4-week window, never a single week.</p>
 <p class="li">Make brand mention rate the headline KPI; citations are the evidence underneath it.</p>

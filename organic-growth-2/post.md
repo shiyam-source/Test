@@ -31,12 +31,12 @@ So "just get on Reddit" or "just write more blog posts" is engine-specific advic
 
 We turned the data into one playbook. Everything's in the image:
 
-→ Organic 1.0 vs 2.0, side by side
-→ The map: 7 surfaces AI pulls from, plus your site
-→ How each engine reads the map differently
+→ The map: 8 surfaces that feed every AI answer
+→ The blind spot your rank tracker can't see
+→ Why "get on Reddit" only works for some engines
+→ Why rank still matters, engine by engine
 → A 5-step weekly loop
-→ Plays for all 8 surfaces, with what to measure
-→ A 90-day plan, in order
+→ One play for each surface, and who should own it
 
 Every play is tagged so you know what's worth automating and what isn't. Press, Wikipedia, community posts and asking for reviews stay human. Tracking, audits and refreshes don't need to be.
 

@@ -1,0 +1,4 @@
+__pycache__/
+data/*.csv
+data/SIMULATED
+out/

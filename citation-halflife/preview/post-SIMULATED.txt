@@ -1,0 +1,34 @@
+[SIMULATED DATA. LAYOUT PREVIEW ONLY. DO NOT POST THESE NUMBERS.]
+
+Half of this week's AI citations are gone in 11 days.
+
+Brand mentions last 5.8× longer.
+
+We tracked 990 fixed buyer prompts on Google AI Mode, ChatGPT, Perplexity, every week for 14 weeks. Same prompts, same categories, answers collected from the consumer apps. Then we ran survival analysis on every cited URL, every cited domain and every brand named.
+
+What decays:
+→ A cited URL has a half-life of 11 days.
+→ A cited domain: 13 days.
+→ A named brand: 64 days.
+
+Every week, 42% of cited URLs are replaced. Only 11% of brands are.
+
+After 4 weeks, 19% of URL citations are still there. 71% of brand mentions are.
+
+By source: vendor site citations last longest (14 days). community / UGC churns fastest (7 days).
+
+What I take from it:
+A weekly "pages cited" report is mostly noise. Run it on a rolling 4-week window, and make brand mention rate the headline number. Citations are the evidence underneath it, and the evidence rotates. The verdict mostly doesn't.
+
+Method, for the people who'll ask:
+→ Kaplan-Meier survival. Half-life = median survival.
+→ "Gone" = absent for 2 straight weekly runs, so one-week flickers don't count.
+→ Missing responses are skipped, never counted as absent.
+→ Only spells starting after week 1 are used. Spells still alive at the end are censored.
+→ With zero flicker tolerance, half-lives drop to 10 days (URL) and 50 days (brand). The gap holds.
+
+Limits: 14 weekly runs, so the longest half-lives are lower bounds. One answer per prompt per engine per week.
+
+Data: SlateIndex (CC BY 4.0).
+
+What's your citation-reporting window today? One week, or longer?

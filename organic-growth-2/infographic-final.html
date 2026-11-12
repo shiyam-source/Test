@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Organic Growth Playbook</title>
+<!-- Modern bento version, 1080x1800. window.setup(floatJson, leanJson), window.render(t), t in [0,10)s. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0c0c0c; --tile:#151515; --ink:#f5f4f0; --mute:#a19c94; --dim:#6f6a63; --accent:#ee6216; --accent2:#ff8a3d;
+          --c-search:#6ea8fe; --c-social:#5ec8d8; --c-shop:#b18cff; --c-review:#6fcf97; --c-comm:#e0a458; --c-video:#ff7a8a; --c-ref:#f2c14e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1800px; background: var(--bg); overflow: hidden; }
+  body { font-family: 'Inter Tight', system-ui, sans-serif; color: var(--ink); position: relative; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .tile { position: absolute; left: 40px; right: 40px; border-radius: 30px; background: linear-gradient(180deg, #181818 0%, #131313 100%); border: 1px solid rgba(255,255,255,.07); overflow: hidden; box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }
+  .blob { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; }
+  .kick { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 14px; border-radius: 15px; background: rgba(238,98,22,.12); border: 1px solid rgba(238,98,22,.35); color: #ffb48a; font-size: 13px; font-weight: 500; letter-spacing: .01em; }
+  .kick i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+  .lbl { font-size: 12.5px; letter-spacing: .14em; color: var(--dim); font-family: 'JetBrains Mono', monospace; }
+  .ttl { font-size: 24px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.12; }
+  .ttl span { color: var(--mute); font-weight: 500; }
+
+  /* hero */
+  .hero { top: 40px; height: 320px; }
+  .hero .logo { position: absolute; left: 40px; top: 36px; height: 26px; }
+  .hero .kick { position: absolute; left: 40px; top: 78px; }
+  .hero h1 { position: absolute; left: 40px; top: 122px; font-size: 66px; line-height: 1; font-weight: 600; letter-spacing: -0.05em; }
+  .hero h1 em { font-style: normal; background: linear-gradient(90deg, #ee6216, #ff9a52); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p { position: absolute; left: 40px; top: 262px; width: 640px; font-size: 16.5px; line-height: 1.4; color: var(--mute); }
+  .hero p b { color: var(--ink); font-weight: 500; }
+  #heroM { position: absolute; right: 26px; top: 26px; width: 280px; height: 280px; }
+
+  /* map (network style) */
+  .orbit { top: 376px; height: 560px; }
+  .orbit .head { position: absolute; left: 36px; top: 30px; z-index: 5; }
+  .orbit .head .ttl { margin-top: 8px; }
+  #net, #ndots { position: absolute; left: 0; top: 0; width: 1000px; height: 560px; }
+  .pill { position: absolute; height: 32px; padding: 0 12px 0 10px; border-radius: 9px; background: #1a1a1a; border: 1px solid #343434; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; white-space: nowrap; transform: translate(-50%, -50%); z-index: 4; }
+  .pill i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .pill.own { background: #2a160a; border-color: var(--accent); height: 36px; font-size: 15.5px; font-weight: 600; }
+  .clab { position: absolute; transform: translate(-50%, -50%); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .16em; white-space: nowrap; z-index: 4; }
+  .hub { position: absolute; left: 500px; top: 296px; width: 170px; height: 170px; border-radius: 50%; transform: translate(-50%, -50%); background: radial-gradient(circle at 50% 38%, #2e1a0e, #141414 70%); border: 1.5px solid var(--accent); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; z-index: 5; }
+  .hub b { font-size: 21px; letter-spacing: -0.03em; }
+  .hub span { margin-top: 5px; font-size: 10.5px; line-height: 1.5; color: var(--mute); font-family: 'JetBrains Mono', monospace; }
+  .engines { position: absolute; right: 36px; top: 34px; text-align: right; font-size: 12.5px; color: var(--mute); line-height: 1.6; z-index: 5; }
+  .engines b { color: var(--ink); font-weight: 500; }
+
+  /* stat tiles */
+  .row3 { position: absolute; left: 40px; right: 40px; top: 952px; height: 280px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .row3 .tile, .row2 .tile { position: relative; left: 0; right: 0; height: 100%; }
+  .st { padding: 26px 26px; }
+  .st .big { font-size: 60px; font-weight: 600; letter-spacing: -0.05em; line-height: 1; }
+  .st .cap { margin-top: 8px; font-size: 14.5px; line-height: 1.38; color: var(--mute); }
+  .st .cap b { color: var(--ink); font-weight: 500; }
+  .ring { position: absolute; right: 22px; top: 22px; }
+  .bars { margin-top: 18px; display: flex; flex-direction: column; gap: 12px; }
+  .hb { display: grid; grid-template-columns: 88px 1fr 52px; align-items: center; gap: 10px; font-size: 13.5px; }
+  .hb .track { height: 10px; border-radius: 5px; background: #242424; position: relative; overflow: hidden; }
+  .hb .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px; background: linear-gradient(90deg, #ee6216, #ff9a52); }
+  .hb b { text-align: right; font-weight: 600; }
+  .vb { margin-top: 14px; display: flex; align-items: flex-end; gap: 10px; height: 128px; padding-left: 4px; }
+  .vb .c { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 84px; }
+  .vb .col { width: 44px; border-radius: 10px 10px 4px 4px; background: linear-gradient(180deg, #ff9a52, #ee6216); }
+  .vb .v { font-size: 17px; font-weight: 600; }
+  .vb .n { font-size: 11.5px; color: var(--mute); white-space: nowrap; }
+
+  /* row2 */
+  .row2 { position: absolute; left: 40px; right: 40px; top: 1248px; height: 340px; display: grid; grid-template-columns: 410px 1fr; gap: 16px; }
+  .loop { padding: 24px 24px; }
+  #dial { position: absolute; left: 0; top: 0; }
+  .plays { padding: 24px 26px; }
+  .pl { margin-top: 12px; display: flex; flex-direction: column; }
+  .pr { display: grid; grid-template-columns: 14px 120px 1fr auto; align-items: center; gap: 10px; height: 32px; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 13.5px; }
+  .pr:last-child { border-bottom: 0; }
+  .pr i { width: 9px; height: 9px; border-radius: 50%; }
+  .pr b { font-weight: 600; letter-spacing: -0.01em; }
+  .pr span { color: var(--mute); }
+  .tg { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: .08em; height: 20px; padding: 0 8px; border-radius: 10px; display: inline-flex; align-items: center; white-space: nowrap; }
+  .tg.a { background: var(--accent); color: #fff; } .tg.s { border: 1px solid var(--accent); color: #ff9a52; } .tg.h { border: 1px solid #4a4743; color: #bdb7ae; }
+
+  /* cta */
+  .cta { top: 1604px; height: 104px; background: linear-gradient(100deg, #ee6216 0%, #ff8a3d 100%); border: 0; overflow: visible; }
+  .cta .a { position: absolute; left: 32px; top: 24px; font-size: 28px; font-weight: 700; letter-spacing: -0.035em; color: #fff; }
+  .cta .a small { display: block; font-size: 14.5px; font-weight: 500; color: #ffe6d6; letter-spacing: -0.01em; margin-top: 4px; }
+  .cta .b { position: absolute; right: 190px; top: 27px; height: 50px; padding: 0 22px; border-radius: 25px; background: #0c0c0c; color: #fff; font-size: 17px; font-weight: 600; display: flex; align-items: center; }
+  #closeM { position: absolute; right: 16px; top: -46px; width: 160px; height: 160px; }
+  .foot { position: absolute; left: 44px; right: 44px; top: 1736px; display: flex; justify-content: space-between; align-items: baseline; font-size: 14.5px; }
+  .foot b { font-weight: 600; } .foot span { color: var(--mute); }
+  .foot .mono { font-size: 10.5px; color: var(--dim); }
+</style>
+</head>
+<body>
+  <div class="blob" style="left:620px; top:-80px; width:520px; height:520px; background:rgba(238,98,22,.22)"></div>
+  <div class="blob" style="left:-120px; top:820px; width:420px; height:420px; background:rgba(110,168,254,.08)"></div>
+
+  <!-- HERO -->
+  <div class="tile hero">
+    <div class="blob" style="right:-40px; top:-60px; width:380px; height:380px; background:rgba(238,98,22,.28)"></div>
+    <img class="logo" src="logo.png">
+    <div class="kick"><i></i>Save this for later</div>
+    <h1>Organic Growth<br><em>Cheat Sheet 2.0</em></h1>
+    <p>Everything you need to get <b>recommended by ChatGPT, Perplexity, Claude and Google's AI</b>, on one page. <b>Save it</b> before your next planning session.</p>
+    <div id="heroM"></div>
+  </div>
+
+  <!-- MAP -->
+  <div class="tile orbit">
+    <div class="blob" style="left:330px; top:150px; width:340px; height:300px; background:rgba(238,98,22,.16)"></div>
+    <svg id="net" viewBox="0 0 1000 560"></svg>
+    <svg id="ndots" viewBox="0 0 1000 560" style="z-index:3"></svg>
+    <div class="head"><div class="lbl">01 · THE MAP</div><div class="ttl">8 surfaces feed<br><span>every AI answer.</span></div></div>
+    <div class="engines">read by<br><b>ChatGPT · Perplexity</b><br><b>Claude · Gemini · AI Overviews</b></div>
+    <div class="hub" id="core"><b>The AI answer</b><span>ChatGPT · Perplexity<br>Claude · Gemini<br>AI Overviews</span></div>
+    <div id="netbox"></div>
+  </div>
+
+  <!-- STATS -->
+  <div class="row3">
+    <div class="tile st">
+      <div class="lbl">02 · THE BLIND SPOT</div>
+      <svg class="ring" width="112" height="112" viewBox="0 0 112 112"><circle cx="56" cy="56" r="44" stroke="#262626" stroke-width="12" fill="none"/><circle id="ringArc" cx="56" cy="56" r="44" stroke="url(#rg)" stroke-width="12" fill="none" stroke-linecap="round" transform="rotate(-90 56 56)" stroke-dasharray="276.5" stroke-dashoffset="276.5"/><defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#ee6216"/><stop offset="1" stop-color="#ff9a52"/></linearGradient></defs></svg>
+      <div class="big" style="margin-top:62px" id="n74">74%</div>
+      <div class="cap">of pages AI cited <b>weren't in Google's top 10</b>. Your rank tracker can't see most of the map.</div>
+    </div>
+    <div class="tile st">
+      <div class="lbl">03 · ONE ENGINE ≠ ALL</div>
+      <div class="ttl" style="margin-top:10px; font-size:21px">Reddit citations<br><span>in 1,000 answers</span></div>
+      <div class="bars">
+        <div class="hb"><span>Perplexity</span><div class="track"><div class="fill" data-w="100"></div></div><b>1,051</b></div>
+        <div class="hb"><span>ChatGPT</span><div class="track"><div class="fill" data-w="0"></div></div><b>0</b></div>
+        <div class="hb"><span>Claude</span><div class="track"><div class="fill" data-w="0"></div></div><b>0</b></div>
+      </div>
+      <div class="cap" style="margin-top:16px; font-size:13.5px">"Get on Reddit" only works for some engines.</div>
+    </div>
+    <div class="tile st">
+      <div class="lbl">04 · RANK STILL MATTERS</div>
+      <div class="ttl" style="margin-top:10px; font-size:21px">Cites Google's<br><span>#1 result</span></div>
+      <div class="vb">
+        <div class="c"><div class="v">87%</div><div class="col" data-h="87"></div><div class="n">Perplexity</div></div>
+        <div class="c"><div class="v">55%</div><div class="col" data-h="55"></div><div class="n">AI Overviews</div></div>
+        <div class="c"><div class="v">35%</div><div class="col" data-h="35"></div><div class="n">Claude</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOOP + PLAYS -->
+  <div class="row2">
+    <div class="tile loop">
+      <svg id="dial" width="410" height="340" viewBox="0 0 410 340"></svg>
+      <div class="lbl" style="position:relative">05 · THE LOOP</div>
+      <div class="ttl" style="position:relative; margin-top:8px; font-size:21px">Five steps.<br><span>Every week.</span></div>
+    </div>
+    <div class="tile plays">
+      <div class="lbl">06 · THE PLAYS</div>
+      <div class="pl">
+        <div class="pr"><i style="background:var(--accent)"></i><b>Your site</b><span>Pricing in text, honest "X vs Y" pages</span><em class="tg s">ASSISTS</em></div>
+        <div class="pr"><i style="background:var(--c-search)"></i><b>Search</b><span>Top 3 on bottom-funnel queries</span><em class="tg a">AUTOMATES</em></div>
+        <div class="pr"><i style="background:var(--c-ref)"></i><b>Roundups</b><span>Pitch the "best X" lists AI cites</span><em class="tg s">ASSISTS</em></div>
+        <div class="pr"><i style="background:var(--c-comm)"></i><b>Communities</b><span>Answer threads as a real person</span><em class="tg h">YOUR TEAM</em></div>
+        <div class="pr"><i style="background:var(--c-review)"></i><b>Reviews</b><span>Ask monthly, right after a win</span><em class="tg h">YOUR TEAM</em></div>
+        <div class="pr"><i style="background:var(--c-video)"></i><b>Video</b><span>Film the questions sales hears</span><em class="tg h">YOUR TEAM</em></div>
+        <div class="pr"><i style="background:var(--c-social)"></i><b>Social</b><span>Every study becomes 5–10 posts</span><em class="tg s">ASSISTS</em></div>
+        <div class="pr"><i style="background:var(--c-shop)"></i><b>Marketplaces</b><span>Complete listings, mirror integrations</span><em class="tg h">YOUR TEAM</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="tile cta">
+    <div class="a">Try Slate free for 14 days<small>Slate runs the tracking, refreshes and weekly report. No card needed.</small></div>
+    <div class="b" id="ctaB">slatehq.com →</div>
+    <div id="closeM"></div>
+  </div>
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">Data: Slate Citation Lab · 1,000 B2B SaaS queries via API · 3 Aug 2026</div></div>
+
+<script src="lottie.min.js"></script>
+<script>
+const T = 10, TAU = Math.PI * 2, clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), ease = x => { x = clamp(x); return 1 - Math.pow(1 - x, 3); };
+// ---- network map ----
+const C = { x: 500, y: 296 }, OWN = { x: 500, y: 420 };
+const clusters = [
+  { name: 'SEARCH ENGINES', hex: '#6ea8fe', cx: 500, cy: 98, cols: 4, gx: 126, gy: 0, lx: 500, ly: 66, nodes: ['Google', 'Bing', 'Brave', 'DuckDuckGo'] },
+  { name: 'REFERENCE & NEWS', hex: '#f2c14e', cx: 178, cy: 200, cols: 2, gx: 122, gy: 40, lx: 178, ly: 150, nodes: ['Wikipedia', 'Reuters', 'WIRED', "Tom's Guide"] },
+  { name: 'SOCIAL', hex: '#5ec8d8', cx: 822, cy: 200, cols: 2, gx: 118, gy: 40, lx: 822, ly: 150, nodes: ['LinkedIn', 'X', 'Instagram', 'Facebook'] },
+  { name: 'VIDEO', hex: '#ff7a8a', cx: 104, cy: 362, cols: 1, gx: 0, gy: 40, lx: 104, ly: 300, nodes: ['YouTube', 'TikTok', 'Vimeo'] },
+  { name: 'MARKETPLACES', hex: '#b18cff', cx: 892, cy: 362, cols: 1, gx: 0, gy: 40, lx: 892, ly: 300, nodes: ['AWS Marketplace', 'HubSpot Apps', 'AppExchange'] },
+  { name: 'COMMUNITIES', hex: '#e0a458', cx: 268, cy: 506, cols: 2, gx: 118, gy: 40, lx: 268, ly: 458, nodes: ['Reddit', 'Quora', 'Stack Overflow'] },
+  { name: 'REVIEW SITES', hex: '#6fcf97', cx: 732, cy: 506, cols: 2, gx: 118, gy: 40, lx: 732, ly: 458, nodes: ['G2', 'Capterra', 'TrustRadius', 'Trustpilot'] },
+];
+const netbox = document.getElementById('netbox'), net = document.getElementById('net'), ndots = document.getElementById('ndots');
+const pts = [];
+clusters.forEach((c, ci) => {
+  const lab = document.createElement('div'); lab.className = 'clab'; lab.style.left = c.lx + 'px'; lab.style.top = c.ly + 'px'; lab.style.color = c.hex; lab.textContent = c.name; netbox.appendChild(lab);
+  const rows = Math.ceil(c.nodes.length / c.cols), cn = Math.min(c.cols, c.nodes.length);
+  c.nodes.forEach((n, i) => {
+    const col = i % c.cols, row = Math.floor(i / c.cols);
+    const x = c.cx + (col - (cn - 1) / 2) * c.gx, y = c.cy + (row - (rows - 1) / 2) * c.gy;
+    const p = document.createElement('div'); p.className = 'pill'; p.style.left = x + 'px'; p.style.top = y + 'px';
+    p.innerHTML = `<i style="background:${c.hex}"></i>${n}`; netbox.appendChild(p); pts.push({ x, y, ci, hex: c.hex });
+  });
+});
+const ownEl = document.createElement('div'); ownEl.className = 'pill own'; ownEl.style.left = OWN.x + 'px'; ownEl.style.top = OWN.y + 'px'; ownEl.innerHTML = '<i style="background:#ee6216"></i>Your website'; netbox.appendChild(ownEl);
+let nseed = 7; const nrnd = () => (nseed = (nseed * 16807) % 2147483647) / 2147483647;
+let nl = '';
+for (let k = 0; k < 40; k++) { const a = pts[Math.floor(nrnd() * pts.length)], b = pts[Math.floor(nrnd() * pts.length)]; if (a.ci === b.ci) continue;
+  nl += `<path d="M${a.x} ${a.y} Q ${(a.x + b.x) / 2 + (nrnd() - .5) * 100} ${(a.y + b.y) / 2 + (nrnd() - .5) * 100} ${b.x} ${b.y}" stroke="#2c2c2c" stroke-width="1" fill="none"/>`; }
+pts.forEach(p => { nl += `<line x1="${p.x}" y1="${p.y}" x2="${C.x}" y2="${C.y}" stroke="${p.hex}" stroke-opacity=".3" stroke-width="1.2"/>`; });
+nl += `<line x1="${OWN.x}" y1="${OWN.y}" x2="${C.x}" y2="${C.y}" stroke="#ee6216" stroke-width="2.5"/>`;
+net.innerHTML = nl;
+const sig = pts.map((p, i) => { const d = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); d.setAttribute('r', 3.6); d.setAttribute('fill', p.hex); ndots.appendChild(d); return { el: d, p, off: (i * 0.37) % 1 }; });
+const ownDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); ownDot.setAttribute('r', 5); ownDot.setAttribute('fill', '#ee6216'); ndots.appendChild(ownDot);
+
+// ---- loop dial ----
+const dial = document.getElementById('dial');
+const D = { x: 112, y: 214, r: 62 };
+const stepsTxt = [['1', 'Map the prompts', 'auto'], ['2', 'Fix your own site', 'assist'], ['3', 'Earn the map', 'team'], ['4', 'Refresh what decays', 'auto'], ['5', 'Prove it weekly', 'auto']];
+const segCol = k => k === 'auto' ? '#ee6216' : (k === 'assist' ? '#8a4215' : '#3d3a36');
+let dS = `<circle cx="${D.x}" cy="${D.y}" r="${D.r - 22}" fill="#111" stroke="rgba(255,255,255,.06)"/>`;
+dS += `<text x="${D.x}" y="${D.y - 2}" text-anchor="middle" fill="#f5f4f0" font-family="Inter Tight" font-weight="600" font-size="14">every</text><text x="${D.x}" y="${D.y + 15}" text-anchor="middle" fill="#ee6216" font-family="Inter Tight" font-weight="600" font-size="14">week</text>`;
+const arcPath = (a0, a1, r) => { const x0 = D.x + r * Math.cos(a0), y0 = D.y + r * Math.sin(a0), x1 = D.x + r * Math.cos(a1), y1 = D.y + r * Math.sin(a1); return `M${x0} ${y0} A${r} ${r} 0 0 1 ${x1} ${y1}`; };
+stepsTxt.forEach((s, i) => { const a0 = -Math.PI / 2 + i * TAU / 5 + 0.08, a1 = a0 + TAU / 5 - 0.16;
+  dS += `<path id="seg${i}" d="${arcPath(a0, a1, D.r)}" stroke="${segCol(s[2])}" stroke-width="13" fill="none" stroke-linecap="round"/>`;
+  const am = (a0 + a1) / 2; dS += `<text x="${D.x + (D.r + 20) * Math.cos(am)}" y="${D.y + (D.r + 20) * Math.sin(am) + 4}" text-anchor="middle" fill="#ee6216" font-family="Inter Tight" font-weight="700" font-size="12">${s[0]}</text>`;
+  const ly = 128 + i * 38;
+  dS += `<rect id="row${i}" x="206" y="${ly - 15}" width="182" height="30" rx="9" fill="transparent"/>`;
+  dS += `<circle cx="222" cy="${ly}" r="5" fill="${segCol(s[2])}"/>`;
+  dS += `<text x="236" y="${ly + 4.5}" fill="#e8e3db" font-family="Inter Tight" font-weight="500" font-size="13.5"><tspan fill="#ee6216" font-weight="700">${s[0]}  </tspan>${s[1]}</text>`; });
+dS += `<circle id="dialDot" r="6" fill="#fff"/>`;
+dS += `<g font-family="JetBrains Mono" font-size="9.5" fill="#a19c94"><rect x="24" y="306" width="10" height="10" rx="3" fill="#ee6216"/><text x="40" y="315">AUTOMATES</text><rect x="128" y="306" width="10" height="10" rx="3" fill="#8a4215"/><text x="144" y="315">ASSISTS</text><rect x="216" y="306" width="10" height="10" rx="3" fill="#3d3a36"/><text x="232" y="315">YOUR TEAM</text></g>`;
+dial.innerHTML = dS;
+const dialDot = document.getElementById('dialDot'), segs = stepsTxt.map((_, i) => document.getElementById('seg' + i)), rowsEl = stepsTxt.map((_, i) => document.getElementById('row' + i));
+
+// ---- setup + render ----
+let heroAnim, closeAnim;
+window.setup = (f, l) => Promise.all([
+  new Promise(r => { heroAnim = lottie.loadAnimation({ container: document.getElementById('heroM'), renderer: 'svg', loop: false, autoplay: false, animationData: f }); heroAnim.addEventListener('DOMLoaded', r); }),
+  new Promise(r => { closeAnim = lottie.loadAnimation({ container: document.getElementById('closeM'), renderer: 'svg', loop: false, autoplay: false, animationData: l }); closeAnim.addEventListener('DOMLoaded', r); }),
+]);
+const ringArc = document.getElementById('ringArc'), core = document.getElementById('core'), ctaB = document.getElementById('ctaB');
+const fills = [...document.querySelectorAll('.hb .fill')], cols = [...document.querySelectorAll('.vb .col')];
+window.render = (t) => {
+  t = ((t % T) + T) % T;
+  heroAnim.goToAndStop((t * 60) % 600, true); closeAnim.goToAndStop((t * 60) % 600, true);
+  const out = ease((t - 9.3) / 0.6);                       // gentle reset for a clean loop
+  // network: signal dots travel from every source into the AI answer
+  sig.forEach(d => { const ph = ((t / 2.5) + d.off) % 1, e = ph * ph;
+    d.el.setAttribute('cx', (d.p.x + (C.x - d.p.x) * e).toFixed(1)); d.el.setAttribute('cy', (d.p.y + (C.y - d.p.y) * e).toFixed(1)); d.el.setAttribute('opacity', (Math.sin(Math.PI * ph) * 0.95).toFixed(2)); });
+  const op = (t / 1.25) % 1; ownDot.setAttribute('cx', OWN.x); ownDot.setAttribute('cy', (OWN.y - (OWN.y - C.y - 85) * op).toFixed(1)); ownDot.setAttribute('opacity', Math.sin(Math.PI * op).toFixed(2));
+  const pulse = 0.5 + 0.5 * Math.sin(TAU * t / 2.5);
+  core.style.boxShadow = `0 0 ${36 + 44 * pulse}px rgba(238,98,22,${(0.2 + 0.25 * pulse).toFixed(2)})`;
+  // stats draw in, hold, reset
+  const p1 = ease((t - 0.3) / 1.4) * (1 - out);
+  ringArc.setAttribute('stroke-dashoffset', (276.5 * (1 - 0.74 * p1)).toFixed(1));
+  document.getElementById('n74').textContent = Math.round(74 * p1) + '%';
+  fills.forEach((f, i) => f.style.width = (f.dataset.w * ease((t - 0.6 - i * 0.15) / 1.2) * (1 - out)) + '%');
+  cols.forEach((c, i) => c.style.height = (c.dataset.h * ease((t - 0.9 - i * 0.15) / 1.2) * (1 - out) * 0.95) + 'px');
+  // dial: highlight moves through steps
+  const sp = (t / 2) % 5, si = Math.floor(sp);
+  segs.forEach((s, i) => { s.setAttribute('stroke-width', i === si ? 18 : 13); s.setAttribute('opacity', i === si ? 1 : 0.7); });
+  rowsEl.forEach((r, i) => { r.setAttribute('fill', i === si ? 'rgba(238,98,22,.14)' : 'transparent'); r.setAttribute('stroke', i === si ? 'rgba(238,98,22,.5)' : 'none'); });
+  const da = -Math.PI / 2 + (sp / 5) * TAU; dialDot.setAttribute('cx', D.x + D.r * Math.cos(da)); dialDot.setAttribute('cy', D.y + D.r * Math.sin(da));
+  const beat = Math.pow(Math.max(0, Math.sin(TAU * t / 1.25)), 2);
+  ctaB.style.transform = `scale(${(1 + 0.05 * beat).toFixed(3)})`;
+};
+</script>
+</body>
+</html>

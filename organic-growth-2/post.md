@@ -1,10 +1,10 @@
 # Slate: Organic Growth Cheat Sheet 2.0 (single infographic)
 
-**Attach:** `organic-growth-2.0-playbook.gif`: one infographic, 1080×1920, 10-second loop, 7.3 MB.
-Sections: the shift (before: your website only; now: 8 surfaces feeding the AI answer), three data charts, a surface-by-surface plays table (what to do / what to measure / impact / owner), the weekly loop, and a free-trial CTA. The mascot appears top and bottom.
-**Also:** `organic-growth-2.0-playbook.mp4` (same animation as video) and `organic-growth-2.0-infographic.png` (still, 2160×3840).
-**Source:** `infographic-v3.html` (uses `lottie.min.js`, `fuzzy-float.json`, `fuzzy-lean.json`). Every stat comes from the Slate Citation Lab study (`../citation-lab/`).
-**Earlier versions** (not needed): `infographic-bento.html`, `infographic-1800.html`, `infographic-compact.html`, `infographic.html`, `playbook.html` + `slides/`.
+**Attach:** `organic-growth-2.0-playbook.gif`: one infographic, 1080×1800, 10-second loop.
+Sections: the network map (8 surfaces and 25 sources feeding the AI answer, with signal dots), the 74% blind-spot ring, Reddit and rank charts, the five-step loop dial, the plays list, and a free-trial CTA. The mascot appears top and bottom.
+**Also:** `organic-growth-2.0-playbook.mp4` (same animation as video) and `organic-growth-2.0-infographic.png` (still, 2160×3600).
+**Source:** `infographic-final.html` (uses `lottie.min.js`, `fuzzy-float.json`, `fuzzy-lean.json`). Every stat comes from the Slate Citation Lab study (`../citation-lab/`).
+**Earlier versions** (not needed): `infographic-v3.html`, `infographic-bento.html`, `infographic-1800.html`, `infographic-compact.html`, `infographic.html`, `playbook.html` + `slides/`.
 
 **Slate vs education:** the playbook is education-first. Slate shows up only as honest labels on each play (Slate automates / Slate assists / Your team) and in the closing CTA.
 
@@ -30,12 +30,12 @@ So "just get on Reddit" or "just write more blog posts" is engine-specific advic
 
 We turned the data into one playbook. Everything's in the image:
 
-→ The shift: from optimising one website to optimising 8 surfaces
+→ The map: 8 surfaces that feed every AI answer
 → The blind spot your rank tracker can't see
 → Why "get on Reddit" only works for some engines
 → Why rank still matters, engine by engine
-→ A table for every surface: what to do, what to measure, the impact, and who owns it
 → A 5-step weekly loop
+→ One play for each surface, and who should own it
 
 Every play is tagged so you know what's worth automating and what isn't. Press, Wikipedia, community posts and asking for reviews stay human. Tracking, audits and refreshes don't need to be.
 

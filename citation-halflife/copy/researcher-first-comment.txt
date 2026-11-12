@@ -1,0 +1,12 @@
+Method, in full:
+
+→ Unit: a spell = consecutive weekly runs in which the same URL, domain or brand appears in the answer to the same prompt on the same engine.
+→ Estimator: Kaplan–Meier. Half-life = median survival, in days (weeks × 7). Hazard by spell age from the same curve.
+→ "Dropped" = absent for 2 consecutive collected runs, so one-week flickers don't count. Sensitivity at zero tolerance: URL [__]d, brand [__]d. The gap holds.
+→ Missing responses (not collected) are treated as missing, never as absent.
+→ Left truncation: spells already present in run 1 are excluded, since their start is unknown. Spells alive at the last run are right-censored.
+→ Comparison: log-rank test, URL vs brand. Stratified by engine, intent, source type and starting position.
+→ Collection: consumer apps via data providers, not the APIs. Runs every Monday, 09:30 IST.
+→ Source type from the cited domain: tracked brands' own domains, review sites, community/UGC, everything else.
+
+Data: slateindex.ai (CC BY 4.0). Methodology: slateindex.ai/methodology

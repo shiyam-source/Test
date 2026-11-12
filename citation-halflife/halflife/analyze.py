@@ -97,7 +97,13 @@ def km_summary(recs):
     d = [r["dur"] for r in recs]; e = [r["event"] for r in recs]
     curve = kaplan_meier(d, e)
     med = median_survival(curve)
+    # discrete hazard h(t) = 1 - S(t)/S(t-1): chance of being dropped in week t, given alive at t-1
+    hazard = [(t, round(1 - s / curve[i - 1][1], 4)) for i, (t, s, _) in enumerate(curve) if i and curve[i - 1][1] > 0]
+    s4, s8 = survival_at(curve, 4), (survival_at(curve, 8) if len(curve) > 8 else None)
     return {"n_spells": len(d), "events": sum(e), "median_weeks": round(med, 2) if med else None,
+            "hazard": hazard,
+            "peak_hazard_week": max(hazard, key=lambda x: x[1])[0] if hazard else None,
+            "cond_survive_next4_given4": round(s8 / s4, 3) if (s8 is not None and s4) else None,
             "half_life_days": round(med * 7, 1) if med else None,
             "s1": round(survival_at(curve, 1), 3), "s2": round(survival_at(curve, 2), 3),
             "s4": round(survival_at(curve, 4), 3), "s8": round(survival_at(curve, 8), 3) if len(curve) > 8 else None,

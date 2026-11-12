@@ -1,6 +1,6 @@
 # Slate: "AEO needs two leaps of faith" LinkedIn post
 
-**Image:** `aeo-trust-gap.png` (4:5, 2160×2700). Source: `aeo.html`. The mascot is rendered from Slate's own Lottie file (slatehq.com/mascot/fuzzy-lean.json).
+**Image:** `aeo-trust-gap.png` (4:5, 2160×2700). Source: `aeo.html`. Reads top to bottom like the post: the claim, the two things you need (each backed by a Citation Lab stat), a Venn showing how few companies have both, and how Slate swaps faith for proof. The mascot is Slate's own (slatehq.com/mascot/).
 **Data:** the three stats come from the Slate Citation Lab study (`../citation-lab/`): 1,000 B2B SaaS queries via API, captured 3 Aug 2026.
 
 ---

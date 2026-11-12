@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Organic Growth Playbook</title>
+<!-- 1080x1800 version of infographic.html (same visual system, condensed). window.setup(floatJson, leanJson), window.render(t), t in [0,10)s. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#111111; --card:#171717; --line:#262626; --ink:#f5f4f0; --mute:#a9a59d; --dim:#75716a; --accent:#ee6216;
+          --c-search:#6ea8fe; --c-social:#5ec8d8; --c-shop:#b18cff; --c-review:#6fcf97; --c-comm:#e0a458; --c-video:#ff7a8a; --c-ref:#f2c14e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1800px; background: var(--bg); overflow: hidden; }
+  body { font-family: 'Inter Tight', system-ui, sans-serif; color: var(--ink); position: relative; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: #1d1d1d; }
+  .bar::before { content: ''; position: absolute; left: 0; top: 0; height: 4px; width: 84px; background: var(--accent); }
+  .abs { position: absolute; left: 60px; right: 60px; }
+
+  .t { display: inline-flex; align-items: center; height: 20px; padding: 0 8px; border-radius: 5px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: .1em; white-space: nowrap; }
+  .t.auto { background: var(--accent); color: #fff; }
+  .t.assist { border: 1px solid var(--accent); color: var(--accent); }
+  .t.human { border: 1px solid #4a4743; color: #bdb7ae; }
+
+  .sh { display: flex; align-items: center; gap: 14px; }
+  .sh .no { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: .2em; color: var(--accent); white-space: nowrap; }
+  .sh .tt { font-size: 21px; font-weight: 600; letter-spacing: -0.025em; white-space: nowrap; }
+  .sh .tt span { color: var(--mute); font-weight: 500; }
+  .sh .ln { flex: 1; height: 1px; background: #2a2a2a; }
+
+  /* top + hero */
+  .top { position: absolute; top: 34px; left: 60px; right: 60px; display: flex; justify-content: space-between; align-items: center; }
+  .top img { height: 28px; } .top .tag { font-size: 12px; letter-spacing: .2em; color: var(--mute); }
+  .k { top: 104px; font-size: 13px; letter-spacing: .26em; color: var(--accent); }
+  h1 { position: absolute; top: 132px; left: 60px; font-size: 64px; line-height: .98; font-weight: 600; letter-spacing: -0.05em; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .sub { top: 276px; width: 640px; font-size: 19px; line-height: 1.38; color: var(--mute); }
+  .sub b { color: var(--ink); font-weight: 500; }
+  .legend { top: 348px; display: flex; gap: 18px; }
+  .legend .row { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--mute); }
+  #heroM { position: absolute; right: 36px; top: 96px; width: 250px; height: 250px; }
+  .heroglow { position: absolute; right: 20px; top: 50px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(closest-side, rgba(238,98,22,.22), transparent); }
+
+  /* map */
+  .map { position: absolute; left: 0; width: 1080px; top: 432px; height: 470px; }
+  .map svg { position: absolute; inset: 0; }
+  .pill { position: absolute; height: 30px; padding: 0 10px 0 9px; border-radius: 8px; background: #1a1a1a; border: 1px solid #333; display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 500; white-space: nowrap; transform: translate(-50%, -50%); z-index: 2; }
+  .pill i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+  .pill.own { background: #2a170c; border-color: var(--accent); height: 34px; font-size: 15px; font-weight: 600; }
+  .clab { position: absolute; transform: translate(-50%, -50%); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .16em; white-space: nowrap; }
+  .hub { position: absolute; left: 540px; top: 225px; width: 170px; height: 170px; border-radius: 50%; transform: translate(-50%, -50%); background: radial-gradient(circle at 50% 40%, #2b1a10, #151515 70%); border: 1.5px solid var(--accent); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; z-index: 3; }
+  .hub b { font-size: 21px; letter-spacing: -0.03em; }
+  .hub span { margin-top: 5px; font-size: 10.5px; line-height: 1.5; color: var(--mute); font-family: 'JetBrains Mono', monospace; }
+
+  /* data table */
+  .dt { top: 950px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--card); }
+  .dt .r { display: grid; grid-template-columns: 160px 1fr 1fr 1fr 1.45fr; align-items: center; border-bottom: 1px solid var(--line); height: 44px; }
+  .dt .r:last-child { border-bottom: 0; }
+  .dt .r > div { padding: 0 14px; }
+  .dt .hd { background: #141414; height: 36px; }
+  .dt .hd > div { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .12em; color: var(--dim); }
+  .dt .eng { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; }
+  .dt .v { font-size: 19px; font-weight: 600; letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; }
+  .dt .v .barx { flex: 1; height: 5px; border-radius: 3px; background: #2a2a2a; position: relative; overflow: hidden; }
+  .dt .v .barx i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); }
+  .dt .f { font-size: 12.5px; line-height: 1.3; color: #d8d3cb; }
+
+  /* loop */
+  .steps { top: 1234px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 12px 12px; height: 128px; display: flex; flex-direction: column; position: relative; }
+  .step .no { width: 26px; height: 26px; border-radius: 50%; background: #2a2a2a; color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+  .step.on { border-color: var(--accent); background: linear-gradient(180deg, #24150d, #171717 75%); }
+  .step.on .no { background: var(--accent); }
+  .step h4 { margin-top: 8px; font-size: 16px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.12; }
+  .step .tg { margin-top: auto; display: flex; gap: 4px; flex-wrap: wrap; }
+  .step .ar { position: absolute; right: -9px; top: 50%; transform: translateY(-50%); color: #5a5650; font-size: 12px; z-index: 2; }
+
+  /* surfaces */
+  .grid { top: 1412px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .sc { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 11px 12px 11px; height: 108px; display: flex; flex-direction: column; }
+  .sc.own { border-color: #6a3214; background: linear-gradient(150deg, #24150d 0%, #171717 60%); }
+  .sc .cat { display: flex; align-items: center; gap: 7px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; }
+  .sc .cat i { width: 8px; height: 8px; border-radius: 50%; }
+  .sc p { margin-top: 6px; font-size: 13.5px; line-height: 1.3; color: #e8e3db; }
+  .sc .tg { margin-top: auto; display: flex; gap: 4px; flex-wrap: wrap; }
+
+  /* cta + foot */
+  .cta { top: 1670px; height: 66px; border-radius: 16px; background: var(--accent); padding: 0 22px; display: flex; justify-content: space-between; align-items: center; }
+  .cta .a { font-size: 22px; font-weight: 700; letter-spacing: -0.03em; color: #fff; }
+  .cta .a small { font-size: 14px; font-weight: 500; color: #ffe6d6; margin-left: 10px; letter-spacing: -0.01em; }
+  .cta .b { height: 42px; padding: 0 18px; border-radius: 21px; background: #111; color: #fff; font-size: 16px; font-weight: 600; display: flex; align-items: center; margin-right: 120px; }
+  #closeM { position: absolute; right: 26px; top: 1630px; width: 150px; height: 150px; z-index: 3; }
+  .foot { top: 1756px; display: flex; justify-content: space-between; align-items: baseline; font-size: 14.5px; }
+  .foot b { font-weight: 600; } .foot span { color: var(--mute); }
+  .foot .mono { font-size: 10.5px; color: var(--dim); }
+</style>
+</head>
+<body>
+  <div class="bar"></div>
+  <div class="top"><img src="logo.png"><div class="tag mono">SLATE PLAYBOOK · NOV 2026</div></div>
+
+  <div class="heroglow"></div>
+  <div id="heroM"></div>
+  <div class="abs k mono">THE ORGANIC GROWTH 2.0 PLAYBOOK</div>
+  <h1>Your website is one node.<br><em>AI reads the map.</em></h1>
+  <div class="abs sub">How to get <b>recommended by ChatGPT, Perplexity, Claude and Google's AI</b>, surface by surface. Built on 1,000 queries of our own research.</div>
+  <div class="abs legend">
+    <div class="row"><span class="t auto">SLATE AUTOMATES</span>you approve</div>
+    <div class="row"><span class="t assist">SLATE ASSISTS</span>you lead</div>
+    <div class="row"><span class="t human">YOUR TEAM</span>keep it human</div>
+  </div>
+
+  <div class="abs sh" style="top:404px"><span class="no">01</span><span class="tt">The map <span>· where AI gets its answers</span></span><span class="ln"></span></div>
+  <div class="map" id="map">
+    <svg id="mapsvg" width="1080" height="470" viewBox="0 0 1080 470"></svg>
+    <svg id="dots" width="1080" height="470" viewBox="0 0 1080 470" style="z-index:1"></svg>
+    <div class="hub" id="hub"><b>The AI answer</b><span>ChatGPT · Perplexity<br>Claude · Gemini<br>AI Overviews</span></div>
+  </div>
+
+  <div class="abs sh" style="top:918px"><span class="no">02</span><span class="tt">The data <span>· every engine reads the map differently</span></span><span class="ln"></span></div>
+  <div class="abs dt">
+    <div class="r hd"><div>ENGINE</div><div>LINKS / ANSWER</div><div>COMMUNITY SHARE</div><div>CITES GOOGLE #1</div><div>FAVOURS</div></div>
+    <div class="r"><div class="eng">Perplexity</div><div class="v">19.1<span class="barx"><i style="width:100%"></i></span></div><div class="v">10.7%<span class="barx"><i style="width:100%"></i></span></div><div class="v">87%<span class="barx"><i style="width:87%"></i></span></div><div class="f">Pricing pages · Reddit is its #1 domain</div></div>
+    <div class="r"><div class="eng">AI Overviews</div><div class="v">9.4<span class="barx"><i style="width:49%"></i></span></div><div class="v">10.4%<span class="barx"><i style="width:97%"></i></span></div><div class="v">55%<span class="barx"><i style="width:55%"></i></span></div><div class="f">Definition pages · pricing pages least</div></div>
+    <div class="r"><div class="eng">Claude</div><div class="v">12.5<span class="barx"><i style="width:65%"></i></span></div><div class="v">0.6%<span class="barx"><i style="width:6%"></i></span></div><div class="v">35%<span class="barx"><i style="width:35%"></i></span></div><div class="f">Longer, deeper, structured pages</div></div>
+    <div class="r"><div class="eng">ChatGPT</div><div class="v">3.1<span class="barx"><i style="width:16%"></i></span></div><div class="v">0.1%<span class="barx"><i style="width:1%"></i></span></div><div class="v">1%<span class="barx"><i style="width:1%"></i></span></div><div class="f">Pricing pages: 33% of its links</div></div>
+  </div>
+  <div class="abs mono" style="top:1176px; font-size:12.5px; color:var(--mute);"><span style="color:var(--accent)">74%</span> of cited pages sit outside Google's top 10 · ChatGPT's 1% = share of Google top-10 pages it ever cited</div>
+
+  <div class="abs sh" style="top:1206px"><span class="no">03</span><span class="tt">The loop <span>· five steps, every week</span></span><span class="ln"></span></div>
+  <div class="abs steps">
+    <div class="step"><div class="no">1</div><h4>Map the prompts</h4><div class="tg"><span class="t auto">SLATE AUTOMATES</span></div><span class="ar">→</span></div>
+    <div class="step"><div class="no">2</div><h4>Fix your own node</h4><div class="tg"><span class="t assist">SLATE ASSISTS</span></div><span class="ar">→</span></div>
+    <div class="step"><div class="no">3</div><h4>Earn the other nodes</h4><div class="tg"><span class="t assist">ASSISTS</span><span class="t human">TEAM</span></div><span class="ar">→</span></div>
+    <div class="step"><div class="no">4</div><h4>Refresh what decays</h4><div class="tg"><span class="t auto">SLATE AUTOMATES</span></div><span class="ar">→</span></div>
+    <div class="step"><div class="no">5</div><h4>Prove it weekly</h4><div class="tg"><span class="t auto">SLATE AUTOMATES</span></div></div>
+  </div>
+
+  <div class="abs sh" style="top:1384px"><span class="no">04</span><span class="tt">The plays <span>· one move per surface</span></span><span class="ln"></span></div>
+  <div class="abs grid">
+    <div class="sc own"><div class="cat" style="color:var(--accent)"><i style="background:var(--accent)"></i>YOUR SITE</div><p>Public pricing in text. Honest "X vs Y" pages.</p><div class="tg"><span class="t auto">AUDITS · SCHEMA</span></div></div>
+    <div class="sc"><div class="cat" style="color:var(--c-search)"><i style="background:var(--c-search)"></i>SEARCH</div><p>Top 3 on bottom-funnel queries. Rank still feeds AI.</p><div class="tg"><span class="t auto">RANK TRACKING</span></div></div>
+    <div class="sc"><div class="cat" style="color:var(--c-ref)"><i style="background:var(--c-ref)"></i>ROUNDUPS &amp; NEWS</div><p>Pitch the "best X" lists engines already cite.</p><div class="tg"><span class="t assist">FIND + PITCH</span><span class="t human">PRESS</span></div></div>
+    <div class="sc"><div class="cat" style="color:var(--c-comm)"><i style="background:var(--c-comm)"></i>COMMUNITIES</div><p>Answer real threads as a person, if Perplexity matters.</p><div class="tg"><span class="t auto">TRACKING</span><span class="t human">POSTING</span></div></div>
+    <div class="sc"><div class="cat" style="color:var(--c-review)"><i style="background:var(--c-review)"></i>REVIEWS</div><p>Ask for reviews monthly, right after a win.</p><div class="tg"><span class="t assist">THEME MINING</span><span class="t human">ASKING</span></div></div>
+    <div class="sc"><div class="cat" style="color:var(--c-video)"><i style="background:var(--c-video)"></i>VIDEO</div><p>Film the 10 questions sales hears most.</p><div class="tg"><span class="t assist">VIDEO → BLOG</span><span class="t human">FILMING</span></div></div>
+    <div class="sc"><div class="cat" style="color:var(--c-social)"><i style="background:var(--c-social)"></i>SOCIAL</div><p>Turn every study into posts that point back to it.</p><div class="tg"><span class="t assist">DRAFTS</span><span class="t human">VOICE</span></div></div>
+    <div class="sc"><div class="cat" style="color:var(--c-shop)"><i style="background:var(--c-shop)"></i>MARKETPLACES</div><p>Complete every listing. Mirror integrations on-site.</p><div class="tg"><span class="t assist">PAGES</span><span class="t human">LISTINGS</span></div></div>
+  </div>
+
+  <div class="abs cta"><div class="a">Try Slate free for 14 days<small>no card needed</small></div><div class="b" id="ctaB">slatehq.com →</div></div>
+  <div id="closeM"></div>
+  <div class="abs foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">Data: Slate Citation Lab · 1,000 B2B SaaS queries via API · 3 Aug 2026</div></div>
+
+<script src="lottie.min.js"></script>
+<script>
+const clusters = [
+  { name: 'SEARCH ENGINES', hex: '#6ea8fe', x: 540, y: 46, cols: 4, gx: 135, gy: 0, nodes: ['Google', 'Bing', 'Brave', 'DuckDuckGo'], lx: 540, ly: 14 },
+  { name: 'REFERENCE & NEWS', hex: '#f2c14e', x: 200, y: 150, cols: 2, gx: 125, gy: 40, nodes: ['Wikipedia', 'Reuters', 'WIRED', "Tom's Guide"], lx: 200, ly: 108 },
+  { name: 'SOCIAL', hex: '#5ec8d8', x: 880, y: 150, cols: 2, gx: 120, gy: 40, nodes: ['LinkedIn', 'X', 'Instagram', 'Facebook'], lx: 880, ly: 108 },
+  { name: 'VIDEO', hex: '#ff7a8a', x: 120, y: 318, cols: 1, gx: 0, gy: 38, nodes: ['YouTube', 'TikTok', 'Vimeo'], lx: 120, ly: 248 },
+  { name: 'MARKETPLACES', hex: '#b18cff', x: 950, y: 318, cols: 1, gx: 0, gy: 38, nodes: ['AWS Marketplace', 'HubSpot Apps', 'AppExchange'], lx: 950, ly: 248 },
+  { name: 'COMMUNITIES', hex: '#e0a458', x: 320, y: 432, cols: 3, gx: 118, gy: 0, nodes: ['Reddit', 'Quora', 'Stack Overflow'], lx: 320, ly: 400 },
+  { name: 'REVIEW SITES', hex: '#6fcf97', x: 770, y: 432, cols: 4, gx: 100, gy: 0, nodes: ['G2', 'Capterra', 'TrustRadius', 'Trustpilot'], lx: 770, ly: 400 },
+];
+const map = document.getElementById('map'), svg = document.getElementById('mapsvg'), dotsSvg = document.getElementById('dots');
+const HUB = { x: 540, y: 225 }, OWN = { x: 540, y: 352 }, pts = [];
+clusters.forEach((c, ci) => {
+  const lab = document.createElement('div'); lab.className = 'clab'; lab.style.left = c.lx + 'px'; lab.style.top = c.ly + 'px'; lab.style.color = c.hex; lab.textContent = c.name; map.appendChild(lab);
+  const rows = Math.ceil(c.nodes.length / c.cols);
+  c.nodes.forEach((n, i) => {
+    const col = i % c.cols, row = Math.floor(i / c.cols);
+    const x = c.x + (col - (Math.min(c.cols, c.nodes.length) - 1) / 2) * c.gx, y = c.y + (row - (rows - 1) / 2) * (c.gy || 0);
+    const p = document.createElement('div'); p.className = 'pill'; p.style.left = x + 'px'; p.style.top = y + 'px';
+    p.innerHTML = `<i style="background:${c.hex}"></i>${n}`; map.appendChild(p); pts.push({ x, y, ci, hex: c.hex });
+  });
+});
+const own = document.createElement('div'); own.className = 'pill own'; own.style.left = OWN.x + 'px'; own.style.top = OWN.y + 'px'; own.innerHTML = '<i style="background:#ee6216"></i>Your website'; map.appendChild(own);
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+let lines = '';
+for (let k = 0; k < 40; k++) { const a = pts[Math.floor(rnd() * pts.length)], b = pts[Math.floor(rnd() * pts.length)]; if (a.ci === b.ci) continue;
+  lines += `<path d="M${a.x} ${a.y} Q ${(a.x + b.x) / 2 + (rnd() - .5) * 90} ${(a.y + b.y) / 2 + (rnd() - .5) * 90} ${b.x} ${b.y}" stroke="#2c2c2c" stroke-width="1" fill="none"/>`; }
+pts.forEach(p => { lines += `<line x1="${p.x}" y1="${p.y}" x2="${HUB.x}" y2="${HUB.y}" stroke="${p.hex}" stroke-opacity=".3" stroke-width="1.1"/>`; });
+lines += `<line x1="${OWN.x}" y1="${OWN.y}" x2="${HUB.x}" y2="${HUB.y}" stroke="#ee6216" stroke-width="2.5"/>`;
+svg.innerHTML = lines;
+const sig = pts.map((p, i) => { const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); c.setAttribute('r', 3.5); c.setAttribute('fill', p.hex); dotsSvg.appendChild(c); return { el: c, p, off: (i * 0.37) % 1 }; });
+const ownDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); ownDot.setAttribute('r', 5); ownDot.setAttribute('fill', '#ee6216'); dotsSvg.appendChild(ownDot);
+
+const T = 10, clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+let heroAnim, closeAnim;
+window.setup = (f, l) => Promise.all([
+  new Promise(r => { heroAnim = lottie.loadAnimation({ container: document.getElementById('heroM'), renderer: 'svg', loop: false, autoplay: false, animationData: f }); heroAnim.addEventListener('DOMLoaded', r); }),
+  new Promise(r => { closeAnim = lottie.loadAnimation({ container: document.getElementById('closeM'), renderer: 'svg', loop: false, autoplay: false, animationData: l }); closeAnim.addEventListener('DOMLoaded', r); }),
+]);
+const steps = [...document.querySelectorAll('.step')], hub = document.getElementById('hub'), ctaB = document.getElementById('ctaB');
+window.render = (t) => {
+  t = ((t % T) + T) % T;
+  heroAnim.goToAndStop((t * 60) % 600, true);
+  closeAnim.goToAndStop((t * 60) % 600, true);
+  sig.forEach(s => { const ph = ((t / 2.5) + s.off) % 1, e = ph * ph;
+    s.el.setAttribute('cx', (s.p.x + (HUB.x - s.p.x) * e).toFixed(1)); s.el.setAttribute('cy', (s.p.y + (HUB.y - s.p.y) * e).toFixed(1)); s.el.setAttribute('opacity', (Math.sin(Math.PI * ph) * 0.95).toFixed(2)); });
+  const op = (t / 1.25) % 1; ownDot.setAttribute('cx', OWN.x); ownDot.setAttribute('cy', (OWN.y - (OWN.y - HUB.y - 85) * op).toFixed(1)); ownDot.setAttribute('opacity', Math.sin(Math.PI * op).toFixed(2));
+  const pulse = 0.5 + 0.5 * Math.sin(t * Math.PI * 2 / 2.5);
+  hub.style.boxShadow = `0 0 ${30 + 40 * pulse}px rgba(238,98,22,${(0.18 + 0.22 * pulse).toFixed(2)})`;
+  const on = Math.floor(t / 2) % 5; steps.forEach((s, i) => s.classList.toggle('on', i === on));
+  const beat = Math.pow(Math.max(0, Math.sin(Math.PI * 2 * t / 1.25)), 2);
+  ctaB.style.transform = `scale(${(1 + 0.05 * beat).toFixed(3)})`;
+};
+</script>
+</body>
+</html>

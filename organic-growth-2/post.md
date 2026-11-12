@@ -12,48 +12,43 @@ Sections: the network map (8 surfaces and 25 sources feeding the AI answer, with
 
 ## Post
 
-The Organic Growth Cheat Sheet 2.0. Save this one.
+Most SEO teams are optimizing 1 surface. AI reads 8.
 
-SEO isn't dead. But "rank your website" isn't the whole job anymore.
+Here's the Organic Growth Cheat Sheet 2.0. Save it.
 
-When a buyer asks ChatGPT or Perplexity for the best tool in your category, the answer doesn't come from your site alone. It comes from the whole web around it: Reddit threads, G2 reviews, "best X" roundups, YouTube walkthroughs, Wikipedia, marketplaces.
+When a buyer asks ChatGPT "what's the best tool for X?", the answer doesn't just come from your website. It comes from Reddit threads, G2 reviews, "best X" lists, YouTube, Wikipedia and marketplaces too.
 
-Your website is one node. AI reads the whole map.
+We ran 1,000 B2B software questions through ChatGPT, Perplexity, Claude and Gemini. Here's what we found:
 
-We ran 1,000 B2B software questions through ChatGPT, Perplexity, Claude and Gemini to see how that map actually gets read. A few things that surprised us:
-
-→ 74% of the pages AI cited weren't in Google's top 10 at all.
+→ 74% of the pages AI cited weren't in Google's top 10. Your rank tracker can't see most of it.
 → Reddit was Perplexity's #1 source. ChatGPT and Claude cited it zero times.
+→ Rank still matters. Perplexity cited Google's #1 result 87% of the time.
 → A third of ChatGPT's links went to pricing pages.
 
-So "just get on Reddit" or "just write more blog posts" is engine-specific advice at best.
+So "just get on Reddit" or "just write more blogs" isn't a strategy. It's a guess.
 
-We turned the data into one playbook. Everything's in the image:
+The cheat sheet covers:
+→ The 8 surfaces that feed every AI answer
+→ How each engine actually picks its sources
+→ A 5-step loop to run every week
+→ One play per surface, and who should own it
 
-→ The map: 8 surfaces that feed every AI answer
-→ The blind spot your rank tracker can't see
-→ Why "get on Reddit" only works for some engines
-→ Why rank still matters, engine by engine
-→ A 5-step weekly loop
-→ One play for each surface, and who should own it
+Every play is tagged: what you can automate, and what should stay human (press, community posts, asking for reviews).
 
-Every play is tagged so you know what's worth automating and what isn't. Press, Wikipedia, community posts and asking for reviews stay human. Tracking, audits and refreshes don't need to be.
-
-Save it for your next planning session. And if you want the tracking and the weekly report off your plate, try Slate free for 14 days: slatehq.com
+Save it for your next planning call. Send it to the person who still thinks SEO = blog posts.
 
 Which surface is your team ignoring right now?
+
+P.S. Want the tracking and weekly report done for you? Slate's free for 14 days: slatehq.com
 
 ---
 
 ## Hook options (swap for the first line)
 
-0. The Organic Growth Cheat Sheet 2.0. Save this one. (matches the image)
-1b. ChatGPT ignored 99% of Google's top 10 pages. Is yours in the 1%?
-1. SEO isn't dead. But "rank your website" isn't the whole job anymore.
-2. Only 1% of Google's top-10 pages ever showed up in a ChatGPT answer. We checked 1,000 queries.
-3. Your website is one node. AI reads the whole map.
-4. "Just get on Reddit" is terrible AI search advice. Here's why.
-5. Most AI visibility advice is built for one engine. Buyers use four.
+1. Most SEO teams are optimizing 1 surface. AI reads 8.
+2. I made you a cheat sheet for getting recommended by AI. Save it.
+3. ChatGPT ignored 99% of Google's top 10 pages. Here's what it reads instead.
+4. Your rank tracker can't see 74% of what AI cites.
 
 ---
 

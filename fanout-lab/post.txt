@@ -1,0 +1,35 @@
+𝗖𝗹𝗮𝘂𝗱𝗲 𝗢𝗽𝘂𝘀 𝟱 𝗽𝘂𝘁𝘀 𝗮 𝘆𝗲𝗮𝗿 𝗶𝗻 𝟱𝟳% 𝗼𝗳 𝗶𝘁𝘀 𝘀𝗲𝗮𝗿𝗰𝗵𝗲𝘀.
+ChatGPT does it in 25%. It reaches for site: instead.
+
+When a model answers with search, it doesn't search your prompt. It rewrites it into several sub-queries (fan-out) and retrieves for those. The rewrites are what your page actually has to match.
+
+So we looked at which modifiers each model adds. [__] prompts, [__] fan-out queries, ChatGPT and three Claude models.
+
+Share of fan-out queries containing each modifier:
+
+Year → ChatGPT 24.6% · Haiku 4.5 22.6% · Sonnet 5 35.7% · Opus 5 57.4%
+"best" → 10.1% · 18.2% · 23.7% · 3.3%
+"comparison" → 0.8% · 5.5% · 9.8% · 3.8%
+site: → 20.4% in ChatGPT. Not in the top 100 for any Claude model.
+"official" → 13.6% in ChatGPT. Same.
+
+Four things stand out.
+
+𝗙𝗿𝗲𝘀𝗵𝗻𝗲𝘀𝘀 𝗶𝘀 𝘁𝗵𝗲 𝗱𝗼𝗺𝗶𝗻𝗮𝗻𝘁 𝗿𝗲𝘄𝗿𝗶𝘁𝗲.
+Year is the #1 modifier in every model, and in the Claude family it scales with size: 23% → 36% → 57%. My read: larger models know their training data is stale, so they pin the search to the present. A query with "2026" in it pulls toward pages that show 2026. In seven weeks those queries say 2027. Most pages won't.
+
+𝗖𝗵𝗮𝘁𝗚𝗣𝗧 𝗴𝗼𝗲𝘀 𝘀𝘁𝗿𝗮𝗶𝗴𝗵𝘁 𝘁𝗼 𝘁𝗵𝗲 𝘀𝗼𝘂𝗿𝗰𝗲.
+1 in 5 of its searches uses site:, and 1 in 7 says "official". It picks the domain that should hold the answer, then searches inside it. If your own pages don't answer a site: query on your own domain, the model falls back to someone else describing you.
+
+𝗢𝗽𝘂𝘀 𝘀𝗲𝗮𝗿𝗰𝗵𝗲𝘀 𝗹𝗲𝗮𝗻.
+After the year, nothing in Opus 5 clears 4%. "best" collapses from 23.7% in Sonnet 5 to 3.3%. Haiku and Sonnet write queries that look like a buyer's search. Opus writes queries that look like a researcher's.
+
+𝗧𝗵𝗲𝗿𝗲 𝗶𝘀 𝗻𝗼 𝘀𝗶𝗻𝗴𝗹𝗲 "𝗔𝗜 𝗾𝘂𝗲𝗿𝘆".
+"comparison" goes from 0.8% in ChatGPT to 9.8% in Sonnet 5. "top" isn't in ChatGPT's top 100 at all. Optimising for "the" fan-out means optimising for one model.
+
+What I'd do with this:
+1. Put the year where retrieval sees it: title, H1, visible date, dateModified. Update before 1 January, not after.
+2. Run site: queries on your own domain for your core questions, in Bing and Google. If the answer isn't there, the model won't find it either.
+3. Build prompt sets from more than one model's fan-out. One engine's queries give you a one-sided map.
+
+For anyone who has read raw fan-out logs: how much of the year modifier comes from the model, and how much from the search tool's system prompt? Same model, different harness. Has anyone compared?

@@ -1,0 +1,7 @@
+Method, Slate Labs fan-out study:
+• Models: ChatGPT, Claude Haiku 4.5, Claude Sonnet 5, Claude Opus 5
+• [__] prompts across [__] categories, run [__] (dates)
+• [__] fan-out queries captured in total
+• Metric: share of each model's fan-out queries containing the modifier. "Year mention" = any four-digit year
+• "Not in top 100" = the modifier wasn't among that model's 100 most frequent modifiers
+Full breakdown: [link]

@@ -1,0 +1,501 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Organic Growth Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#111111; --card:#171717; --card2:#1c1c1c; --line:#262626; --ink:#f5f4f0; --mute:#a9a59d; --dim:#75716a; --accent:#ee6216; --red:#ff6b5a;
+          --c-search:#6ea8fe; --c-social:#5ec8d8; --c-shop:#b18cff; --c-review:#6fcf97; --c-comm:#e0a458; --c-video:#ff7a8a; --c-ref:#f2c14e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; font-family: 'Inter Tight', system-ui, sans-serif; color: var(--ink); width: 1080px; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .slide { position: relative; width: 1080px; height: 1350px; background: var(--bg); overflow: hidden; }
+  .prog { position: absolute; top: 0; left: 0; height: 4px; width: 100%; background: #1d1d1d; }
+  .prog i { position: absolute; left: 0; top: 0; height: 4px; background: var(--accent); }
+  .top { position: absolute; top: 44px; left: 60px; right: 60px; display: flex; justify-content: space-between; align-items: center; }
+  .top img { height: 30px; }
+  .top .tag { font-size: 12px; letter-spacing: .2em; color: var(--mute); }
+  .foot { position: absolute; left: 60px; right: 60px; bottom: 34px; display: flex; justify-content: space-between; align-items: baseline; font-size: 16px; }
+  .foot b { font-weight: 600; } .foot span { color: var(--mute); }
+  .foot .mono { font-size: 13px; color: var(--mute); letter-spacing: .1em; }
+  .eyebrow { font-size: 13px; letter-spacing: .24em; color: var(--accent); }
+  .h { font-size: 56px; line-height: 1.02; font-weight: 600; letter-spacing: -0.045em; }
+  .h .grey { color: #b9b5ad; } .h em { font-style: normal; color: var(--accent); }
+  .lede { font-size: 20px; line-height: 1.4; color: var(--mute); letter-spacing: -0.01em; }
+  .lede b { color: var(--ink); font-weight: 500; }
+  .head { position: absolute; top: 112px; left: 60px; right: 60px; }
+  .head .h { margin-top: 12px; }
+  .head .lede { margin-top: 14px; }
+  .src { position: absolute; left: 60px; right: 60px; bottom: 74px; font-size: 10.5px; line-height: 1.5; color: var(--dim); }
+
+  /* tags */
+  .t { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .12em; white-space: nowrap; }
+  .t.auto { background: var(--accent); color: #fff; }
+  .t.assist { border: 1px solid var(--accent); color: var(--accent); }
+  .t.human { border: 1px solid #4a4743; color: #bdb7ae; }
+
+  /* cover */
+  .cover-net { position: absolute; inset: 0; opacity: .5; }
+  .cover .title { position: absolute; top: 330px; left: 60px; right: 60px; }
+  .cover .title .k { font-size: 14px; letter-spacing: .26em; color: var(--accent); }
+  .cover .title h1 { margin-top: 18px; font-size: 96px; line-height: .95; font-weight: 600; letter-spacing: -0.05em; }
+  .cover .title h1 em { font-style: normal; color: var(--accent); }
+  .cover .title p { margin-top: 26px; font-size: 26px; line-height: 1.32; color: var(--mute); max-width: 780px; letter-spacing: -0.015em; }
+  .cover .title p b { color: var(--ink); font-weight: 500; }
+  .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; }
+  .chip { height: 40px; padding: 0 16px; border-radius: 20px; border: 1px solid #3a3733; display: inline-flex; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #d8d3cb; background: rgba(23,23,23,.8); }
+  .chip b { color: var(--accent); font-weight: 500; margin-right: 8px; }
+  .cover .mascot { position: absolute; right: 50px; bottom: 120px; width: 300px; filter: drop-shadow(0 18px 30px rgba(0,0,0,.6)); }
+  .cover .legend { position: absolute; left: 60px; bottom: 130px; display: flex; flex-direction: column; gap: 10px; }
+  .cover .legend .row { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--mute); }
+
+  /* compare */
+  .cmp { position: absolute; top: 330px; left: 60px; right: 60px; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--card); }
+  .cmp .r { display: grid; grid-template-columns: 170px 1fr 1fr; align-items: center; min-height: 86px; border-bottom: 1px solid var(--line); }
+  .cmp .r:last-child { border-bottom: 0; }
+  .cmp .r > div { padding: 16px 22px; }
+  .cmp .r .k { font-size: 12px; letter-spacing: .16em; color: var(--dim); }
+  .cmp .r .o { font-size: 20px; color: #8f8a83; letter-spacing: -0.01em; line-height: 1.3; }
+  .cmp .r .n { font-size: 20px; color: var(--ink); font-weight: 500; letter-spacing: -0.015em; line-height: 1.3; background: linear-gradient(90deg, rgba(238,98,22,.10), rgba(238,98,22,0)); height: 100%; display: flex; align-items: center; }
+  .cmp .hd { min-height: 62px; background: #141414; }
+  .cmp .hd .o, .cmp .hd .n { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: .18em; font-weight: 500; }
+  .cmp .hd .n { color: var(--accent); }
+  .big-stat { position: absolute; left: 60px; right: 60px; top: 1060px; display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; border: 1px solid #5a2a10; border-radius: 18px; padding: 22px 28px; background: linear-gradient(100deg, #24150d 0%, #171310 60%, #151515 100%); }
+  .big-stat .n { font-size: 78px; font-weight: 600; letter-spacing: -0.05em; color: var(--accent); line-height: 1; }
+  .big-stat .x { font-size: 21px; line-height: 1.38; color: #e2ddd5; letter-spacing: -0.01em; }
+  .big-stat .x b { color: var(--ink); }
+
+  /* map */
+  .map { position: absolute; left: 0; top: 300px; width: 1080px; height: 880px; }
+  .map svg { position: absolute; inset: 0; }
+  .pill { position: absolute; height: 34px; padding: 0 12px 0 10px; border-radius: 9px; background: #1a1a1a; border: 1px solid #333; display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; white-space: nowrap; transform: translate(-50%, -50%); }
+  .pill i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .pill.own { background: #2a170c; border-color: var(--accent); color: #fff; height: 40px; font-size: 17px; font-weight: 600; }
+  .clab { position: absolute; transform: translate(-50%, -50%); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .16em; white-space: nowrap; }
+  .hub { position: absolute; left: 540px; top: 420px; width: 210px; height: 210px; border-radius: 50%; transform: translate(-50%, -50%); background: radial-gradient(circle at 50% 40%, #2b1a10, #151515 70%); border: 1.5px solid var(--accent); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 0 0 60px rgba(238,98,22,.25); }
+  .hub b { font-size: 26px; letter-spacing: -0.03em; }
+  .hub span { margin-top: 6px; font-size: 12px; line-height: 1.5; color: var(--mute); font-family: 'JetBrains Mono', monospace; letter-spacing: .04em; }
+
+  /* data table */
+  .dt { position: absolute; top: 340px; left: 60px; right: 60px; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--card); }
+  .dt .r { display: grid; grid-template-columns: 190px 1fr 1fr 1fr 1.25fr; align-items: center; border-bottom: 1px solid var(--line); }
+  .dt .r:last-child { border-bottom: 0; }
+  .dt .r > div { padding: 18px 16px; }
+  .dt .hd { background: #141414; }
+  .dt .hd > div { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: var(--dim); line-height: 1.45; }
+  .dt .eng { font-size: 21px; font-weight: 600; letter-spacing: -0.02em; }
+  .dt .v { font-size: 30px; font-weight: 600; letter-spacing: -0.04em; }
+  .dt .v small { display: block; font-size: 12px; font-weight: 400; color: var(--dim); letter-spacing: 0; margin-top: 3px; font-family: 'JetBrains Mono', monospace; }
+  .dt .f { font-size: 16px; line-height: 1.3; color: #d8d3cb; }
+  .bar { height: 6px; border-radius: 3px; background: #2a2a2a; margin-top: 8px; position: relative; overflow: hidden; }
+  .bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 3px; }
+  .takes { position: absolute; left: 60px; right: 60px; top: 902px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .take { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+  .take .n { font-size: 40px; font-weight: 600; letter-spacing: -0.05em; color: var(--accent); line-height: 1; }
+  .take p { margin-top: 10px; font-size: 15.5px; line-height: 1.38; color: #d8d3cb; }
+  .take p b { color: var(--ink); }
+  .read { position: absolute; left: 60px; right: 60px; top: 1112px; font-size: 22px; line-height: 1.35; font-weight: 500; letter-spacing: -0.02em; }
+  .read em { font-style: normal; color: var(--accent); }
+
+  /* loop */
+  .loop { position: absolute; left: 0; top: 300px; width: 1080px; height: 900px; }
+  .ring { position: absolute; left: 540px; top: 430px; width: 560px; height: 560px; transform: translate(-50%,-50%); border-radius: 50%; border: 2px dashed #3a3733; }
+  .core { position: absolute; left: 540px; top: 430px; transform: translate(-50%,-50%); text-align: center; width: 260px; }
+  .core img { width: 150px; filter: drop-shadow(0 12px 22px rgba(0,0,0,.6)); }
+  .core b { display: block; margin-top: 6px; font-size: 20px; letter-spacing: -0.02em; }
+  .core span { display: block; margin-top: 4px; font-size: 13px; color: var(--dim); font-family: 'JetBrains Mono', monospace; letter-spacing: .1em; }
+  .step { position: absolute; width: 300px; transform: translate(-50%,-50%); background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px 16px; }
+  .step .no { position: absolute; left: -14px; top: -14px; width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 5px var(--bg); }
+  .step h4 { font-size: 22px; font-weight: 600; letter-spacing: -0.025em; }
+  .step p { margin-top: 6px; font-size: 14.5px; line-height: 1.38; color: var(--mute); }
+  .step .t { margin-top: 10px; }
+
+  /* surface cards */
+  .grid4 { position: absolute; left: 60px; right: 60px; top: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .sc { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px 22px 18px; height: 432px; position: relative; display: flex; flex-direction: column; }
+  .sc .cat { display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .16em; }
+  .sc .cat i { width: 10px; height: 10px; border-radius: 50%; }
+  .sc h3 { margin-top: 8px; font-size: 27px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; }
+  .sc .ex { margin-top: 6px; font-size: 13px; color: var(--dim); font-family: 'JetBrains Mono', monospace; }
+  .sc .fit { margin-top: 12px; padding: 10px 12px; border-radius: 10px; background: #1f1f1f; font-size: 14px; line-height: 1.38; color: #d8d3cb; }
+  .sc .fit b { color: var(--accent); font-weight: 600; }
+  .sc ul { margin-top: 12px; list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .sc li { font-size: 15px; line-height: 1.36; color: #e2ddd5; padding-left: 18px; position: relative; }
+  .sc li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+  .sc .bottom { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; padding-top: 12px; border-top: 1px solid #242424; }
+  .sc .bottom .m { width: 100%; font-size: 12.5px; color: var(--dim); font-family: 'JetBrains Mono', monospace; letter-spacing: .02em; margin-bottom: 4px; }
+  .sc .bottom .m b { color: var(--mute); font-weight: 500; }
+  .sc.own { border-color: #6a3214; background: linear-gradient(150deg, #24150d 0%, #171717 55%); }
+
+  /* plan */
+  .plan { position: absolute; left: 60px; right: 60px; top: 300px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .ph { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px 20px; height: 840px; display: flex; flex-direction: column; }
+  .ph .d { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .16em; color: var(--accent); }
+  .ph h3 { margin-top: 8px; font-size: 30px; font-weight: 600; letter-spacing: -0.035em; }
+  .ph .g { margin-top: 6px; font-size: 14.5px; color: var(--mute); line-height: 1.35; }
+  .task { margin-top: 12px; padding: 12px 12px; border-radius: 12px; background: #1d1d1d; border: 1px solid #262626; }
+  .task p { font-size: 15px; line-height: 1.35; color: #e8e3db; }
+  .task .t { margin-top: 8px; height: 22px; font-size: 10px; }
+  .ph .out { margin-top: auto; padding-top: 14px; border-top: 1px solid #262626; font-size: 14px; color: var(--mute); line-height: 1.4; }
+  .ph .out b { color: var(--ink); font-weight: 600; display: block; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .16em; color: var(--accent); margin-bottom: 4px; }
+  .timeline { position: absolute; left: 60px; right: 60px; top: 280px; height: 4px; }
+
+  /* who does what */
+  .who { position: absolute; left: 60px; right: 60px; top: 300px; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--card); }
+  .who .r { display: grid; grid-template-columns: 1fr 150px 150px 150px; align-items: center; min-height: 60px; border-bottom: 1px solid #222; }
+  .who .r:last-child { border-bottom: 0; }
+  .who .r > div { padding: 10px 18px; }
+  .who .hd { background: #141414; min-height: 70px; }
+  .who .hd > div { text-align: center; }
+  .who .hd > div:first-child { text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .16em; color: var(--dim); }
+  .who .task2 { font-size: 17px; color: #e8e3db; letter-spacing: -0.01em; }
+  .who .task2 small { display: block; font-size: 12.5px; color: var(--dim); margin-top: 2px; font-family: 'JetBrains Mono', monospace; }
+  .who .c { text-align: center; }
+  .dot { display: inline-block; width: 22px; height: 22px; border-radius: 50%; }
+  .dot.auto { background: var(--accent); box-shadow: 0 0 14px rgba(238,98,22,.5); }
+  .dot.assist { border: 2px solid var(--accent); }
+  .dot.human { background: #4a4743; }
+  .dot.none { width: 8px; height: 2px; border-radius: 1px; background: #333; vertical-align: middle; }
+  .who-note { position: absolute; left: 60px; right: 60px; top: 1130px; display: flex; justify-content: space-between; align-items: center; font-size: 17px; color: var(--mute); }
+  .who-note b { color: var(--ink); font-weight: 600; }
+
+  /* close */
+  .check { position: absolute; left: 60px; top: 330px; width: 600px; display: flex; flex-direction: column; gap: 12px; }
+  .ci { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+  .ci .bx { width: 30px; height: 30px; border-radius: 8px; border: 2px solid var(--accent); margin-top: 2px; }
+  .ci b { display: block; font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
+  .ci span { display: block; margin-top: 4px; font-size: 14.5px; color: var(--mute); line-height: 1.38; }
+  .close-m { position: absolute; right: 40px; top: 400px; width: 360px; filter: drop-shadow(0 18px 30px rgba(0,0,0,.6)); }
+  .bubble { position: absolute; right: 70px; top: 330px; background: #f5f4f0; color: #111; border-radius: 18px; padding: 12px 16px; font-size: 18px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.22; box-shadow: 0 12px 30px rgba(0,0,0,.45); }
+  .bubble b { color: var(--accent); }
+  .bubble::after { content: ''; position: absolute; left: 40px; bottom: -8px; width: 18px; height: 18px; background: #f5f4f0; transform: rotate(45deg); border-radius: 3px; }
+  .cta { position: absolute; left: 60px; right: 60px; top: 1090px; border-radius: 18px; background: var(--accent); padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; }
+  .cta .a { font-size: 30px; font-weight: 700; letter-spacing: -0.035em; color: #fff; line-height: 1.1; }
+  .cta .a small { display: block; font-size: 16px; font-weight: 500; color: #ffe6d6; letter-spacing: -0.01em; margin-top: 6px; }
+  .cta .b { height: 54px; padding: 0 24px; border-radius: 27px; background: #111; color: #fff; font-size: 19px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+  .save { position: absolute; left: 60px; right: 60px; top: 1210px; font-size: 15px; color: var(--mute); text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide cover" data-n="1">
+  <svg class="cover-net" id="covernet" viewBox="0 0 1080 1350"></svg>
+  <div class="top"><img src="logo.png"><div class="tag mono">SLATE PLAYBOOK · 01 / 10</div></div>
+  <div class="title">
+    <div class="k mono">THE ORGANIC GROWTH 2.0 PLAYBOOK</div>
+    <h1>Your website is<br>one node.<br><em>AI reads the map.</em></h1>
+    <p>A surface-by-surface playbook for getting <b>recommended by ChatGPT, Perplexity, Claude and Google's AI</b>, built on 1,000 queries of our own research.</p>
+    <div class="chips"><span class="chip"><b>8</b>surfaces</span><span class="chip"><b>5</b>step loop</span><span class="chip"><b>90</b>day plan</span><span class="chip"><b>1,000</b>queries of data</span></div>
+  </div>
+  <div class="legend">
+    <div class="row"><span class="t auto">SLATE AUTOMATES</span>Slate runs it, you approve</div>
+    <div class="row"><span class="t assist">SLATE ASSISTS</span>Slate does the legwork, you lead</div>
+    <div class="row"><span class="t human">YOUR TEAM</span>Keep this human</div>
+  </div>
+  <img class="mascot" src="mascot-float.png">
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">swipe →</div></div>
+</section>
+
+<!-- 2 1.0 vs 2.0 -->
+<section class="slide" data-n="2">
+  <div class="top"><img src="logo.png"><div class="tag mono">THE SHIFT · 02 / 10</div></div>
+  <div class="head">
+    <div class="eyebrow mono">ORGANIC 1.0 → 2.0</div>
+    <div class="h" style="font-size:50px">Ranking your pages was the game.<br><span class="grey">Getting named in the answer is the new one.</span></div>
+  </div>
+  <div class="cmp">
+    <div class="r hd"><div></div><div class="o">ORGANIC 1.0</div><div class="n">ORGANIC 2.0</div></div>
+    <div class="r"><div class="k mono">THE GOAL</div><div class="o">Rank your pages</div><div class="n">Get your brand named in the answer</div></div>
+    <div class="r"><div class="k mono">THE UNIT</div><div class="o">Keywords</div><div class="n">Prompts: the questions buyers ask AI</div></div>
+    <div class="r"><div class="k mono">THE SURFACE</div><div class="o">Your website</div><div class="n">Your site + the 7 surfaces AI reads</div></div>
+    <div class="r"><div class="k mono">THE SIGNAL</div><div class="o">Position and clicks</div><div class="n">Mentions, citations, share of answer</div></div>
+    <div class="r"><div class="k mono">THE SHELF</div><div class="o">10 blue links</div><div class="n">A handful of vendors, different per engine</div></div>
+    <div class="r"><div class="k mono">THE CADENCE</div><div class="o">Monthly rank report</div><div class="n">Always-on tracking, weekly fixes</div></div>
+  </div>
+  <div class="big-stat"><div class="n">1.0%</div><div class="x">of Google's top-10 pages <b>ever appeared in a ChatGPT answer</b> across our 1,000 queries. Ranking alone doesn't get you into the conversation.</div></div>
+  <div class="src mono">Slate Citation Lab: 1,000 B2B SaaS queries via API with web search, captured 3 Aug 2026.</div>
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">swipe →</div></div>
+</section>
+
+<!-- 3 THE MAP -->
+<section class="slide" data-n="3">
+  <div class="top"><img src="logo.png"><div class="tag mono">THE MAP · 03 / 10</div></div>
+  <div class="head">
+    <div class="eyebrow mono">WHERE AI GETS ITS ANSWERS</div>
+    <div class="h" style="font-size:52px">AI doesn't read your site.<br><span class="grey">It reads the whole web around it.</span></div>
+  </div>
+  <div class="map" id="map">
+    <svg id="mapsvg" width="1080" height="880" viewBox="0 0 1080 880"></svg>
+    <div class="hub"><b>The AI answer</b><span>ChatGPT · Perplexity<br>Claude · Gemini<br>AI Overviews</span></div>
+  </div>
+  <div class="src mono" style="bottom:84px; font-size:14px; color:var(--mute); font-family:'Inter Tight',sans-serif; letter-spacing:-0.01em;">Every grey node is somewhere a buyer's question can get answered <b style="color:var(--ink)">without your website.</b> Organic 2.0 is about showing up on those nodes too.</div>
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">swipe →</div></div>
+</section>
+
+<!-- 4 DATA -->
+<section class="slide" data-n="4">
+  <div class="top"><img src="logo.png"><div class="tag mono">THE DATA · 04 / 10</div></div>
+  <div class="head">
+    <div class="eyebrow mono">SLATE CITATION LAB · 1,000 B2B QUERIES</div>
+    <div class="h" style="font-size:52px">Every engine reads the map<br><span class="grey">differently.</span></div>
+  </div>
+  <div class="dt">
+    <div class="r hd"><div>ENGINE</div><div>LINKS PER<br>ANSWER</div><div>COMMUNITY &amp;<br>SOCIAL SHARE</div><div>CITES GOOGLE'S<br>#1 RESULT</div><div>FAVOURS</div></div>
+    <div class="r"><div class="eng">Perplexity</div><div class="v">19.1<div class="bar"><i style="width:100%"></i></div></div><div class="v">10.7%<div class="bar"><i style="width:100%"></i></div></div><div class="v">87%<div class="bar"><i style="width:87%"></i></div></div><div class="f">Pricing pages · Reddit is its #1 domain</div></div>
+    <div class="r"><div class="eng">AI Overviews</div><div class="v">9.4<div class="bar"><i style="width:49%"></i></div></div><div class="v">10.4%<div class="bar"><i style="width:97%"></i></div></div><div class="v">55%<div class="bar"><i style="width:55%"></i></div></div><div class="f">Definition pages · cites pricing pages least</div></div>
+    <div class="r"><div class="eng">Claude</div><div class="v">12.5<div class="bar"><i style="width:65%"></i></div></div><div class="v">0.6%<div class="bar"><i style="width:6%"></i></div></div><div class="v">35%<div class="bar"><i style="width:35%"></i></div></div><div class="f">Longer, deeper, structured pages</div></div>
+    <div class="r"><div class="eng">ChatGPT</div><div class="v">3.1<div class="bar"><i style="width:16%"></i></div></div><div class="v">0.1%<div class="bar"><i style="width:1%"></i></div></div><div class="v">1%<small>OF TOP-10 PAGES EVER</small></div><div class="f">Pricing pages: 33% of its links · links on 8% of top-funnel answers</div></div>
+  </div>
+  <div class="takes">
+    <div class="take"><div class="n">74%</div><p>of cited pages sit <b>outside Google's top 10</b> and AI Overview. Most of the map is off your rank tracker.</p></div>
+    <div class="take"><div class="n">0</div><p>Reddit citations from <b>ChatGPT and Claude</b> in 1,000 answers. Perplexity: 1,051.</p></div>
+    <div class="take"><div class="n">35–42%</div><p>of named vendors are <b>shared between any two engines</b>, even when the pages differ.</p></div>
+  </div>
+  <div class="read">The read: <em>no single surface wins every engine.</em> Win the mention, not just the page.</div>
+  <div class="src mono">API with web search (gpt-5.4-mini, sonar-pro, claude-sonnet-4.6, gemini-2.5-flash), one run per query, 3 Aug 2026. API results, not the consumer apps.</div>
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">swipe →</div></div>
+</section>
+
+<!-- 5 LOOP -->
+<section class="slide" data-n="5">
+  <div class="top"><img src="logo.png"><div class="tag mono">THE OPERATING LOOP · 05 / 10</div></div>
+  <div class="head">
+    <div class="eyebrow mono">HOW TO RUN IT</div>
+    <div class="h" style="font-size:52px">Five steps. Every week.<br><span class="grey">Not a one-time project.</span></div>
+  </div>
+  <div class="loop">
+    <div class="ring"></div>
+    <div class="core"><img src="mascot-float.png"><b>Run it weekly</b><span>MEASURE → FIX → EARN</span></div>
+    <div class="step" style="left:540px; top:90px;"><div class="no">1</div><h4>Map the prompts</h4><p>100–300 real buyer questions across top, mid and bottom funnel. Track each engine weekly and log which sources it cites.</p><span class="t auto">SLATE AUTOMATES</span></div>
+    <div class="step" style="left:870px; top:330px;"><div class="no">2</div><h4>Fix your own node</h4><p>Definition, comparison and pricing pages. Rank them first: it's the one lever every engine follows.</p><span class="t assist">SLATE ASSISTS</span></div>
+    <div class="step" style="left:760px; top:690px;"><div class="no">3</div><h4>Earn the other nodes</h4><p>Get onto the roundups, review sites and threads the engines already cite for your category.</p><span class="t assist">SLATE ASSISTS</span> <span class="t human">YOUR TEAM</span></div>
+    <div class="step" style="left:320px; top:690px;"><div class="no">4</div><h4>Refresh what decays</h4><p>Pages losing rank or citations get updated with new data before a competitor takes the slot.</p><span class="t auto">SLATE AUTOMATES</span></div>
+    <div class="step" style="left:210px; top:330px;"><div class="no">5</div><h4>Prove it</h4><p>Share of answer vs competitors, citations won and lost, AI-referred sessions per page. Weekly.</p><span class="t auto">SLATE AUTOMATES</span></div>
+  </div>
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">swipe →</div></div>
+</section>
+
+<!-- 6 SURFACES A -->
+<section class="slide" data-n="6">
+  <div class="top"><img src="logo.png"><div class="tag mono">SURFACE PLAYS · 06 / 10</div></div>
+  <div class="head">
+    <div class="eyebrow mono">SURFACE BY SURFACE · PART 1 OF 2</div>
+    <div class="h" style="font-size:48px">Start with the nodes<br><span class="grey">every engine leans on.</span></div>
+  </div>
+  <div class="grid4">
+    <div class="sc own">
+      <div class="cat" style="color:var(--accent)"><i style="background:var(--accent)"></i>YOUR SITE</div>
+      <h3>The one node you control</h3>
+      <div class="ex">definition · comparison · pricing · integration pages</div>
+      <div class="fit"><b>Data:</b> a third of ChatGPT's links went to pricing pages. Definition pages are top-two for Perplexity, Claude and AI Overviews.</div>
+      <ul><li>Public, crawlable pricing with plan names in text</li><li>One clear definition page per category term</li><li>Honest "X vs Y" and "alternatives" pages</li></ul>
+      <div class="bottom"><div class="m"><b>MEASURE</b> pages cited per engine</div><span class="t auto">AUDITS · SCHEMA · LINKS</span><span class="t assist">BRIEFS · DRAFTS</span></div>
+    </div>
+    <div class="sc">
+      <div class="cat" style="color:var(--c-search)"><i style="background:var(--c-search)"></i>SEARCH ENGINES</div>
+      <h3>Rank still feeds the answer</h3>
+      <div class="ex">Google · Bing · Brave · DuckDuckGo</div>
+      <div class="fit"><b>Data:</b> Perplexity cited the #1 result 87% of the time, falling to 46% at #9. Rank was the only lever that mattered.</div>
+      <ul><li>Map each prompt to the query behind it</li><li>Fight for top 3 on bottom-funnel terms</li><li>Verify you're indexed in Bing, not just Google</li></ul>
+      <div class="bottom"><div class="m"><b>MEASURE</b> position on prompt-mapped queries</div><span class="t auto">RANK TRACKING</span><span class="t assist">GAP RESEARCH · CTR FIXES</span></div>
+    </div>
+    <div class="sc">
+      <div class="cat" style="color:var(--c-ref)"><i style="background:var(--c-ref)"></i>REFERENCE, NEWS &amp; ROUNDUPS</div>
+      <h3>Be in what they quote</h3>
+      <div class="ex">Wikipedia · Reuters · WIRED · Tom's Guide · "best X" lists</div>
+      <div class="fit"><b>Data:</b> 74% of cited pages weren't in Google's top 10 or AI Overview. Most of what AI quotes is off your rank tracker.</div>
+      <ul><li>Find the roundups engines cite for your category</li><li>Pitch with proof: data, pricing, screenshots</li><li>Publish original research worth citing</li></ul>
+      <div class="bottom"><div class="m"><b>MEASURE</b> cited third-party pages that name you</div><span class="t assist">FIND + PITCH ROUNDUPS</span><span class="t human">PRESS · WIKIPEDIA</span></div>
+    </div>
+    <div class="sc">
+      <div class="cat" style="color:var(--c-comm)"><i style="background:var(--c-comm)"></i>COMMUNITIES &amp; FORUMS</div>
+      <h3>Huge for one engine. Zero for two.</h3>
+      <div class="ex">Reddit · Quora · Stack Overflow</div>
+      <div class="fit"><b>Data:</b> Reddit was Perplexity's #1 cited domain. ChatGPT and Claude cited it 0 times in 1,000 answers.</div>
+      <ul><li>Prioritise if Perplexity or AI Overviews matter</li><li>Answer real threads as a named person</li><li>Turn repeat questions into pages on your site</li></ul>
+      <div class="bottom"><div class="m"><b>MEASURE</b> threads mentioning you vs competitors</div><span class="t auto">MENTION TRACKING</span><span class="t human">POSTING</span></div>
+    </div>
+  </div>
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">swipe →</div></div>
+</section>
+
+<!-- 7 SURFACES B -->
+<section class="slide" data-n="7">
+  <div class="top"><img src="logo.png"><div class="tag mono">SURFACE PLAYS · 07 / 10</div></div>
+  <div class="head">
+    <div class="eyebrow mono">SURFACE BY SURFACE · PART 2 OF 2</div>
+    <div class="h" style="font-size:48px">Then fill the gaps<br><span class="grey">your buyers actually use.</span></div>
+  </div>
+  <div class="grid4">
+    <div class="sc">
+      <div class="cat" style="color:var(--c-review)"><i style="background:var(--c-review)"></i>REVIEW SITES</div>
+      <h3>Proof in other people's words</h3>
+      <div class="ex">G2 · Capterra · TrustRadius · Trustpilot</div>
+      <div class="fit"><b>Why:</b> buyers ask AI "is X any good?" and review sites are where that answer lives.</div>
+      <ul><li>Ask for reviews right after a win, every month</li><li>Reply to every review, good and bad</li><li>Mine review themes for comparison pages</li></ul>
+      <div class="bottom"><div class="m"><b>MEASURE</b> review count, rating, recency</div><span class="t assist">G2 THEME MINING</span><span class="t human">ASKING CUSTOMERS</span></div>
+    </div>
+    <div class="sc">
+      <div class="cat" style="color:var(--c-video)"><i style="background:var(--c-video)"></i>VIDEO</div>
+      <h3>Answer the question on camera</h3>
+      <div class="ex">YouTube · TikTok · Vimeo</div>
+      <div class="fit"><b>Why:</b> "how do I…" questions get answered with walkthroughs. Transcripts make video readable.</div>
+      <ul><li>Film the 10 questions sales hears most</li><li>Chapters, transcripts, descriptive titles</li><li>Turn every video into a written page</li></ul>
+      <div class="bottom"><div class="m"><b>MEASURE</b> videos covering your top prompts</div><span class="t assist">VIDEO → BLOG</span><span class="t human">PRODUCTION</span></div>
+    </div>
+    <div class="sc">
+      <div class="cat" style="color:var(--c-social)"><i style="background:var(--c-social)"></i>SOCIAL</div>
+      <h3>Where your point of view spreads</h3>
+      <div class="ex">LinkedIn · X · Instagram · Facebook</div>
+      <div class="fit"><b>Why:</b> treat social as distribution. Posts spread the research and point of view that engines do cite.</div>
+      <ul><li>Founder and team posts with real data</li><li>Every study becomes 5–10 posts</li><li>Point people back to the citable page</li></ul>
+      <div class="bottom"><div class="m"><b>MEASURE</b> branded search and mentions</div><span class="t assist">POST DRAFTS · REPURPOSING</span><span class="t human">VOICE · POSTING</span></div>
+    </div>
+    <div class="sc">
+      <div class="cat" style="color:var(--c-shop)"><i style="background:var(--c-shop)"></i>MARKETPLACES</div>
+      <h3>The B2B shelf most teams forget</h3>
+      <div class="ex">AWS Marketplace · HubSpot Apps · AppExchange</div>
+      <div class="fit"><b>Why:</b> "does X integrate with Y?" is a buying question. Listings and integration pages answer it.</div>
+      <ul><li>Complete every listing, with category terms</li><li>Mirror each integration with a page on your site</li><li>Collect reviews on the listing itself</li></ul>
+      <div class="bottom"><div class="m"><b>MEASURE</b> listings live and complete</div><span class="t assist">INTEGRATION PAGES</span><span class="t human">LISTINGS</span></div>
+    </div>
+  </div>
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">swipe →</div></div>
+</section>
+
+<!-- 8 90 DAYS -->
+<section class="slide" data-n="8">
+  <div class="top"><img src="logo.png"><div class="tag mono">THE 90-DAY PLAN · 08 / 10</div></div>
+  <div class="head">
+    <div class="eyebrow mono">FROM ZERO TO COMPOUNDING</div>
+    <div class="h" style="font-size:52px">Your first 90 days.<br><span class="grey">In this order.</span></div>
+  </div>
+  <div class="plan">
+    <div class="ph">
+      <div class="d">DAYS 1–30</div><h3>Baseline</h3><div class="g">Know where you stand, then fix the node you own.</div>
+      <div class="task"><p>Build a 150-prompt set across top, mid and bottom funnel</p><span class="t auto">SLATE AUTOMATES</span></div>
+      <div class="task"><p>Track 4 engines weekly, plus your top 5 competitors</p><span class="t auto">SLATE AUTOMATES</span></div>
+      <div class="task"><p>List the 20 sources cited most in your category</p><span class="t auto">SLATE AUTOMATES</span></div>
+      <div class="task"><p>Fix pricing, definition and comparison pages</p><span class="t assist">SLATE ASSISTS</span></div>
+      <div class="task"><p>Audit schema, internal links and indexing</p><span class="t auto">SLATE AUTOMATES</span></div>
+      <div class="out"><b>YOU NOW HAVE</b>Share of answer per engine, and a hit list of sources to win.</div>
+    </div>
+    <div class="ph">
+      <div class="d">DAYS 31–60</div><h3>Earn</h3><div class="g">Get onto the nodes engines already trust.</div>
+      <div class="task"><p>Pitch the top 20 cited roundups and lists</p><span class="t assist">SLATE ASSISTS</span></div>
+      <div class="task"><p>Start a monthly customer review drive</p><span class="t human">YOUR TEAM</span></div>
+      <div class="task"><p>Answer 5–10 community threads a week as a named person</p><span class="t human">YOUR TEAM</span></div>
+      <div class="task"><p>Publish 1 data-led piece and turn it into posts</p><span class="t assist">SLATE ASSISTS</span></div>
+      <div class="task"><p>Turn repeat Reddit and G2 questions into pages</p><span class="t assist">SLATE ASSISTS</span></div>
+      <div class="out"><b>YOU NOW HAVE</b>Mentions on third-party pages that AI cites for your prompts.</div>
+    </div>
+    <div class="ph">
+      <div class="d">DAYS 61–90</div><h3>Compound</h3><div class="g">Defend what you won. Expand what works.</div>
+      <div class="task"><p>Refresh pages losing rank or citations</p><span class="t auto">SLATE AUTOMATES</span></div>
+      <div class="task"><p>Add prompts for new personas and regions</p><span class="t auto">SLATE AUTOMATES</span></div>
+      <div class="task"><p>Film the top 5 sales questions, then write them up</p><span class="t human">YOUR TEAM</span></div>
+      <div class="task"><p>Complete marketplace and integration listings</p><span class="t human">YOUR TEAM</span></div>
+      <div class="task"><p>Weekly exec report: share of answer vs competitors</p><span class="t auto">SLATE AUTOMATES</span></div>
+      <div class="out"><b>YOU NOW HAVE</b>A weekly loop, and proof the exec team can read.</div>
+    </div>
+  </div>
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">swipe →</div></div>
+</section>
+
+<!-- 9 WHO DOES WHAT -->
+<section class="slide" data-n="9">
+  <div class="top"><img src="logo.png"><div class="tag mono">WHO DOES WHAT · 09 / 10</div></div>
+  <div class="head">
+    <div class="eyebrow mono">AUTOMATE THE GRIND, KEEP THE TRUST WORK HUMAN</div>
+    <div class="h" style="font-size:48px">What to hand to AI.<br><span class="grey">What to keep human.</span></div>
+  </div>
+  <div class="who">
+    <div class="r hd"><div>THE WORK</div><div><span class="t auto">SLATE AUTOMATES</span></div><div><span class="t assist">SLATE ASSISTS</span></div><div><span class="t human">YOUR TEAM</span></div></div>
+    <div class="r"><div class="task2">Track prompts across AI engines<small>ChatGPT · Perplexity · AI Overviews · AI Mode (+ Claude, Gemini)</small></div><div class="c"><span class="dot auto"></span></div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot none"></span></div></div>
+    <div class="r"><div class="task2">See which sources get cited, and for whom</div><div class="c"><span class="dot auto"></span></div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot none"></span></div></div>
+    <div class="r"><div class="task2">Watch competitors' visibility and content</div><div class="c"><span class="dot auto"></span></div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot none"></span></div></div>
+    <div class="r"><div class="task2">Site audits, schema, internal links</div><div class="c"><span class="dot auto"></span></div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot none"></span></div></div>
+    <div class="r"><div class="task2">Refresh decaying pages<small>you approve before anything ships</small></div><div class="c"><span class="dot auto"></span></div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot none"></span></div></div>
+    <div class="r"><div class="task2">Briefs, drafts, visuals for new pages</div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot assist"></span></div><div class="c"><span class="dot none"></span></div></div>
+    <div class="r"><div class="task2">Find and pitch roundups AI cites<small>email and LinkedIn outreach</small></div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot assist"></span></div><div class="c"><span class="dot none"></span></div></div>
+    <div class="r"><div class="task2">Reddit and G2 research</div><div class="c"><span class="dot auto"></span></div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot none"></span></div></div>
+    <div class="r"><div class="task2">Social post drafts and repurposing</div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot assist"></span></div><div class="c"><span class="dot none"></span></div></div>
+    <div class="r"><div class="task2">Posting in communities, asking for reviews</div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot human"></span></div></div>
+    <div class="r"><div class="task2">Press, Wikipedia, video production</div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot human"></span></div></div>
+    <div class="r"><div class="task2">Weekly report to the exec team</div><div class="c"><span class="dot auto"></span></div><div class="c"><span class="dot none"></span></div><div class="c"><span class="dot none"></span></div></div>
+  </div>
+  <div class="who-note"><div><b>Rule of thumb:</b> automate tracking and production. Keep anything that needs trust human.</div></div>
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">swipe →</div></div>
+</section>
+
+<!-- 10 CLOSE -->
+<section class="slide" data-n="10">
+  <div class="top"><img src="logo.png"><div class="tag mono">START HERE · 10 / 10</div></div>
+  <div class="head">
+    <div class="eyebrow mono">DO THESE THIS WEEK</div>
+    <div class="h" style="font-size:52px">Five moves.<br><span class="grey">No tool required.</span></div>
+  </div>
+  <div class="check">
+    <div class="ci"><div class="bx"></div><div><b>Write down 25 questions your buyers ask</b><span>Pull them from sales calls, not keyword tools.</span></div></div>
+    <div class="ci"><div class="bx"></div><div><b>Ask each one in ChatGPT, Perplexity and Google</b><span>Note who gets named and which pages get cited.</span></div></div>
+    <div class="ci"><div class="bx"></div><div><b>Make your pricing page public and readable</b><span>Plan names and prices in text, not just images.</span></div></div>
+    <div class="ci"><div class="bx"></div><div><b>Pick the 3 most-cited roundups and pitch them</b><span>Bring data, screenshots and pricing.</span></div></div>
+    <div class="ci"><div class="bx"></div><div><b>Ask 5 happy customers for a review this week</b><span>On the site your category's buyers trust most.</span></div></div>
+  </div>
+  <div class="bubble">Or I can run steps<br><b>1, 4 and 5</b> for you. Every week.</div>
+  <img class="close-m" src="mascot-lean.png">
+  <div class="cta"><div class="a">Try Slate free for 14 days<small>No card needed. Track your prompts in minutes.</small></div><div class="b">slatehq.com →</div></div>
+  <div class="save mono">SAVE THIS · SHARE IT WITH YOUR TEAM</div>
+  <div class="foot"><div><b>Shiyam Sunder</b> <span>· CEO, Slate</span></div><div class="mono">slatehq.com</div></div>
+</section>
+
+<script>
+// progress bars
+document.querySelectorAll('.slide').forEach(s => { const n = +s.dataset.n; const p = document.createElement('div'); p.className = 'prog'; p.innerHTML = `<i style="width:${n * 10}%"></i>`; s.prepend(p); });
+
+// network map
+const clusters = [
+  { name: 'SEARCH ENGINES', color: 'var(--c-search)', hex: '#6ea8fe', x: 540, y: 120, cols: 4, nodes: ['Google', 'Bing', 'Brave', 'DuckDuckGo'], lx: 540, ly: 70 },
+  { name: 'SOCIAL', color: 'var(--c-social)', hex: '#5ec8d8', x: 880, y: 250, cols: 2, nodes: ['LinkedIn', 'X', 'Instagram', 'Facebook'], lx: 880, ly: 186 },
+  { name: 'MARKETPLACES', color: 'var(--c-shop)', hex: '#b18cff', x: 905, y: 555, cols: 1, nodes: ['AWS Marketplace', 'HubSpot Apps', 'AppExchange'], lx: 905, ly: 476 },
+  { name: 'REVIEW SITES', color: 'var(--c-review)', hex: '#6fcf97', x: 745, y: 770, cols: 2, nodes: ['G2', 'Capterra', 'TrustRadius', 'Trustpilot'], lx: 745, ly: 706 },
+  { name: 'COMMUNITIES', color: 'var(--c-comm)', hex: '#e0a458', x: 330, y: 775, cols: 2, nodes: ['Reddit', 'Quora', 'Stack Overflow'], lx: 330, ly: 706 },
+  { name: 'VIDEO', color: 'var(--c-video)', hex: '#ff7a8a', x: 165, y: 555, cols: 1, nodes: ['YouTube', 'TikTok', 'Vimeo'], lx: 165, ly: 476 },
+  { name: 'REFERENCE & NEWS', color: 'var(--c-ref)', hex: '#f2c14e', x: 205, y: 250, cols: 2, nodes: ['Wikipedia', 'Reuters', 'WIRED', "Tom's Guide"], lx: 205, ly: 186 },
+];
+const map = document.getElementById('map'), svg = document.getElementById('mapsvg');
+const HUB = { x: 540, y: 420 };
+const pts = [];
+clusters.forEach((c, ci) => {
+  const lab = document.createElement('div'); lab.className = 'clab'; lab.style.left = c.lx + 'px'; lab.style.top = c.ly + 'px'; lab.style.color = c.hex; lab.textContent = c.name; map.appendChild(lab);
+  const rows = Math.ceil(c.nodes.length / c.cols);
+  const gx = c.cols === 4 ? 150 : (c.cols === 2 ? 140 : 0), gy = 50;
+  c.nodes.forEach((n, i) => {
+    const col = i % c.cols, row = Math.floor(i / c.cols);
+    const x = c.x + (col - (c.cols - 1) / 2) * gx, y = c.y + (row - (rows - 1) / 2) * gy;
+    const p = document.createElement('div'); p.className = 'pill'; p.style.left = x + 'px'; p.style.top = y + 'px';
+    p.innerHTML = `<i style="background:${c.hex}"></i>${n}`; map.appendChild(p);
+    pts.push({ x, y, ci, hex: c.hex });
+  });
+});
+// own site node
+const own = document.createElement('div'); own.className = 'pill own'; own.style.left = '540px'; own.style.top = '600px'; own.innerHTML = '<i style="background:#ee6216"></i>Your website'; map.appendChild(own);
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+let lines = '';
+for (let k = 0; k < 46; k++) { const a = pts[Math.floor(rnd() * pts.length)], b = pts[Math.floor(rnd() * pts.length)]; if (a.ci === b.ci) continue;
+  lines += `<path d="M${a.x} ${a.y} Q ${(a.x + b.x) / 2 + (rnd() - .5) * 120} ${(a.y + b.y) / 2 + (rnd() - .5) * 120} ${b.x} ${b.y}" stroke="#2c2c2c" stroke-width="1" fill="none"/>`; }
+pts.forEach(p => { lines += `<line x1="${p.x}" y1="${p.y}" x2="${HUB.x}" y2="${HUB.y}" stroke="${p.hex}" stroke-opacity=".28" stroke-width="1.2"/>`; });
+lines += `<line x1="540" y1="600" x2="${HUB.x}" y2="${HUB.y}" stroke="#ee6216" stroke-width="2.5"/>`;
+svg.innerHTML = lines;
+
+// faint cover network
+const cn = document.getElementById('covernet'); let cl = ''; seed = 3;
+const cp = Array.from({ length: 34 }, () => ({ x: 560 + rnd() * 520, y: 120 + rnd() * 1100 }));
+cp.forEach((a, i) => { for (let j = 0; j < 2; j++) { const b = cp[Math.floor(rnd() * cp.length)]; cl += `<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#2a2a2a" stroke-width="1"/>`; } });
+cp.forEach((a, i) => { const cols = ['#6ea8fe','#5ec8d8','#b18cff','#6fcf97','#e0a458','#ff7a8a','#f2c14e']; cl += `<circle cx="${a.x}" cy="${a.y}" r="${i % 5 === 0 ? 6 : 4}" fill="${cols[i % 7]}" fill-opacity=".7"/>`; });
+cn.innerHTML = cl;
+</script>
+</body>
+</html>

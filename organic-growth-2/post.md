@@ -1,9 +1,9 @@
 # Slate: Organic Growth 2.0 playbook (single infographic)
 
-**Attach:** `organic-growth-2.0-playbook.gif`: one infographic, 1080×1800, 10-second loop, 6.9 MB. Same visual system as the full playbook (network map, engine data table, weekly loop, surface plays, mascot), sized close to the Razorpay post.
-**Also:** `organic-growth-2.0-playbook.mp4` (same animation as video) and `organic-growth-2.0-infographic.png` (still, 2160×3600).
-**Source:** `infographic-1800.html` (uses `lottie.min.js`, `fuzzy-float.json`, `fuzzy-lean.json`). Every stat comes from the Slate Citation Lab study (`../citation-lab/`).
-**Earlier versions** (not needed): `infographic.html` (tall), `infographic-compact.html` (Razorpay layout), `playbook.html` + `slides/` (carousel).
+**Attach:** `organic-growth-2.0-playbook.gif`: one modern bento-style infographic, 1080×1800, 10-second loop, 11 MB. The map is an orbital diagram around a glowing "AI answer" core, the stats draw in as charts, the loop is a five-step dial, and the mascot appears top and bottom.
+**Also:** `organic-growth-2.0-playbook.mp4` (same animation as video, 1.4 MB) and `organic-growth-2.0-infographic.png` (still, 2160×3600).
+**Source:** `infographic-bento.html` (uses `lottie.min.js`, `fuzzy-float.json`, `fuzzy-lean.json`). Every stat comes from the Slate Citation Lab study (`../citation-lab/`).
+**Earlier versions** (not needed): `infographic-1800.html`, `infographic-compact.html`, `infographic.html`, `playbook.html` + `slides/`.
 
 **Slate vs education:** the playbook is education-first. Slate shows up only as honest labels on each play (Slate automates / Slate assists / Your team) and in the closing CTA.
 

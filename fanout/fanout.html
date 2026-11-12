@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Fan-outs Decoded</title>
+<!-- Slate Labs fan-out study card, light theme, 1080x1350. window.setup(floatJson), window.render(t), t in [0,8)s. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#ffffff; --ink:#141414; --mute:#5e5a55; --dim:#8a857e; --line:#d9d6d1; --accent:#ee6216; --peach:#fcd5bd; --peach2:#fde3d4; --grey:#e2e0db; --grey2:#ecebe7; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; background: var(--bg); overflow: hidden; }
+  body { font-family: 'Inter Tight', system-ui, sans-serif; color: var(--ink); position: relative; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .logo { position: absolute; left: 56px; top: 58px; height: 30px; }
+  .crumb { position: absolute; right: 56px; top: 66px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: .2em; color: var(--dim); }
+  .crumb b { color: var(--accent); font-weight: 500; }
+  h1 { position: absolute; left: 56px; top: 132px; font-size: 64px; line-height: .98; font-weight: 600; letter-spacing: -0.05em; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .sub { position: absolute; left: 56px; top: 288px; width: 760px; font-size: 21px; line-height: 1.4; color: var(--mute); letter-spacing: -0.01em; }
+  code { font-family: 'JetBrains Mono', monospace; font-size: .9em; background: #f1f0ed; color: var(--ink); padding: 1px 7px; border-radius: 5px; }
+  #mascot { position: absolute; right: 30px; top: 108px; width: 230px; height: 230px; }
+  .bubble { position: absolute; right: 196px; top: 118px; background: var(--ink); color: #fff; border-radius: 14px; padding: 9px 13px; font-size: 14px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; transform-origin: 100% 100%; }
+  .bubble b { color: #ff9a52; }
+  .bubble::after { content: ''; position: absolute; right: 18px; bottom: -6px; width: 14px; height: 14px; background: var(--ink); transform: rotate(45deg); border-radius: 2px; }
+
+  .colh { position: absolute; top: 410px; font-family: 'JetBrains Mono', monospace; font-size: 14.5px; letter-spacing: .02em; color: var(--ink); }
+  #links { position: absolute; left: 0; top: 0; width: 1080px; height: 1350px; pointer-events: none; }
+  .box { position: absolute; width: 206px; height: 57px; border-radius: 10px; background: #fff; overflow: hidden; display: flex; align-items: center; padding: 0 12px 0 11px; z-index: 2; }
+  .box .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; }
+  .box .rk { position: relative; font-size: 11.5px; color: var(--dim); width: 15px; }
+  .box .nm { position: relative; font-size: 17px; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
+  .box .vl { position: relative; margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 13.5px; letter-spacing: .02em; }
+  .box.na { border: 1.5px dashed #dedbd6; background: #fbfaf8; }
+  .box.na .nm { color: #b3aea7; font-weight: 500; font-size: 16px; }
+  .box.na .vl { color: #b3aea7; font-size: 11.5px; }
+
+  .legend { position: absolute; left: 56px; top: 1004px; display: flex; gap: 30px; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mute); }
+  .legend span { display: inline-flex; align-items: center; gap: 9px; }
+  .legend i { width: 26px; height: 11px; border-radius: 3px; display: inline-block; }
+
+  .rule { position: absolute; left: 56px; right: 56px; top: 1064px; height: 1.5px; background: var(--ink); }
+  .stats { position: absolute; left: 56px; right: 56px; top: 1065px; height: 165px; display: grid; grid-template-columns: 1fr 1fr 1fr; }
+  .stats > div { padding: 26px 24px 0 0; position: relative; }
+  .stats > div + div { padding-left: 24px; border-left: 1px solid var(--line); }
+  .stats .n { font-family: 'JetBrains Mono', monospace; font-size: 40px; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
+  .stats .n.o { color: var(--accent); }
+  .stats p { margin-top: 16px; font-size: 17px; line-height: 1.38; color: var(--mute); letter-spacing: -0.01em; }
+  .foot { position: absolute; left: 56px; right: 56px; top: 1288px; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mute); }
+</style>
+</head>
+<body>
+  <img class="logo" src="logo-dark.png">
+  <div class="crumb"><b>SLATE LABS</b> / FAN-OUT STUDY · 4 MODELS</div>
+  <h1>Fan-outs, decoded<br>across <em>four models.</em></h1>
+  <div class="sub">What each model adds when it rewrites a prompt into searches. Claude Opus 5 puts a year in 57% of them. ChatGPT reaches for <code>site:</code> and “official”.</div>
+  <div id="mascot"></div>
+  <div class="bubble" id="bub">I read <b>4 models'</b><br>search habits</div>
+
+  <svg id="links" viewBox="0 0 1080 1350"></svg>
+  <div id="grid"></div>
+
+  <div class="legend">
+    <span><i style="background:var(--peach); border:1.5px solid var(--accent)"></i>fill = share of fan-out queries containing the modifier</span>
+    <span><i style="border:1.5px dashed #c9c5bf; background:#fbfaf8"></i>not in the model's top 100</span>
+  </div>
+
+  <div class="rule"></div>
+  <div class="stats">
+    <div><div class="n o" id="s1">22.6 → 57.4%</div><p>queries with a year, Haiku 4.5 → Opus 5. It grows with model size.</p></div>
+    <div><div class="n" id="s2">20.4%</div><p>of ChatGPT queries use <code>site:</code> to target one domain. Not in any Claude model's top 100.</p></div>
+    <div><div class="n" id="s3">23.7 → 3.3%</div><p>“best”, Sonnet 5 → Opus 5. Opus drops the buyer phrasing.</p></div>
+  </div>
+  <div class="foot"><span>Slate Labs fan-out query study</span><span>slatehq.com</span></div>
+
+<script src="lottie.min.js"></script>
+<script>
+// ---- data (from the Slate Labs fan-out study card) ----
+const MODELS = ['ChatGPT', 'Claude Haiku 4.5', 'Claude Sonnet 5', 'Claude Opus 5'];
+const KIND = {               // border, stroke width, fill, value colour, link colour, link width
+  year:       { b: '#ee6216', bw: 2,   f: '#fcd5bd', v: '#ee6216', l: '#ee6216', lw: 3 },
+  site:       { b: '#f2a47c', bw: 1.5, f: '#fde3d4', v: '#d9530f', l: null },
+  official:   { b: '#f2a47c', bw: 1.5, f: '#fde3d4', v: '#d9530f', l: null },
+  best:       { b: '#141414', bw: 2,   f: '#e2e0db', v: '#141414', l: '#141414', lw: 2 },
+  comparison: { b: '#6b6762', bw: 1.5, f: '#ecebe7', v: '#3d3a36', l: '#6b6762', lw: 2 },
+  top:        { b: '#b9b5af', bw: 1.5, f: '#ecebe7', v: '#3d3a36', l: '#b9b5af', lw: 1.5 },
+  review:     { b: '#b9b5af', bw: 1.5, f: '#ecebe7', v: '#3d3a36', l: '#b9b5af', lw: 1.5 },
+};
+const LABEL = { year: 'Year mention', site: 'site:', official: '“official”', best: '“best”', comparison: '“comparison”', top: '“top”', review: '“review”' };
+const COLS = [
+  [['year', 24.6], ['site', 20.4], ['official', 13.6], ['best', 10.1], ['review', 5.0], ['comparison', 0.8], ['top', null]],
+  [['year', 22.6], ['best', 18.2], ['comparison', 5.5], ['top', 2.3], ['review', 1.4], ['site', null], ['official', null]],
+  [['year', 35.7], ['best', 23.7], ['comparison', 9.8], ['top', 4.6], ['review', 3.8], ['site', null], ['official', null]],
+  [['year', 57.4], ['comparison', 3.8], ['best', 3.3], ['site', null], ['official', null], ['review', null], ['top', null]],
+];
+const X0 = 56, CW = 206, GAP = 47.33, Y0 = 462, RH = 57, PITCH = 74.25;
+const colX = c => X0 + c * (CW + GAP);
+const rowY = r => Y0 + r * PITCH;
+
+const grid = document.getElementById('grid'), boxes = [];
+MODELS.forEach((m, c) => { const h = document.createElement('div'); h.className = 'colh'; h.style.left = (colX(c) + 2) + 'px'; h.textContent = m; grid.appendChild(h); });
+COLS.forEach((col, c) => col.forEach(([k, v], r) => {
+  const b = document.createElement('div'); const K = KIND[k];
+  b.className = 'box' + (v === null ? ' na' : ''); b.style.left = colX(c) + 'px'; b.style.top = rowY(r) + 'px';
+  if (v === null) { b.innerHTML = `<span class="nm" style="margin-left:14px">${LABEL[k]}</span><span class="vl">not in top 100</span>`; }
+  else {
+    b.style.border = `${K.bw}px solid ${K.b}`;
+    b.innerHTML = `<div class="fill" style="background:${K.f}"></div><span class="rk">${r + 1}</span><span class="nm">${LABEL[k]}</span><span class="vl" style="color:${K.v}">${v.toFixed(1)}%</span>`;
+    boxes.push({ el: b, fill: b.querySelector('.fill'), val: b.querySelector('.vl'), v, c, r });
+  }
+  grid.appendChild(b);
+}));
+
+// connectors between adjacent columns for modifiers present in both
+const svg = document.getElementById('links'), links = [];
+for (let c = 0; c < 3; c++) {
+  COLS[c].forEach(([k, v], r) => {
+    if (v === null || !KIND[k].l) return;
+    const r2 = COLS[c + 1].findIndex(([k2, v2]) => k2 === k && v2 !== null); if (r2 < 0) return;
+    const x1 = colX(c) + CW, y1 = rowY(r) + RH / 2, x2 = colX(c + 1), y2 = rowY(r2) + RH / 2, mx = (x1 + x2) / 2;
+    const d = r === r2 ? `M${x1} ${y1} L${x2} ${y2}` : `M${x1} ${y1} C ${mx + 6} ${y1}, ${mx - 6} ${y2}, ${x2} ${y2}`;
+    const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    p.setAttribute('d', d); p.setAttribute('stroke', KIND[k].l); p.setAttribute('stroke-width', KIND[k].lw); p.setAttribute('fill', 'none'); p.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(p); const len = p.getTotalLength(); p.setAttribute('stroke-dasharray', len); p.setAttribute('stroke-dashoffset', len);
+    links.push({ p, len, c });
+  });
+}
+
+// ---- animation ----
+const T = 8, clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), ease = x => { x = clamp(x); return 1 - Math.pow(1 - x, 3); };
+const backOut = x => { x = clamp(x); const c1 = 1.7, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+let anim;
+window.setup = f => new Promise(r => { anim = lottie.loadAnimation({ container: document.getElementById('mascot'), renderer: 'svg', loop: false, autoplay: false, animationData: f }); anim.addEventListener('DOMLoaded', r); });
+const bub = document.getElementById('bub'), s1 = document.getElementById('s1'), s2 = document.getElementById('s2'), s3 = document.getElementById('s3');
+const fmt = x => x.toFixed(1);
+window.render = (t) => {
+  t = ((t % T) + T) % T;
+  anim.goToAndStop((t / T) * 600, true);
+  const out = ease((t - 7.35) / 0.5);
+  boxes.forEach(b => { const p = ease((t - 0.35 - b.c * 0.42 - b.r * 0.06) / 0.7) * (1 - out);
+    b.fill.style.width = (Math.min(100, b.v / 60 * 100) * p).toFixed(2) + '%'; b.val.textContent = fmt(b.v * p) + '%'; });
+  links.forEach(l => { const p = ease((t - 0.85 - l.c * 0.42) / 0.55) * (1 - out); l.p.setAttribute('stroke-dashoffset', (l.len * (1 - p)).toFixed(1)); });
+  const q = ease((t - 2.4) / 1.1) * (1 - out);
+  s1.textContent = `${fmt(22.6 * q)} → ${fmt(57.4 * q)}%`; s2.textContent = `${fmt(20.4 * q)}%`; s3.textContent = `${fmt(23.7 * q)} → ${fmt(3.3 * q)}%`;
+  const bi = backOut((t - 3.0) / 0.4), bo = ease((t - 6.9) / 0.35);
+  bub.style.opacity = (clamp(bi * 2) * (1 - bo)).toFixed(2);
+  bub.style.transform = `scale(${(clamp(bi, 0, 1.15) * (1 - bo)).toFixed(3)}) translateY(${(-3 * Math.sin(t * 2.4)).toFixed(2)}px)`;
+};
+</script>
+</body>
+</html>

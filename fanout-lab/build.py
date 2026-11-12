@@ -2,6 +2,7 @@
 import pathlib
 ROOT = pathlib.Path(__file__).parent
 F = "../citation-halflife/assets/fonts/"
+logo = (ROOT.parent / "citation-halflife/assets/slate-logo.svg").read_text().replace('width="100%" height="100%"', '')
 
 MODELS = ["ChatGPT", "Claude Haiku 4.5", "Claude Sonnet 5", "Claude Opus 5"]
 # ranked lists from the study: (modifier, share of fan-out queries %). Then modifiers outside the top 100.
@@ -64,7 +65,8 @@ html = f"""<!doctype html><html><head><meta charset="utf-8"><style>
 *{{box-sizing:border-box;margin:0;padding:0}}
 body{{background:#fff;color:#141414;font-family:IT,sans-serif}}
 .slide{{position:relative;width:1080px;height:1350px;padding:60px 56px;background:#fff;overflow:hidden}}
-.top{{display:flex;justify-content:space-between;font-family:JB,monospace;font-size:13px;letter-spacing:1.6px;color:#8A8A92}}
+.top{{display:flex;justify-content:space-between;align-items:center;font-family:JB,monospace;font-size:13px;letter-spacing:1.6px;color:#8A8A92}}
+.top svg{{height:28px;width:auto;color:#141414}}
 .top b{{color:#EE6216;font-weight:500}}
 h1{{font-size:64px;font-weight:600;letter-spacing:-2px;line-height:1.05;margin-top:46px;max-width:930px}}
 h1 em{{font-style:normal;color:#EE6216}}
@@ -90,9 +92,9 @@ svg .nat{{font-family:JB,monospace;font-size:11.5px;fill:#AEAEB5}}
 .stats span{{display:block;font-size:19px;line-height:1.4;color:#55555E;margin-top:10px}}
 .ftr{{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-family:JB,monospace;font-size:12px;color:#8A8A92}}
 </style></head><body><section class="slide">
-<div class="top"><span><b>SLATE LABS</b> / QUERY FAN-OUT</span><span>4 MODELS · TOP MODIFIERS, RANKED</span></div>
-<h1>Claude Opus 5 puts a year in <em>57%</em> of its searches.</h1>
-<p class="sub">What each model adds when it rewrites a prompt into search queries. ChatGPT reaches for <code>site:</code> and “official”. No Claude model does.</p>
+<div class="top">{logo}<span><b>SLATE LABS</b> / FAN-OUT STUDY · 4 MODELS</span></div>
+<h1>Fan-outs, decoded<br>across <em>four models.</em></h1>
+<p class="sub">What each model adds when it rewrites a prompt into searches. Claude Opus 5 puts a year in 57% of them. ChatGPT reaches for <code>site:</code> and “official”.</p>
 <div class="chart">{chart}
 <div class="key"><span><i></i>fill = share of fan-out queries containing the modifier</span><span><s></s>not in the model’s top 100</span></div></div>
 <div class="stats">

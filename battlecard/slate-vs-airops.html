@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slate vs AirOps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: Letter; margin: 0; }
+  :root{
+    --ink:#0f1729; --ink-2:#334155; --mute:#64748b; --line:#e2e8f0; --bg:#ffffff;
+    --soft:#f5f7fb; --accent:#4f46e5; --accent-soft:#eef0ff; --win:#047857; --win-soft:#e7f6ef;
+    --warn:#b45309;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#e9edf3}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{width:8.5in;height:11in;margin:0 auto;background:var(--bg);display:flex;flex-direction:column;overflow:hidden}
+  @media screen{ .page{margin:24px auto;box-shadow:0 10px 40px rgba(15,23,41,.12)} }
+
+  /* Header */
+  header{background:var(--ink);color:#fff;padding:20px 40px 17px;position:relative}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .brand{font-weight:800;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+  .brand i{width:18px;height:18px;border-radius:5px;background:linear-gradient(135deg,#818cf8,#4f46e5);display:inline-block}
+  .tag{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#c7d2fe;border:1px solid rgba(199,210,254,.35);padding:4px 10px;border-radius:99px}
+  h1{font-size:24px;line-height:1.12;letter-spacing:-.025em;font-weight:800;max-width:6.6in}
+  h1 em{font-style:normal;color:#a5b4fc}
+  .sub{margin-top:7px;font-size:11.5px;line-height:1.5;color:#cbd5e1;max-width:6.9in}
+
+  main{padding:14px 40px 0;flex:1;display:flex;flex-direction:column;gap:11px}
+  h2{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+
+  /* Differentiators */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+  .card{background:var(--soft);border:1px solid var(--line);border-radius:9px;padding:8px 10px}
+  .card b{display:block;font-size:11.3px;letter-spacing:-.01em;margin-bottom:3px}
+  .card p{font-size:9.7px;line-height:1.38;color:var(--ink-2)}
+
+  /* Table */
+  table{width:100%;border-collapse:separate;border-spacing:0;font-size:9.8px;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  th,td{text-align:left;padding:4.5px 10px;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.38}
+  tr:last-child td{border-bottom:0}
+  thead th{background:var(--soft);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+  thead th.s{color:var(--accent);background:var(--accent-soft)}
+  td:first-child{font-weight:600;width:22%;color:var(--ink)}
+  td.s{background:#fafaff;color:var(--ink);width:42%}
+  td.a{color:var(--ink-2)}
+  .pill{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:1px 6px;border-radius:99px;margin-right:5px;vertical-align:1px}
+  .pill.w{background:var(--win-soft);color:var(--win)}
+  .pill.n{background:#f1f5f9;color:var(--mute)}
+
+  /* Bottom row */
+  .row{display:grid;grid-template-columns:1.05fr 1fr;gap:14px}
+  .proof{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .stat{border:1px solid var(--line);border-radius:9px;padding:7px 10px}
+  .stat strong{display:block;font-size:19px;font-weight:800;letter-spacing:-.03em;color:var(--accent);line-height:1.05}
+  .stat span{font-size:9.8px;color:var(--ink-2);line-height:1.35;display:block;margin-top:2px}
+  .stat span b{color:var(--ink)}
+  .steps{display:flex;flex-direction:column;gap:5px}
+  .step{display:flex;gap:10px;align-items:flex-start}
+  .step .n{flex:none;width:21px;height:21px;border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .step b{font-size:10.8px;display:block}
+  .step p{font-size:9.7px;color:var(--ink-2);line-height:1.4}
+  .price{margin-top:7px;background:var(--soft);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:9.6px;line-height:1.4;color:var(--ink-2)}
+  .price b{color:var(--ink)}
+
+  footer{margin-top:12px;background:var(--accent-soft);border-top:1px solid #dfe3ff;padding:11px 40px 9px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  footer .cta b{font-size:14px;letter-spacing:-.01em;display:block}
+  footer .cta p{font-size:10.3px;color:var(--ink-2);margin-top:2px}
+  .btns{display:flex;gap:8px;flex:none}
+  .btn{font-size:10.5px;font-weight:700;padding:8px 13px;border-radius:7px;text-decoration:none;white-space:nowrap}
+  .btn.p{background:var(--accent);color:#fff}
+  .btn.o{border:1px solid var(--accent);color:var(--accent);background:#fff}
+  .fine{padding:4px 40px 10px;background:var(--accent-soft);font-size:7.6px;color:var(--mute);line-height:1.4}
+
+  @media screen and (max-width:860px){
+    html,body{background:#fff}
+    .page{width:100%;height:auto;margin:0;box-shadow:none}
+    header,main,footer,.fine{padding-left:16px;padding-right:16px}
+    .grid,.row,.proof{grid-template-columns:1fr}
+    footer{flex-direction:column;align-items:flex-start}
+    table{font-size:11px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="top">
+      <div class="brand"><i></i>Slate</div>
+      <div class="tag">For AirOps customers</div>
+    </div>
+    <h1>AirOps shows you where you stand in AI search.<br><em>Slate tells you what to fix, then fixes it.</em></h1>
+    <p class="sub">Slate tracks your visibility across six AI engines, picks the pages that matter most this week, ships the fixes to your CMS and runs outreach to the sites AI engines cite. Strategists come with every plan.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Where Slate goes further</h2>
+      <div class="grid">
+        <div class="card"><b>A copilot that gives direction</b><p>Ask what to work on and get a ranked list of the fixes most likely to lift visibility, drawn from your own data. AirOps' copilot is built to edit workflows.</p></div>
+        <div class="card"><b>Fixes that get published</b><p>Every page is scored on 10 dimensions (evidence, structure, freshness, schema, entities and more). Slate writes the fix and publishes it to WordPress, Webflow or HubSpot.</p></div>
+        <div class="card"><b>Outreach is built in</b><p>Find the third-party sites ChatGPT and Perplexity cite for your category, get the contacts and run the campaign in Slate. You don't need a separate outreach tool.</p></div>
+        <div class="card"><b>Strategists included</b><p>Our GTM engineers build custom workflows with your team, and quarterly strategy reviews are part of the plan. You get the software and the people who know how to use it.</p></div>
+        <div class="card"><b>Your models, no token markup</b><p>Each task is routed to the best fit from 30+ models. You can also bring your own Anthropic or OpenAI key and pay the provider directly.</p></div>
+        <div class="card"><b>Works inside Claude</b><p>Slate MCP brings your brand context, data and publishing into Claude and into the agents you've already built.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Side by side</h2>
+      <table>
+        <thead><tr><th></th><th class="s">Slate</th><th>AirOps</th></tr></thead>
+        <tbody>
+          <tr><td>AI engines tracked</td><td class="s"><span class="pill w">6</span>ChatGPT, Perplexity, Google AI Overviews, AI Mode, Gemini <b>and Claude</b></td><td class="a">ChatGPT, Perplexity, AI Overviews, AI Mode. No Claude tracking</td></tr>
+          <tr><td>AI copilot</td><td class="s"><span class="pill w">Prescriptive</span>Analyzes your data and tells you what to fix next</td><td class="a"><span class="pill n">Builder</span>Helps build and edit workflows</td></tr>
+          <tr><td>Content scoring</td><td class="s"><span class="pill w">Prescriptive</span>Fixed 10-dimension scorecard with a fix tied to each metric</td><td class="a"><span class="pill n">Diagnostic</span>Fewer dimensions and no fixed scoring framework</td></tr>
+          <tr><td>Sentiment</td><td class="s"><span class="pill w">Advanced</span>Positive, neutral and negative for you <b>and competitors</b>, plus theme analysis</td><td class="a"><span class="pill n">Basic</span>Sentiment for your brand only</td></tr>
+          <tr><td>Citation outreach</td><td class="s"><span class="pill w">Built in</span>Find site owners and email them from Slate</td><td class="a"><span class="pill n">External</span>Export your data to a separate tool</td></tr>
+          <tr><td>Strategy support</td><td class="s"><span class="pill w">Included</span>SEO and AEO strategists plus workflow design help</td><td class="a"><span class="pill n">Self-serve</span>Training and technical onboarding</td></tr>
+          <tr><td>Workflows &amp; CMS</td><td class="s">Visual no-code builder with direct publishing to WordPress, Webflow and HubSpot</td><td class="a">Visual builder with direct publishing to several CMSs</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="row">
+      <div>
+        <h2>Results on Slate</h2>
+        <div class="proof">
+          <div class="stat"><strong>275%</strong><span><b>Glean</b>: growth in organic traffic, plus better demo conversion</span></div>
+          <div class="stat"><strong>12×</strong><span><b>RateGain</b>: more AI Overview citations, plus 34% more ranking keywords</span></div>
+          <div class="stat"><strong>14×</strong><span><b>Meegle</b>: growth in blog traffic, with 134% more AI citations</span></div>
+          <div class="stat"><strong>800+</strong><span><b>Signeasy</b>: LLM-referred sessions a month, growing 60–68%</span></div>
+        </div>
+      </div>
+      <div>
+        <h2>Switch without a gap</h2>
+        <div class="steps">
+          <div class="step"><div class="n">1</div><div><b>Free visibility audit</b><p>We run your current prompt set in Slate and show where you and your competitors stand across all six engines.</p></div></div>
+          <div class="step"><div class="n">2</div><div><b>We rebuild your top workflows</b><p>Our engineers recreate your highest-value AirOps workflows in Slate, including your brand kit and knowledge bases.</p></div></div>
+          <div class="step"><div class="n">3</div><div><b>Run both side by side, then decide</b><p>Compare coverage, output quality and cost on real pages before you switch.</p></div></div>
+        </div>
+        <div class="price"><b>Pricing has a middle tier.</b> Slate plans are Growth at $499/mo, Scale at $999/mo, Agency at $2,000/mo and Enterprise at custom pricing. AirOps lists Solo at $200/mo and Pro at $2,000/mo. Annual plans on Slate are 20% off.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="cta"><b>See your brand's AI visibility next to your competitors'.</b><p>Bring your AirOps prompt set and we'll show you what Slate would fix first.</p></div>
+    <div class="btns">
+      <a class="btn p" href="https://slatehq.com/book-a-demo">Book a demo · slatehq.com</a>
+      <a class="btn o" href="https://app.slatehq.ai/register">Start free trial</a>
+    </div>
+  </footer>
+  <div class="fine">AirOps capabilities and list prices come from publicly available information as of November 2026 and may change. Check airops.com for current plans. Customer results come from published Slate case studies at slatehq.com/case-study. Slate is built by TripleDart.</div>
+</div>
+</body>
+</html>

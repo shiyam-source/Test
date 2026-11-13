@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Slate LinkedIn Cover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Slate Design System tokens (colors_and_type.css). Forma DJR Text -> DM Sans, Parabolica Text -> Jost. */
+:root{
+  --orange-500:#F66719; --orange-300:#F89762;
+  --dark-900:#16161E; --dark-700:#343446; --dark-400:#585858;
+  --cream:#F6F4F1; --white:#FFFFFF; --gray-200:#E2E2E2;
+  --font-display:"Forma DJR Text","DM Sans",sans-serif;
+  --font-body:"Parabolica Text","Jost",sans-serif;
+
+  --bg:var(--dark-900); --ink:var(--white); --ink-2:rgba(255,255,255,.72);
+  --dot:rgba(255,255,255,.16); --card:var(--dark-700); --card-line:rgba(255,255,255,.09);
+  --pill-line:rgba(255,255,255,.22); --accent:var(--orange-500);
+}
+/* Cream variant: the website's light sections */
+body.cream{
+  --bg:var(--cream); --ink:var(--dark-900); --ink-2:var(--dark-400);
+  --dot:rgba(22,22,30,.10); --card:var(--white); --card-line:var(--gray-200);
+  --pill-line:rgba(22,22,30,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1584px;height:396px;background:var(--bg);overflow:hidden}
+body{position:relative;font-family:var(--font-body);color:var(--ink)}
+
+.dots{position:absolute;inset:0;background-image:radial-gradient(circle,var(--dot) 1px,transparent 1.4px);background-size:22px 22px}
+.glow{position:absolute;width:760px;height:760px;right:-140px;top:-180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(246,103,25,.22) 0%,rgba(246,103,25,0) 62%)}
+body.cream .glow{background:radial-gradient(circle,rgba(246,103,25,.16) 0%,rgba(246,103,25,0) 62%)}
+
+/* Brand mark sits top-left, clear of the profile photo zone (bottom-left) */
+.brand{position:absolute;left:112px;top:95px;height:30px;color:var(--ink)}
+.brand svg{height:30px;width:auto;display:block}
+
+.copy{position:absolute;left:420px;top:97px;width:520px}
+.label{font-family:var(--font-body);font-weight:500;font-size:14px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--font-display);font-weight:400;font-size:52px;line-height:1;letter-spacing:-.02em;margin-top:18px}
+h1 span{color:var(--accent)}
+.sub{font-size:18px;line-height:1.4;color:var(--ink-2);margin-top:18px;max-width:470px}
+
+.loop{display:flex;align-items:center;gap:8px;margin-top:26px}
+.pill{display:flex;align-items:center;gap:8px;height:34px;padding:0 15px 0 12px;border:1px solid var(--pill-line);border-radius:100px;font-size:15px;font-weight:500;white-space:nowrap}
+.pill i{font-style:normal;font-size:11px;letter-spacing:.06em;color:var(--accent)}
+.arrow{width:14px;height:1px;background:var(--pill-line);position:relative}
+.arrow:after{content:"";position:absolute;right:0;top:-3px;border:3.5px solid transparent;border-left:5px solid var(--pill-line);border-right:0}
+
+/* Customer logos */
+.wall{position:absolute;right:64px;top:40px;width:540px;height:316px;background:var(--card);border:1px solid var(--card-line);border-radius:15px;overflow:hidden;display:flex;flex-direction:column}
+.wall .label{color:var(--ink-2);font-size:12px;padding:20px 24px 0}
+.grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);margin:14px 0 0}
+.cell{display:flex;align-items:center;justify-content:center;border-top:1px solid var(--card-line)}
+.cell:not(:nth-child(3n+1)){border-left:1px solid var(--card-line)}
+.logo{display:block;object-fit:contain;opacity:.88}
+body.cream .logo{filter:brightness(0);opacity:.86}
+</style>
+</head>
+<body>
+<div class="dots"></div>
+<div class="glow"></div>
+
+<div class="brand" aria-label="Slate">
+<svg viewBox="0 0 373 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M 136.996 63.644 L 145.382 63.644 C 145.615 66.931 146.585 69.865 148.293 72.447 C 150.002 75.029 152.331 77.064 155.281 78.55 C 158.309 80.037 161.842 80.781 165.88 80.781 C 169.373 80.781 172.285 80.272 174.614 79.255 C 177.021 78.159 178.807 76.673 179.972 74.795 C 181.214 72.917 181.835 70.726 181.835 68.222 C 181.835 65.64 181.214 63.566 179.972 62.001 C 178.729 60.436 176.944 59.106 174.614 58.011 C 172.285 56.915 169.529 55.859 166.345 54.842 C 163.317 53.903 160.25 52.807 157.145 51.555 C 154.039 50.303 151.127 48.777 148.41 46.978 C 145.77 45.178 143.635 43.026 142.004 40.522 C 140.374 37.94 139.559 34.849 139.559 31.25 C 139.559 27.729 140.49 24.442 142.354 21.391 C 144.295 18.261 147.09 15.757 150.739 13.879 C 154.466 11.923 158.93 10.945 164.133 10.945 C 172.285 10.945 178.38 13.175 182.417 17.635 C 186.455 22.095 188.396 28.003 188.241 35.358 L 179.855 35.358 C 179.7 29.802 178.147 25.812 175.197 23.386 C 172.246 20.96 168.403 19.748 163.667 19.748 C 159.707 19.748 156.252 20.687 153.301 22.565 C 150.351 24.364 148.876 27.22 148.876 31.133 C 148.876 32.854 149.186 34.38 149.807 35.71 C 150.506 36.962 151.593 38.136 153.068 39.231 C 154.621 40.327 156.679 41.422 159.241 42.518 C 161.881 43.535 165.103 44.669 168.908 45.921 C 171.392 46.704 173.916 47.643 176.478 48.738 C 179.118 49.834 181.525 51.203 183.699 52.846 C 185.95 54.489 187.736 56.602 189.056 59.184 C 190.454 61.688 191.152 64.857 191.152 68.691 C 191.152 72.369 190.259 75.812 188.474 79.02 C 186.765 82.15 184.048 84.693 180.321 86.649 C 176.672 88.605 171.936 89.583 166.112 89.583 C 161.143 89.583 156.873 88.918 153.301 87.588 C 149.807 86.18 146.935 84.38 144.683 82.189 C 142.431 79.998 140.684 77.729 139.442 75.381 C 138.277 72.956 137.501 70.687 137.113 68.574 C 136.725 66.461 136.686 64.818 136.996 63.644 Z" fill="currentColor"/><path d="M 201.054 6.25 L 210.371 6.25 L 210.371 88.41 L 201.054 88.41 L 201.054 6.25 Z" fill="currentColor"/><path d="M 245.248 89.583 C 240.667 89.583 236.436 88.292 232.554 85.71 C 228.749 83.05 225.682 79.45 223.353 74.912 C 221.101 70.295 219.975 65.053 219.975 59.184 C 219.975 53.316 221.14 48.073 223.469 43.457 C 225.799 38.84 228.943 35.201 232.903 32.541 C 236.94 29.881 241.444 28.55 246.413 28.55 C 251.848 28.55 255.963 29.959 258.758 32.776 C 261.631 35.514 263.572 39.192 264.581 43.809 C 265.668 48.425 266.212 53.55 266.212 59.184 C 266.212 62.158 265.901 65.405 265.28 68.926 C 264.659 72.369 263.572 75.694 262.019 78.903 C 260.544 82.032 258.447 84.615 255.73 86.649 C 253.012 88.605 249.518 89.583 245.248 89.583 Z M 247.577 80.663 C 251.537 80.663 254.798 79.685 257.36 77.729 C 260 75.773 261.941 73.191 263.184 69.982 C 264.426 66.696 265.047 63.097 265.047 59.184 C 265.047 54.881 264.387 51.125 263.067 47.917 C 261.825 44.63 259.884 42.087 257.244 40.288 C 254.682 38.41 251.46 37.471 247.577 37.471 C 241.754 37.471 237.251 39.544 234.068 43.691 C 230.884 47.76 229.293 52.924 229.293 59.184 C 229.293 63.331 230.069 67.048 231.622 70.334 C 233.252 73.543 235.426 76.086 238.144 77.964 C 240.939 79.763 244.083 80.663 247.577 80.663 Z M 265.047 29.724 L 274.364 29.724 L 274.364 88.41 L 265.862 88.41 C 265.862 88.41 265.785 87.705 265.629 86.297 C 265.552 84.888 265.435 83.245 265.28 81.367 C 265.125 79.489 265.047 77.924 265.047 76.673 L 265.047 29.724 Z" fill="currentColor"/><path d="M 281.973 29.724 L 316.214 29.724 L 316.214 38.527 L 281.973 38.527 L 281.973 29.724 Z M 294.435 14.466 L 303.752 14.466 L 303.752 88.41 L 294.435 88.41 L 294.435 14.466 Z" fill="currentColor"/><path d="M 363.819 69.513 L 372.554 69.513 C 371.932 73.347 370.535 76.79 368.361 79.842 C 366.264 82.815 363.469 85.201 359.975 87.001 C 356.559 88.723 352.599 89.583 348.096 89.583 C 342.661 89.583 337.77 88.292 333.422 85.71 C 329.074 83.05 325.618 79.45 323.056 74.912 C 320.572 70.295 319.329 65.053 319.329 59.184 C 319.329 53.316 320.533 48.073 322.94 43.457 C 325.424 38.84 328.802 35.201 333.072 32.541 C 337.342 29.881 342.156 28.55 347.514 28.55 C 353.182 28.55 357.957 29.842 361.839 32.424 C 365.799 34.928 368.71 38.644 370.574 43.574 C 372.515 48.425 373.291 54.411 372.903 61.532 L 328.647 61.532 C 329.035 65.366 330.083 68.73 331.791 71.626 C 333.499 74.521 335.751 76.79 338.546 78.433 C 341.341 79.998 344.524 80.781 348.096 80.781 C 352.056 80.781 355.394 79.763 358.112 77.729 C 360.907 75.616 362.809 72.878 363.819 69.513 Z M 347.863 37.353 C 343.049 37.353 339.012 38.762 335.751 41.579 C 332.49 44.396 330.316 48.23 329.229 53.081 L 363.353 53.081 C 363.042 47.917 361.373 44.004 358.345 41.344 C 355.394 38.683 351.901 37.353 347.863 37.353 Z" fill="currentColor"/><path d="M 99.629 45.759 C 99.746 47.157 99.807 48.571 99.807 50 C 99.807 77.614 77.465 100 49.904 100 C 41.879 100 34.298 98.102 27.581 94.73 L 48.255 50.31 L 99.629 45.759 Z M 49.904 0 C 56.959 0 63.671 1.468 69.755 4.113 L 48.255 50.31 L 0.205 54.566 C 0.07 53.062 0 51.539 0 50 C 0 22.386 22.343 0 49.904 0 Z" fill="currentColor"/></svg>
+</div>
+
+<div class="copy">
+  <div class="label">Your autonomous marketing coworker</div>
+  <h1>Set the goal.<br><span>Slate does the work.</span></h1>
+  <div class="loop">
+    <div class="pill"><i>01</i>Watches</div><div class="arrow"></div>
+    <div class="pill"><i>02</i>Plans</div><div class="arrow"></div>
+    <div class="pill"><i>03</i>Executes</div><div class="arrow"></div>
+    <div class="pill"><i>04</i>Learns</div>
+  </div>
+</div>
+
+<div class="wall">
+  <div class="label">Trusted by growth teams at</div>
+  <div class="grid">
+    <div class="cell"><img class="logo" src="logos/signeasy.svg" alt="" style="width:111px;height:26px"></div>
+    <div class="cell"><img class="logo" src="logos/meegle.svg" alt="" style="width:115px;height:25px"></div>
+    <div class="cell"><img class="logo" src="logos/flowforma.svg" alt="" style="width:137px;height:21px"></div>
+    <div class="cell"><img class="logo" src="logos/revenue-grid.svg" alt="" style="width:106px;height:30px"></div>
+    <div class="cell"><img class="logo" src="logos/webgility.svg" alt="" style="width:151px;height:22px"></div>
+    <div class="cell"><img class="logo" src="logos/razorpay.svg" alt="" style="width:137px;height:30px"></div>
+    <div class="cell"><img class="logo" src="logos/wework.svg" alt="" style="width:109px;height:22px"></div>
+    <div class="cell"><img class="logo" src="logos/glean.svg" alt="" style="width:76px;height:30px"></div>
+    <div class="cell"><img class="logo" src="logos/atlas.svg" alt="" style="width:77px;height:25px"></div>
+  </div>
+</div>
+</body>
+</html>

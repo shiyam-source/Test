@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Slate LinkedIn Banner</title>
+<!-- ?v=profile (1584x396) or ?v=company (1128x191). Text avoids the bottom-left corner LinkedIn covers with the photo/logo. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter Tight', system-ui, sans-serif; color: #141414; overflow: hidden; }
+  .b { position: relative; overflow: hidden; background: linear-gradient(100deg, #ffffff 0%, #ffffff 38%, #fff4ec 70%, #fde3d4 100%); }
+  .b svg.net { position: absolute; inset: 0; }
+  .glow { position: absolute; border-radius: 50%; background: radial-gradient(closest-side, rgba(238,98,22,.22), rgba(238,98,22,0)); }
+  .logo { position: absolute; }
+  .k { position: absolute; font-family: 'JetBrains Mono', monospace; letter-spacing: .22em; color: #ee6216; }
+  h1 { position: absolute; font-weight: 600; letter-spacing: -0.045em; line-height: 1; white-space: nowrap; }
+  h1 em { font-style: normal; color: #ee6216; }
+  .sub { position: absolute; color: #5e5a55; letter-spacing: -0.01em; line-height: 1.35; }
+  .chips { position: absolute; display: flex; gap: 8px; }
+  .chip { display: inline-flex; align-items: center; gap: 7px; border-radius: 999px; background: #fff; border: 1.5px solid #e6e2dc; font-weight: 500; white-space: nowrap; color: #2a2724; }
+  .chip i { border-radius: 50%; display: inline-block; }
+  .url { position: absolute; font-family: 'JetBrains Mono', monospace; color: #141414; letter-spacing: .06em; }
+  .url b { color: #ee6216; font-weight: 500; }
+  .m { position: absolute; filter: drop-shadow(0 14px 22px rgba(120,50,10,.25)); }
+
+  /* profile 1584x396 */
+  .profile { width: 1584px; height: 396px; }
+  .profile .logo { left: 470px; top: 46px; height: 30px; }
+  .profile .k { left: 472px; top: 104px; font-size: 13px; }
+  .profile h1 { left: 470px; top: 128px; font-size: 58px; }
+  .profile .sub { left: 472px; top: 204px; width: 680px; font-size: 19px; }
+  .profile .chips { left: 472px; top: 290px; }
+  .profile .chip { height: 34px; padding: 0 14px 0 12px; font-size: 14.5px; }
+  .profile .chip i { width: 8px; height: 8px; }
+  .profile .url { right: 56px; top: 54px; font-size: 14px; }
+  .profile .m { right: 64px; top: 96px; width: 262px; }
+  .profile .glow { right: 0; top: 0; width: 520px; height: 520px; transform: translate(10%, -18%); }
+
+  /* company 1128x191 */
+  .company { width: 1128px; height: 191px; }
+  .company .logo { left: 270px; top: 28px; height: 22px; }
+  .company .k { display: none; }
+  .company h1 { left: 270px; top: 64px; font-size: 40px; }
+  .company .sub { left: 271px; top: 116px; width: 560px; font-size: 14.5px; }
+  .company .chips { display: none; }
+  .company .url { display: none; }
+  .company .m { right: 60px; top: 30px; width: 168px; }
+  .company .glow { right: 0; top: 0; width: 320px; height: 320px; transform: translate(10%, -20%); }
+</style>
+</head>
+<body>
+  <div class="b" id="b">
+    <svg class="net" id="net"></svg>
+    <div class="glow"></div>
+    <img class="logo" src="logo-dark.png">
+    <div class="k">AI SEARCH · SEO · CONTENT · REDDIT</div>
+    <h1>Your AI teammate <em>for growth.</em></h1>
+    <div class="sub">Slate finds where you can grow across SEO, AI search, content and your web presence. Then it does the work.</div>
+    <div class="chips">
+      <span class="chip"><i style="background:#ee6216"></i>AI visibility</span>
+      <span class="chip"><i style="background:#2f6fd6"></i>SEO</span>
+      <span class="chip"><i style="background:#b8900a"></i>Content</span>
+      <span class="chip"><i style="background:#c9781c"></i>Reddit</span>
+      <span class="chip"><i style="background:#2e9e62"></i>Outreach</span>
+      <span class="chip"><i style="background:#7c4ddb"></i>Reports</span>
+    </div>
+    <div class="url"><b>→</b> slatehq.com</div>
+    <img class="m" src="mascot.png">
+  </div>
+<script>
+const v = new URLSearchParams(location.search).get('v') || 'profile';
+const b = document.getElementById('b'); b.classList.add(v);
+const W = v === 'company' ? 1128 : 1584, H = v === 'company' ? 191 : 396;
+document.body.style.width = W + 'px'; document.body.style.height = H + 'px';
+// faint network motif on the right half (nods to the "map" in Slate's content)
+const net = document.getElementById('net'); net.setAttribute('viewBox', `0 0 ${W} ${H}`); net.setAttribute('width', W); net.setAttribute('height', H);
+let seed = 5; const r = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const cols = ['#2f6fd6', '#1593a6', '#7c4ddb', '#2e9e62', '#c9781c', '#e0475b', '#b8900a'];
+const pts = Array.from({ length: v === 'company' ? 18 : 30 }, () => ({ x: W * ((v === 'company' ? 0.66 : 0.6) + r() * (v === 'company' ? 0.34 : 0.4)), y: H * (0.06 + r() * 0.88) }));
+const hub = { x: W - (v === 'company' ? 145 : 215), y: H * 0.55 };
+let s = '';
+pts.forEach(p => { s += `<line x1="${p.x}" y1="${p.y}" x2="${hub.x}" y2="${hub.y}" stroke="#ee6216" stroke-opacity=".10" stroke-width="1"/>`; });
+pts.forEach((p, i) => { const q = pts[(i * 7 + 3) % pts.length]; s += `<line x1="${p.x}" y1="${p.y}" x2="${q.x}" y2="${q.y}" stroke="#141414" stroke-opacity=".05" stroke-width="1"/>`; });
+pts.forEach((p, i) => { s += `<circle cx="${p.x}" cy="${p.y}" r="${i % 4 ? 2.6 : 3.6}" fill="${cols[i % 7]}" fill-opacity=".55"/>`; });
+net.innerHTML = s;
+</script>
+</body>
+</html>

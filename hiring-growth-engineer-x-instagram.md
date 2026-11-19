@@ -8,16 +8,16 @@ Attach the Portugal offsite photo to both.
 
 ### Option A: single post (fits in 280 characters, no Premium needed)
 
-I'm hiring someone who's chronically online on X.
+I'm hiring someone who's chronically on X.
 
-Role: Growth Engineer at @shownmedia
+The role: Growth Engineer at @shownmedia
 
 You:
-→ have hit 1M+ views more times than you can count
-→ can tell why any post worked or flopped
-→ know what sourcing, ranking and retrieval mean
+- have hit 1M+ views more times than you can count
+- can tell why any post worked or flopped
+- know what sourcing, ranking and retrieval mean
 
-DM me or reply 👇
+DM or reply 👇
 
 P.S. offsites look like this 🇵🇹
 

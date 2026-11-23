@@ -1,0 +1,129 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="slate.css">
+<style>
+.panel{width:1080px;padding:60px 64px 0;background:#fff;position:relative}
+.panel+.panel{margin-top:40px}
+h1{font-size:74px;font-weight:600;letter-spacing:-2.6px;line-height:1.02;margin-top:52px}
+h1 em{font-style:normal;color:var(--or)}
+.sub{font-size:25px;line-height:1.42;color:var(--mute);margin-top:22px;max-width:920px}
+.legend{margin-top:28px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;border-top:2px solid var(--ink)}
+.stats div{padding:22px 18px 0 0}
+.stats div+div{padding-left:20px;border-left:1px solid var(--line)}
+.stats b{display:block;font-family:JB,monospace;font-size:44px;font-weight:500;letter-spacing:-1.5px;line-height:1.05}
+.stats b.o{color:var(--or)}
+.stats span{display:block;font-size:18.5px;line-height:1.38;color:var(--mute);margin-top:10px}
+.maph{display:flex;justify-content:space-between;align-items:baseline;margin-top:58px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.maph h2,.sec h2{font-size:34px;font-weight:600;letter-spacing:-.8px}
+.maph span,.sec .meta{font-family:JB,monospace;font-size:14.5px;color:var(--soft);letter-spacing:.3px}
+.map{margin-top:26px}
+.howto{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.howto div{background:var(--panel);border:1px solid var(--panelb);border-radius:12px;padding:18px 20px}
+.howto em{font-style:normal;font-family:JB,monospace;font-size:13.5px;color:var(--soft);letter-spacing:.6px}
+.howto b{display:block;font-size:21px;font-weight:600;margin-top:6px;letter-spacing:-.3px}
+.howto span{display:block;font-size:17.5px;line-height:1.4;color:var(--mute);margin-top:6px}
+
+.ph{display:flex;justify-content:space-between;align-items:flex-end;margin-top:44px;padding-bottom:16px;border-bottom:2px solid var(--ink)}
+.ph h2{font-size:46px;font-weight:600;letter-spacing:-1.4px;line-height:1.05}
+.ph h2 em{font-style:normal;color:var(--or)}
+.ph p{font-family:JB,monospace;font-size:14.5px;color:var(--soft);letter-spacing:.3px;text-align:right;line-height:1.6}
+.row{display:grid;grid-template-columns:86px 360px 1fr;gap:0 30px;padding:28px 0 26px;border-bottom:1px solid var(--line)}
+.row .bdg{display:flex;flex-direction:column;gap:8px;padding-top:4px}
+.row .bdg .bd{font-size:19px;height:36px;min-width:58px;border-radius:6px}
+.row .bdg small{font-family:JB,monospace;font-size:11px;letter-spacing:1px;color:var(--soft)}
+.row h3{font-size:29px;font-weight:600;letter-spacing:-.6px;line-height:1.14}
+.row .why{font-size:19.5px;line-height:1.45;color:var(--mute);margin-top:10px}
+.row ul{list-style:none;padding-top:4px}
+.row li{position:relative;padding-left:22px;font-size:19px;line-height:1.42;color:var(--ink2)}
+.row li+li{margin-top:9px}
+.row li:before{content:"";position:absolute;left:2px;top:.55em;width:8px;height:8px;border-radius:2px;background:var(--ink)}
+.row .wr{grid-column:2/4;margin-top:16px;background:var(--panel);border:1px solid var(--panelb);border-radius:10px;padding:12px 16px;font-size:18px;line-height:1.42;color:var(--ink2);display:flex;gap:12px;align-items:baseline}
+.row .wr em{font-style:normal;font-family:JB,monospace;font-size:12.5px;letter-spacing:.8px;color:var(--soft);white-space:nowrap;flex:0 0 auto}
+.row.cta .bdg .bd{font-size:15px}
+.row .where{display:block;font-family:JB,monospace;font-size:13.5px;color:var(--ordk);letter-spacing:.4px;margin-top:8px}
+
+.sec{margin-top:52px}
+.sec .shd{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.sec .lede{font-size:20px;line-height:1.45;color:var(--mute);margin-top:16px}
+.tech{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.tech div{border:1.5px solid var(--line);border-radius:14px;padding:22px 22px 20px}
+.tech b{display:block;font-size:24px;font-weight:600;letter-spacing:-.4px}
+.tech p{font-size:18px;line-height:1.45;color:var(--mute);margin-top:8px}
+.tech .ck{margin-top:14px;background:var(--panel);border:1px solid var(--panelb);border-radius:10px;padding:12px 14px;font-size:17px;line-height:1.42;color:var(--ink2)}
+.tech .ck em{display:block;font-style:normal;font-family:JB,monospace;font-size:12px;letter-spacing:1px;color:var(--soft);margin-bottom:4px}
+
+.src{font-family:JB,monospace;font-size:13px;line-height:1.6;color:var(--soft);margin-top:40px}
+.ftr{display:flex;justify-content:space-between;align-items:center;margin:30px -64px 0;padding:26px 64px 36px;border-top:1px solid var(--line)}
+.who{display:flex;align-items:center;gap:16px}
+.av{width:60px;height:60px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:21px}
+.who b{display:block;font-size:23px;font-weight:600;letter-spacing:-.3px}
+.who span{display:block;font-family:JB,monospace;font-size:13.5px;color:var(--soft);margin-top:2px}
+.save{text-align:right}
+.save b{display:block;font-size:23px;font-weight:500}
+.save b i{font-style:normal;color:var(--or);margin-right:6px}
+.save span{display:block;font-family:JB,monospace;font-size:13px;color:var(--soft);margin-top:4px}
+</style></head><body>
+
+<section class="panel" id="p1">
+ <div class="top"><!--LOGO--><span><b>SLATE LABS</b> / PAGE TEMPLATE · 01 / 04</span></div>
+ <h1>The anatomy of a page that wins Google and <em>AI search.</em></h1>
+ <p class="sub">Works for any topic: a guide, a definition, a how-to or a comparison. 19 on-page elements in the order they appear, 7 conversion placements, and the technical layer underneath.</p>
+ <div class="legend"><span><i class="bd br">01</i>retrieval and citation signal</span><span><i class="bd bs">07</i>page structure</span><span><i class="bd bc">CTA</i>conversion placement</span></div>
+ <div class="stats">
+  <div><b class="o">+40%</b><span>visibility in AI answers from citations, quotes and stats (Princeton GEO study)</span></div>
+  <div><b>40–60</b><span>words in the answer AI lifts into its reply</span></div>
+  <div><b>19</b><span>on-page elements, in the order they appear</span></div>
+  <div><b>7</b><span>conversion placements, from the sticky bar to the final block</span></div>
+ </div>
+ <div class="maph"><h2>The page, top to bottom</h2><span>every block, in order</span></div>
+ <div class="map"><div class="chrome" style="width:330px"><i></i><i></i><i></i><span>yourdomain.com/topic</span></div><div id="map1"></div><div class="chrome-b" style="width:330px"></div></div>
+ <div class="howto">
+  <div><em>02 / 04</em><b>Elements 01–10</b><span>Title to mistakes: what AI lifts first.</span></div>
+  <div><em>03 / 04</em><b>Elements 11–19</b><span>Tables, proof and FAQ, plus schema.</span></div>
+  <div><em>04 / 04</em><b>7 CTAs + tech layer</b><span>Where to ask, and what gets you crawled.</span></div>
+ </div>
+ <div class="ftr"><div class="who"><div class="av">SS</div><div><b>Shiyam Sunder</b><span>ceo, slate · founder, tripledart</span></div></div><div class="save"><b><i>↳</i>save this</b><span>swipe for every element →</span></div></div>
+</section>
+
+<section class="panel" id="p2">
+ <div class="top"><!--LOGO--><span><b>SLATE LABS</b> / PAGE TEMPLATE · 02 / 04</span></div>
+ <div class="ph"><h2>Elements <em>01–10</em><br>the top of the page</h2><p>what AI lifts first<br>retrieval ■ · structure □</p></div>
+ <div id="rows2"></div>
+ <div class="ftr"><div class="who"><div class="av">SS</div><div><b>Shiyam Sunder</b><span>ceo, slate · founder, tripledart</span></div></div><div class="save"><b><i>↳</i>save this</b><span>02 / 04</span></div></div>
+</section>
+
+<section class="panel" id="p3">
+ <div class="top"><!--LOGO--><span><b>SLATE LABS</b> / PAGE TEMPLATE · 03 / 04</span></div>
+ <div class="ph"><h2>Elements <em>11–19</em><br>proof, choice and FAQ</h2><p>plus the schema underneath<br>retrieval ■ · structure □</p></div>
+ <div id="rows3"></div>
+ <div class="ftr"><div class="who"><div class="av">SS</div><div><b>Shiyam Sunder</b><span>ceo, slate · founder, tripledart</span></div></div><div class="save"><b><i>↳</i>save this</b><span>03 / 04</span></div></div>
+</section>
+
+<section class="panel" id="p4">
+ <div class="top"><!--LOGO--><span><b>SLATE LABS</b> / PAGE TEMPLATE · 04 / 04</span></div>
+ <div class="ph"><h2><em>7 places</em> to ask<br>for the conversion</h2><p>from the sticky bar<br>to the final block</p></div>
+ <div id="rows4"></div>
+ <div class="sec"><div class="shd"><h2>The technical layer most pages skip</h2><span class="meta">6 checks</span></div>
+  <p class="lede">The on-page structure gets you considered. These get the page crawled, trusted and refreshed in AI answers.</p>
+  <div class="tech" id="tech"></div></div>
+ <p class="src">Content: Ira Bodnar / Ryze AI page template, inspired by Rob Hoffman's SOP. +40% figure: Princeton GEO study. Redesigned by Slate.</p>
+ <div class="ftr"><div class="who"><div class="av">SS</div><div><b>Shiyam Sunder</b><span>ceo, slate · founder, tripledart</span></div></div><div class="save"><b><i>↳</i>save this</b><span>slatehq.com</span></div></div>
+</section>
+
+<script src="data.js"></script>
+<script>
+const esc=s=>s.replace(/</g,'&lt;');
+renderMap(document.getElementById('map1'),{rowH:38,frameW:330,labelSize:21});
+const tagName={r:'RETRIEVAL',s:'STRUCTURE',h:'UNDER THE HOOD'};
+const row=e=>`<div class="row"><div class="bdg"><i class="bd ${e.t==='r'?'br':e.t==='s'?'bs':'bh'}">${e.n}</i><small>${tagName[e.t]}</small></div>
+ <div><h3>${esc(e.title)}</h3><p class="why">${esc(e.why)}</p></div>
+ <ul>${e.b.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+ <div class="wr"><em>MOST PAGES GET WRONG</em><span>${esc(e.wrong)}</span></div></div>`;
+document.getElementById('rows2').innerHTML=EL.slice(0,10).map(row).join('');
+document.getElementById('rows3').innerHTML=EL.slice(10).map(row).join('');
+document.getElementById('rows4').innerHTML=CTA.map(c=>`<div class="row cta"><div class="bdg"><i class="bd bc">${c.pos}</i><small>CONVERSION</small></div>
+ <div><h3>${esc(c.title)}</h3><span class="where">↳ ${c.where}</span><p class="why">${esc(c.why)}</p></div>
+ <ul>${c.b.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+ <div class="wr"><em>MOST PAGES GET WRONG</em><span>${esc(c.wrong)}</span></div></div>`).join('');
+document.getElementById('tech').innerHTML=TECH.map(t=>`<div><b>${t.title}</b><p>${t.d}</p><div class="ck"><em>CHECK IT</em>${t.c}</div></div>`).join('');
+</script></body></html>

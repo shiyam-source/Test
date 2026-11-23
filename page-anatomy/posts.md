@@ -1,91 +1,96 @@
-# Page anatomy: X + LinkedIn posts
+# The anatomy of a page that wins Google and AI search: X + LinkedIn
 
-Source: Ira Bodnar / Ryze AI, "The exact structure of a page that ChatGPT and Google rank" (research on 10K sites ranked #1 in LLMs)
+Source: Ira Bodnar / Ryze AI page template (inspired by Rob Hoffman's SOP)
 https://x.com/irabukht/status/2114031412991218048
 
-Assets in this folder:
-- `x-infographic.png`: tall static infographic for X (1185 × 4096)
-- `linkedin-animated.gif`: animated checklist for LinkedIn (1080 × 1350, ~37s loop)
-- `linkedin-animated.mp4`: same animation as video, if LinkedIn won't take the GIF
-- `linkedin-static.png`: final frame as a still image (backup)
+## Assets
+| File | Use |
+|---|---|
+| `x-01.png` … `x-04.png` | X: attach all 4 in this order (each under 4096 px tall, readable on tap) |
+| `linkedin-anatomy.gif` | LinkedIn post: the page builds itself block by block (1080 × 1350, ~14s loop) |
+| `linkedin-anatomy.mp4` | Same animation as video, if LinkedIn won't take the GIF |
+| `linkedin-anatomy-still.png` | Final frame as a still image |
+| `anatomy-full.png` | All 4 panels stacked (1600 wide). Attach to the LinkedIn first comment |
+| `anatomy-carousel.pdf` | 4-page LinkedIn document carousel, for a follow-up post |
+
+Panels: 01 cover + full page map · 02 elements 01–10 · 03 elements 11–19 + structured data · 04 the 7 CTAs + the technical layer
 
 ---
 
-## X (long post, Premium). Attach `x-infographic.png`
+## X (long post, Premium). Attach x-01 → x-04
 
-Your page isn't losing in ChatGPT because of your content.
+Most pages are written for readers.
 
-It's losing because AI can't get in, can't quote it, or doesn't trust it.
+The ones AI cites are built in a specific order.
 
-Research on 10K pages ranked #1 in LLMs found 10 things they share. I sorted them by job 👇
+19 elements, 7 conversion spots, 6 technical checks. Top to bottom 👇
 
-LET AI IN
-1/ Allow OAI-SearchBot, PerplexityBot and Claude-SearchBot in robots.txt. Many sites still block the bots that would cite them.
-2/ Get indexed by Bing. ChatGPT search finds pages through Bing. Submit + IndexNow on every update.
-3/ Ship a markdown twin. A clean .md copy of the page, listed in llms.txt.
-4/ Make sign-up agent-proof. AI agents sign up for tools now. Many die at the login wall.
+What AI lifts:
+→ A title that matches one exact query
+→ The answer first, in 40–60 words: definition, number, who it's for
+→ 5 key facts, each with a number and a date
+→ Original data. AI credits the source, not the 100 copies
+→ Comparison tables in HTML, never a screenshot
+→ An FAQ built from real buyer prompts
 
-GIVE IT SOMETHING TO QUOTE
-5/ Definition first, a number second. Both inside the first 50 words.
-6/ Publish a stat only you have. The original gets cited. The 100 copies don't.
-7/ Put comparison tables in HTML. AI can't read a table inside an image.
-8/ Build your FAQ from what buyers ask ChatGPT. 2–3 sentence answers.
+What makes it quotable:
+→ Steps as H3s
+→ Mistakes with a price tag
+→ A "who this is NOT for" section
 
-PROVE YOU'RE REAL
-9/ A named author. LinkedIn profile and dates that match the schema.
-10/ Link sources inline. Quote real experts. Up to 40% more visibility in AI answers.
+Where you ask:
+→ A sticky bar after the first scroll, never a popup on load
+→ An image CTA at ~15%. 20–30% of readers are ready on screen 1
+→ One final CTA. Three side by side kills the click
 
-Start with 3 today: robots.txt, Bing, your first 50 words.
+Under all of it: server-rendered HTML, indexed in Bing, the same facts everywhere.
 
-30 minutes. No new content needed.
-
-Full breakdown in the image. Save it.
+The full template is in the 4 images. Save it.
 
 ### Reply 1
-Research by @irabukht and the Ryze AI team. Original thread: https://x.com/irabukht/status/2114031412991218048
+Template by @irabukht and Ryze AI, inspired by @RobHoffman_'s SOP. Original: https://x.com/irabukht/status/2114031412991218048
 
 ---
 
-## LinkedIn. Attach `linkedin-animated.gif`
+## LinkedIn. Attach `linkedin-anatomy.gif`
 
-Most B2B pages fail AI search before anyone reads a word.
+Most B2B pages are written like essays.
 
-To get cited, a page has to pass 3 tests:
-AI can get in.
-AI can find something to quote.
-AI trusts who wrote it.
+AI doesn't read them like essays. It lifts pieces.
 
-Fail one and you're out of the answer.
+A 40–60 word answer. A key fact with a date. One row of a comparison table. One FAQ answer.
 
-Research on 10K pages ranked #1 in ChatGPT and Google AI found 10 things they share.
+If a piece needs the paragraph above it to make sense, it gets skipped.
 
-Score your page. 1 point each.
+So the pages that win both Google and AI search are built differently. This template maps the whole page, top to bottom (watch it build 👇):
 
-𝗟𝗲𝘁 𝗔𝗜 𝗶𝗻
-→ robots.txt allows OAI-SearchBot, PerplexityBot and Claude-SearchBot
-→ The page is indexed in Bing (ChatGPT search finds pages through it)
-→ A clean markdown copy exists, listed in llms.txt
-→ An AI agent can get through your sign-up without hitting a wall
+→ 19 on-page elements, in the order they appear
+→ 7 conversion placements, from the sticky bar to the final block
+→ 6 technical checks most pages skip
 
-𝗚𝗶𝘃𝗲 𝗶𝘁 𝘀𝗼𝗺𝗲𝘁𝗵𝗶𝗻𝗴 𝘁𝗼 𝗾𝘂𝗼𝘁𝗲
-→ The first 50 words hold a definition and a number
-→ There's a stat nobody else has published
-→ Comparison tables are HTML, not images
-→ The FAQ answers what buyers actually ask ChatGPT, in 2–3 sentences
+3 that most teams get wrong:
 
-𝗣𝗿𝗼𝘃𝗲 𝘆𝗼𝘂'𝗿𝗲 𝗿𝗲𝗮𝗹
-→ A named author whose LinkedIn and dates match the schema
-→ Sources linked inline, quotes from real experts (up to 40% more AI visibility)
+𝟭. 𝗧𝗵𝗲 𝗮𝗻𝘀𝘄𝗲𝗿 𝗰𝗼𝗺𝗲𝘀 𝘁𝗵𝗶𝗿𝗱
+A 3-paragraph story before the answer. AI quotes the page that answers first.
 
-What stood out to me: 4 of the 10 have nothing to do with content.
+𝟮. 𝗧𝗵𝗲 𝘀𝘁𝗮𝘁 𝗶𝘀 𝗯𝗼𝗿𝗿𝗼𝘄𝗲𝗱
+Quote someone else's number and you're one of the 100 pages repeating it. AI credits the source.
 
-They're plumbing. A robots.txt line. A Bing submission. A markdown file. A sign-up form.
+𝟯. 𝗧𝗵𝗲 𝗼𝗳𝗳𝗲𝗿 𝗶𝘀 𝗵𝗶𝗱𝗱𝗲𝗻
+20–30% of readers are ready on screen 1. Most pages make them scroll to the end to act.
 
-Your team can fix them this week without writing a single new blog post.
+And the one nobody checks: open your page with JavaScript off. If the answer isn't there, most AI crawlers can't see it either.
 
-Drop your score out of 10 in the comments. I'll tell you which fix to start with.
+The full breakdown of all 19 elements, with what most pages get wrong on each, is in the first comment.
+
+Which of the 19 is your site missing?
 
 #AISearch #GEO #B2BMarketing
 
-### First comment (post right after publishing)
-The research behind this comes from Ira Bodnar and the Ryze AI team, who studied 10K pages ranked #1 in LLMs. Original thread: https://x.com/irabukht/status/2114031412991218048
+### First comment (attach `anatomy-full.png`)
+Every element, explained. Save it.
+
+Template by Ira Bodnar and the Ryze AI team, inspired by Rob Hoffman's SOP. Original: https://x.com/irabukht/status/2114031412991218048
+
+### Follow-up post (optional, a few days later)
+Post `anatomy-carousel.pdf` as a LinkedIn document. Hook: "Save this before you write your next page. 19 elements, 7 CTAs, 6 technical checks, in 4 slides."

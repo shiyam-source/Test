@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="slate.css">
+<style>
+.slide{position:relative;width:1080px;height:1350px;padding:48px 56px 0;background:#fff;overflow:hidden}
+.top{font-size:13px}
+.top .logo{height:27px}
+h1{font-size:50px;font-weight:600;letter-spacing:-1.8px;line-height:1.04;margin-top:26px}
+h1 em{font-style:normal;color:var(--or)}
+.bar{display:flex;align-items:center;gap:12px;margin-top:20px}
+.ctr{display:flex;align-items:baseline;gap:10px;border:1.5px solid var(--ink);border-radius:10px;padding:7px 14px}
+.ctr small{font-family:JB,monospace;font-size:12px;letter-spacing:1.2px;color:var(--soft)}
+.ctr b{font-family:JB,monospace;font-size:22px;font-weight:500;letter-spacing:-.5px}
+.ctr b span{color:#C9C9CE}
+.ctr.c{border-color:var(--or)}
+.ctr.c b{color:var(--ordk)}
+.bar .legend{margin-left:auto;gap:8px}
+.bar .legend span{font-size:12.5px;padding:5px 11px 5px 7px;gap:7px}
+.map{margin-top:18px}
+.chrome{height:30px}
+.ftr{position:absolute;left:56px;right:56px;bottom:0;height:78px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line)}
+.ftr .who{font-size:19px;font-weight:600;letter-spacing:-.2px}
+.ftr .who span{font-family:JB,monospace;font-size:12.5px;font-weight:400;color:var(--soft);margin-left:10px;letter-spacing:.3px}
+.ftr .go{font-size:19px;font-weight:500}
+.ftr .go i{font-style:normal;color:var(--or);margin-right:6px}
+</style></head><body><section class="slide" id="cap">
+<div class="top"><!--LOGO--><span><b>SLATE LABS</b> / PAGE TEMPLATE</span></div>
+<h1>The anatomy of a page that wins<br>Google and <em>AI search.</em></h1>
+<div class="bar">
+ <div class="ctr"><small>ELEMENTS</small><b id="ce">00<span>/19</span></b></div>
+ <div class="ctr c"><small>CTAs</small><b id="cc">0<span>/7</span></b></div>
+ <div class="legend"><span><i class="bd br">01</i>retrieval</span><span><i class="bd bs">07</i>structure</span><span><i class="bd bc">CTA</i>conversion</span></div>
+</div>
+<div class="map"><div class="chrome" style="width:360px"><i></i><i></i><i></i><span>yourdomain.com/topic</span></div><div id="m"></div><div class="chrome-b" style="width:360px"></div></div>
+<div class="ftr"><div class="who">Shiyam Sunder<span>ceo, slate · founder, tripledart</span></div><div class="go"><i>↳</i>every element, explained: in the comments</div></div>
+</section>
+<script src="data.js"></script>
+<script>
+window.setStep=(n,active)=>{
+  renderMap(document.getElementById('m'),{rowH:34,frameW:360,labelSize:19,upto:n,active:active});
+  const seen=MAP.slice(0,n).map(r=>r[0]);
+  const e=seen.filter(x=>/^\d/.test(x)).length, c=seen.filter(x=>x[0]==='c').length;
+  document.getElementById('ce').innerHTML=String(e).padStart(2,'0')+'<span>/19</span>';
+  document.getElementById('cc').innerHTML=c+'<span>/7</span>';
+};
+setStep(MAP.length,-1);
+</script></body></html>

@@ -66,16 +66,24 @@ Hector's full playbook and Victor's breakdown below 👇
 
 ## LinkedIn
 
-### Hook options
-1. **Your job description would reject the two best growth marketers in SaaS right now. They're both 19.** ← pick
-2. "5+ years of experience required." Meanwhile, two 19-year-olds just rewrote the SaaS growth playbook.
-3. A 19-year-old helped take Wispr Flow to a $2B valuation. Another got Composio 280M views. Neither has a résumé you'd shortlist.
+### Hook options (more direct)
+1. **A 19-year-old ships 400 ads a week. Your marketing team ships 4.** ← pick
+2. Two 19-year-olds just made "10 years of experience" look worthless.
+3. Your senior marketer has 10 years of experience. These 19-year-olds have better numbers.
+4. 280M views. A $2B company. Both driven by 19-year-olds your hiring process would reject.
+5. Stop hiring for experience. Two 19-year-olds just proved why.
+
+(Earlier, softer version: "Your job description would reject the two best growth marketers in SaaS right now. They're both 19.")
 
 ### Post
 
-Your job description would reject the two best growth marketers in SaaS right now.
+A 19-year-old ships 400 ads a week.
 
-They're both 19.
+Your marketing team ships 4.
+
+Another 19-year-old got 280M views in a couple of months.
+
+Neither would pass your "5+ years of experience" filter.
 
 Hector Serrano joined Wispr Flow at 19, days after quitting D1 soccer.
 

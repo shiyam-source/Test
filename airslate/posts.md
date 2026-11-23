@@ -7,7 +7,9 @@
 Slides: 01 cover · 02–10 the 9 levers · 11 the twist · 12 steal / stop / start · 13 close + sources
 
 ## Link to attach (first comment / reply)
-Nathan Latka's interview with airSlate CEO Vadim Yasinovsky (published Oct 14, 2026). Paste the episode link from Latka's podcast feed. Latka's company data page: https://getlatka.com/companies/airslate
+"This Ugly Website Does $106M/Year (866,000 Pay For It)", Nathan Latka with airSlate CEO Vadim Yasinovsky (Oct 14, 2026, 20 min): https://www.youtube.com/watch?v=pouSLsXOzgE
+
+Timestamps worth pointing to: 3:52 the page that does $106M · 4:35 85,000 forms hand-built by lawyers · 8:54 bought signNow at $3M, now $35M · 11:26 4.8B keywords, 35M pages · 13:07 search drops from 80% to 30% · 14:27 "ChatGPT SEO gurus? It's b.s." · 17:37 M&A rule: $5–10M revenue minimum
 
 ---
 
@@ -32,9 +34,11 @@ The 3 levers I'd steal tomorrow:
 Buyers comparing tools are close to paying. Own that page and you're inside the decision.
 
 𝟯. 𝗕𝘂𝘆, 𝘁𝗵𝗲𝗻 𝗽𝗹𝘂𝗴 𝗶𝗻
-They bought signNow at ~$3M revenue and pointed the machine at it. It now makes $35M.
+They bought signNow at ~$3M in revenue and pointed the machine at it. It now makes $35M. Today they only buy at $5–10M revenue or more.
 
 The twist: the team that built all this expects search to fall from 80% of new customers to 30%.
+
+And on the AI search experts? "ChatGPT SEO gurus? It's b.s."
 
 That's the real lesson. The keyword era built airSlate. The answer era rewards a different page: one AI quotes, not one that matches a string.
 
@@ -45,7 +49,7 @@ Which lever is your team using right now?
 #SEO #AISearch #B2BMarketing
 
 ### First comment
-Source: Nathan Latka's interview with airSlate CEO Vadim Yasinovsky → [episode link]
+Source: Nathan Latka's interview with airSlate CEO Vadim Yasinovsky (worth the 20 minutes) → https://www.youtube.com/watch?v=pouSLsXOzgE
 
 ---
 
@@ -69,6 +73,8 @@ Here's the machine, and what to steal before it ends 👇
 
 The twist: he expects search to drop from 80% of new customers to 30%.
 
+His take on AI search gurus: "It's b.s."
+
 Steal: pages from real questions, comparison pages, free tools.
 Stop: pages that only match a keyword string.
 Start: tracking the prompts buyers ask AI.
@@ -76,4 +82,4 @@ Start: tracking the prompts buyers ask AI.
 Full teardown in the image. Save it.
 
 ### Reply 1
-Source: @NathanLatka's interview with airSlate CEO Vadim Yasinovsky → [episode link]
+Source: @NathanLatka's interview with airSlate CEO Vadim Yasinovsky → https://www.youtube.com/watch?v=pouSLsXOzgE

@@ -38,7 +38,9 @@ h1 em{font-style:normal;color:var(--or)}
 .tw .nums div{background:var(--panel);border:1px solid var(--panelb);border-radius:12px;padding:16px 16px}
 .tw .nums div.w{grid-column:1/3}
 .tw .nums b{display:block;font-family:JB,monospace;font-size:44px;font-weight:500;letter-spacing:-1.6px;line-height:1}
-.tw .nums div.w b{color:var(--or)}
+.tw .nums div.w2 b{color:var(--or)}
+.tw .nums div.qq{grid-column:1/3;font-size:24px;font-weight:600;letter-spacing:-.5px;line-height:1.2;background:#fff;border:1.5px solid var(--ink)}
+.tw .nums div.qq span{font-family:JB,monospace;font-size:12px;font-weight:400;letter-spacing:.6px}
 .tw .nums span{display:block;font-size:16px;color:var(--mute);margin-top:6px;line-height:1.3}
 .ss{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
 .ss div{border:1.5px solid var(--line);border-radius:14px;padding:20px 20px}
@@ -68,7 +70,7 @@ h1 em{font-style:normal;color:var(--or)}
 <div class="stats" id="stats"></div>
 <div class="sh"><h2>The 9 levers</h2><span>what they did · the proof · what to steal</span></div>
 <div class="grid" id="grid"></div>
-<div class="tw"><div><em class="k">THE TWIST</em><h3>Even airSlate thinks keyword SEO is ending.</h3><p>The team behind 35M search pages is planning for search to bring in less than half the customers it does today, as AI answers take over.</p></div>
+<div class="tw"><div><em class="k">THE TWIST</em><h3>Even airSlate thinks keyword SEO is ending.</h3><p>The team behind 35M search pages is planning for search to bring in less than half the customers it does today. And he has no time for the AI search gurus either.</p></div>
 <div class="nums" id="tw"></div></div>
 <div class="sh"><h2>What to steal, stop and start</h2><span>for any B2B SaaS team</span></div>
 <div class="ss" id="ss"></div>
@@ -81,7 +83,7 @@ document.getElementById('stats').innerHTML=STATS.map(s=>`<div><b>${s[0]}</b><spa
 document.getElementById('grid').innerHTML=LEVERS.map((l,i)=>`<div class="card"${i===8?' style="grid-column:1/3"':''}><div class="hd"><i class="bd br">${String(i+1).padStart(2,'0')}</i><small>${l.k}</small></div>
 <h3>${l.title}</h3><div class="st"><b>${l.stat}</b><span>${l.statL}</span></div><ul>${l.pts.map(p=>`<li>${p}</li>`).join('')}</ul><p class="wy">${l.why}</p>
 <div class="sl"><div><em>STEAL THIS</em>${l.steal}</div></div></div>`).join('');
-document.getElementById('tw').innerHTML=`<div class="w"><b>${TWIST.stat} months</b><span>the CEO gives keyword SEO</span></div><div><b>${TWIST.from}</b><span>${TWIST.fromL}</span></div><div><b>${TWIST.to}</b><span>${TWIST.toL}</span></div>`;
+document.getElementById('tw').innerHTML=`<div><b>${TWIST.from}</b><span>${TWIST.fromL}</span></div><div class="w2"><b>${TWIST.to}</b><span>${TWIST.toL}</span></div><div class="w"><b>${TWIST.win}</b><span>${TWIST.winL}</span></div><div class="qq">${TWIST.q}<span>Vadim Yasinovsky, CEO, on AI search advice</span></div>`;
 document.getElementById('ss').innerHTML=`<div class="k"><em>STEAL</em><ul>${STEAL.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="x"><em>STOP</em><ul>${STOP.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="n"><em>START</em><ul>${START.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
 document.getElementById('src').textContent=SRC;
 </script></body></html>

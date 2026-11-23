@@ -47,12 +47,19 @@
 .tw .big{margin-top:56px;display:flex;align-items:baseline;gap:24px;border-top:2px solid var(--ink);padding-top:34px}
 .tw .big b{font-family:JB,monospace;font-size:150px;font-weight:500;letter-spacing:-6px;line-height:.9;color:var(--or)}
 .tw .big span{font-size:30px;line-height:1.3;color:var(--mute);max-width:420px}
-.tw .shift{display:grid;grid-template-columns:1fr 70px 1fr;align-items:center;margin-top:60px;gap:10px}
+.tw .shift{display:grid;grid-template-columns:1fr 70px 1fr;align-items:stretch;margin-top:56px;gap:10px}
 .tw .shift div{border:1.5px solid var(--line);border-radius:16px;padding:26px 28px}
 .tw .shift b{display:block;font-family:JB,monospace;font-size:72px;font-weight:500;letter-spacing:-3px;line-height:1}
 .tw .shift div:last-child b{color:var(--ordk)}
 .tw .shift span{display:block;font-size:22px;color:var(--mute);margin-top:10px;line-height:1.35}
-.tw .shift i{font-style:normal;text-align:center;font-size:44px;color:var(--soft)}
+.tw .shift i{align-self:center;font-style:normal;text-align:center;font-size:44px;color:var(--soft)}
+.tw .win{display:flex;align-items:baseline;gap:20px;margin-top:40px;padding-top:30px;border-top:1px solid var(--line)}
+.tw .win b{font-family:JB,monospace;font-size:54px;font-weight:500;letter-spacing:-2px;white-space:nowrap}
+.tw .win span{font-size:24px;color:var(--mute);line-height:1.35}
+.tw blockquote{margin-top:44px;font-size:52px;font-weight:600;letter-spacing:-1.6px;line-height:1.1}
+.tw blockquote cite{display:block;font-style:normal;font-family:JB,monospace;font-size:16px;letter-spacing:1px;color:var(--soft);font-weight:400;margin-top:16px}
+.tw .take{margin-top:40px;padding-top:28px;border-top:1px solid var(--line);font-size:28px;line-height:1.42;color:var(--mute)}
+.tw .take b{color:var(--ink);font-weight:600}
 .tw .q{margin-top:52px;font-size:30px;line-height:1.4;color:var(--ink2)}
 /* steal / stop / start */
 .ss h2{font-size:66px;font-weight:600;letter-spacing:-2.2px;line-height:1.04;margin-top:70px}
@@ -92,9 +99,11 @@ LEVERS.forEach((l,i)=>{h+=`<section class="slide lv">${topBar(i+2)}<div class="k
 <div class="proof"><b>${l.stat}</b><span>${l.statL}</span></div><ul>${l.pts.map(p=>`<li>${p}</li>`).join('')}</ul><div class="why"><em>WHY IT WORKS</em><p>${l.why}</p></div>
 <div class="steal"><em>STEAL THIS</em><p>${l.steal}</p></div>${ftr()}</section>`;});
 h+=`<section class="slide tw">${topBar(LEVERS.length+2)}<h2>The twist: even they think<br>this is <em>ending.</em></h2>
-<div class="big"><b>${TWIST.stat}</b><span>${TWIST.statL}, before AI search takes over</span></div>
 <div class="shift"><div><b>${TWIST.from}</b><span>${TWIST.fromL}</span></div><i>→</i><div><b>${TWIST.to}</b><span>${TWIST.toL}</span></div></div>
-<p class="q">The team that built one of the biggest SEO machines online is planning for search to bring in less than half the customers it does today.</p>${ftr()}</section>`;
+<div class="win"><b>${TWIST.win}</b><span>${TWIST.winL}</span></div>
+<blockquote>${TWIST.q}<cite>Vadim Yasinovsky, CEO, on AI search advice</cite></blockquote>
+<p class="take"><b>Our take:</b> he’s right about the hacks. What replaces keyword pages isn’t a trick. It’s being the page AI can quote.</p>
+${ftr()}</section>`;
 h+=`<section class="slide ss">${topBar(LEVERS.length+3)}<h2>What to steal.<br>What to stop.</h2><div class="cols">
 <div class="col k"><em>STEAL (STILL WORKS IN AI SEARCH)</em><ul>${STEAL.map(x=>`<li>${x}</li>`).join('')}</ul></div>
 <div class="col x"><em>STOP (DYING)</em><ul>${STOP.map(x=>`<li>${x}</li>`).join('')}</ul></div>

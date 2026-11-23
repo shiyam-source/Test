@@ -1,0 +1,87 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="slate.css">
+<style>
+.page{width:1080px;padding:60px 60px 0;background:#fff}
+h1{font-size:82px;font-weight:600;letter-spacing:-3px;line-height:1;margin-top:50px}
+h1 em{font-style:normal;color:var(--or)}
+.sub{font-size:25px;line-height:1.42;color:var(--mute);margin-top:20px;max-width:900px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:36px;border-top:2px solid var(--ink)}
+.stats div{padding:20px 16px 0 0}
+.stats div+div{padding-left:18px;border-left:1px solid var(--line)}
+.stats b{display:block;font-family:JB,monospace;font-size:44px;font-weight:500;letter-spacing:-1.5px;line-height:1.05}
+.stats span{display:block;font-size:18px;line-height:1.35;color:var(--mute);margin-top:8px}
+.sh{display:flex;justify-content:space-between;align-items:baseline;margin-top:50px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.sh h2{font-size:34px;font-weight:600;letter-spacing:-.8px}
+.sh span{font-family:JB,monospace;font-size:14px;color:var(--soft);letter-spacing:.3px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.card{border:1.5px solid var(--line);border-radius:14px;padding:20px 22px 18px;display:flex;flex-direction:column}
+.card .hd{display:flex;align-items:center;gap:12px}
+.card .hd .bd{font-size:15px;height:30px;min-width:44px;border-radius:5px}
+.card .hd small{font-family:JB,monospace;font-size:12.5px;letter-spacing:1.4px;color:var(--soft)}
+.card h3{font-size:24.5px;font-weight:600;letter-spacing:-.5px;line-height:1.18;margin-top:12px}
+.card .st{display:flex;align-items:baseline;gap:12px;margin-top:12px}
+.card .st b{font-family:JB,monospace;font-size:34px;font-weight:500;letter-spacing:-1.2px;white-space:nowrap;line-height:1}
+.card .st span{font-size:16.5px;color:var(--mute);line-height:1.3}
+.card ul{list-style:none;margin-top:12px}
+.card li{position:relative;padding-left:18px;font-size:17.5px;line-height:1.4;color:var(--ink2)}
+.card li+li{margin-top:4px}
+.card li:before{content:"";position:absolute;left:1px;top:.55em;width:7px;height:7px;border-radius:2px;background:var(--ink)}
+.card .wy{font-size:16.5px;line-height:1.42;color:var(--mute);margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.card .sl{margin-top:auto;padding-top:14px}
+.card .sl div{background:var(--panel);border:1px solid var(--panelb);border-radius:10px;padding:10px 13px;font-size:17px;font-weight:600;line-height:1.35;letter-spacing:-.2px}
+.card .sl em{display:block;font-style:normal;font-family:JB,monospace;font-size:11.5px;letter-spacing:1.4px;color:var(--or);font-weight:500;margin-bottom:3px}
+.tw{margin-top:50px;border:2px solid var(--ink);border-radius:18px;padding:28px 30px;display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center}
+.tw em.k{display:block;font-style:normal;font-family:JB,monospace;font-size:13px;letter-spacing:1.6px;color:var(--or);font-weight:500}
+.tw h3{font-size:34px;font-weight:600;letter-spacing:-.9px;line-height:1.12;margin-top:8px}
+.tw p{font-size:19px;line-height:1.45;color:var(--mute);margin-top:10px}
+.tw .nums{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tw .nums div{background:var(--panel);border:1px solid var(--panelb);border-radius:12px;padding:16px 16px}
+.tw .nums div.w{grid-column:1/3}
+.tw .nums b{display:block;font-family:JB,monospace;font-size:44px;font-weight:500;letter-spacing:-1.6px;line-height:1}
+.tw .nums div.w b{color:var(--or)}
+.tw .nums span{display:block;font-size:16px;color:var(--mute);margin-top:6px;line-height:1.3}
+.ss{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.ss div{border:1.5px solid var(--line);border-radius:14px;padding:20px 20px}
+.ss div.k{border:2px solid var(--ink)}
+.ss div.n{border:2px solid var(--or)}
+.ss em{display:block;font-style:normal;font-family:JB,monospace;font-size:13px;letter-spacing:1.6px;font-weight:500}
+.ss .x em{color:var(--soft)}
+.ss .n em{color:var(--or)}
+.ss li{list-style:none;position:relative;padding-left:24px;font-size:18px;line-height:1.38;color:var(--ink2);margin-top:10px}
+.ss li:before{position:absolute;left:0;font-family:JB,monospace}
+.ss .k li:before{content:"✓"}
+.ss .x li{color:var(--mute)}
+.ss .x li:before{content:"✕";color:var(--soft)}
+.ss .n li:before{content:"→";color:var(--or)}
+.src{font-family:JB,monospace;font-size:13px;line-height:1.6;color:var(--soft);margin-top:36px}
+.ftr{display:flex;justify-content:space-between;align-items:center;margin:28px -60px 0;padding:24px 60px 34px;border-top:1px solid var(--line)}
+.who{display:flex;align-items:center;gap:14px}
+.av{width:56px;height:56px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:19px}
+.who b{display:block;font-size:22px;font-weight:600;letter-spacing:-.3px}
+.who span{display:block;font-family:JB,monospace;font-size:13px;color:var(--soft);margin-top:2px}
+.save{text-align:right}.save b{display:block;font-size:22px;font-weight:500}.save b i{font-style:normal;color:var(--or);margin-right:6px}
+.save span{display:block;font-family:JB,monospace;font-size:12.5px;color:var(--soft);margin-top:3px}
+</style></head><body><section class="page" id="cap">
+<div class="top"><!--LOGO--><span><b>SLATE LABS</b> / GROWTH TEARDOWN · AIRSLATE</span></div>
+<h1>$200M ARR from SEO.<br>The playbook behind <em>airSlate.</em></h1>
+<p class="sub">pdfFiller, signNow, DocHub and US Legal Forms: 9 levers that built one of the biggest search machines online, and why its own CEO thinks it has months left.</p>
+<div class="stats" id="stats"></div>
+<div class="sh"><h2>The 9 levers</h2><span>what they did · the proof · what to steal</span></div>
+<div class="grid" id="grid"></div>
+<div class="tw"><div><em class="k">THE TWIST</em><h3>Even airSlate thinks keyword SEO is ending.</h3><p>The team behind 35M search pages is planning for search to bring in less than half the customers it does today, as AI answers take over.</p></div>
+<div class="nums" id="tw"></div></div>
+<div class="sh"><h2>What to steal, stop and start</h2><span>for any B2B SaaS team</span></div>
+<div class="ss" id="ss"></div>
+<p class="src" id="src"></p>
+<div class="ftr"><div class="who"><div class="av">SS</div><div><b>Shiyam Sunder</b><span>ceo, slate · founder, tripledart</span></div></div><div class="save"><b><i>↳</i>save this</b><span>slatehq.com</span></div></div>
+</section>
+<script src="data.js"></script>
+<script>
+document.getElementById('stats').innerHTML=STATS.map(s=>`<div><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
+document.getElementById('grid').innerHTML=LEVERS.map((l,i)=>`<div class="card"${i===8?' style="grid-column:1/3"':''}><div class="hd"><i class="bd br">${String(i+1).padStart(2,'0')}</i><small>${l.k}</small></div>
+<h3>${l.title}</h3><div class="st"><b>${l.stat}</b><span>${l.statL}</span></div><ul>${l.pts.map(p=>`<li>${p}</li>`).join('')}</ul><p class="wy">${l.why}</p>
+<div class="sl"><div><em>STEAL THIS</em>${l.steal}</div></div></div>`).join('');
+document.getElementById('tw').innerHTML=`<div class="w"><b>${TWIST.stat} months</b><span>the CEO gives keyword SEO</span></div><div><b>${TWIST.from}</b><span>${TWIST.fromL}</span></div><div><b>${TWIST.to}</b><span>${TWIST.toL}</span></div>`;
+document.getElementById('ss').innerHTML=`<div class="k"><em>STEAL</em><ul>${STEAL.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="x"><em>STOP</em><ul>${STOP.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="n"><em>START</em><ul>${START.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
+document.getElementById('src').textContent=SRC;
+</script></body></html>

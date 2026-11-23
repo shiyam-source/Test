@@ -1,0 +1,80 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:IT;font-weight:400;src:url(../citation-halflife/assets/fonts/inter-tight-latin-400-normal.woff2)}
+@font-face{font-family:IT;font-weight:500;src:url(../citation-halflife/assets/fonts/inter-tight-latin-500-normal.woff2)}
+@font-face{font-family:IT;font-weight:600;src:url(../citation-halflife/assets/fonts/inter-tight-latin-600-normal.woff2)}
+@font-face{font-family:JB;font-weight:400;src:url(../citation-halflife/assets/fonts/jetbrains-mono-latin-400-normal.woff2)}
+@font-face{font-family:JB;font-weight:500;src:url(../citation-halflife/assets/fonts/jetbrains-mono-latin-500-normal.woff2)}
+:root{--ink:#141414;--mute:#55555E;--soft:#8A8A92;--line:#E4E2DF;--panel:#F7F6F4;--or:#EE6216;--ort:#FCD9C4;--ordk:#C94A0A}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;color:var(--ink);font-family:IT,sans-serif}
+.slide{position:relative;width:1080px;height:1350px;padding:56px 56px 0;background:#fff;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;font-family:JB,monospace;font-size:13.5px;letter-spacing:1.7px;color:var(--soft)}
+.top .logo{height:28px;width:auto;color:var(--ink)}
+.top b{color:var(--or);font-weight:500}
+.head{display:flex;justify-content:space-between;align-items:flex-end;margin-top:40px;gap:30px}
+h1{font-size:60px;font-weight:600;letter-spacing:-2px;line-height:1.03}
+h1 em{font-style:normal;color:var(--or)}
+.sub{font-size:22px;line-height:1.4;color:var(--mute);margin-top:14px}
+.score{flex:0 0 250px;border:2px solid var(--ink);border-radius:14px;padding:16px 18px 18px}
+.score small{display:block;font-family:JB,monospace;font-size:12.5px;letter-spacing:1.4px;color:var(--soft)}
+.score .val{font-family:JB,monospace;font-size:52px;font-weight:500;letter-spacing:-2px;line-height:1.05;margin-top:4px}
+.score .val span{color:#C9C9CE}
+.bar{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;margin-top:10px}
+.bar i{height:10px;border-radius:2px;background:#ECEAE7}
+.bar i.on{background:var(--ink)}
+.bar i.now{background:var(--or)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.card{position:relative;border:1.5px solid var(--line);border-radius:14px;padding:18px 20px 18px 20px;height:160px;background:#fff;display:grid;grid-template-columns:40px 1fr;gap:0 14px;transition:none}
+.card .ck{width:40px;height:40px;border-radius:50%;border:2px solid #CFCDC9;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;font-weight:600;margin-top:2px}
+.card .ck svg{width:20px;height:20px;opacity:0}
+.card.done .ck{background:var(--ink);border-color:var(--ink)}
+.card.done .ck svg{opacity:1}
+.card.pop .ck{transform:scale(1.18)}
+.card.scan{border-color:var(--or);background:#FFF8F3}
+.card.scan .ck{border-color:var(--or)}
+.card .tag{position:absolute;top:18px;right:20px;font-family:JB,monospace;font-size:12px;letter-spacing:1px;color:var(--soft)}
+.card .tag b{color:var(--ink);font-weight:500;margin-right:6px}
+.card h3{font-size:26.5px;font-weight:600;letter-spacing:-.5px;line-height:1.15;padding-right:92px}
+.card p{font-size:20.5px;line-height:1.36;color:var(--mute);margin-top:8px}
+.card p b{color:var(--ink);font-weight:600}
+.ftr{position:absolute;left:56px;right:56px;bottom:0;height:118px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line)}
+.who{display:flex;align-items:center;gap:14px}
+.av{width:54px;height:54px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:19px}
+.who b{display:block;font-size:21px;font-weight:600;letter-spacing:-.3px}
+.who span{display:block;font-family:JB,monospace;font-size:12.5px;color:var(--soft);margin-top:2px}
+.src{font-family:JB,monospace;font-size:12px;color:var(--soft);text-align:right;line-height:1.55}
+.src b{display:block;font-family:IT;font-size:21px;font-weight:500;color:var(--ink);letter-spacing:-.2px}
+.src b i{font-style:normal;color:var(--or);margin-right:6px}
+.done-banner{display:none}
+</style></head><body><section class="slide" id="cap">
+<div class="top"><!--LOGO--><span><b>SLATE LABS</b> / PAGE ANATOMY · 10K PAGES</span></div>
+<div class="head"><div><h1>Would AI cite<br><em>your page?</em></h1><p class="sub">The 10 things #1 pages in ChatGPT have in common.<br>Score yours as you read.</p></div>
+<div class="score"><small>AI-READY SCORE</small><div class="val" id="val">0<span>/10</span></div><div class="bar" id="bar"></div></div></div>
+<div class="grid" id="grid"></div>
+<div class="ftr"><div class="who"><div class="av">SS</div><div><b>Shiyam Sunder</b><span>ceo, slate · founder, tripledart</span></div></div>
+<div class="src"><b><i>↳</i>save this</b>source: Ryze AI research, 10K pages ranked #1 in LLMs</div></div>
+</section>
+<script>
+const items=[
+["A","access","Let the AI bots in","Allow <b>OAI-SearchBot, PerplexityBot</b> and <b>Claude-SearchBot</b> in robots.txt."],
+["A","access","Get indexed by Bing","ChatGPT search finds pages through Bing. <b>Resubmit + IndexNow</b> on every update."],
+["A","access","Ship a markdown twin","A clean <b>.md copy</b> for AI agents. No scripts or popups. Listed in llms.txt."],
+["A","access","Agent-proof sign-up","AI agents sign up for tools now. <b>Many die at the login wall.</b>"],
+["B","content","A liftable first paragraph","<b>Definition first, a number second</b>, inside the first 50 words."],
+["B","content","A stat only you have","The first page to publish it gets cited. <b>The 100 copies don't.</b>"],
+["B","content","Comparison tables in HTML","AI can't read a table in an image. <b>HTML rows</b> show up in “X vs Y”."],
+["B","content","FAQ from buyer prompts","Ask ChatGPT what buyers ask. <b>Answer each in 2–3 sentences.</b>"],
+["C","trust","Named author + schema","LinkedIn profile and dates that <b>match the schema</b>. No author = content farm."],
+["C","trust","Inline sources + expert quotes","Citations, quotes and stats lift AI visibility <b>by up to 40%</b>."]];
+const ck='<svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+document.getElementById('grid').innerHTML=items.map((t,i)=>`<div class="card" id="c${i}"><div class="ck">${ck}</div><div><span class="tag"><b>${String(i+1).padStart(2,'0')}</b>${t[1].toUpperCase()}</span><h3>${t[2]}</h3><p>${t[3]}</p></div></div>`).join('');
+document.getElementById('bar').innerHTML='<i></i>'.repeat(10);
+// done = number checked; scan = index being scanned (-1 none); pop = index just checked (-1 none)
+window.setState=(done,scan,pop)=>{
+  items.forEach((_,i)=>{const c=document.getElementById('c'+i);c.className='card'+(i<done?' done':'')+(i===scan?' scan':'')+(i===pop?' pop':'');});
+  document.getElementById('val').innerHTML=done+'<span>/10</span>';
+  [...document.querySelectorAll('#bar i')].forEach((b,i)=>b.className=i<done?(i===done-1&&done<10?'now':'on'):'');
+  if(done===10)[...document.querySelectorAll('#bar i')].forEach(b=>b.className='on');
+};
+setState(0,-1,-1);
+</script></body></html>

@@ -1,0 +1,157 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:IT;font-weight:400;src:url(../citation-halflife/assets/fonts/inter-tight-latin-400-normal.woff2)}
+@font-face{font-family:IT;font-weight:500;src:url(../citation-halflife/assets/fonts/inter-tight-latin-500-normal.woff2)}
+@font-face{font-family:IT;font-weight:600;src:url(../citation-halflife/assets/fonts/inter-tight-latin-600-normal.woff2)}
+@font-face{font-family:JB;font-weight:400;src:url(../citation-halflife/assets/fonts/jetbrains-mono-latin-400-normal.woff2)}
+@font-face{font-family:JB;font-weight:500;src:url(../citation-halflife/assets/fonts/jetbrains-mono-latin-500-normal.woff2)}
+:root{--ink:#141414;--ink2:#3A3A42;--mute:#55555E;--soft:#8A8A92;--line:#E4E2DF;--panel:#F7F6F4;--panelb:#ECEAE7;--or:#EE6216;--ort:#FCD9C4;--ordk:#C94A0A}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;color:var(--ink);font-family:IT,sans-serif}
+.page{width:1080px;padding:64px 64px 0;background:#fff}
+.top{display:flex;justify-content:space-between;align-items:center;font-family:JB,monospace;font-size:14px;letter-spacing:1.8px;color:var(--soft)}
+.top .logo{height:30px;width:auto;color:var(--ink)}
+.top b{color:var(--or);font-weight:500}
+h1{font-size:76px;font-weight:600;letter-spacing:-2.6px;line-height:1.02;margin-top:56px}
+h1 em{font-style:normal;color:var(--or)}
+.sub{font-size:26px;line-height:1.42;color:var(--mute);margin-top:24px;max-width:900px}
+.sub b{color:var(--ink);font-weight:600}
+.legend{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.legend span{font-family:JB,monospace;font-size:15px;letter-spacing:.4px;color:var(--ink2);border:1.5px solid var(--line);border-radius:999px;padding:8px 16px}
+.legend span i{font-style:normal;color:var(--or);font-weight:500;margin-right:8px}
+
+.layer{margin-top:58px}
+.lh{display:flex;align-items:baseline;gap:16px;padding-bottom:16px;border-bottom:2px solid var(--ink)}
+.lh .ll{font-family:JB,monospace;font-size:16px;font-weight:500;color:var(--or);letter-spacing:1px}
+.lh h2{font-size:34px;font-weight:600;letter-spacing:-.8px}
+.lh p{margin-left:auto;font-family:JB,monospace;font-size:15px;color:var(--soft);letter-spacing:.3px}
+
+.row{display:grid;grid-template-columns:74px 1fr 404px;gap:0 28px;padding:30px 0;border-bottom:1px solid var(--line);align-items:start}
+.num{font-family:JB,monospace;font-size:20px;font-weight:500;color:var(--ink);padding-top:6px}
+.row h3{font-size:31px;font-weight:600;letter-spacing:-.6px;line-height:1.15}
+.row p{font-size:21.5px;line-height:1.45;color:var(--mute);margin-top:10px}
+.row p b{color:var(--ink);font-weight:600}
+.spec{background:var(--panel);border:1px solid var(--panelb);border-radius:12px;padding:16px 18px 17px;font-family:JB,monospace;font-size:16.5px;line-height:1.62;color:var(--ink);white-space:pre}
+.spec .c{color:var(--soft)}
+.spec .y{color:var(--ink);font-weight:500}
+.spec .n{color:#A6A6AE;text-decoration:line-through;text-decoration-color:#C9C9CE}
+.spec .o{color:var(--ordk);font-weight:500}
+.spec.big{white-space:normal;display:flex;align-items:center;gap:18px;padding:18px 20px}
+.spec.big strong{font-family:JB,monospace;font-size:54px;font-weight:500;letter-spacing:-2px;color:var(--or);line-height:1}
+.spec.big span{font-family:IT;font-size:19px;line-height:1.35;color:var(--mute)}
+.spec.big span b{display:block;color:var(--ink);font-weight:600}
+
+.start{margin-top:62px;border:2px solid var(--ink);border-radius:16px;padding:30px 32px 32px}
+.start .lh2{display:flex;justify-content:space-between;align-items:baseline}
+.start h2{font-size:34px;font-weight:600;letter-spacing:-.8px}
+.start .lh2 span{font-family:JB,monospace;font-size:15px;color:var(--soft);letter-spacing:.3px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.steps div{background:var(--panel);border:1px solid var(--panelb);border-radius:12px;padding:20px 20px 22px}
+.steps em{font-style:normal;font-family:JB,monospace;font-size:15px;color:var(--or);font-weight:500;letter-spacing:.5px}
+.steps b{display:block;font-size:24px;font-weight:600;letter-spacing:-.4px;margin-top:8px;line-height:1.2}
+.steps span{display:block;font-size:19px;line-height:1.4;color:var(--mute);margin-top:8px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:2px solid var(--ink)}
+.stats div{padding:24px 20px 0 0}
+.stats div+div{padding-left:22px;border-left:1px solid var(--line)}
+.stats b{display:block;font-family:JB,monospace;font-size:46px;font-weight:500;letter-spacing:-1.5px;color:var(--ink);line-height:1.05}
+.stats b.o{color:var(--or)}
+.stats span{display:block;font-size:19px;line-height:1.38;color:var(--mute);margin-top:10px}
+.src{font-family:JB,monospace;font-size:13.5px;line-height:1.6;color:var(--soft);margin-top:48px;letter-spacing:.2px}
+.ftr{display:flex;justify-content:space-between;align-items:center;margin:34px -64px 0;padding:30px 64px 40px;border-top:1px solid var(--line)}
+.who{display:flex;align-items:center;gap:18px}
+.av{width:68px;height:68px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:IT;font-weight:600;font-size:24px;letter-spacing:.5px}
+.who b{display:block;font-size:26px;font-weight:600;letter-spacing:-.4px}
+.who span{display:block;font-family:JB,monospace;font-size:14.5px;color:var(--soft);margin-top:3px}
+.save{font-size:26px;font-weight:500;color:var(--ink)}
+.save i{font-style:normal;color:var(--or);margin-right:8px}
+</style></head><body><section class="page" id="cap">
+
+<div class="top"><!--LOGO--><span><b>SLATE LABS</b> / AI SEARCH · PAGE ANATOMY</span></div>
+
+<h1>The anatomy of a page<br>AI <em>actually cites.</em></h1>
+<p class="sub">10 things the pages ranking <b>#1 in ChatGPT and Google AI</b> have in common, from research on 10K of them. Sorted by the job each one does.</p>
+<div class="legend"><span><i>A</i>let AI in</span><span><i>B</i>give it something to quote</span><span><i>C</i>prove you're real</span></div>
+
+<!-- A -->
+<div class="layer"><div class="lh"><span class="ll">A</span><h2>Let AI in</h2><p>access · 01–04</p></div>
+
+<div class="row"><div class="num">01</div><div><h3>Let the AI bots in</h3><p>Many sites still block the exact bots that would cite them. <b>Allow all three.</b></p></div>
+<div class="spec"><span class="c"># robots.txt</span>
+User-agent: OAI-SearchBot    <span class="y">Allow: /</span>
+User-agent: PerplexityBot    <span class="y">Allow: /</span>
+User-agent: Claude-SearchBot <span class="y">Allow: /</span></div></div>
+
+<div class="row"><div class="num">02</div><div><h3>Get indexed by Bing</h3><p>ChatGPT search finds pages through Bing. <b>Resubmit on every update.</b></p></div>
+<div class="spec"><span class="c"># on every publish</span>
+Bing Webmaster Tools  → <span class="y">submit</span>
+IndexNow              → <span class="y">ping</span></div></div>
+
+<div class="row"><div class="num">03</div><div><h3>Ship a markdown twin</h3><p>A clean <b>.md copy</b> of the page, written for AI agents. No scripts, menus or popups. Listed in llms.txt.</p></div>
+<div class="spec"><span class="c"># llms.txt</span>
+/pricing     → <span class="y">/pricing.md</span>
+/vs-rival    → <span class="y">/vs-rival.md</span>
+/docs/setup  → <span class="y">/docs/setup.md</span></div></div>
+
+<div class="row"><div class="num">04</div><div><h3>Make sign-up agent-proof</h3><p>AI agents now sign up for tools for their users. <b>Many die at the login wall.</b></p></div>
+<div class="spec"><span class="c"># run an agent through it</span>
+agent → lands on page  <span class="y">✓</span>
+agent → fills sign-up  <span class="y">✓</span>
+agent → login wall     <span class="o">✕ breaks here</span></div></div>
+</div>
+
+<!-- B -->
+<div class="layer"><div class="lh"><span class="ll">B</span><h2>Give it something to quote</h2><p>content · 05–08</p></div>
+
+<div class="row"><div class="num">05</div><div><h3>A first paragraph AI can lift</h3><p><b>Definition first, a number second</b>, both inside the first 50 words. That's what ChatGPT quotes word for word.</p></div>
+<div class="spec"><span class="c"># first 50 words</span>
+words 01–25  → <span class="y">what it is</span>
+words 26–50  → <span class="y">one hard number</span>
+everything else → <span class="c">after</span></div></div>
+
+<div class="row"><div class="num">06</div><div><h3>A stat only you have</h3><p>The first page to publish “43% of X” gets cited. <b>The 100 pages repeating it don't.</b></p></div>
+<div class="spec"><span class="c"># who gets the citation</span>
+original stat     → <span class="y">cited ✓</span>
+100 copies of it  → <span class="n">ignored</span></div></div>
+
+<div class="row"><div class="num">07</div><div><h3>Comparison tables in HTML</h3><p>AI can't read a table inside an image. In HTML, <b>every row can show up</b> in “X vs Y” answers.</p></div>
+<div class="spec"><span class="c"># same table, two formats</span>
+&lt;table&gt;     → <span class="y">every row readable ✓</span>
+table.png   → <span class="n">invisible to AI</span></div></div>
+
+<div class="row"><div class="num">08</div><div><h3>An FAQ built from buyer prompts</h3><p>Ask ChatGPT what your buyers ask it. <b>Answer each question in 2–3 sentences.</b></p></div>
+<div class="spec"><span class="c"># per question</span>
+Q → <span class="y">a real buyer prompt</span>
+A → <span class="y">2–3 sentences, no fluff</span></div></div>
+</div>
+
+<!-- C -->
+<div class="layer"><div class="lh"><span class="ll">C</span><h2>Prove you're real</h2><p>trust · 09–10</p></div>
+
+<div class="row"><div class="num">09</div><div><h3>A named author, matching schema</h3><p>A LinkedIn profile and dates that match the schema. <b>Pages with no author look like content farms.</b></p></div>
+<div class="spec"><span class="c"># schema, matching the page</span>
+"author": "<span class="y">Jane Doe</span>",
+"sameAs": "<span class="y">linkedin.com/in/…</span>",
+"dateModified": "<span class="y">= page date</span>"</div></div>
+
+<div class="row"><div class="num">10</div><div><h3>Inline sources, real expert quotes</h3><p>Link sources in the text. Quote people with real names. <b>Citations, quotes and stats</b> all lift AI visibility.</p></div>
+<div class="spec big"><strong>+40%</strong><span><b>up to, in AI answers</b>from citations, quotes and stats</span></div></div>
+</div>
+
+<div class="start"><div class="lh2"><h2>Start with these 3 today</h2><span>~30 minutes</span></div>
+<div class="steps">
+<div><em>01 · 5 MIN</em><b>Open robots.txt</b><span>Allow OAI-SearchBot, PerplexityBot and Claude-SearchBot.</span></div>
+<div><em>02 · 10 MIN</em><b>Submit to Bing</b><span>Add the site to Bing Webmaster Tools. Turn on IndexNow.</span></div>
+<div><em>05 · 15 MIN</em><b>Rewrite your first 50 words</b><span>On your top page: a definition, then one hard number.</span></div>
+</div></div>
+
+<div class="stats">
+<div><b>10K</b><span>pages studied, all ranked #1 in LLMs</span></div>
+<div><b>50</b><span>words: where the quotable answer goes</span></div>
+<div><b>3</b><span>AI search bots to allow in robots.txt</span></div>
+<div><b class="o">40%</b><span>max visibility lift from sources and quotes</span></div>
+</div>
+
+<p class="src">source: Ryze AI research on 10K websites ranked #1 in LLMs, shared by Ira Bodnar (Oct 2026). Schema and robots.txt examples are illustrative.</p>
+
+<div class="ftr"><div class="who"><div class="av">SS</div><div><b>Shiyam Sunder</b><span>ceo, slate · founder, tripledart</span></div></div><div class="save"><i>↳</i>save this</div></div>
+</section></body></html>
